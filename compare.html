@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blackridge vs. Existing Tools — Northwatch Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #090B0F;
+  --bg-2:      #0C0F14;
+  --surface:   #12161D;
+  --surface-2: #171C24;
+  --surface-3: #0E1219;
+  --ink:       #ECEEF1;
+  --ink-2:     #A4ACB6;
+  --ink-3:     #69727D;
+  --line:      #1E242D;
+  --line-2:    #2A323D;
+  --line-3:    #3A434F;
+  --accent:    #D2762F;
+  --accent-2:  #F0A14E;
+  --accent-3:  #F7C27E;
+  --steel:     #8B95A1;
+  --good:      oklch(0.74 0.075 155);
+
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --disp: 'Space Grotesk', var(--sans);
+  --max: 1100px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.field {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 82% -6%, rgba(210,118,47,.09), transparent 60%),
+    radial-gradient(50rem 40rem at 2% 4%, rgba(90,108,128,.06), transparent 55%);
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; position: relative; z-index: 1; }
+
+.label {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--mono); font-size: 11.5px; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--accent-2);
+  white-space: nowrap;
+}
+.label::before { content: ''; width: 30px; height: 1px; flex: none; background: linear-gradient(90deg, transparent, var(--accent)); }
+.label.center { justify-content: center; }
+.label.center::after { content: ''; width: 30px; height: 1px; background: linear-gradient(90deg, var(--accent), transparent); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  min-height: 46px; padding: 0 22px; border-radius: 9px;
+  border: 1px solid var(--line-2);
+  font-family: var(--mono); font-size: 12px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.primary {
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
+  border-color: var(--accent); color: #160C04;
+  box-shadow: 0 8px 26px rgba(210,118,47,.26);
+}
+.btn.primary:hover { box-shadow: 0 12px 32px rgba(210,118,47,.36); }
+.btn.ghost { background: rgba(255,255,255,.025); color: var(--ink); }
+.btn.ghost:hover { border-color: var(--line-3); background: rgba(255,255,255,.05); }
+.arr { transition: transform .16s ease; }
+.btn:hover .arr { transform: translateX(3px); }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in oklab, var(--bg) 78%, transparent);
+  backdrop-filter: blur(16px) saturate(120%);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 13px; }
+.brand-mark { width: 34px; height: 34px; flex: none; }
+.brand-name { font-family: var(--disp); font-weight: 600; font-size: 16px; letter-spacing: .26em; text-transform: uppercase; }
+.brand-name span { color: var(--ink-3); font-weight: 500; }
+.nav-links { display: flex; align-items: center; gap: 26px; }
+.nav-links a { color: var(--ink-2); font-size: 14px; transition: color .14s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+
+/* Hero */
+.hero { padding: 88px 0 64px; }
+.hero-inner { max-width: 800px; }
+h1 { font-family: var(--disp); font-weight: 600; font-size: clamp(38px, 5.4vw, 62px); line-height: 1.04; letter-spacing: -.026em; text-wrap: balance; margin-top: 22px; }
+h1 em { font-style: normal; color: var(--accent-2); }
+.lede { margin-top: 20px; color: var(--ink-2); font-size: clamp(16px, 1.4vw, 18px); max-width: 680px; line-height: 1.6; }
+
+/* Wedge callout */
+.wedge-hero {
+  margin-top: 36px;
+  border-left: 3px solid var(--accent);
+  padding: 16px 22px;
+  background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 9%, transparent), transparent 70%);
+  border-radius: 0 10px 10px 0;
+}
+.wedge-hero p { font-family: var(--disp); font-size: 19px; font-weight: 500; line-height: 1.4; color: var(--ink); }
+.wedge-hero p strong { color: var(--accent-2); font-weight: 700; }
+
+/* Comp table */
+.comp-section { padding: 16px 0 100px; }
+.comp-grid { display: grid; gap: 14px; margin-top: 44px; }
+.comp-card {
+  display: grid; grid-template-columns: 280px 1fr auto;
+  gap: 0; border: 1px solid var(--line-2); border-radius: 14px;
+  background: var(--surface-3); overflow: hidden;
+  transition: border-color .18s ease;
+}
+.comp-card:hover { border-color: var(--line-3); }
+.comp-cat {
+  padding: 26px 26px; border-right: 1px solid var(--line);
+  background: var(--surface);
+}
+.comp-cat .tool { font-family: var(--disp); font-weight: 600; font-size: 18px; color: var(--ink); margin-bottom: 5px; }
+.comp-cat .examples { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--ink-3); }
+.comp-body { padding: 26px 28px; }
+.comp-body .what { font-size: 15px; color: var(--ink-2); line-height: 1.55; margin-bottom: 14px; }
+.comp-body .win { font-size: 15px; color: var(--ink); line-height: 1.55; font-weight: 500; padding-left: 18px; position: relative; }
+.comp-body .win::before { content: ''; position: absolute; left: 0; top: 9px; width: 10px; height: 2px; background: var(--accent); }
+.comp-tag {
+  display: grid; place-items: center; width: 100px;
+  border-left: 1px solid var(--line); padding: 0 16px;
+}
+.comp-tag span {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; text-align: center; line-height: 1.5;
+  color: var(--accent-2);
+}
+
+/* Layer diagram */
+.layer-section { padding: 0 0 100px; }
+.layer-diagram {
+  border: 1px solid var(--line-2); border-radius: 16px;
+  background: var(--surface); overflow: hidden; margin-top: 44px;
+}
+.layer-row {
+  display: flex; align-items: stretch; border-bottom: 1px solid var(--line);
+  transition: background .14s ease;
+}
+.layer-row:last-child { border-bottom: none; }
+.layer-row:hover { background: rgba(255,255,255,.015); }
+.layer-row.hl { background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 10%, transparent), transparent 60%); }
+.layer-row.hl:hover { background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 14%, transparent), transparent 60%); }
+.ln { width: 5px; flex: none; }
+.layer-row.hl .ln { background: linear-gradient(180deg, var(--accent-3), var(--accent)); }
+.layer-row:not(.hl) .ln { background: var(--line); }
+.layer-label { width: 200px; flex: none; padding: 22px 22px 22px 20px; border-right: 1px solid var(--line); }
+.layer-label strong { display: block; font-family: var(--disp); font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+.layer-label span { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: .04em; }
+.layer-row.hl .layer-label strong { color: var(--accent-2); }
+.layer-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 22px 24px; flex: 1; }
+.tool-chip {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em;
+  padding: 6px 13px; border-radius: 7px; border: 1px solid var(--line-2);
+  color: var(--ink-3); background: var(--surface-3);
+}
+.tool-chip.ours {
+  color: var(--accent-2); border-color: color-mix(in oklab, var(--accent) 45%, var(--line-2));
+  background: color-mix(in oklab, var(--accent) 12%, var(--surface-3));
+  font-weight: 600;
+}
+
+/* CTA */
+.cta-section { text-align: center; padding: 20px 0 100px; }
+.cta-section h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(28px, 3.8vw, 44px); letter-spacing: -.022em; max-width: 740px; margin: 0 auto 14px; }
+.cta-section p { color: var(--ink-2); font-size: 17px; max-width: 580px; margin: 0 auto 28px; }
+.cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+/* Footer */
+.footer { border-top: 1px solid var(--line); padding: 36px 0; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.meta { font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+
+@media (max-width: 860px) {
+  .comp-card { grid-template-columns: 1fr; }
+  .comp-cat { border-right: none; border-bottom: 1px solid var(--line); }
+  .comp-tag { width: auto; border-left: none; border-top: 1px solid var(--line); padding: 14px 26px; place-items: start; }
+  .comp-tag span { writing-mode: horizontal-tb; }
+  .layer-label { width: 150px; }
+}
+@media (max-width: 600px) {
+  .nav-links a:not(.btn) { display: none; }
+  .hero { padding-top: 56px; }
+  .layer-label { width: 110px; }
+  .layer-label strong { font-size: 13px; }
+  .cta-actions .btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="homepage.html" aria-label="homepage — home">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="9" fill="#12161D" stroke="#2A323D"/>
+        <rect x="11" y="10" width="4.4" height="20" rx="1" fill="#9aa4b0"/>
+        <rect x="24.6" y="10" width="4.4" height="20" rx="1" fill="#9aa4b0"/>
+        <path d="M14.4 11 L26 29.5" stroke="url(#seam)" stroke-width="3" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="seam" x1="14" y1="11" x2="26" y2="30" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F7C27E"/>
+            <stop offset="1" stop-color="#D2762F"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="brand-name">Northwatch <span>Systems</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="homepage.html">Home</a>
+      <a href="homepage.html#problem">The Problem</a>
+      <a href="compare.html" class="active">Compare</a>
+      <a class="btn primary" href="homepage.html#assessment">Book 7-Day Assessment <span class="arr">→</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="label">Competitive positioning</div>
+      <h1>We don't replace your stack.<br>We <em>sit between</em> it and your bill.</h1>
+      <p class="lede">Most tools adjacent to Blackridge solve a real but different problem. The honest move isn't a comparison table — it's drawing the layer. Here's where everything fits.</p>
+      <div class="wedge-hero">
+        <p>Everyone else watches the bill or moves the bytes. <strong>Blackridge is the only layer that understands inference as economics and sits where it can act.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITIVE POSITIONING -->
+  <section class="comp-section">
+    <div class="container">
+      <div class="section-head" style="max-width:780px; margin-bottom:0;">
+        <div class="label">Tool by tool</div>
+        <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.06;letter-spacing:-.024em;margin-top:16px;margin-bottom:12px;">Five adjacent tools. One gap they all share.</h2>
+        <p style="color:var(--ink-2);font-size:17px;max-width:700px;">None of them are wrong for what they do. The gap is that none of them sit inline at the runtime, reason in inference economics, and act on cost before it leaves your environment.</p>
+      </div>
+
+      <div class="comp-grid">
+
+        <div class="comp-card">
+          <div class="comp-cat">
+            <div class="tool">Provider dashboards</div>
+            <div class="examples">OpenAI · Anthropic · Gemini consoles</div>
+          </div>
+          <div class="comp-body">
+            <p class="what">Per-provider, after-the-fact reporting. No cross-provider view, no internal attribution — you see what you spent with that provider, not which application, team, or workflow caused it.</p>
+            <p class="win">Blackridge sees all providers through one control point and attributes spend to your teams before the bill exists.</p>
+          </div>
+          <div class="comp-tag"><span>Observes one provider, after the fact</span></div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-cat">
+            <div class="tool">Generic API gateways</div>
+            <div class="examples">Kong · Apigee · Envoy</div>
+          </div>
+          <div class="comp-body">
+            <p class="what">Route bytes and enforce HTTP policies. They have no concept of model pricing, token economics, or semantic caching — a request is a request, not an inference call with a cost per token.</p>
+            <p class="win">Blackridge reasons in inference economics, not just HTTP. Cache decisions, routing choices, and budget enforcement are all model- and token-aware.</p>
+          </div>
+          <div class="comp-tag"><span>Routes bytes, not economics</span></div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-cat">
+            <div class="tool">Cloud cost &amp; FinOps tools</div>
+            <div class="examples">Generic cost platforms</div>
+          </div>
+          <div class="comp-body">
+            <p class="what">Excellent at aggregating and reporting cloud spend across services. They work from billing exports — which means they see cost after it's incurred and can't change it.</p>
+            <p class="win">Blackridge both measures and acts at the point the cost is incurred — inline, in real time, before the dollar leaves your environment.</p>
+          </div>
+          <div class="comp-tag"><span>Reports cost, can't change it</span></div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-cat">
+            <div class="tool">LLM routers &amp; OSS proxies</div>
+            <div class="examples">Open-source gateways</div>
+          </div>
+          <div class="comp-body">
+            <p class="what">Often built as developer-convenience proxies — useful for switching providers during experimentation, but not built for enterprise runtime infrastructure: no tenant-scoped caching, no budget enforcement, not Kubernetes-native or air-gap capable.</p>
+            <p class="win">Blackridge is Kubernetes-native, observable, air-gap capable, and built to be owned by platform teams — not just used by individual developers.</p>
+          </div>
+          <div class="comp-tag"><span>Dev convenience, not platform infra</span></div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-cat">
+            <div class="tool">Agentic AI platforms</div>
+            <div class="examples">Orchestration suites</div>
+          </div>
+          <div class="comp-body">
+            <p class="what">Solve a different problem at a different layer — how to orchestrate multi-step AI workflows. They generate inference traffic; they don't govern it.</p>
+            <p class="win">Blackridge is infrastructure beneath them. Every inference call an orchestration layer makes flows through the runtime — and that's exactly where Blackridge sits.</p>
+          </div>
+          <div class="comp-tag"><span>Generates traffic, doesn't govern it</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYER DIAGRAM -->
+  <section class="layer-section">
+    <div class="container">
+      <div class="label">Where the layers sit</div>
+      <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.022em;line-height:1.06;margin-top:16px;margin-bottom:12px;">The stack, drawn honestly.</h2>
+      <p style="color:var(--ink-2);font-size:17px;max-width:680px;">Each of these tools belongs in its layer. Blackridge fills the gap none of them cover: the runtime boundary where inference traffic can actually be controlled.</p>
+      <div class="layer-diagram">
+        <div class="layer-row">
+          <div class="ln"></div>
+          <div class="layer-label"><strong>Orchestration</strong><span>workflow layer</span></div>
+          <div class="layer-tools">
+            <span class="tool-chip">LangChain</span>
+            <span class="tool-chip">LlamaIndex</span>
+            <span class="tool-chip">AutoGen</span>
+            <span class="tool-chip">Your agent framework</span>
+          </div>
+        </div>
+        <div class="layer-row hl">
+          <div class="ln"></div>
+          <div class="layer-label"><strong>Runtime boundary</strong><span>Blackridge layer</span></div>
+          <div class="layer-tools">
+            <span class="tool-chip ours">Blackridge Runtime Gateway</span>
+          </div>
+        </div>
+        <div class="layer-row">
+          <div class="ln"></div>
+          <div class="layer-label"><strong>HTTP routing</strong><span>gateway layer</span></div>
+          <div class="layer-tools">
+            <span class="tool-chip">Kong</span>
+            <span class="tool-chip">Apigee</span>
+            <span class="tool-chip">Envoy</span>
+            <span class="tool-chip">nginx</span>
+          </div>
+        </div>
+        <div class="layer-row">
+          <div class="ln"></div>
+          <div class="layer-label"><strong>Model providers</strong><span>inference layer</span></div>
+          <div class="layer-tools">
+            <span class="tool-chip">OpenAI</span>
+            <span class="tool-chip">Anthropic</span>
+            <span class="tool-chip">Gemini</span>
+            <span class="tool-chip">Self-hosted</span>
+          </div>
+        </div>
+        <div class="layer-row">
+          <div class="ln"></div>
+          <div class="layer-label"><strong>Cost reporting</strong><span>FinOps layer</span></div>
+          <div class="layer-tools">
+            <span class="tool-chip">Provider consoles</span>
+            <span class="tool-chip">Cloud cost platforms</span>
+            <span class="tool-chip">FinOps tools</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="label center" style="margin-bottom:20px;">Next step</div>
+      <h2>See what's actually happening in your runtime.</h2>
+      <p>The 7-day assessment deploys inline, watches your real traffic, and delivers a report that answers questions no other tool in your stack currently can.</p>
+      <div class="cta-actions">
+        <a class="btn primary" href="Northwatch Systems.html#assessment">Book your 7-day assessment <span class="arr">→</span></a>
+        <a class="btn ghost" href="Northwatch Systems.html">Back to overview</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="brand-name" style="font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.26em;text-transform:uppercase;">Northwatch <span style="color:var(--ink-3);font-weight:500;">Systems</span></span>
+    <span class="meta">Blackridge — Runtime Economics for AI Infrastructure</span>
+    <span class="meta"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0169646d6d6e416f6e73756976607562692f72787275646c72">[email&#160;protected]</a></span>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
