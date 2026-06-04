@@ -1,14 +1,16 @@
 # Quick Start - Deploy in 10 Minutes
 
-## Step 1: Form Setup (5 min)
-1. Go to https://formspree.io
-2. Sign up (free)
-3. Create a form, copy the ID (e.g., `xvgprkbn`)
-4. Edit `assessment.html` line 254:
-   ```html
-   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
-   Replace `YOUR_FORM_ID` with your actual ID
+## Step 1: Form Setup
+
+**Option A: Quick (but costs $10-20/month later)**
+1. Go to https://formspree.io and use free tier temporarily
+2. Deploy proper serverless solution later
+
+**Option B: Proper Setup (20 min, then $1/month forever)**
+1. Deploy AWS Lambda from `serverless/aws-lambda/`
+2. Follow `serverless/SERVERLESS_SETUP.md`
+3. Update `assessment.html` line 357 with your API endpoint
+4. **Saves $108-228/year vs third-party services**
 
 ## Step 2: Domain Setup (2 min)
 Choose one:

@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRG — GTM & Messaging Playbook</title>
+<style>
+  :root{
+    --bg:#0c0d10; --bg-2:#0f1115; --panel:#14171d; --panel-2:#181c23; --panel-3:#1d222b;
+    --line:#262c36; --line-2:#333a47;
+    --ash:#e8eaed; --ash-2:#c4c8cf; --mut:#8b919c; --mut-2:#626977; --dim:#454c58;
+    --ember:#ec6a39; --ember-2:#f2895f; --ember-soft:rgba(236,106,57,.12); --ember-line:rgba(236,106,57,.42);
+    --steel:#6f93cf; --steel-soft:rgba(111,147,207,.12); --steel-line:rgba(111,147,207,.40);
+    --ok:#5fae7e; --warn:#d9a441; --bad:#c2685c;
+    --mono:ui-monospace,"SF Mono","Cascadia Code","Source Code Pro",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:
+      radial-gradient(1100px 560px at 88% -8%, rgba(236,106,57,.05), transparent 60%),
+      radial-gradient(900px 460px at 0% 0%, rgba(111,147,207,.045), transparent 55%),
+      var(--bg);
+    color:var(--ash);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+  /* ---------- layout ---------- */
+  .shell{display:grid;grid-template-columns:268px minmax(0,1fr);gap:0;max-width:1500px;margin:0 auto}
+  nav.side{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:26px 20px 40px;border-right:1px solid var(--line)}
+  nav.side::-webkit-scrollbar{width:7px} nav.side::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:4px}
+  main{padding:40px 56px 120px;min-width:0}
+
+  /* ---------- sidebar ---------- */
+  .logo{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+  .logo .mark{width:26px;height:26px;border-radius:6px;background:var(--ember);position:relative;flex:none}
+  .logo .mark:before{content:"";position:absolute;inset:7px 13px 7px 7px;background:#0c0d10;border-radius:1px}
+  .logo .mark:after{content:"";position:absolute;inset:7px 7px 7px 14px;background:rgba(12,13,16,.45);border-radius:1px}
+  .logo .nm{font-size:15px;font-weight:680;letter-spacing:-.01em}
+  .side .tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut-2);margin:0 0 22px 36px}
+  .navgroup{margin-bottom:18px}
+  .navgroup .gt{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:8px;padding-left:2px}
+  nav.side a{display:block;font-size:12.5px;color:var(--mut);text-decoration:none;padding:5px 10px;border-radius:6px;border-left:2px solid transparent;transition:.13s;line-height:1.35}
+  nav.side a:hover{color:var(--ash-2);background:var(--panel)}
+  nav.side a.active{color:var(--ash);background:var(--ember-soft);border-left-color:var(--ember)}
+
+  /* ---------- hero ---------- */
+  .hero{border-bottom:1px solid var(--line);padding-bottom:30px;margin-bottom:14px}
+  .hero .kick{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ember);margin-bottom:14px}
+  .hero h1{font-size:38px;line-height:1.04;letter-spacing:-.025em;font-weight:680;margin:0 0 16px;max-width:18ch}
+  .hero p{font-size:16px;color:var(--ash-2);max-width:62ch;margin:0 0 20px}
+  .hero .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .hero .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ash-2);border:1px solid var(--line-2);background:var(--panel);padding:6px 11px;border-radius:20px}
+  .hero .chip b{color:var(--ember-2);font-weight:600}
+
+  /* ---------- guardrails banner ---------- */
+  .guard{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0 4px}
+  .guard .g{border:1px solid var(--line);border-radius:11px;padding:15px 18px;background:var(--panel)}
+  .guard .g.say{border-left:2px solid var(--ok)} .guard .g.dont{border-left:2px solid var(--bad)}
+  .guard .gh{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:11px}
+  .guard .say .gh{color:var(--ok)} .guard .dont .gh{color:var(--bad)}
+  .guard ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+  .guard li{font-size:12.5px;color:var(--ash-2);line-height:1.4;padding-left:18px;position:relative}
+  .guard .say li:before{content:"+";position:absolute;left:1px;color:var(--ok);font-weight:700}
+  .guard .dont li{color:var(--mut)} .guard .dont li:before{content:"\00d7";position:absolute;left:1px;color:var(--bad);font-weight:700}
+
+  /* ---------- section scaffolding ---------- */
+  section.sec{padding:42px 0 8px;border-top:1px solid var(--line);margin-top:30px;scroll-margin-top:18px}
+  section.sec:first-of-type{border-top:0}
+  .sechead{margin-bottom:22px}
+  .sechead .ix{font-family:var(--mono);font-size:11px;color:var(--mut-2);letter-spacing:.1em}
+  .sechead h2{font-size:25px;letter-spacing:-.02em;font-weight:660;margin:7px 0 8px}
+  .sechead .lead{font-size:14px;color:var(--mut);max-width:70ch;margin:0}
+  .subhead{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin:26px 0 13px;display:flex;align-items:center;gap:11px}
+  .subhead:after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* ---------- generic cards ---------- */
+  .stack{display:flex;flex-direction:column;gap:11px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+  .card{border:1px solid var(--line);background:var(--panel);border-radius:11px;padding:16px 18px}
+  .card.hl{border-color:var(--ember-line);background:var(--ember-soft)}
+
+  /* option / variant lines */
+  .opt{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:13px 16px}
+  .opt .num{font-family:var(--mono);font-size:11px;color:var(--ember);border:1px solid var(--ember-line);background:var(--ember-soft);width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex:none;margin-top:2px}
+  .opt .body{min-width:0}
+  .opt .headline{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.25;color:var(--ash)}
+  .opt .headline.lg{font-size:21px}
+  .opt .note{font-size:12px;color:var(--mut);margin-top:5px}
+  .opt .sub{font-size:13.5px;color:var(--ash-2);margin-top:6px;line-height:1.5}
+  .opt.primary{border-color:var(--ember-line);background:linear-gradient(180deg,var(--ember-soft),var(--panel))}
+  .opt.primary .num{background:var(--ember);color:#0c0d10;border-color:var(--ember)}
+
+  .pillrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px}
+  .pill{font-size:13px;border:1px solid var(--line-2);background:var(--panel);border-radius:7px;padding:8px 13px;color:var(--ash-2)}
+  .pill.star{border-color:var(--ember-line);background:var(--ember-soft);color:var(--ash)}
+
+  /* labeled block */
+  .lblblock{border:1px solid var(--line);border-radius:11px;background:var(--panel);overflow:hidden}
+  .lblblock .lh{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-bottom:1px solid var(--line);background:var(--panel-2)}
+  .lblblock .lh .t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash-2)}
+  .lblblock .lh .b{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut-2);border:1px solid var(--line-2);padding:3px 8px;border-radius:5px}
+  .lblblock .lb{padding:15px 17px;font-size:13.5px;color:var(--ash-2);line-height:1.6}
+  .lblblock .lb p{margin:0 0 11px} .lblblock .lb p:last-child{margin:0}
+  .lblblock .lb b{color:var(--ash);font-weight:600}
+  .lblblock .lb .q{color:var(--ember-2)}
+
+  /* messaging hierarchy ladder */
+  .ladder{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:11px;overflow:hidden}
+  .rung{display:grid;grid-template-columns:160px 1fr;gap:0;border-bottom:1px solid var(--line)}
+  .rung:last-child{border-bottom:0}
+  .rung .lvl{padding:14px 16px;background:var(--panel-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut-2);border-right:1px solid var(--line);display:flex;align-items:center}
+  .rung .val{padding:14px 18px;background:var(--panel)}
+  .rung .val .big{font-size:16px;font-weight:600;color:var(--ash);letter-spacing:-.01em}
+  .rung .val .sm{font-size:13px;color:var(--mut);margin-top:4px}
+  .rung.top .lvl{color:var(--ember)} .rung.top .val{background:var(--ember-soft)}
+
+  /* persona table */
+  .ptable{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+  .persona{border:1px solid var(--line);border-radius:11px;background:var(--panel);padding:16px 17px}
+  .persona .role{font-size:15px;font-weight:640;color:var(--ash)}
+  .persona .cares{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);margin:3px 0 12px}
+  .persona .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut-2);margin:11px 0 5px}
+  .persona p{margin:0;font-size:13px;color:var(--ash-2);line-height:1.5}
+
+  /* objection */
+  .obj-q{font-size:14.5px;font-weight:600;color:var(--ash);margin-bottom:7px;display:flex;gap:10px;align-items:baseline}
+  .obj-q .mk{font-family:var(--mono);font-size:11px;color:var(--bad);flex:none}
+  .obj-a{font-size:13.5px;color:var(--ash-2);line-height:1.55;padding-left:23px;border-left:2px solid var(--ember-line);margin-left:3px}
+
+  /* competitive */
+  .comprow{display:grid;grid-template-columns:1fr;gap:11px}
+  .comp{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:14px 17px;display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:baseline}
+  .comp .cat{font-size:14px;font-weight:600;color:var(--ash-2)}
+  .comp .cat span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut-2);margin-top:3px;font-weight:400}
+  .comp .pos{font-size:13.5px;color:var(--ash-2);line-height:1.5}
+  .comp .pos b{color:var(--ember-2);font-weight:600}
+
+  /* steps / flow */
+  .steps{display:flex;flex-direction:column;gap:0}
+  .step{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:0 0 22px;position:relative}
+  .step:before{content:"";position:absolute;left:21px;top:34px;bottom:-4px;width:1px;background:var(--line-2)}
+  .step:last-child{padding-bottom:0} .step:last-child:before{display:none}
+  .step .sn{width:30px;height:30px;border-radius:8px;background:var(--panel-2);border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--ember);font-weight:600;margin:0 auto;z-index:1}
+  .step .st{font-size:15px;font-weight:600;color:var(--ash);margin-bottom:4px}
+  .step .sd{font-size:13px;color:var(--mut);line-height:1.5}
+  .step .sd b{color:var(--ash-2);font-weight:600}
+
+  /* report mock */
+  .report{border:1px solid var(--line-2);border-radius:12px;overflow:hidden;background:var(--bg-2)}
+  .report .rtop{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--panel)}
+  .report .rtop .t{font-size:15px;font-weight:640} .report .rtop .t span{color:var(--ember)}
+  .report .rtop .d{font-family:var(--mono);font-size:11px;color:var(--mut-2)}
+  .report .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+  .report .kpi{background:var(--panel);padding:15px 17px}
+  .report .kpi .kl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut-2)}
+  .report .kpi .kv{font-size:23px;font-weight:680;letter-spacing:-.02em;margin-top:6px}
+  .report .kpi .kv.up{color:var(--ok)} .report .kpi .kv.warn{color:var(--warn)} .report .kpi .kv.em{color:var(--ember-2)}
+  .report .kpi .kt{font-size:11.5px;color:var(--mut);margin-top:3px}
+  .report .rbody{padding:6px 20px 18px}
+  .report .rsec{padding:14px 0;border-bottom:1px solid var(--line)} .report .rsec:last-child{border-bottom:0}
+  .report .rsec .rsh{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash-2);margin-bottom:9px}
+  .report .rsec ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+  .report .rsec li{font-size:13px;color:var(--mut);padding-left:16px;position:relative;line-height:1.45}
+  .report .rsec li:before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:1px;background:var(--ember)}
+  .report .rsec li b{color:var(--ash-2);font-weight:600}
+
+  /* code/email block */
+  .email{border:1px solid var(--line);border-radius:10px;background:var(--bg-2);overflow:hidden}
+  .email .eh{display:flex;justify-content:space-between;padding:10px 15px;border-bottom:1px solid var(--line);background:var(--panel);font-family:var(--mono);font-size:11px;color:var(--mut-2)}
+  .email .eh .subj{color:var(--ash-2)}
+  .email .eb{padding:15px 17px;font-size:13px;line-height:1.62;color:var(--ash-2);white-space:pre-wrap}
+  .email .eb b{color:var(--ash);font-weight:600}
+
+  /* design tokens demo */
+  .swatches{display:flex;gap:11px;flex-wrap:wrap}
+  .sw{border:1px solid var(--line);border-radius:9px;overflow:hidden;width:108px;background:var(--panel)}
+  .sw .chip{height:52px} .sw .meta{padding:8px 10px} .sw .meta .n{font-size:11.5px;font-weight:600;color:var(--ash)}
+  .sw .meta .h{font-family:var(--mono);font-size:10px;color:var(--mut-2)}
+
+  .takeaway{border:1px solid var(--ember-line);background:linear-gradient(180deg,var(--ember-soft),var(--panel));border-radius:11px;padding:15px 18px;margin-top:14px}
+  .takeaway .tl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ember);margin-bottom:7px}
+  .takeaway p{margin:0;font-size:14px;color:var(--ash);line-height:1.55}
+  .takeaway p b{color:var(--ember-2)}
+
+  .note-inline{font-size:12px;color:var(--mut-2);margin-top:9px;font-style:italic}
+  a.xref{color:var(--steel);text-decoration:none;border-bottom:1px solid var(--steel-line)}
+
+  /* ---------- discovery diagnostic ---------- */
+  .diag{border:1px solid var(--line-2);border-radius:12px;background:var(--bg-2);overflow:hidden}
+  .diag-top{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 20px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+  .diag-top .dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash-2)}
+  .diag-score{display:flex;align-items:center;gap:13px}
+  .diag-score .sc{font-family:var(--mono);font-size:13px;color:var(--mut)}
+  .diag-score .sc b{font-size:20px;color:var(--ember-2);font-variant-numeric:tabular-nums;font-weight:700}
+  .diag-score .reset{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut-2);background:none;border:1px solid var(--line-2);padding:6px 11px;border-radius:6px;cursor:pointer;transition:.13s}
+  .diag-score .reset:hover{color:var(--ash-2);border-color:var(--mut-2)}
+  .dq{border-bottom:1px solid var(--line);padding:15px 20px;transition:.15s}
+  .dq:last-of-type{border-bottom:0}
+  .dq.gap{background:var(--ember-soft)}
+  .dq .dq-row{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+  .dq .qn{display:flex;align-items:baseline;gap:12px;min-width:0}
+  .dq .qn .qx{font-family:var(--mono);font-size:11px;color:var(--ember);flex:none}
+  .dq .qn .qt{font-size:15.5px;font-weight:600;color:var(--ash);letter-spacing:-.01em}
+  .dq .ans{display:flex;gap:6px;flex:none}
+  .dq .ans button{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--mut);background:var(--panel);border:1px solid var(--line-2);padding:7px 13px;border-radius:6px;cursor:pointer;transition:.12s}
+  .dq .ans button:hover{color:var(--ash-2);border-color:var(--mut-2)}
+  .dq .ans button.on[data-v="yes"]{background:rgba(95,174,126,.16);border-color:rgba(95,174,126,.5);color:var(--ok)}
+  .dq .ans button.on[data-v="no"]{background:var(--ember-soft);border-color:var(--ember-line);color:var(--ember-2)}
+  .dq .ans button.on[data-v="unsure"]{background:rgba(217,164,65,.14);border-color:rgba(217,164,65,.5);color:var(--warn)}
+  .dq .meaning{font-size:12.5px;color:var(--mut);line-height:1.5;margin-top:10px;padding-left:23px;max-width:78ch}
+  .dq .meaning b{color:var(--ash-2);font-weight:600}
+  .dq .meaning .maps{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);margin-right:8px}
+  .diag-foot{padding:16px 20px;background:var(--panel);border-top:1px solid var(--line);font-size:13.5px;color:var(--ash-2);line-height:1.55}
+  .diag-foot b{color:var(--ash);font-weight:600}
+  .diag-foot.gap-on b.lead{color:var(--ember-2)}
+
+  footer.foot{margin-top:50px;border-top:1px solid var(--line);padding-top:20px;font-size:12px;color:var(--mut-2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer.foot b{color:var(--ash-2)}
+
+  @media (max-width:1080px){
+    .shell{grid-template-columns:1fr} nav.side{display:none}
+    main{padding:30px 24px 90px}
+    .guard,.grid2,.grid3,.ptable,.report .rgrid{grid-template-columns:1fr}
+    .rung,.comp{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <nav class="side">
+    <div class="logo"><span class="mark"></span><span class="nm">Blackridge</span></div>
+    <div class="tag">BRG · GTM Playbook</div>
+
+    <div class="navgroup">
+      <div class="gt">01 · Foundation</div>
+      <a href="#hierarchy">Messaging hierarchy</a>
+      <a href="#positioning">Positioning statements</a>
+      <a href="#personas">Buyer personas</a>
+      <a href="#taglines">Taglines</a>
+      <a href="#brand">Brand personality</a>
+    </div>
+    <div class="navgroup">
+      <div class="gt">02 · Web & Pitch</div>
+      <a href="#headlines">Homepage headlines</a>
+      <a href="#subheads">Subheadlines</a>
+      <a href="#sitemap">Website structure</a>
+      <a href="#landing">Landing page copy</a>
+      <a href="#elevator">Elevator pitches</a>
+      <a href="#descriptions">Company descriptions</a>
+      <a href="#valueprop">Enterprise value prop</a>
+    </div>
+    <div class="navgroup">
+      <div class="gt">03 · Buyer Messaging</div>
+      <a href="#problems">Problem statements</a>
+      <a href="#technical">Technical buyer</a>
+      <a href="#finops">FinOps buyer</a>
+      <a href="#objections">Objection handling</a>
+      <a href="#competitive">Competitive position</a>
+    </div>
+    <div class="navgroup">
+      <div class="gt">04 · The Assessment</div>
+      <a href="#diagnostic">Six discovery questions</a>
+      <a href="#assessment">7-day assessment</a>
+      <a href="#report">Economics report</a>
+    </div>
+    <div class="navgroup">
+      <div class="gt">05 · Sales Motion</div>
+      <a href="#deck">First-call deck</a>
+      <a href="#demo">Demo flow</a>
+      <a href="#casestudy">Case study structure</a>
+      <a href="#outbound">Cold outbound</a>
+      <a href="#founder">Founder outreach</a>
+    </div>
+    <div class="navgroup">
+      <div class="gt">06 · Content & Design</div>
+      <a href="#whitepapers">Whitepaper topics</a>
+      <a href="#blog">Blog strategy</a>
+      <a href="#design">Design language</a>
+      <a href="#diagrams">Diagrams & KPIs</a>
+    </div>
+    <div class="navgroup">
+      <div class="gt">07 · Strategy</div>
+      <a href="#moat">Strategic moat</a>
+    </div>
+  </nav>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+    <div class="hero" id="top">
+      <div class="kick">Blackridge Runtime Gateway · Go-to-Market & Messaging Playbook</div>
+      <h1>The runtime layer for enterprise AI spend.</h1>
+      <p>This is the working messaging system for BRG — positioning, copy, buyer narratives, sales motion, and design language, written for a technical, hype-skeptical audience. Every line is built to survive a platform engineer reading it at 11pm. Visibility before governance. Optimization before orchestration. Measurable, or it doesn't ship.</p>
+      <div class="meta">
+        <span class="chip">Category: <b>AI Runtime Economics</b></span>
+        <span class="chip">Wedge: <b>Inference FinOps</b></span>
+        <span class="chip">Buyers: <b>Platform · Infra · FinOps</b></span>
+        <span class="chip">Tone reference: <b>Datadog · HashiCorp · Cloudflare</b></span>
+      </div>
+    </div>
+
+    <!-- voice guardrails -->
+    <div class="guard">
+      <div class="g say">
+        <div class="gh">House voice — do</div>
+        <ul>
+          <li>Lead with the operational problem, not the technology.</li>
+          <li>Quantify in the customer's units: dollars, tokens, p99 latency, cache hit rate.</li>
+          <li>Frame savings as measurable optimization, never as magic.</li>
+          <li>Say "inline with inference traffic," "Kubernetes-native," "provider-neutral."</li>
+          <li>Sound like an engineer who has run this in production.</li>
+        </ul>
+      </div>
+      <div class="g dont">
+        <div class="gh">House voice — don't</div>
+        <ul>
+          <li>"Transform your business with AI." Ever.</li>
+          <li>Promise a specific savings percentage you can't defend.</li>
+          <li>Use "agentic," "copilot," "revolutionary," or emojis.</li>
+          <li>Imply BRG is a chatbot, model, or governance platform on day one.</li>
+          <li>Hide behind enterprise jargon or consultant-speak.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ 01 · FOUNDATION ============ -->
+
+    <section class="sec" id="hierarchy">
+      <div class="sechead">
+        <div class="ix">01 · Foundation / Messaging hierarchy</div>
+        <h2>Messaging hierarchy</h2>
+        <p class="lead">One spine the whole company narrows to. Everything below — headlines, decks, outbound — is a projection of this ladder. If a claim can't trace up to the category line, cut it.</p>
+      </div>
+      <div class="ladder">
+        <div class="rung top">
+          <div class="lvl">Category</div>
+          <div class="val"><div class="big">AI Runtime Economics — the runtime layer for enterprise AI spend.</div><div class="sm">We are defining a category, not joining the "AI gateway" pile. The runtime is where cost is actually incurred; that is where it should be controlled.</div></div>
+        </div>
+        <div class="rung">
+          <div class="lvl">One-liner</div>
+          <div class="val"><div class="big">BRG sits inline with your inference traffic and gives platform teams visibility, routing, and caching — without changing application code.</div></div>
+        </div>
+        <div class="rung">
+          <div class="lvl">Value pillars</div>
+          <div class="val"><div class="big">Visibility · Optimization · Control</div><div class="sm">See where the spend goes → reduce it through routing and caching → keep it inside operational limits. In that order. Visibility before governance.</div></div>
+        </div>
+        <div class="rung">
+          <div class="lvl">Proof points</div>
+          <div class="val"><div class="sm">Cost attribution per team / app / workflow · semantic + exact caching · deterministic multi-model routing · retry & fallback handling · provider-neutral · Kubernetes-native · OpenAI-compatible APIs · append-only economics ledger.</div></div>
+        </div>
+        <div class="rung">
+          <div class="lvl">Reasons to believe</div>
+          <div class="val"><div class="sm">Built by infrastructure engineers · deploys inline in an afternoon · measurable in a week · GitOps-compatible · air-gap capable · no application rewrite.</div></div>
+        </div>
+        <div class="rung">
+          <div class="lvl">What we are not</div>
+          <div class="val"><div class="sm">Not a model, not a chatbot, not an agent framework, not a governance suite, not prompt tooling. Those are downstream of trust we have not earned yet.</div></div>
+        </div>
+      </div>
+      <div class="takeaway"><div class="tl">The through-line</div><p><b>Inference cost is becoming the next uncontrolled cloud bill.</b> BRG is the runtime control point that makes it visible, then optimizable, then governable — in that sequence.</p></div>
+    </section>
+
+    <section class="sec" id="positioning">
+      <div class="sechead">
+        <div class="ix">01 · Foundation / Positioning statements</div>
+        <h2>Product positioning statements</h2>
+        <p class="lead">Internal alignment tools — not website copy. Use the classical form so every team fills the same blanks the same way.</p>
+      </div>
+      <div class="subhead">Primary positioning statement</div>
+      <div class="lblblock">
+        <div class="lh"><span class="t">Canonical — use this one</span><span class="b">Approved</span></div>
+        <div class="lb"><p>For <b>platform, infrastructure, and FinOps teams</b> running production AI inference across one or more model providers, <b>Blackridge Runtime Gateway</b> is an <b>AI runtime economics layer</b> that gives them <b>visibility into, and control over, inference spend at runtime</b> — without changing application code.</p><p>Unlike <b>provider dashboards or generic API gateways</b>, BRG sits inline with inference traffic and treats cost, latency, and reliability as <b>first-class, measurable operational signals</b>.</p></div>
+      </div>
+      <div class="subhead">Variant — FinOps-led</div>
+      <div class="lblblock">
+        <div class="lh"><span class="t">For finance / cost-owning buyers</span><span class="b">Variant</span></div>
+        <div class="lb"><p>For <b>FinOps and engineering leaders</b> watching AI inference become an unmanaged line item, BRG is the <b>inference FinOps layer</b> that attributes every dollar to a team, app, and workflow — and reduces it through routing and caching you can measure.</p></div>
+      </div>
+      <div class="subhead">Variant — platform-engineering-led</div>
+      <div class="lblblock">
+        <div class="lh"><span class="t">For the cluster owners</span><span class="b">Variant</span></div>
+        <div class="lb"><p>For <b>platform engineering teams</b> who already own ingress, observability, and policy in Kubernetes, BRG is the <b>runtime insertion point for AI inference</b> — provider-neutral, OpenAI-compatible, and managed like any other piece of cluster infrastructure.</p></div>
+      </div>
+    </section>
+
+    <section class="sec" id="personas">
+      <div class="sechead">
+        <div class="ix">01 · Foundation / Buyer personas</div>
+        <h2>Who we are actually talking to</h2>
+        <p class="lead">Three buyers, one runtime. The platform engineer is the champion, FinOps is the budget pressure, the CTO signs. Speak to each in their own units.</p>
+      </div>
+      <div class="ptable">
+        <div class="persona">
+          <div class="role">Platform / Infra Engineer</div>
+          <div class="cares">Champion · technical evaluator</div>
+          <div class="k">Owns</div><p>Ingress, Kubernetes, observability, the on-call pager. Already runs gateways and service meshes.</p>
+          <div class="k">Cares about</div><p>Latency overhead, deployment model, blast radius, no app rewrites, escape hatches.</p>
+          <div class="k">Wins when</div><p>BRG installs cleanly, adds negligible latency, and shows spend on day one.</p>
+        </div>
+        <div class="persona">
+          <div class="role">FinOps / Eng Director</div>
+          <div class="cares">Economic buyer · budget pressure</div>
+          <div class="k">Owns</div><p>The cloud bill, cost attribution, forecasting, vendor accountability.</p>
+          <div class="k">Cares about</div><p>Spend visibility per team, projected overruns, defensible savings, no surprises.</p>
+          <div class="k">Wins when</div><p>Inference cost becomes a chart they can attribute, forecast, and bound.</p>
+        </div>
+        <div class="persona">
+          <div class="role">CTO / Enterprise Architect</div>
+          <div class="cares">Decision sponsor · risk owner</div>
+          <div class="k">Owns</div><p>Architecture direction, provider strategy, build-vs-buy, long-term risk.</p>
+          <div class="k">Cares about</div><p>Provider neutrality, lock-in avoidance, operational trust, where this goes next.</p>
+          <div class="k">Wins when</div><p>BRG is a strategic control point, not a point tool — and it is theirs to own.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="taglines">
+      <div class="sechead">
+        <div class="ix">01 · Foundation / Taglines</div>
+        <h2>Tagline ideas</h2>
+        <p class="lead">Ordered by conviction. The top tier is on-category and defensible; the lower tier is situational. None of them say "AI" louder than "runtime."</p>
+      </div>
+      <div class="subhead">Tier 1 — lead candidates</div>
+      <div class="stack">
+        <div class="opt primary"><div class="num">A</div><div class="body"><div class="headline lg">The runtime layer for enterprise AI spend.</div><div class="note">Category-defining. Pairs cleanly with every buyer. Recommended primary.</div></div></div>
+        <div class="opt"><div class="num">B</div><div class="body"><div class="headline lg">Inference traffic, under control.</div><div class="note">Operational, calm, true. Strong on the homepage and on a booth wall alike.</div></div></div>
+        <div class="opt"><div class="num">C</div><div class="body"><div class="headline lg">Put your AI inference on a budget.</div><div class="note">FinOps-forward. Concrete. Slightly more pointed for outbound.</div></div></div>
+      </div>
+      <div class="subhead">Tier 2 — supporting lines</div>
+      <div class="pillrow">
+        <span class="pill">Visibility before governance.</span>
+        <span class="pill">See it. Route it. Reduce it.</span>
+        <span class="pill">FinOps for AI inference.</span>
+        <span class="pill">Runtime economics for multi-model AI.</span>
+        <span class="pill">The control point for inference cost.</span>
+        <span class="pill">Know what every model call costs you.</span>
+        <span class="pill">Operational control for inference traffic.</span>
+      </div>
+      <div class="note-inline">Avoid: anything with "unleash," "supercharge," "AI-powered," or a rocket. They read as the opposite of credible to this audience.</div>
+    </section>
+
+    <section class="sec" id="brand">
+      <div class="sechead">
+        <div class="ix">01 · Foundation / Brand personality</div>
+        <h2>Brand personality</h2>
+        <p class="lead">If BRG were a person on your platform team: the senior engineer who is unflappable on call, allergic to hype, and trusted precisely because they under-promise and show the graph.</p>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="subhead" style="margin-top:0">Voice attributes</div>
+          <div class="stack">
+            <div class="pillrow"><span class="pill star">Operationally grounded</span><span class="pill star">Calm &amp; confident</span><span class="pill star">Technically credible</span><span class="pill star">Measured</span><span class="pill star">Pragmatic</span></div>
+            <p style="font-size:13.5px;color:var(--ash-2);margin:4px 0 0;line-height:1.6">We earn trust by being precise. Short declarative sentences. Real numbers. Named tradeoffs. We would rather say "here is the latency cost" than pretend there isn't one.</p>
+          </div>
+        </div>
+        <div class="card"><div class="subhead" style="margin-top:0">Tone dial</div>
+          <div class="stack">
+            <div class="pillrow"><span class="pill">More HashiCorp, less hackathon</span><span class="pill">More Grafana, less growth-hack</span><span class="pill">More SRE postmortem, less keynote</span></div>
+            <p style="font-size:13.5px;color:var(--ash-2);margin:4px 0 0;line-height:1.6">Confidence comes from restraint. When in doubt, remove an adjective and add a unit. The reader should feel they are being leveled with, not sold to.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 · WEB & PITCH ============ -->
+
+    <section class="sec" id="headlines">
+      <div class="sechead">
+        <div class="ix">02 · Web &amp; Pitch / Homepage headlines</div>
+        <h2>Homepage headline options</h2>
+        <p class="lead">Each is a complete promise on its own. Pair any with a subheadline below. The lead candidate is operational and category-defining; the rest trade specificity for punch.</p>
+      </div>
+      <div class="stack">
+        <div class="opt primary"><div class="num">1</div><div class="body"><div class="headline lg">The runtime layer for enterprise AI spend.</div><div class="note">Lead candidate. Names the category and the buyer in seven words.</div></div></div>
+        <div class="opt"><div class="num">2</div><div class="body"><div class="headline lg">AI inference is your next cloud bill. This is how you control it.</div><div class="note">Problem-first. Lands instantly with anyone who has seen the invoice.</div></div></div>
+        <div class="opt"><div class="num">3</div><div class="body"><div class="headline lg">See, route, and reduce your AI inference costs — at runtime.</div><div class="note">States the three pillars in order. Self-explaining above the fold.</div></div></div>
+        <div class="opt"><div class="num">4</div><div class="body"><div class="headline lg">Inference traffic, under control.</div><div class="note">Minimal and calm. Best when the subhead carries the detail.</div></div></div>
+        <div class="opt"><div class="num">5</div><div class="body"><div class="headline lg">Runtime economics for multi-model AI systems.</div><div class="note">For an architect audience. Signals provider-neutral, multi-model from word one.</div></div></div>
+        <div class="opt"><div class="num">6</div><div class="body"><div class="headline lg">Know what every model call costs you — and what to do about it.</div><div class="note">FinOps-forward. Implies attribution plus action.</div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="subheads">
+      <div class="sechead">
+        <div class="ix">02 · Web &amp; Pitch / Subheadlines</div>
+        <h2>Homepage subheadline options</h2>
+        <p class="lead">The subhead does the technical reassurance the headline can't. It should answer "what is it, where does it sit, what do I have to change."</p>
+      </div>
+      <div class="stack">
+        <div class="opt"><div class="num">1</div><div class="body"><div class="sub" style="margin-top:0">BRG sits inline with your inference traffic to give platform teams visibility, intelligent routing, and caching — provider-neutral, Kubernetes-native, and OpenAI-compatible. No application changes.</div><div class="note">Recommended default. Hits placement, capability, deployment, and the "no rewrite" objection at once.</div></div></div>
+        <div class="opt"><div class="num">2</div><div class="body"><div class="sub" style="margin-top:0">Attribute every inference dollar to a team, app, and workflow. Cut spend with deterministic routing and semantic caching. Deploy in an afternoon; measure the savings in a week.</div><div class="note">FinOps pairing. Concrete and time-bounded without promising a percentage.</div></div></div>
+        <div class="opt"><div class="num">3</div><div class="body"><div class="sub" style="margin-top:0">A single runtime control point for multi-model AI: routing, caching, failover, and cost attribution — observable by default and managed like the rest of your platform.</div><div class="note">Architect pairing. Frames BRG as infrastructure, not a feature.</div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="sitemap">
+      <div class="sechead">
+        <div class="ix">02 · Web &amp; Pitch / Website structure</div>
+        <h2>Website section structure</h2>
+        <p class="lead">Single marketing site, ordered the way a skeptical platform engineer reads: problem, placement, proof, deployment, then the low-commitment next step. No "AI transformation" hero theater.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="sn">01</div><div><div class="st">Hero</div><div class="sd">Headline + subhead + two CTAs: <b>Book a runtime assessment</b> (primary) and <b>Read the architecture</b> (secondary). One quiet system diagram, no stock imagery.</div></div></div>
+        <div class="step"><div class="sn">02</div><div><div class="st">The problem</div><div class="sd">"AI inference is becoming an uncontrolled cloud bill." Name the five leaks: <b>premium-model overuse, duplicate traffic, retry amplification, routing inefficiency, zero attribution.</b></div></div></div>
+        <div class="step"><div class="sn">03</div><div><div class="st">Where BRG sits</div><div class="sd">The runtime insertion diagram — app → BRG → providers. Inline, OpenAI-compatible, provider-neutral. This is the single most important visual on the site.</div></div></div>
+        <div class="step"><div class="sn">04</div><div><div class="st">What it does</div><div class="sd">Three capability blocks in pillar order: <b>Visibility</b> (attribution, observability) · <b>Optimization</b> (routing, caching, failover) · <b>Control</b> (limits, policy — framed as where this goes).</div></div></div>
+        <div class="step"><div class="sn">05</div><div><div class="st">Deployment &amp; trust</div><div class="sd">Kubernetes-native, GitOps-compatible, air-gap capable, latency budget stated honestly. Speaks directly to the person who owns the cluster.</div></div></div>
+        <div class="step"><div class="sn">06</div><div><div class="st">Proof</div><div class="sd">A sample runtime economics report, a quantified mini-case, and a "built by infrastructure engineers" note. Evidence over adjectives.</div></div></div>
+        <div class="step"><div class="sn">07</div><div><div class="st">The assessment offer</div><div class="sd">The 7-day runtime economics assessment as the primary conversion. Low commitment, high signal, ends in a real report.</div></div></div>
+        <div class="step"><div class="sn">08</div><div><div class="st">Docs / Resources / Footer</div><div class="sd">Architecture docs, whitepapers, security &amp; compliance posture. Quiet, complete, scannable.</div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="landing">
+      <div class="sechead">
+        <div class="ix">02 · Web &amp; Pitch / Landing page copy</div>
+        <h2>Landing page copy (drop-in)</h2>
+        <p class="lead">Production-ready blocks for the hero and the problem section. Edit numbers to fit; never inflate them.</p>
+      </div>
+      <div class="lblblock">
+        <div class="lh"><span class="t">Hero block</span><span class="b">Above the fold</span></div>
+        <div class="lb">
+          <p class="q" style="font-size:21px;font-weight:660;color:var(--ash);line-height:1.2">The runtime layer for enterprise AI spend.</p>
+          <p>BRG sits inline with your inference traffic to give platform teams visibility, intelligent routing, and caching — provider-neutral, Kubernetes-native, and OpenAI-compatible. No application changes. Deploy in an afternoon; see where your spend goes in a week.</p>
+          <p><b>Book a runtime assessment</b> &nbsp;·&nbsp; <b>Read the architecture</b></p>
+        </div>
+      </div>
+      <div class="lblblock" style="margin-top:13px">
+        <div class="lh"><span class="t">Problem block</span><span class="b">Section 02</span></div>
+        <div class="lb">
+          <p><b>Your inference bill is growing faster than your visibility into it.</b></p>
+          <p>Most teams running production AI cannot answer basic operational questions: which team is spending what, how much traffic is duplicate, how often retries amplify a single request into five, and how much premium-model usage is genuinely necessary. The spend is real and rising; the attribution is not there.</p>
+          <p>BRG turns inference traffic into something you can see, measure, and act on — before you try to govern it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="elevator">
+      <div class="sechead">
+        <div class="ix">02 · Web &amp; Pitch / Elevator pitches</div>
+        <h2>Elevator pitch variants</h2>
+        <p class="lead">Three lengths, same spine. The 10-second is for hallways; the technical is for the engineer who will actually run it.</p>
+      </div>
+      <div class="grid3">
+        <div class="card"><div class="subhead" style="margin-top:0">10 seconds</div><p style="font-size:14px;color:var(--ash-2);margin:0;line-height:1.6">"BRG is a runtime layer that sits in front of your AI inference traffic and shows you exactly where the spend goes — then cuts it with routing and caching. FinOps for inference."</p></div>
+        <div class="card"><div class="subhead" style="margin-top:0">30 seconds</div><p style="font-size:13.5px;color:var(--ash-2);margin:0;line-height:1.6">"Enterprises are running more inference across more models, and the cost is becoming an unmanaged cloud bill. BRG sits inline — OpenAI-compatible, no app changes — and gives platform teams attribution per team and workflow, plus routing, caching, and failover to bring the cost down. Visibility first, then optimization. It deploys into Kubernetes in an afternoon."</p></div>
+        <div class="card"><div class="subhead" style="margin-top:0">Technical (60s)</div><p style="font-size:13px;color:var(--ash-2);margin:0;line-height:1.6">"BRG is a provider-neutral runtime gateway for inference. You point your OpenAI-compatible clients at it; it terminates, fingerprints, and routes requests across providers by cost, latency, and reliability, with deterministic fallback. It does exact and semantic caching to kill duplicate traffic, handles retries so they don't amplify spend, and emits an append-only economics ledger you can attribute by namespace, app, and workflow. Kubernetes-native, GitOps-managed, air-gap capable. Sub-millisecond decision overhead on the hot path."</p></div>
+      </div>
+    </section>
+
+    <section class="sec" id="descriptions">
+      <div class="sechead">
+        <div class="ix">02 · Web &amp; Pitch / Company descriptions</div>
+        <h2>Short LinkedIn / company descriptions</h2>
+        <p class="lead">For social bios, directories, and the one-line "what do you do." Length-graded.</p>
+      </div>
+      <div class="stack">
+        <div class="opt"><div class="num">S</div><div class="body"><div class="sub" style="margin-top:0">Blackridge builds the runtime layer for enterprise AI spend — visibility, routing, and caching for inference traffic.</div><div class="note">~17 words. LinkedIn tagline / Twitter bio.</div></div></div>
+        <div class="opt"><div class="num">M</div><div class="body"><div class="sub" style="margin-top:0">Blackridge Runtime Gateway (BRG) is a provider-neutral, Kubernetes-native runtime layer for enterprise AI inference. It gives platform and FinOps teams cost attribution, intelligent routing, semantic caching, and failover — inline with traffic, with no application changes.</div><div class="note">~38 words. LinkedIn "About," AngelList, directories.</div></div></div>
+        <div class="opt"><div class="num">L</div><div class="body"><div class="sub" style="margin-top:0">Blackridge builds infrastructure for AI runtime economics. Our first product, the Blackridge Runtime Gateway (BRG), sits inline with enterprise inference traffic to make spend visible, attributable, and optimizable — through deterministic multi-model routing, exact and semantic caching, retry and fallback handling, and a runtime economics ledger. BRG is provider-neutral, OpenAI-compatible, Kubernetes-native, and built for teams that treat inference like production infrastructure, not an experiment.</div><div class="note">~62 words. Press boilerplate, deck appendix, "About us" page.</div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="valueprop">
+      <div class="sechead">
+        <div class="ix">02 · Web &amp; Pitch / Enterprise value proposition</div>
+        <h2>Enterprise value proposition framing</h2>
+        <p class="lead">The same value, recast per buyer. Each row is a sentence you can lift verbatim into a deck slide or a call open.</p>
+      </div>
+      <div class="comprow">
+        <div class="comp"><div class="cat">Platform Engineering<span>champion</span></div><div class="pos">A runtime control point you own, that <b>installs inline without an app rewrite</b>, adds negligible latency, and finally makes inference traffic observable like everything else in the cluster.</div></div>
+        <div class="comp"><div class="cat">FinOps / Finance<span>economic buyer</span></div><div class="pos">Inference becomes a <b>line item you can attribute, forecast, and bound</b> — per team, app, and workflow — with savings you can measure rather than estimate.</div></div>
+        <div class="comp"><div class="cat">Engineering Director<span>operational owner</span></div><div class="pos">Fewer surprises. <b>Routing, caching, and failover handled at the runtime</b>, so cost and reliability stop being per-team reinvention.</div></div>
+        <div class="comp"><div class="cat">CTO / Architect<span>sponsor</span></div><div class="pos">Provider neutrality and <b>lock-in insurance</b> at the layer where it matters, plus a strategic control point that grows from economics toward governance.</div></div>
+      </div>
+    </section>
+
+    <!-- ============ 03 · BUYER MESSAGING ============ -->
+
+    <section class="sec" id="problems">
+      <div class="sechead">
+        <div class="ix">03 · Buyer Messaging / Problem statements</div>
+        <h2>Problem statements for enterprise buyers</h2>
+        <p class="lead">Name the leak before you name the product. These are the five problems BRG exists to make visible — written as the buyer would describe them on an incident review.</p>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="st" style="font-size:15px;font-weight:600;color:var(--ash);margin-bottom:6px">No attribution</div><p style="margin:0;font-size:13.5px;color:var(--ash-2);line-height:1.55">"The inference bill went up 40% last quarter and no one can tell me which team or feature drove it." Cost exists; ownership doesn't.</p></div>
+        <div class="card"><div class="st" style="font-size:15px;font-weight:600;color:var(--ash);margin-bottom:6px">Premium-model overuse</div><p style="margin:0;font-size:13.5px;color:var(--ash-2);line-height:1.55">The most expensive model is the default for everything, including requests a smaller model would answer identically. Nobody is measuring the gap.</p></div>
+        <div class="card"><div class="st" style="font-size:15px;font-weight:600;color:var(--ash);margin-bottom:6px">Duplicate inference</div><p style="margin:0;font-size:13.5px;color:var(--ash-2);line-height:1.55">Identical or near-identical requests are paid for again and again because there is no cache at the runtime. Pure waste.</p></div>
+        <div class="card"><div class="st" style="font-size:15px;font-weight:600;color:var(--ash);margin-bottom:6px">Retry amplification</div><p style="margin:0;font-size:13.5px;color:var(--ash-2);line-height:1.55">A single user request becomes three to five billed calls under naive retry logic, especially during provider degradation — and it never shows up cleanly in the bill.</p></div>
+        <div class="card"><div class="st" style="font-size:15px;font-weight:600;color:var(--ash);margin-bottom:6px">Routing inefficiency</div><p style="margin:0;font-size:13.5px;color:var(--ash-2);line-height:1.55">Traffic is pinned to one provider or model by hardcoded clients, so there is no way to shift load on cost, latency, or availability.</p></div>
+        <div class="card hl"><div class="st" style="font-size:15px;font-weight:600;color:var(--ash);margin-bottom:6px">The meta-problem</div><p style="margin:0;font-size:13.5px;color:var(--ash);line-height:1.55">Inference runs through application code, not infrastructure — so the people who own cost and reliability have no control point. BRG is that control point.</p></div>
+      </div>
+    </section>
+
+    <section class="sec" id="technical">
+      <div class="sechead">
+        <div class="ix">03 · Buyer Messaging / Technical buyer</div>
+        <h2>Technical buyer messaging</h2>
+        <p class="lead">For the platform engineer who will pilot it. Lead with placement and blast radius, not benefits. Answer the questions they'll ask before they ask them.</p>
+      </div>
+      <div class="stack">
+        <div class="lblblock"><div class="lh"><span class="t">Where it sits</span><span class="b">Placement</span></div><div class="lb"><p>BRG is an inline runtime gateway. Your OpenAI-compatible clients point at BRG instead of the provider; BRG terminates, decides, dispatches, and accounts. <b>No SDK swap, no application rewrite</b> — a base-URL change.</p></div></div>
+        <div class="lblblock"><div class="lh"><span class="t">What it costs you on the hot path</span><span class="b">Latency</span></div><div class="lb"><p>Decision overhead is sub-millisecond; cache hits return faster than the provider would. We state the latency budget honestly and let you measure it in the assessment. <b>If BRG ever slows the path, it has failed.</b></p></div></div>
+        <div class="lblblock"><div class="lh"><span class="t">What happens when you fail</span><span class="b">Blast radius</span></div><div class="lb"><p>Deterministic fallback chains, configurable fail-open behavior, and provider failover. BRG degrades toward "pass the request through" — it does not become a new single point of failure you can't reason about.</p></div></div>
+        <div class="lblblock"><div class="lh"><span class="t">How you run it</span><span class="b">Operations</span></div><div class="lb"><p>Kubernetes-native, declared as CRDs, reconciled by an operator, managed through GitOps. Air-gap capable. Metrics and events are first-class — it observes like the rest of your platform, not a black box.</p></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="finops">
+      <div class="sechead">
+        <div class="ix">03 · Buyer Messaging / FinOps buyer</div>
+        <h2>FinOps buyer messaging</h2>
+        <p class="lead">For the person who owns the number. Inference is the new untagged cloud spend; BRG is the tagging-and-control layer they already wish existed for it.</p>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="subhead" style="margin-top:0">The framing they already understand</div><p style="font-size:13.5px;color:var(--ash-2);margin:0;line-height:1.6">"You spent years getting cloud cost under control: tagging, attribution, rightsizing, commitments. Inference is the new untagged spend — growing fast, owned by no one, forecastable by nobody. BRG brings the same discipline to it."</p></div>
+        <div class="card"><div class="subhead" style="margin-top:0">What we give them</div>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ash-2)">
+            <li style="padding-left:16px;position:relative"><span style="position:absolute;left:1px;color:var(--ember)">+</span>Spend attributed per team, app, and workflow</li>
+            <li style="padding-left:16px;position:relative"><span style="position:absolute;left:1px;color:var(--ember)">+</span>Projected vs. budgeted spend, with forecast</li>
+            <li style="padding-left:16px;position:relative"><span style="position:absolute;left:1px;color:var(--ember)">+</span>Measured savings from routing and caching — not estimates</li>
+            <li style="padding-left:16px;position:relative"><span style="position:absolute;left:1px;color:var(--ember)">+</span>An append-only ledger finance can actually trust</li>
+          </ul>
+        </div>
+      </div>
+      <div class="takeaway"><div class="tl">Language discipline</div><p>Say <b>"measurable operational optimization."</b> Never say "AI savings" or quote a percentage we can't defend in their environment. The assessment produces their number, in their units.</p></div>
+    </section>
+
+    <section class="sec" id="objections">
+      <div class="sechead">
+        <div class="ix">03 · Buyer Messaging / Objection handling</div>
+        <h2>Objection handling</h2>
+        <p class="lead">The real ones, answered the way a credible engineer would — by conceding what's true and reframing the rest.</p>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <div class="obj-q"><span class="mk">Q</span>"Won't an inline gateway add latency to every call?"</div>
+          <div class="obj-a">Decision overhead is sub-millisecond and cache hits are faster than a provider round-trip. We don't ask you to take that on faith — the assessment measures it on your traffic. If BRG adds latency you can feel, it isn't doing its job.</div>
+        </div>
+        <div class="card">
+          <div class="obj-q"><span class="mk">Q</span>"My provider already shows me usage. Why do I need this?"</div>
+          <div class="obj-a">Provider dashboards show you spend per provider, after the fact. They can't attribute to your teams and workflows, can't see duplicate or retry-amplified traffic, and can't move load across providers. BRG sits at your runtime, so it sees what the provider can't.</div>
+        </div>
+        <div class="card">
+          <div class="obj-q"><span class="mk">Q</span>"Isn't this just an API gateway with extra steps?"</div>
+          <div class="obj-a">A generic gateway proxies bytes. BRG understands inference economics — model pricing, token accounting, semantic equivalence, fallback cost. The unit of reasoning is the dollar and the request, not the route. That's the difference between routing and runtime economics.</div>
+        </div>
+        <div class="card">
+          <div class="obj-q"><span class="mk">Q</span>"We'd rather build this internally."</div>
+          <div class="obj-a">Many teams start there — a proxy and a dashboard. It's the maintenance that gets you: pricing catalogs change weekly, providers drift, caching correctness is subtle, and someone now owns it on call. BRG is that surface, maintained, with an escape hatch if you ever want out.</div>
+        </div>
+        <div class="card">
+          <div class="obj-q"><span class="mk">Q</span>"Is this going to lock me into your routing decisions?"</div>
+          <div class="obj-a">The opposite. BRG is provider-neutral by design and routing is declarative — you own the policy in Git. Its entire reason to exist is to reduce lock-in to any single provider. You can fail open through it at any time.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="competitive">
+      <div class="sechead">
+        <div class="ix">03 · Buyer Messaging / Competitive position</div>
+        <h2>Competitive positioning</h2>
+        <p class="lead">We don't disparage adjacent tools — we clarify the layer. Most "competitors" solve a different problem; the honest move is to draw the boundary.</p>
+      </div>
+      <div class="comprow">
+        <div class="comp"><div class="cat">Provider dashboards<span>OpenAI / Anthropic consoles</span></div><div class="pos">Per-provider, after-the-fact, no cross-provider view and no internal attribution. <b>BRG is the runtime that sees all providers and attributes to your teams.</b></div></div>
+        <div class="comp"><div class="cat">Generic API gateways<span>Kong, Apigee, Envoy</span></div><div class="pos">Route bytes; have no concept of model pricing, tokens, or semantic caching. <b>BRG reasons in inference economics, not just HTTP.</b></div></div>
+        <div class="comp"><div class="cat">Cloud cost / FinOps tools<span>generic cost platforms</span></div><div class="pos">Report cost; they don't sit inline and can't change it. <b>BRG both measures and acts at the point the cost is incurred.</b></div></div>
+        <div class="comp"><div class="cat">LLM routers / proxies<span>OSS gateways</span></div><div class="pos">Often a dev-convenience proxy, not enterprise runtime infrastructure. <b>BRG is Kubernetes-native, observable, air-gap capable, and built to be owned by platform teams.</b></div></div>
+        <div class="comp"><div class="cat">"Agentic AI" platforms<span>orchestration suites</span></div><div class="pos">Solve a different problem at a different layer. <b>BRG is infrastructure beneath them — they generate the inference traffic BRG controls.</b></div></div>
+      </div>
+      <div class="takeaway"><div class="tl">The one-line wedge</div><p>Everyone else watches the bill or moves the bytes. <b>BRG is the only layer that understands inference as economics and sits where it can act.</b></p></div>
+    </section>
+
+    <!-- ============ 04 · THE ASSESSMENT ============ -->
+
+    <section class="sec" id="diagnostic">
+      <div class="sechead">
+        <div class="ix">04 · The Assessment / Six discovery questions</div>
+        <h2>The six questions a prospect can't answer</h2>
+        <p class="lead">This is the sharpest cold-open we have. Not a pitch — a diagnostic. If a platform or FinOps leader can't answer these in a meeting, that isn't a knowledge gap; it's a <em>visibility</em> gap, and it's exactly what BRG closes. Use it three ways: the hook in outbound, the qualifying questions on a first call, and the spine of the 7-day assessment. Try it below.</p>
+      </div>
+      <div class="diag" id="diag">
+        <div class="diag-top">
+          <span class="dt">Runtime economics — self-diagnostic</span>
+          <div class="diag-score">
+            <span class="sc"><b id="gapCount">6</b> / 6 blind spots</span>
+            <button class="reset" id="diagReset">Reset</button>
+          </div>
+        </div>
+
+        <div class="dq" data-gap="true">
+          <div class="dq-row">
+            <div class="qn"><span class="qx">01</span><span class="qt">Are you multi-model yet?</span></div>
+            <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
+          </div>
+          <div class="meaning"><span class="maps">Maps to</span>Provider neutrality &amp; routing leverage. <b>If no:</b> traffic is pinned to one provider with no way to shift on cost, latency, or availability — and no leverage against price changes. BRG is the provider-neutral runtime that makes multi-model an operational choice, not a rewrite.</div>
+        </div>
+
+        <div class="dq" data-gap="true">
+          <div class="dq-row">
+            <div class="qn"><span class="qx">02</span><span class="qt">Do you know your cost-per-workflow?</span></div>
+            <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
+          </div>
+          <div class="meaning"><span class="maps">Maps to</span>Cost attribution. <b>If no:</b> you can see a provider total but not what a feature or workflow actually costs to run — so you can't price, forecast, or prioritize. This is Section 2 of the economics report.</div>
+        </div>
+
+        <div class="dq" data-gap="true">
+          <div class="dq-row">
+            <div class="qn"><span class="qx">03</span><span class="qt">Are teams using premium models by default?</span></div>
+            <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
+          </div>
+          <div class="meaning"><span class="maps">Maps to</span>Premium-model overuse. <b>If yes or unsure:</b> the most expensive model is likely the default for requests a smaller one would serve identically — and nobody is measuring the gap. BRG quantifies it in shadow before you change anything.</div>
+        </div>
+
+        <div class="dq" data-gap="true">
+          <div class="dq-row">
+            <div class="qn"><span class="qx">04</span><span class="qt">Do you know your retry amplification rate?</span></div>
+            <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
+          </div>
+          <div class="meaning"><span class="maps">Maps to</span>Retry amplification. <b>If no:</b> a single user request may quietly become three to five billed calls under naive retry logic — worst during provider degradation — and it never shows up cleanly in the bill. BRG measures the multiplier directly.</div>
+        </div>
+
+        <div class="dq" data-gap="true">
+          <div class="dq-row">
+            <div class="qn"><span class="qx">05</span><span class="qt">Are you measuring duplicate inference traffic?</span></div>
+            <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
+          </div>
+          <div class="meaning"><span class="maps">Maps to</span>Duplicate inference &amp; caching. <b>If no:</b> identical and near-identical requests are being paid for again and again because there is no cache at the runtime. Pure waste, and usually the fastest dollar to recover.</div>
+        </div>
+
+        <div class="dq" data-gap="true">
+          <div class="dq-row">
+            <div class="qn"><span class="qx">06</span><span class="qt">Can you attribute spend by tenant, app, and team?</span></div>
+            <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
+          </div>
+          <div class="meaning"><span class="maps">Maps to</span>Attribution coverage. <b>If no:</b> spend exists but ownership doesn't — so cost can't be governed, charged back, or forecast. This is the metric that turns inference into a managed line item.</div>
+        </div>
+
+        <div class="diag-foot" id="diagFoot">
+          <b class="lead">Six unanswered questions.</b> That's not a failing grade — almost no one can answer these today, because inference runs through application code, not infrastructure. Every one of them is answered, in your own numbers, by the <b>7-day runtime economics assessment</b> below.
+        </div>
+      </div>
+      <div class="takeaway"><div class="tl">How to tie them in</div><p><b>These are discovery, not narrative.</b> Open outbound with one question (#1, #4, and #6 land hardest). Run all six as qualifying questions on the first call. Then frame the assessment as "the report that answers all six in your environment." The moat narrative explains <em>why we win</em>; these six explain <em>why they need us now.</em></p></div>
+    </section>
+
+    <section class="sec" id="assessment">
+      <div class="sechead">
+        <div class="ix">04 · The Assessment / 7-day runtime assessment</div>
+        <h2>The 7-day runtime economics assessment</h2>
+        <p class="lead">This is the primary conversion offer and the wedge into every account. Low commitment, high signal, ends in a real artifact the buyer can circulate internally — whether or not they buy. It sells visibility, which is exactly what we lead with.</p>
+      </div>
+      <div class="lblblock">
+        <div class="lh"><span class="t">The offer — pitch copy</span><span class="b">Use on site + outbound</span></div>
+        <div class="lb">
+          <p class="q" style="font-size:18px;font-weight:600;color:var(--ash)">Seven days. Your real traffic. One report that tells you where your inference spend actually goes.</p>
+          <p>Deploy BRG inline in observe-only mode alongside your existing inference traffic. It changes nothing about how your applications behave. For seven days it measures: spend by team and workflow, duplicate and retry-amplified traffic, premium-model usage that a smaller model would have served, and the routing and caching opportunities sitting in your current load.</p>
+          <p>At the end you get a <b>runtime economics report</b> — your numbers, your units, with the specific, measurable optimizations available and what they're worth. No commitment to continue. The report is yours either way.</p>
+        </div>
+      </div>
+      <div class="subhead">What makes it work as an offer</div>
+      <div class="grid3">
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">Observe-only</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">No routing changes, no risk to production behavior. The hardest objection — "will it break things" — is answered by the design of the offer.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">Their numbers</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">We never quote a generic savings percentage. The assessment generates the buyer's own figure from their own traffic — far more persuasive than any claim.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">A circulating artifact</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">The report gets forwarded to FinOps and the CTO. It does the internal selling the champion can't do in every room.</p></div>
+      </div>
+      <div class="subhead">The seven days, concretely</div>
+      <div class="steps">
+        <div class="step"><div class="sn">D1</div><div><div class="st">Deploy inline, observe-only</div><div class="sd">Base-URL change on a slice of traffic. BRG starts fingerprinting and accounting. <b>Nothing about app behavior changes.</b></div></div></div>
+        <div class="step"><div class="sn">D2-3</div><div><div class="st">Baseline the traffic</div><div class="sd">Establish spend by team, app, and workflow; model mix; token distribution; current cost-per-workflow.</div></div></div>
+        <div class="step"><div class="sn">D4-5</div><div><div class="st">Surface the leaks</div><div class="sd">Quantify duplicate traffic, retry amplification, premium-model overuse, and routing inefficiency against the baseline.</div></div></div>
+        <div class="step"><div class="sn">D6</div><div><div class="st">Model the opportunity</div><div class="sd">Project the measurable effect of caching and routing on <b>their</b> traffic — conservative, defensible, in dollars.</div></div></div>
+        <div class="step"><div class="sn">D7</div><div><div class="st">Deliver the report + readout</div><div class="sd">A 30-minute readout with platform and FinOps in the room, and the written report to circulate.</div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="report">
+      <div class="sechead">
+        <div class="ix">04 · The Assessment / Economics report</div>
+        <h2>Runtime economics report — mockup structure</h2>
+        <p class="lead">The artifact the assessment produces. Designed to be read by an engineer and forwarded to a CFO. Numbers below are illustrative placeholders for layout only.</p>
+      </div>
+      <div class="report">
+        <div class="rtop"><div class="t">Runtime Economics Report — <span>Acme Platform</span></div><div class="d">30-day window · observe-only</div></div>
+        <div class="rgrid">
+          <div class="kpi"><div class="kl">Inference spend</div><div class="kv">$184k</div><div class="kt">trailing 30d</div></div>
+          <div class="kpi"><div class="kl">Unattributed</div><div class="kv warn">37%</div><div class="kt">no team / workflow owner</div></div>
+          <div class="kpi"><div class="kl">Duplicate + retry</div><div class="kv em">18%</div><div class="kt">of billed calls</div></div>
+          <div class="kpi"><div class="kl">Identified opportunity</div><div class="kv up">measurable</div><div class="kt">routing + cache, conservative</div></div>
+        </div>
+        <div class="rbody">
+          <div class="rsec"><div class="rsh">1 · Executive summary</div><ul><li>Where the spend goes, in one paragraph a CFO can read.</li><li>The single largest leak, named, with its dollar figure.</li><li>The recommended first action and its conservative expected value.</li></ul></div>
+          <div class="rsec"><div class="rsh">2 · Spend attribution</div><ul><li>Cost by <b>team, application, and workflow</b> — including the unattributed share.</li><li>Model mix and cost-per-workflow distribution.</li><li>Trend and projection against current budget.</li></ul></div>
+          <div class="rsec"><div class="rsh">3 · Leak analysis</div><ul><li><b>Duplicate inference:</b> identical/near-identical requests paid for repeatedly.</li><li><b>Retry amplification:</b> billed-call multiplier per user request, esp. during provider degradation.</li><li><b>Premium-model overuse:</b> requests a smaller model served identically in shadow.</li></ul></div>
+          <div class="rsec"><div class="rsh">4 · Optimization opportunities</div><ul><li>Caching opportunity (exact + semantic), quantified on their traffic.</li><li>Routing opportunity by cost, latency, and reliability — with named fallback chains.</li><li>Each opportunity stated as a <b>conservative, measurable dollar range</b>, never a single hero number.</li></ul></div>
+          <div class="rsec"><div class="rsh">5 · Operational findings</div><ul><li>Latency overhead measured on their hot path.</li><li>Reliability observations — provider error rates, failover behavior.</li><li>Deployment notes: footprint, GitOps fit, air-gap considerations.</li></ul></div>
+          <div class="rsec"><div class="rsh">6 · Recommended next step</div><ul><li>The smallest enforcement-free change that captures the largest share of the opportunity.</li><li>A proposed pilot scope with success metrics defined up front.</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 · SALES MOTION ============ -->
+
+    <section class="sec" id="deck">
+      <div class="sechead">
+        <div class="ix">05 · Sales Motion / First-call deck</div>
+        <h2>First-call sales deck outline</h2>
+        <p class="lead">Ten slides, twenty minutes, built to earn the assessment — not to close. The job of the first call is to make the buyer want their own report.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div><div class="st">The shift</div><div class="sd">Inference is moving from experiment to production load. Cost is following — and it's outrunning visibility. One chart, no hype.</div></div></div>
+        <div class="step"><div class="sn">2</div><div><div class="st">The uncomfortable question</div><div class="sd">"Can you attribute last quarter's inference spend to a team and a workflow?" Most can't. Let it sit.</div></div></div>
+        <div class="step"><div class="sn">3</div><div><div class="st">The five leaks</div><div class="sd">Attribution, premium-model overuse, duplicate traffic, retry amplification, routing inefficiency — named and defined.</div></div></div>
+        <div class="step"><div class="sn">4</div><div><div class="st">Why it's invisible</div><div class="sd">Inference runs through app code, not infrastructure. The people who own cost have no control point.</div></div></div>
+        <div class="step"><div class="sn">5</div><div><div class="st">Where BRG sits</div><div class="sd">The runtime insertion diagram. Inline, OpenAI-compatible, provider-neutral. The anchor slide of the deck.</div></div></div>
+        <div class="step"><div class="sn">6</div><div><div class="st">Visibility → Optimization → Control</div><div class="sd">The three pillars in order. Make clear we lead with visibility — we are not selling governance yet.</div></div></div>
+        <div class="step"><div class="sn">7</div><div><div class="st">How it deploys</div><div class="sd">Kubernetes-native, GitOps, air-gap capable, honest latency budget. Speaks to the champion's real concerns.</div></div></div>
+        <div class="step"><div class="sn">8</div><div><div class="st">Proof</div><div class="sd">A sample economics report and one quantified mini-case. Evidence, in dollars and units.</div></div></div>
+        <div class="step"><div class="sn">9</div><div><div class="st">The assessment</div><div class="sd">Seven days, observe-only, their numbers, a report they keep. The actual ask of the call.</div></div></div>
+        <div class="step"><div class="sn">10</div><div><div class="st">What this becomes</div><div class="sd">One honest slide on the roadmap from economics toward control — so the architect sees the strategic arc without us overpromising.</div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="demo">
+      <div class="sechead">
+        <div class="ix">05 · Sales Motion / Demo flow</div>
+        <h2>Demo flow recommendations</h2>
+        <p class="lead">Demo the report and the runtime, not a marketing UI. The "aha" is seeing real traffic decomposed into dollars in front of them.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="sn">01</div><div><div class="st">Start at the leak, not the product</div><div class="sd">Open on a spend-attribution view with a large unattributed slice. Let them recognize their own situation before you show a single feature.</div></div></div>
+        <div class="step"><div class="sn">02</div><div><div class="st">Point one client at BRG, live</div><div class="sd">A base-URL change, one request, and it appears in the ledger attributed and priced. The "no rewrite" claim, demonstrated in ten seconds.</div></div></div>
+        <div class="step"><div class="sn">03</div><div><div class="st">Replay a duplicate, hit the cache</div><div class="sd">Same request again — cache hit, faster, $0. Show the duplicate-traffic leak being closed in real time.</div></div></div>
+        <div class="step"><div class="sn">04</div><div><div class="st">Trip a provider, show failover</div><div class="sd">Fail the primary; watch the deterministic fallback chain hold the request. Reliability as an economics feature.</div></div></div>
+        <div class="step"><div class="sn">05</div><div><div class="st">Show the CRD + GitOps</div><div class="sd">Routing and quota as declarative objects in Git. This is what makes the platform engineer relax.</div></div></div>
+        <div class="step"><div class="sn">06</div><div><div class="st">Land on the report</div><div class="sd">End where you started — the economics report — now populated by what they just watched. Bridge straight into the assessment.</div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="casestudy">
+      <div class="sechead">
+        <div class="ix">05 · Sales Motion / Case study structure</div>
+        <h2>Case study structure</h2>
+        <p class="lead">Engineering-grade case studies: situation, instrumentation, finding, action, measured result. Read like a postmortem, not a testimonial.</p>
+      </div>
+      <div class="ladder">
+        <div class="rung"><div class="lvl">Context</div><div class="val"><div class="sm">Who they are, scale of inference, model mix, what triggered the look (usually a bill or a forecast).</div></div></div>
+        <div class="rung"><div class="lvl">Instrumentation</div><div class="val"><div class="sm">How BRG was deployed, in what mode, over what window. Honest about footprint and latency.</div></div></div>
+        <div class="rung"><div class="lvl">What we found</div><div class="val"><div class="sm">The specific leaks, quantified — the part the reader compares to their own environment.</div></div></div>
+        <div class="rung"><div class="lvl">What changed</div><div class="val"><div class="sm">The routing and caching policy applied, and why — declarative, reviewable, owned by their team.</div></div></div>
+        <div class="rung top"><div class="lvl">Measured result</div><div class="val"><div class="big">Outcomes in their units — dollars, cache hit rate, p99, attribution coverage.</div><div class="sm">Measured before/after, with method stated. No rounded-up hero percentage.</div></div></div>
+        <div class="rung"><div class="lvl">Operator quote</div><div class="val"><div class="sm">One line from the platform engineer, not the CMO. Credibility comes from the practitioner.</div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="outbound">
+      <div class="sechead">
+        <div class="ix">05 · Sales Motion / Cold outbound</div>
+        <h2>Cold outbound messaging examples</h2>
+        <p class="lead">Short, specific, no flattery, one ask. Lead with the question they can't answer, not with us.</p>
+      </div>
+      <div class="grid2">
+        <div class="email">
+          <div class="eh"><span>To: VP Platform Eng</span><span class="subj">Subj: inference spend attribution</span></div>
+          <div class="eb">Hi {name},
+
+Quick one: can your team attribute last quarter's AI inference spend to a specific team and workflow? Most platform groups we talk to can see the provider total but not the breakdown.
+
+We built BRG to sit inline with inference traffic and answer exactly that — plus catch duplicate and retry-amplified calls. Kubernetes-native, no app changes.
+
+Worth a 20-minute look at a sample runtime economics report?
+
+— {sender}</div>
+        </div>
+        <div class="email">
+          <div class="eh"><span>To: Director, FinOps</span><span class="subj">Subj: the new untagged cloud spend</span></div>
+          <div class="eb">Hi {name},
+
+You spent years getting cloud cost tagged and attributed. AI inference is the new untagged line item — growing fast, owned by no one.
+
+BRG brings the same discipline to inference: attribution per team and workflow, plus measurable reduction from caching and routing. We run a 7-day, observe-only assessment that ends in a report with your real numbers.
+
+Open to seeing what it would surface in your environment?
+
+— {sender}</div>
+        </div>
+      </div>
+      <div class="note-inline">Rule: every cold message contains one concrete, falsifiable claim and exactly one ask. No "circling back," no "synergies," no paragraph about us.</div>
+    </section>
+
+    <section class="sec" id="founder">
+      <div class="sechead">
+        <div class="ix">05 · Sales Motion / Founder outreach</div>
+        <h2>Founder-led technical outreach</h2>
+        <p class="lead">Engineer-to-engineer. The founder's edge is credibility, not polish. Reference a real technical observation, skip the pitch, offer to compare notes.</p>
+      </div>
+      <div class="email">
+        <div class="eh"><span>From: {founder}, co-founder &amp; eng</span><span class="subj">Subj: how you're handling retry amplification</span></div>
+        <div class="eb">{name} — saw your talk / post on {specific thing}. We're building infrastructure for AI runtime economics and ran into the same wall you described: once inference is production load, retry logic quietly multiplies billed calls and it never shows up cleanly in the provider bill.
+
+We ended up building a runtime gateway that sits inline, fingerprints requests, and accounts for this stuff directly — BRG. Not pitching; genuinely curious how your team is handling attribution and retries today, because everyone solves it slightly differently.
+
+If useful, happy to share what we've measured across the environments we've instrumented. 20 minutes, engineer to engineer.
+
+— {founder}</div>
+      </div>
+      <div class="takeaway"><div class="tl">Why founder outreach converts</div><p>The buyer is skeptical of marketing and trusts practitioners. <b>A founder who has clearly run this in production earns the meeting that a sequence never will.</b> Protect that channel; don't automate it into noise.</p></div>
+    </section>
+
+    <!-- ============ 06 · CONTENT & DESIGN ============ -->
+
+    <section class="sec" id="whitepapers">
+      <div class="sechead">
+        <div class="ix">06 · Content &amp; Design / Whitepaper topics</div>
+        <h2>Technical whitepaper topics</h2>
+        <p class="lead">Depth is the marketing. Each paper is something a platform engineer would actually cite — and each one quietly establishes the category.</p>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">The Anatomy of an Inference Bill</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">Where AI inference cost actually accumulates: token economics, retry amplification, duplicate traffic, premium-model defaults. Defines the problem space.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">A Reference Architecture for AI Runtime Economics</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">Where to place a runtime control point, what it must measure, and the latency/reliability tradeoffs. The category's architectural anchor.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">Semantic Caching for Inference: Correctness &amp; Cost</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">When semantic caching is safe, when it isn't, and how to bound staleness. Demonstrates engineering rigor, not just savings claims.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">Deterministic Multi-Model Routing</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">Routing by cost, latency, and reliability with predictable, reviewable behavior — and why "AI orchestration" is the wrong frame.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">Inference FinOps: Attribution at the Runtime</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">Bringing cloud-cost discipline to inference. The bridge document between platform and finance buyers.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">Running an AI Gateway in Production</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">Deployment patterns, failure modes, fail-open design, air-gap considerations. The operational-trust paper.</p></div>
+      </div>
+    </section>
+
+    <section class="sec" id="blog">
+      <div class="sechead">
+        <div class="ix">06 · Content &amp; Design / Blog strategy</div>
+        <h2>Blog / article strategy</h2>
+        <p class="lead">Three lanes, published on a steady cadence. The goal is to become the reference voice for inference economics — not to chase traffic.</p>
+      </div>
+      <div class="grid3">
+        <div class="card"><div class="subhead" style="margin-top:0">Field notes</div><p style="font-size:13px;color:var(--ash-2);margin:0 0 9px;line-height:1.55">Specific, measured observations from real environments. "What retry amplification looks like in production." Short, technical, frequent.</p><div class="pillrow"><span class="pill">Practitioner trust</span></div></div>
+        <div class="card"><div class="subhead" style="margin-top:0">Category essays</div><p style="font-size:13px;color:var(--ash-2);margin:0 0 9px;line-height:1.55">Define and defend "AI Runtime Economics" and "Inference FinOps." Slower cadence, higher polish, link-worthy.</p><div class="pillrow"><span class="pill">Category ownership</span></div></div>
+        <div class="card"><div class="subhead" style="margin-top:0">Engineering deep-dives</div><p style="font-size:13px;color:var(--ash-2);margin:0 0 9px;line-height:1.55">How BRG works internally — caching correctness, routing determinism, ledger design. Earns the respect of the people who'll run it.</p><div class="pillrow"><span class="pill">Technical credibility</span></div></div>
+      </div>
+      <div class="note-inline">Cadence over volume. One genuinely good field note a week beats five SEO posts. Never publish anything you wouldn't send directly to a skeptical staff engineer.</div>
+    </section>
+
+    <section class="sec" id="design">
+      <div class="sechead">
+        <div class="ix">06 · Content &amp; Design / Design language</div>
+        <h2>Design language recommendations</h2>
+        <p class="lead">The visual system should read like infrastructure tooling — dense, precise, monospaced where it counts. This document is itself a reference implementation of it.</p>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="subhead" style="margin-top:0">Principles</div>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--ash-2)">
+            <li style="padding-left:16px;position:relative"><span style="position:absolute;left:1px;color:var(--ember)">+</span>Dark-first. This audience lives in terminals and dashboards.</li>
+            <li style="padding-left:16px;position:relative"><span style="position:absolute;left:1px;color:var(--ember)">+</span>Monospace for data, labels, and anything technical. Sans for prose.</li>
+            <li style="padding-left:16px;position:relative"><span style="position:absolute;left:1px;color:var(--ember)">+</span>One warm accent (ember) used sparingly, against neutral slate.</li>
+            <li style="padding-left:16px;position:relative"><span style="position:absolute;left:1px;color:var(--ember)">+</span>Diagrams over photography. No stock imagery, ever.</li>
+            <li style="padding-left:16px;position:relative"><span style="position:absolute;left:1px;color:var(--ember)">+</span>Density signals competence. Don't pad with whitespace theater.</li>
+          </ul>
+        </div>
+        <div class="card"><div class="subhead" style="margin-top:0">Core palette</div>
+          <div class="swatches">
+            <div class="sw"><div class="chip" style="background:#0c0d10"></div><div class="meta"><div class="n">Ridge</div><div class="h">#0C0D10</div></div></div>
+            <div class="sw"><div class="chip" style="background:#14171d"></div><div class="meta"><div class="n">Panel</div><div class="h">#14171D</div></div></div>
+            <div class="sw"><div class="chip" style="background:#ec6a39"></div><div class="meta"><div class="n">Ember</div><div class="h">#EC6A39</div></div></div>
+            <div class="sw"><div class="chip" style="background:#6f93cf"></div><div class="meta"><div class="n">Steel</div><div class="h">#6F93CF</div></div></div>
+            <div class="sw"><div class="chip" style="background:#e8eaed"></div><div class="meta"><div class="n">Ash</div><div class="h">#E8EAED</div></div></div>
+          </div>
+          <p style="font-size:12px;color:var(--mut);margin:13px 0 0;line-height:1.5">Ember = action / spend / the runtime. Steel = future control plane. Greens and ambers reserved for status, never decoration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="diagrams">
+      <div class="sechead">
+        <div class="ix">06 · Content &amp; Design / Diagrams &amp; KPIs</div>
+        <h2>Suggested diagrams &amp; metrics to visualize</h2>
+        <p class="lead">The visuals that carry the argument, and the numbers worth putting on a chart. Every metric here is something the buyer feels in their bill or their pager.</p>
+      </div>
+      <div class="subhead">Diagrams that do the selling</div>
+      <div class="grid2">
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">The runtime insertion point</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">App → BRG → providers, inline. The single most important diagram in the company. Everything else is a detail of this.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">The request lifecycle</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">Terminate → fingerprint → route → cache → dispatch → account. Shows where each capability acts on the hot path.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">Spend decomposition</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">A bill broken into attributed / duplicate / retry / premium-overuse slices. The "where it goes" picture.</p></div>
+        <div class="card"><div class="st" style="font-weight:600;color:var(--ash);margin-bottom:5px">Failover behavior</div><p style="margin:0;font-size:13px;color:var(--mut);line-height:1.5">A provider degrading and the deterministic fallback chain holding. Reliability as an economics story.</p></div>
+      </div>
+      <div class="subhead">KPIs worth visualizing</div>
+      <div class="pillrow">
+        <span class="pill star">Cost per workflow</span>
+        <span class="pill star">Spend attribution coverage</span>
+        <span class="pill star">Cache hit rate (exact + semantic)</span>
+        <span class="pill star">Duplicate-traffic %</span>
+        <span class="pill star">Retry amplification factor</span>
+        <span class="pill star">Premium-model share</span>
+        <span class="pill star">Projected vs. budgeted spend</span>
+        <span class="pill star">Decision latency (p50 / p99)</span>
+        <span class="pill star">Provider error &amp; failover rate</span>
+        <span class="pill star">Measured savings (routing + cache)</span>
+      </div>
+      <div class="note-inline">Always plot in the buyer's units. A cache hit rate means nothing to a CFO; "$31k/month in duplicate calls eliminated" does. Show both, joined.</div>
+    </section>
+
+    <!-- ============ 07 · STRATEGY ============ -->
+
+    <section class="sec" id="moat">
+      <div class="sechead">
+        <div class="ix">07 · Strategy / Strategic moat</div>
+        <h2>Strategic moat narrative</h2>
+        <p class="lead">The internal story of why this compounds. Not for the website — for the team and the cap table. It's the reason visibility-first is a strategy, not a limitation.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div><div class="st">The wedge is placement</div><div class="sd">Being inline with inference traffic is the position everyone else lacks. Dashboards observe from outside; BRG sits on the path where cost is incurred and reliability is decided. <b>Placement is the asset.</b></div></div></div>
+        <div class="step"><div class="sn">2</div><div><div class="st">Visibility earns the right to act</div><div class="sd">We sell visibility first because it's the lowest-risk way in — and because once we're the system of record for inference economics, optimization and control are the obvious next steps, on infrastructure they already trust.</div></div></div>
+        <div class="step"><div class="sn">3</div><div><div class="st">Data compounds</div><div class="sd">Every instrumented environment improves our pricing models, routing heuristics, and benchmarks. The economics ledger becomes a dataset no point tool or dashboard can replicate.</div></div></div>
+        <div class="step"><div class="sn">4</div><div><div class="st">Switching cost is structural, not contractual</div><div class="sd">Once routing, caching, attribution, and failover run through BRG as declarative platform infrastructure, it's load-bearing. That's durable in the right way — earned through operational trust, not lock-in.</div></div></div>
+        <div class="step"><div class="sn">5</div><div><div class="st">Economics is the on-ramp to control</div><div class="sd">The runtime that already sees and shapes every inference call is the only natural place to later govern it. <b>We win cost first, then become the control plane — because we're already on the path.</b> That second act is the moat; the first act earns the right to build it.</div></div></div>
+      </div>
+      <div class="takeaway"><div class="tl">The one-paragraph version</div><p><b>BRG starts as the cheapest, lowest-risk way to see inference spend — and ends as the control point the whole inference path runs through.</b> Visibility is the wedge, the runtime position is the moat, and the data we accumulate makes both harder to dislodge every quarter.</p></div>
+    </section>
+
+    <footer class="foot">
+      <span>Blackridge Runtime Gateway · GTM &amp; Messaging Playbook · Internal</span>
+      <span><b>Visibility before governance. Optimization before orchestration. Measurable, or it doesn't ship.</b></span>
+    </footer>
+  </main>
+</div>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect width="100" height="100" fill="#0c0d10"/>
+<rect x="30" y="30" width="26" height="40" rx="4" fill="#ec6a39"/>
+<rect x="40" y="38" width="9" height="24" fill="#0c0d10"/>
+<rect x="62" y="30" width="9" height="40" rx="2" fill="#6f93cf"/>
+</svg>
+</template>
+<script>
+  // scroll-spy nav
+  const links = [...document.querySelectorAll('nav.side a')];
+  const map = new Map(links.map(a=>[a.getAttribute('href').slice(1), a]));
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const a = map.get(e.target.id); if(a) a.classList.add('active');
+      }
+    });
+  },{rootMargin:'-10% 0px -80% 0px',threshold:0});
+  document.querySelectorAll('section.sec').forEach(s=>obs.observe(s));
+
+  // ---- discovery diagnostic ----
+  (function(){
+    const diag = document.getElementById('diag');
+    if(!diag) return;
+    const rows = [...diag.querySelectorAll('.dq')];
+    const gapEl = document.getElementById('gapCount');
+    const foot = document.getElementById('diagFoot');
+    // a "gap" = unanswered, answered No to a have-you/can-you question,
+    // or answered Yes to the premium-default question (Q3), or Not sure anywhere.
+    function isGap(q, v){
+      if(v===null) return true;            // unanswered
+      if(v==='unsure') return true;         // not sure = blind spot
+      if(q===2) return v==='yes';           // Q3 premium-by-default: yes is the problem
+      return v==='no';                      // the rest: no is the gap
+    }
+    const state = rows.map(()=>null);
+    function render(){
+      let gaps=0;
+      rows.forEach((row,i)=>{
+        const gap = isGap(i,state[i]);
+        if(gap) gaps++;
+        row.classList.toggle('gap', gap && state[i]!==null);
+      });
+      gapEl.textContent = gaps;
+      const answered = state.filter(v=>v!==null).length;
+      if(answered===0){
+        foot.innerHTML = '<b class="lead">Six unanswered questions.</b> That\'s not a failing grade — almost no one can answer these today, because inference runs through application code, not infrastructure. Every one of them is answered, in your own numbers, by the <b>7-day runtime economics assessment</b> below.';
+        foot.classList.add('gap-on');
+      } else if(gaps===0){
+        foot.innerHTML = '<b class="lead">Zero blind spots — rare.</b> If a prospect truly answers all six with confidence, they\'ve already built a runtime economics layer. The conversation shifts from "you can\'t see this" to "we maintain this surface so your team doesn\'t have to." Probe how much it costs them to keep it running.';
+        foot.classList.remove('gap-on');
+      } else {
+        foot.innerHTML = '<b class="lead">'+gaps+' blind spot'+(gaps>1?'s':'')+' surfaced.</b> Each one is a place inference spend is leaking unseen. The <b>7-day assessment</b> below closes every one of them with the prospect\'s own traffic — no commitment, no app changes.';
+        foot.classList.add('gap-on');
+      }
+    }
+    rows.forEach((row,i)=>{
+      row.querySelectorAll('.ans button').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const v = btn.dataset.v;
+          state[i] = (state[i]===v) ? null : v;   // toggle off if same
+          row.querySelectorAll('.ans button').forEach(b=>b.classList.toggle('on', b.dataset.v===state[i]));
+          render();
+        });
+      });
+    });
+    document.getElementById('diagReset').addEventListener('click',()=>{
+      state.fill(null);
+      diag.querySelectorAll('.ans button').forEach(b=>b.classList.remove('on'));
+      render();
+    });
+    render();
+  })();
+</script>
+</body>
+</html>
