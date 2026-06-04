@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blackridge Runtime Gateway | AI Inference Is Becoming Infrastructure</title>
+  <meta name="description" content="Every infrastructure shift creates a new control point. We've seen this pattern before. AI inference is next." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand brand-lockup active" href="index.html" aria-current="page">
+        <span>Blackridge</span>
+        <small>by Northwatch Systems</small>
+      </a>
+      <div class="nav-links">
+        <a href="architecture.html">Architecture</a>
+        <a href="assessment.html" class="nav-cta">Assessment</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero: Pattern Recognition -->
+    <section class="section hero-section">
+      <div class="wrap hero narrative-hero">
+        <div>
+          <div class="eyebrow">Built by platform engineers who operated distributed systems at scale</div>
+          <h1>AI inference is becoming infrastructure. We've seen this pattern before.</h1>
+          <p class="lead">Every infrastructure shift creates the same need: a shared boundary where traffic becomes observable, optimizable, and controllable.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#diagnostic">Take the Assessment</a>
+            <a class="button" href="assessment.html">Talk to the Founders</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Pattern: Category Creation Moment -->
+    <section class="section section-pad" id="pattern">
+      <div class="wrap split control-plane-split">
+        <div>
+          <div class="eyebrow">The infrastructure pattern</div>
+          <h2>This is not a new idea. It is an old infrastructure pattern applied to a new runtime.</h2>
+          <p class="lead">Distributed systems keep creating the same need: a shared boundary where traffic becomes observable, optimizable, and controllable.</p>
+          <p style="margin-top: 24px;">The cloud bill arrived first. Governance arrived later. AI will follow the same path.</p>
+        </div>
+        <div class="control-stack evolution-stack">
+          <div><span class="mono">Compute</span><strong>Hypervisors</strong></div>
+          <div><span class="mono">Packaging</span><strong>Containers</strong></div>
+          <div><span class="mono">Orchestration</span><strong>Kubernetes</strong></div>
+          <div><span class="mono">Services</span><strong>API Gateways</strong></div>
+          <div class="active"><span class="mono">AI inference</span><strong>Runtime Gateways</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagnostic: MOVED UP - Immediate Personalization After Pattern -->
+    <section class="section diagnostic-section" id="diagnostic">
+      <div class="wrap narrow">
+        <div class="eyebrow">Runtime economics diagnostic</div>
+        <h2>Where are you in this transition?</h2>
+        <p class="diagnostic-intro">Six questions that reveal your position on the runtime economics maturity curve.</p>
+
+        <div class="diagnostic" id="diagnosticTool">
+          <div class="diagnostic-header">
+            <span class="diagnostic-title">Your visibility maturity</span>
+            <div class="diagnostic-score">
+              <span class="score-display"><strong id="gapCount">6</strong> / 6 gaps</span>
+              <button class="diagnostic-reset" id="diagnosticReset">Reset</button>
+            </div>
+          </div>
+
+          <div class="diagnostic-question" data-gap="true" data-q="0">
+            <div class="dq-row">
+              <div class="dq-number">01</div>
+              <div class="dq-content">
+                <div class="dq-text">Are you multi-model yet?</div>
+                <div class="dq-buttons">
+                  <button data-v="yes">Yes</button>
+                  <button data-v="no">No</button>
+                  <button data-v="unsure">Not sure</button>
+                </div>
+              </div>
+            </div>
+            <div class="dq-meaning">
+              <span class="dq-label">Maps to:</span> Provider neutrality & routing leverage. <strong>If no:</strong> traffic is pinned to one provider with no way to shift on cost, latency, or availability.
+            </div>
+          </div>
+
+          <div class="diagnostic-question" data-gap="true" data-q="1">
+            <div class="dq-row">
+              <div class="dq-number">02</div>
+              <div class="dq-content">
+                <div class="dq-text">Do you know your cost-per-workflow?</div>
+                <div class="dq-buttons">
+                  <button data-v="yes">Yes</button>
+                  <button data-v="no">No</button>
+                  <button data-v="unsure">Not sure</button>
+                </div>
+              </div>
+            </div>
+            <div class="dq-meaning">
+              <span class="dq-label">Maps to:</span> Cost attribution. <strong>If no:</strong> you can see a provider total but not what a feature or workflow actually costs to run.
+            </div>
+          </div>
+
+          <div class="diagnostic-question" data-gap="true" data-q="2">
+            <div class="dq-row">
+              <div class="dq-number">03</div>
+              <div class="dq-content">
+                <div class="dq-text">Are teams using premium models by default?</div>
+                <div class="dq-buttons">
+                  <button data-v="yes">Yes</button>
+                  <button data-v="no">No</button>
+                  <button data-v="unsure">Not sure</button>
+                </div>
+              </div>
+            </div>
+            <div class="dq-meaning">
+              <span class="dq-label">Maps to:</span> Premium-model overuse. <strong>If yes or unsure:</strong> the most expensive model is likely the default for requests a smaller one would serve identically.
+            </div>
+          </div>
+
+          <div class="diagnostic-question" data-gap="true" data-q="3">
+            <div class="dq-row">
+              <div class="dq-number">04</div>
+              <div class="dq-content">
+                <div class="dq-text">Do you know your retry amplification rate?</div>
+                <div class="dq-buttons">
+                  <button data-v="yes">Yes</button>
+                  <button data-v="no">No</button>
+                  <button data-v="unsure">Not sure</button>
+                </div>
+              </div>
+            </div>
+            <div class="dq-meaning">
+              <span class="dq-label">Maps to:</span> Retry amplification. <strong>If no:</strong> a single user request may quietly become three to five billed calls under naive retry logic.
+            </div>
+          </div>
+
+          <div class="diagnostic-question" data-gap="true" data-q="4">
+            <div class="dq-row">
+              <div class="dq-number">05</div>
+              <div class="dq-content">
+                <div class="dq-text">Are you measuring duplicate inference traffic?</div>
+                <div class="dq-buttons">
+                  <button data-v="yes">Yes</button>
+                  <button data-v="no">No</button>
+                  <button data-v="unsure">Not sure</button>
+                </div>
+              </div>
+            </div>
+            <div class="dq-meaning">
+              <span class="dq-label">Maps to:</span> Duplicate inference & caching. <strong>If no:</strong> identical requests are being paid for again and again. Pure waste, usually the fastest dollar to recover.
+            </div>
+          </div>
+
+          <div class="diagnostic-question" data-gap="true" data-q="5">
+            <div class="dq-row">
+              <div class="dq-number">06</div>
+              <div class="dq-content">
+                <div class="dq-text">Can you attribute spend by tenant, app, and team?</div>
+                <div class="dq-buttons">
+                  <button data-v="yes">Yes</button>
+                  <button data-v="no">No</button>
+                  <button data-v="unsure">Not sure</button>
+                </div>
+              </div>
+            </div>
+            <div class="dq-meaning">
+              <span class="dq-label">Maps to:</span> Attribution coverage. <strong>If no:</strong> spend exists but ownership doesn't — so cost can't be governed, charged back, or forecast.
+            </div>
+          </div>
+
+          <div class="diagnostic-footer" id="diagnosticFooter">
+            <strong>Most platform teams surface 4-6 gaps.</strong> That's expected — inference runs through application code today, not infrastructure. The question is whether you build visibility now or wait until the bill forces it.
+          </div>
+        </div>
+
+        <div style="height: 48px;"></div>
+
+        <div class="reveal-copy" style="text-align: center;">
+          <p><strong>Each gap represents a place where runtime economics is invisible.</strong></p>
+          <p>BRG answers these questions from the runtime path, using your own traffic.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Reframe: Why AI is Different - NOW explains WHY the gaps exist -->
+    <section class="section section-pad">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The infrastructure shift</div>
+            <h2>AI inference is becoming infrastructure. Most teams are still treating it like API usage.</h2>
+          </div>
+          <p>At first, model calls look simple. One team. One provider. One app. One bill. Then adoption spreads. Agents appear. Workflows multiply. Context gets reloaded. Retries happen quietly. Teams choose different models for similar work. Provider bills grow faster than anyone can explain.</p>
+        </div>
+        <div class="runtime-expansion severity-flow">
+          <div class="runtime-step severity-low"><span class="mono">01</span><strong>User intent</strong><em>Launch plan requested</em><b>low</b></div>
+          <div class="runtime-step severity-med"><span class="mono">02</span><strong>Context load</strong><em>Docs, tickets, repo state</em><b>medium</b></div>
+          <div class="runtime-step severity-high"><span class="mono">03</span><strong>Model call</strong><em>Expensive reasoning path</em><b>high</b></div>
+          <div class="runtime-step severity-hot"><span class="mono">04</span><strong>Retry loop</strong><em>Ambiguous output</em><b>very high</b></div>
+          <div class="runtime-step severity-hot"><span class="mono">05</span><strong>Duplicate workflow</strong><em>Another agent repeats it</em><b>very high</b></div>
+          <div class="runtime-step severity-save"><span class="mono">06</span><strong>Cache hit</strong><em>Avoided provider call</em><b>avoided</b></div>
+        </div>
+        <p class="thesis-line">Token spend is the <span>exhaust</span> of runtime behavior.</p>
+      </div>
+    </section>
+
+    <!-- Visibility Gap -->
+    <section class="section section-pad">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The visibility gap</div>
+            <h2>Provider dashboards show spend. They do not explain runtime behavior.</h2>
+          </div>
+          <p>Provider dashboards can tell you what you spent with that provider. They usually cannot tell you which workflow caused the spend, which team owns it, how much was duplicate, how much came from retries, whether a cheaper model could have handled it, what would have happened with a shared cache, or how spend would change if traffic moved providers.</p>
+        </div>
+
+        <div class="waste-board brg-waste-board">
+          <div class="waste-column">
+            <span class="label">Provider Dashboard</span>
+            <ul class="list">
+              <li>Provider total</li>
+              <li>Model usage</li>
+              <li>Billing export</li>
+              <li>After-the-fact visibility</li>
+            </ul>
+          </div>
+          <div class="waste-column accent-column">
+            <span class="label">BRG Runtime View</span>
+            <ul class="list">
+              <li>Tenant / app / team attribution</li>
+              <li>Cache verdict</li>
+              <li>Route decision</li>
+              <li>Retry accounting</li>
+              <li>Savings calculation</li>
+              <li>Runtime cost control</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="approach-tagline">BRG sits before the provider, so it can see the request before it becomes a bill.</p>
+      </div>
+    </section>
+
+    <!-- BRG Solution -->
+    <section class="section solution-section">
+      <div class="wrap">
+        <div class="eyebrow">The solution</div>
+        <h2>Put a runtime control point between your applications and your model providers.</h2>
+        <p class="solution-intro">BRG is an inline runtime gateway for inference traffic. Your existing OpenAI-compatible clients point at BRG. BRG normalizes the request, checks the cache, chooses the route, calls the provider, records the economics, and returns the response in the shape your application expects. No application rewrite. One runtime boundary.</p>
+
+        <div class="approach-steps">
+          <div class="approach-step">
+            <div class="approach-number">01</div>
+            <div class="approach-content">
+              <div class="approach-arrow">→</div>
+              <h3>Visibility</h3>
+              <p class="approach-headline">Attribute every request</p>
+              <p class="approach-detail">By tenant, app, user, team, route, provider, model, token usage, latency, and cache verdict.</p>
+            </div>
+          </div>
+
+          <div class="approach-step">
+            <div class="approach-number">02</div>
+            <div class="approach-content">
+              <div class="approach-arrow">→</div>
+              <h3>Optimization</h3>
+              <p class="approach-headline">Reduce waste through caching and routing</p>
+              <p class="approach-detail">Exact-match caching, provider routing, retry accounting, fallback control, and model selection.</p>
+            </div>
+          </div>
+
+          <div class="approach-step">
+            <div class="approach-number">03</div>
+            <div class="approach-content">
+              <div class="approach-arrow">→</div>
+              <h3>Control</h3>
+              <p class="approach-headline">Set budget ceilings and enforce limits</p>
+              <p class="approach-detail">Downgrade expensive routes, force cache-only behavior, or deny runaway usage before it reaches a provider.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="approach-tagline">Visibility before governance. Always.</p>
+      </div>
+    </section>
+
+    <!-- Architecture Preview -->
+    <section class="section section-pad graph-center" id="architecture-preview">
+      <div class="wrap">
+        <div class="section-head graph-head aligned-head">
+          <div>
+            <div class="eyebrow">Product architecture</div>
+            <h2>Gateway on the hot path. Economics off the hot path.</h2>
+          </div>
+          <p>BRG is designed like production infrastructure. The synchronous path stays small: normalize, cache, route, dispatch, respond. Accounting, metrics, savings, dashboards, and reporting happen off-path so visibility never blocks inference.</p>
+        </div>
+
+        <div class="topology-card centerpiece-graph">
+          <div class="topology-head">
+            <span class="status-dot mono">BRG runtime topology</span>
+            <span class="mono">HOT PATH + OFF-PATH ECONOMICS</span>
+          </div>
+          <div class="topology brg-topology" data-graph="brg">
+            <svg role="img" aria-label="Blackridge Runtime Gateway topology"></svg>
+          </div>
+        </div>
+
+        <div class="solution-grid" style="margin-top: 48px;">
+          <article class="solution-card">
+            <div class="solution-label">OpenAI-compatible endpoint</div>
+            <p>Drop-in integration. No SDK swap required. Decision overhead is sub-millisecond.</p>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-label">Kubernetes-native deployment</div>
+            <p>Deploy into your environment. CRDs, GitOps, air-gap capable. Operates like the rest of your platform.</p>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-label">Provider-neutral adapters</div>
+            <p>Route across OpenAI, Anthropic, Gemini, Azure, Bedrock, or private models. Reduce single-provider lock-in.</p>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-label">Deterministic failure modes</div>
+            <p>Configurable fail-open behavior. Telemetry degrades gracefully. Not a new single point of failure.</p>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 32px;">
+          <a class="button" href="examples/brg-runtime-gateway.html">Open Architecture Overview</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Section: Trust Builder -->
+    <section class="section section-pad">
+      <div class="wrap callout thesis-callout">
+        <div class="callout-main">
+          <div class="eyebrow">Who's building this</div>
+          <h2>Platform engineers who have operated distributed systems in production environments.</h2>
+          <p>Blackridge is built by Geoffrey Gabbott and Daniel Kendrick — infrastructure engineers who have spent decades designing and operating large-scale distributed systems. We're not AI researchers. We're the people who kept the systems running when traffic spiked, costs exploded, and visibility disappeared.</p>
+          <p style="margin-top: 24px;">We've seen this infrastructure pattern emerge before: compute, packaging, orchestration, services. Each time, a new runtime layer appeared to make traffic observable, optimizable, and controllable. AI inference is following the same path.</p>
+        </div>
+        <div class="callout-side">
+          <p class="statement">We're building the infrastructure layer for autonomous systems.</p>
+          <p class="side-note">Design partners work directly with the founders. We're selective because the program is founder-led, not because seats are scarce.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before/After -->
+    <section class="section section-pad">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Before and after</div>
+            <h2>From scattered model calls to observable runtime economics.</h2>
+          </div>
+        </div>
+        <div class="waste-board brg-waste-board">
+          <div class="waste-column">
+            <span class="label">Without BRG</span>
+            <ul class="list">
+              <li>Every app integrates directly with providers</li>
+              <li>Teams choose models independently</li>
+              <li>Duplicate prompts are paid for repeatedly</li>
+              <li>Retry loops quietly multiply cost</li>
+              <li>Spend is visible only after billing</li>
+              <li>Ownership is unclear</li>
+            </ul>
+          </div>
+          <div class="waste-column accent-column">
+            <span class="label">With BRG</span>
+            <ul class="list">
+              <li>One runtime boundary for inference</li>
+              <li>Shared cache across applications</li>
+              <li>Route policy controls provider/model choice</li>
+              <li>Retries and fallbacks are accounted for</li>
+              <li>Spend is attributed to teams and workflows</li>
+              <li>Savings are measured continuously</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concrete Assessment Offer -->
+    <section class="section section-pad">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Founder-led assessment</div>
+            <h2>7-Day Runtime Economics Assessment</h2>
+          </div>
+          <p>We work with platform teams to map real inference traffic, identify visibility gaps, and quantify where caching, routing, and attribution can begin creating value.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="panel">
+            <span class="label">What we identify</span>
+            <h3>Runtime patterns in your traffic</h3>
+            <p>Where model calls enter your systems. Which teams and workflows generate spend. Where duplicate inference exists. Where routing flexibility would matter.</p>
+          </article>
+          <article class="panel">
+            <span class="label">What you receive</span>
+            <h3>Concrete deliverables</h3>
+            <p><strong>Runtime economics scorecard.</strong> Cost visibility map. Cache opportunity analysis. Recommended next steps. Custom savings projection.</p>
+          </article>
+          <article class="panel">
+            <span class="label">Who delivers it</span>
+            <h3>Founder-led walkthrough</h3>
+            <p>Geoffrey and Daniel work directly with your team to analyze your traffic and build your runtime economics baseline.</p>
+          </article>
+          <article class="panel">
+            <span class="label">What it costs</span>
+            <h3>No charge for qualified teams</h3>
+            <p>If BRG makes sense, we'll co-create a deployment plan. If not, you keep the scorecard and insights. We're selective because the assessment is founder-led.</p>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+          <a class="button primary" href="assessment.html" style="margin-right: 16px;">Schedule Assessment</a>
+          <a class="button" href="assessment.html">Talk to the Founders</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Close -->
+    <section class="section reveal-section final-vision">
+      <div class="wrap narrow">
+        <h2>Before you scale AI, make it operable.</h2>
+        <p class="reveal-copy">Inference cost is becoming the next uncontrolled cloud bill. BRG gives platform teams the runtime layer to see it, route it, reduce it, and control it.</p>
+        <div style="text-align: center; margin-top: 32px;">
+          <a class="button primary" href="assessment.html">Talk to the Founders</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>Blackridge</span>
+      <span class="mono">BRG for runtime economics. BCP for runtime governance.</span>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA Bar: Context-Aware -->
+  <div class="sticky-cta-bar" id="stickyCta">
+    <div class="sticky-cta-content">
+      <span class="sticky-cta-text" id="stickyCtaText">Ready to map your runtime economics?</span>
+      <div class="sticky-cta-actions">
+        <a href="assessment.html" class="button primary">Schedule Assessment</a>
+        <a href="architecture.html" class="button ghost">See Architecture</a>
+      </div>
+    </div>
+    <button class="sticky-cta-close" id="stickyCtaClose" aria-label="Close">×</button>
+  </div>
+
+  <script src="assets/site.js"></script>
+  <script>
+    // Sticky CTA Bar behavior - context-aware based on diagnostic
+    (function() {
+      const stickyCta = document.getElementById('stickyCta');
+      const stickyCtaText = document.getElementById('stickyCtaText');
+      const closeBtn = document.getElementById('stickyCtaClose');
+      const heroSection = document.querySelector('.hero-section');
+
+      let isVisible = false;
+      let isDismissed = false;
+      let gapCount = 6;
+
+      function checkScroll() {
+        if (isDismissed) return;
+
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+
+        if (heroBottom < 0 && !isVisible) {
+          stickyCta.classList.add('visible');
+          isVisible = true;
+        } else if (heroBottom >= 0 && isVisible) {
+          stickyCta.classList.remove('visible');
+          isVisible = false;
+        }
+      }
+
+      // Update sticky CTA text based on diagnostic results
+      window.updateStickyCTA = function(gaps) {
+        gapCount = gaps;
+        if (gaps === 0) {
+          stickyCtaText.textContent = "Zero gaps? Let's verify that with real traffic data.";
+        } else if (gaps >= 1 && gaps <= 3) {
+          stickyCtaText.textContent = `${gaps} gap${gaps > 1 ? 's' : ''} identified. Let's quantify the opportunity.`;
+        } else {
+          stickyCtaText.textContent = `${gaps} gaps surfaced. Let's map your runtime economics.`;
+        }
+      };
+
+      closeBtn.addEventListener('click', function() {
+        stickyCta.classList.remove('visible');
+        isDismissed = true;
+      });
+
+      window.addEventListener('scroll', checkScroll);
+      checkScroll();
+    })();
+
+    // Diagnostic interactive behavior
+    (function() {
+      const diagnostic = document.getElementById('diagnosticTool');
+      if (!diagnostic) return;
+
+      const questions = diagnostic.querySelectorAll('.diagnostic-question');
+      const gapCountEl = document.getElementById('gapCount');
+      const footer = document.getElementById('diagnosticFooter');
+      const resetBtn = document.getElementById('diagnosticReset');
+
+      const state = [null, null, null, null, null, null]; // 6 questions
+
+      function isGap(questionIndex, value) {
+        if (value === null) return true; // unanswered
+        if (value === 'unsure') return true; // not sure = blind spot
+        if (questionIndex === 2) return value === 'yes'; // Q3 premium: yes is problem
+        return value === 'no'; // others: no is the gap
+      }
+
+      function render() {
+        let gaps = 0;
+        questions.forEach((q, i) => {
+          const gap = isGap(i, state[i]);
+          if (gap) gaps++;
+          q.classList.toggle('gap', gap && state[i] !== null);
+        });
+
+        gapCountEl.textContent = gaps;
+
+        // Update sticky CTA
+        if (window.updateStickyCTA) {
+          window.updateStickyCTA(gaps);
+        }
+
+        const answered = state.filter(v => v !== null).length;
+        if (answered === 0) {
+          footer.innerHTML = '<strong>Most platform teams surface 4-6 gaps.</strong> That\'s expected — inference runs through application code today, not infrastructure. The question is whether you build visibility now or wait until the bill forces it.';
+        } else if (gaps === 0) {
+          footer.innerHTML = '<strong>Zero gaps — exceptional visibility.</strong> If you can answer all six with confidence, you have visibility most platform teams don\'t. Let\'s verify that with real traffic data in a 7-day assessment.';
+        } else if (gaps >= 1 && gaps <= 3) {
+          footer.innerHTML = '<strong>' + gaps + ' gap' + (gaps > 1 ? 's' : '') + ' identified.</strong><br><span class="diagnostic-highlight">You\'re ahead of most teams. Each gap represents optimization opportunity. A 7-day assessment quantifies the dollar value.</span>';
+          setTimeout(() => {
+            const highlight = footer.querySelector('.diagnostic-highlight');
+            if (highlight) highlight.classList.add('animate-in');
+          }, 50);
+        } else {
+          footer.innerHTML = '<strong>' + gaps + ' gaps surfaced.</strong><br><span class="diagnostic-highlight">This is the norm — inference visibility doesn\'t exist in most stacks yet. BRG gives you answers to all six questions from your runtime path, in your own numbers.</span>';
+          setTimeout(() => {
+            const highlight = footer.querySelector('.diagnostic-highlight');
+            if (highlight) highlight.classList.add('animate-in');
+          }, 50);
+        }
+        footer.classList.toggle('gap-on', gaps > 0 && answered > 0);
+      }
+
+      // Button click handlers
+      questions.forEach((q, i) => {
+        q.querySelectorAll('.dq-buttons button').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const v = btn.dataset.v;
+            state[i] = (state[i] === v) ? null : v; // toggle
+            q.querySelectorAll('.dq-buttons button').forEach(b =>
+              b.classList.toggle('on', b.dataset.v === state[i])
+            );
+            render();
+          });
+        });
+      });
+
+      resetBtn.addEventListener('click', () => {
+        state.fill(null);
+        diagnostic.querySelectorAll('.dq-buttons button').forEach(b => b.classList.remove('on'));
+        questions.forEach(q => q.classList.remove('gap'));
+        render();
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
