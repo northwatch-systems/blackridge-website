@@ -1,0 +1,12 @@
+{
+  "name": "blackridge-form-handler",
+  "version": "1.0.0",
+  "description": "Google Cloud Function for Blackridge assessment form",
+  "main": "index.js",
+  "dependencies": {
+    "nodemailer": "^6.9.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

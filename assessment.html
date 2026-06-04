@@ -244,7 +244,13 @@
         </div>
 
         <div class="inspector">
-          <form>
+          <!--
+            SERVERLESS FORM SETUP:
+            Deploy the Lambda/Cloud Function from serverless/ directory
+            Then replace YOUR_API_ENDPOINT below with your actual endpoint
+            See serverless/SERVERLESS_SETUP.md for detailed instructions
+          -->
+          <form id="assessmentForm">
             <label>Name<input type="text" name="name" placeholder="Your name" required /></label>
             <label>Company<input type="text" name="company" placeholder="Your company" required /></label>
             <label>Work Email<input type="email" name="email" placeholder="you@company.com" required /></label>
@@ -304,7 +310,7 @@
               </select>
             </label>
             <label>Optional Notes<textarea name="notes" placeholder="Tell us a little about your environment or the challenge you're trying to solve." rows="4"></textarea></label>
-            <button class="button primary" type="button">Request Assessment</button>
+            <button class="button primary" type="submit">Request Assessment</button>
           </form>
           <p style="margin-top: 16px; font-size: 13px; color: var(--ink-3); text-align: center;">Founder-led reviews typically receive a response within 2 business days.</p>
         </div>
@@ -342,6 +348,53 @@
   </div>
 
   <script>
+    // Form submission handler
+    (function() {
+      const form = document.getElementById('assessmentForm');
+      if (!form) return;
+
+      // REPLACE THIS with your actual API endpoint after deploying Lambda/Cloud Function
+      const API_ENDPOINT = 'https://YOUR_API_ENDPOINT/submit';
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const button = form.querySelector('button[type="submit"]');
+        const originalText = button.textContent;
+        button.textContent = 'Sending...';
+        button.disabled = true;
+
+        // Collect form data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch(API_ENDPOINT, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            alert('Thank you for your interest! We will review your submission and contact you within 2 business days.');
+            form.reset();
+          } else {
+            throw new Error(result.error || 'Submission failed');
+          }
+        } catch (error) {
+          console.error('Form submission error:', error);
+          alert('There was an error submitting the form. Please try again or email us directly at hello@northwatch.systems');
+        } finally {
+          button.textContent = originalText;
+          button.disabled = false;
+        }
+      });
+    })();
+
     // Sticky CTA Bar behavior
     (function() {
       const stickyCta = document.getElementById('stickyCta');

@@ -1,0 +1,12 @@
+{
+  "name": "blackridge-form-handler",
+  "version": "1.0.0",
+  "description": "AWS Lambda function for Blackridge assessment form",
+  "main": "handler.js",
+  "dependencies": {
+    "aws-sdk": "^2.1400.0"
+  },
+  "scripts": {
+    "package": "zip -r function.zip handler.js node_modules/"
+  }
+}
