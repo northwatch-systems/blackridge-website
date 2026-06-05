@@ -33,27 +33,38 @@
         <p class="lead" style="max-width: 720px; margin-left: auto; margin-right: auto; margin-top: 32px;">Provider dashboards show spend after it happens. They rarely explain which team, workflow, feature, or customer created it.</p>
         <p style="max-width: 720px; margin-left: auto; margin-right: auto; margin-top: 32px; font-size: 20px; font-weight: 600; color: var(--accent); font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em;">Visibility gaps become cost gaps.</p>
 
-        <!-- Visual: Growing Unexplained Spend -->
-        <div style="margin-top: 64px; padding: 32px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; max-width: 600px; margin-left: auto; margin-right: auto;">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--ink-3); margin-bottom: 20px; text-align: left;">MONTHLY AI INFERENCE SPEND</div>
-          <div style="font-size: 56px; font-weight: 600; color: var(--ink); margin-bottom: 24px;">$48,000</div>
-          <div style="display: grid; grid-template-columns: 1fr; gap: 12px; text-align: left; font-size: 15px; color: var(--ink-2);">
-            <div style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--line);">
-              <span>Which team?</span>
-              <span style="color: var(--ink-3);">Unknown</span>
+        <!-- Visual: Growing Spend Trend -->
+        <div style="margin-top: 64px; max-width: 700px; margin-left: auto; margin-right: auto;">
+          <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; align-items: end; height: 200px;">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: end; height: 100%;">
+              <div style="width: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 4px 4px 0 0; height: 35%;"></div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-3); margin-top: 8px;">Jan</div>
             </div>
-            <div style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--line);">
-              <span>Which workflow?</span>
-              <span style="color: var(--ink-3);">Unknown</span>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: end; height: 100%;">
+              <div style="width: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 4px 4px 0 0; height: 42%;"></div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-3); margin-top: 8px;">Feb</div>
             </div>
-            <div style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--line);">
-              <span>Duplicate inference?</span>
-              <span style="color: var(--ink-3);">Unknown</span>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: end; height: 100%;">
+              <div style="width: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 4px 4px 0 0; height: 58%;"></div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-3); margin-top: 8px;">Mar</div>
             </div>
-            <div style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--line);">
-              <span>Cache opportunity?</span>
-              <span style="color: var(--ink-3);">Unknown</span>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: end; height: 100%;">
+              <div style="width: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 4px 4px 0 0; height: 70%;"></div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-3); margin-top: 8px;">Apr</div>
             </div>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: end; height: 100%;">
+              <div style="width: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 4px 4px 0 0; height: 85%;"></div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-3); margin-top: 8px;">May</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: end; height: 100%;">
+              <div style="width: 100%; background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 4px 4px 0 0; height: 100%;"></div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); margin-top: 8px; font-weight: 600;">Jun</div>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 32px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--ink-3); margin-bottom: 8px;">CURRENT MONTHLY SPEND</div>
+            <div style="font-size: 48px; font-weight: 600; color: var(--ink);">$48,000</div>
+            <div style="font-size: 15px; color: var(--ink-3); margin-top: 8px;">+140% from January</div>
           </div>
         </div>
       </div>
@@ -100,6 +111,45 @@
         </div>
 
         <p style="max-width: 680px; margin-left: auto; margin-right: auto; margin-top: 48px; font-size: 20px; font-weight: 600; color: var(--accent); font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em;">The bill arrives first. The operational layer follows.</p>
+      </div>
+    </section>
+
+    <!-- Section 3: The Visibility Gap -->
+    <section class="section section-pad">
+      <div class="wrap" style="max-width: 1000px; padding: 80px 20px;">
+        <div style="text-align: center; margin-bottom: 64px;">
+          <h2>Provider dashboards show spend. They rarely explain it.</h2>
+          <p class="lead" style="max-width: 680px; margin-left: auto; margin-right: auto; margin-top: 24px;">Most organizations can see totals. Few can connect those totals to teams, workflows, products, or customers.</p>
+        </div>
+
+        <!-- Two-Column Comparison -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; margin: 0 auto;">
+          <!-- Left: What You Have -->
+          <div style="padding: 32px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--ink-3); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.1em;">Provider Dashboard</div>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+              <li style="font-size: 16px; color: var(--ink-2);">Monthly Spend</li>
+              <li style="font-size: 16px; color: var(--ink-2);">Token Usage</li>
+              <li style="font-size: 16px; color: var(--ink-2);">Model Usage</li>
+              <li style="font-size: 16px; color: var(--ink-2);">Billing History</li>
+            </ul>
+          </div>
+
+          <!-- Right: What You Need -->
+          <div style="padding: 32px; background: var(--panel); border: 1px solid var(--line); border-left: 2px solid var(--accent); border-radius: 8px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.1em;">Questions Still Unanswered</div>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+              <li style="font-size: 16px; color: var(--ink);">Which team?</li>
+              <li style="font-size: 16px; color: var(--ink);">Which workflow?</li>
+              <li style="font-size: 16px; color: var(--ink);">Which feature?</li>
+              <li style="font-size: 16px; color: var(--ink);">Which tenant or customer?</li>
+              <li style="font-size: 16px; color: var(--ink);">Duplicate requests?</li>
+              <li style="font-size: 16px; color: var(--ink);">Cache opportunity?</li>
+            </ul>
+          </div>
+        </div>
+
+        <p style="text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; margin-top: 56px; font-size: 20px; font-weight: 600; color: var(--accent); font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em;">If you cannot attribute activity, you cannot attribute cost.</p>
       </div>
     </section>
 
