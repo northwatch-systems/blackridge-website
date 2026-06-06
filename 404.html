@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 — Page Not Found | Northwatch Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #090B0F;
+  --bg-2:      #0C0F14;
+  --surface:   #12161D;
+  --surface-2: #171C24;
+  --surface-3: #0E1219;
+  --ink:       #ECEEF1;
+  --ink-2:     #A4ACB6;
+  --ink-3:     #69727D;
+  --line:      #1E242D;
+  --line-2:    #2A323D;
+  --line-3:    #3A434F;
+  --accent:    #D2762F;
+  --accent-2:  #F0A14E;
+  --accent-3:  #F7C27E;
+  --mono:  'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans:  'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --disp:  'Space Grotesk', var(--sans);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.field {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 50% 50%, rgba(210,118,47,.08), transparent 60%);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 600px;
+}
+
+.code {
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: var(--disp);
+  font-weight: 600;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  margin-bottom: 18px;
+}
+
+p {
+  color: var(--ink-2);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 9px;
+  border: 1px solid var(--line-2);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
+  border-color: var(--accent);
+  color: #160C04;
+  box-shadow: 0 8px 26px rgba(210,118,47,.26);
+}
+
+.btn.primary:hover {
+  box-shadow: 0 12px 32px rgba(210,118,47,.36);
+}
+
+.btn.ghost {
+  background: rgba(255,255,255,.025);
+  color: var(--ink);
+}
+
+.btn.ghost:hover {
+  border-color: var(--line-3);
+  background: rgba(255,255,255,.05);
+}
+
+.arr {
+  font-family: var(--sans);
+  font-weight: 400;
+  transition: transform .16s ease;
+}
+
+.btn:hover .arr {
+  transform: translateX(3px);
+}
+
+@media (max-width: 620px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<div class="container">
+  <div class="code">Error 404</div>
+  <h1>Page not found.</h1>
+  <p>The page you're looking for doesn't exist or has been moved. If you typed the URL manually, check for typos. Otherwise, head back to the homepage.</p>
+  <div class="actions">
+    <a class="btn primary" href="/">Return home <span class="arr">→</span></a>
+    <a class="btn ghost" href="/compare.html">Compare tools</a>
+  </div>
+</div>
+
+</body>
+</html>

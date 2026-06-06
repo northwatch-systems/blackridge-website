@@ -1,0 +1,10 @@
+# northwatch.systems robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://northwatch.systems/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
