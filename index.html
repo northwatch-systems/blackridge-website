@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-THGE3L4GDD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-THGE3L4GDD');
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Blackridge — Runtime Economics for AI Infrastructure | Northwatch Systems</title>
@@ -669,7 +678,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
           <h2 style="margin-top:18px;">Start your assessment.</h2>
           <p style="margin-top:14px; color:var(--ink-2); font-size:15px; max-width:560px;">Complete the form below and we'll review your environment before the founder conversation.</p>
         </div>
-        <form class="assessment-form">
+        <form class="assessment-form" id="assessmentForm">
           <div class="form-row">
             <label>
               <span class="form-label">Name</span>
@@ -871,6 +880,135 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
     render();
   });
   render();
+})();
+</script>
+
+<script>
+// GA4 Enhanced Event Tracking
+(function() {
+  // Track form submission
+  var form = document.getElementById('assessmentForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Get form data for better attribution
+      var formData = new FormData(form);
+      var role = formData.get('role');
+      var usage = formData.get('usage');
+      var concern = formData.get('concern');
+
+      // Fire GA4 event
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'generate_lead', {
+          'event_category': 'Form',
+          'event_label': 'Assessment Request',
+          'role': role,
+          'ai_usage': usage,
+          'primary_concern': concern
+        });
+      }
+
+      // Note: When you wire up Formspree, you'll submit the form here
+      // For now, just show a console message
+      console.log('Form submitted - GA4 event fired');
+      alert('Form tracking is working! Connect to Formspree to enable actual submission.');
+    });
+  }
+
+  // Track CTA button clicks
+  document.querySelectorAll('.btn.primary').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      var btnText = btn.textContent.trim();
+      var isExternal = btn.href && !btn.href.includes('#');
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          'event_category': 'CTA',
+          'event_label': btnText,
+          'cta_type': 'primary'
+        });
+      }
+    });
+  });
+
+  // Track secondary CTA clicks
+  document.querySelectorAll('.btn.ghost').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      var btnText = btn.textContent.trim();
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          'event_category': 'CTA',
+          'event_label': btnText,
+          'cta_type': 'secondary'
+        });
+      }
+    });
+  });
+
+  // Track diagnostic tool interactions
+  var diagAnswers = document.querySelectorAll('.dq .ans button');
+  diagAnswers.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var question = btn.closest('.dq').querySelector('.qt').textContent;
+      var answer = btn.dataset.v;
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'diagnostic_answer', {
+          'event_category': 'Diagnostic Tool',
+          'event_label': question,
+          'answer': answer
+        });
+      }
+    });
+  });
+
+  // Track diagnostic reset
+  var resetBtn = document.getElementById('diagReset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'diagnostic_reset', {
+          'event_category': 'Diagnostic Tool',
+          'event_label': 'Reset Diagnostic'
+        });
+      }
+    });
+  }
+
+  // Track section visibility (when sections come into viewport)
+  var sections = document.querySelectorAll('section[id]');
+  var sectionObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        var sectionId = entry.target.id;
+        if (sectionId && typeof gtag !== 'undefined') {
+          gtag('event', 'section_view', {
+            'event_category': 'Engagement',
+            'event_label': sectionId
+          });
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(function(section) {
+    sectionObserver.observe(section);
+  });
+
+  // Track compare page visits
+  var compareLinks = document.querySelectorAll('a[href*="compare.html"]');
+  compareLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_view', {
+          'event_category': 'Navigation',
+          'event_label': 'Compare Page'
+        });
+      }
+    });
+  });
 })();
 </script>
 
