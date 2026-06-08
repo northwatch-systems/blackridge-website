@@ -678,7 +678,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
           <h2 style="margin-top:18px;">Start your assessment.</h2>
           <p style="margin-top:14px; color:var(--ink-2); font-size:15px; max-width:560px;">Complete the form below and we'll review your environment before the founder conversation.</p>
         </div>
-        <form class="assessment-form" id="assessmentForm">
+        <form class="assessment-form" id="assessmentForm" action="https://formspree.io/f/mbdeozdy" method="POST">
           <div class="form-row">
             <label>
               <span class="form-label">Name</span>
@@ -763,6 +763,8 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
             <span class="form-label">Optional Notes</span>
             <textarea name="notes" placeholder="Tell us a little about your environment or the challenge you're trying to solve." rows="4"></textarea>
           </label>
+          <!-- Hidden field for better Formspree email subject -->
+          <input type="hidden" name="_subject" value="New Assessment Request - Blackridge" />
           <button class="btn primary" type="submit" style="width:100%; margin-top:10px;">Request Assessment <span class="arr">→</span></button>
         </form>
         <p style="margin-top:20px; font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-align:center; color:var(--ink-3);">Founder-led reviews typically receive a response within 2 business days.</p>
@@ -909,10 +911,10 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
         });
       }
 
-      // Note: When you wire up Formspree, you'll submit the form here
-      // For now, just show a console message
-      console.log('Form submitted - GA4 event fired');
-      alert('Form tracking is working! Connect to Formspree to enable actual submission.');
+      // Submit to Formspree after a brief delay to ensure GA4 event fires
+      setTimeout(function() {
+        form.submit();
+      }, 300);
     });
   }
 
