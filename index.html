@@ -911,10 +911,44 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
         });
       }
 
-      // Submit to Formspree after a brief delay to ensure GA4 event fires
-      setTimeout(function() {
-        form.submit();
-      }, 300);
+      // Disable submit button and show loading state
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending...';
+
+      // Submit to Formspree via AJAX
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(function(response) {
+        if (response.ok) {
+          // Success - replace form with thank you message
+          form.innerHTML = '<div style="text-align:center; padding:60px 20px;">' +
+            '<div style="width:64px; height:64px; margin:0 auto 24px; border-radius:50%; background:linear-gradient(180deg, var(--accent-2), var(--accent)); display:grid; place-items:center; box-shadow:0 8px 24px rgba(210,118,47,.3);">' +
+            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#160C04" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+            '</div>' +
+            '<h3 style="font-family:var(--disp); font-size:28px; font-weight:600; color:var(--ink); margin-bottom:12px;">Request Received</h3>' +
+            '<p style="color:var(--ink-2); font-size:16px; line-height:1.6; max-width:480px; margin:0 auto 28px;">We\'ll review your environment and reach out within 2 business days to schedule your founder conversation.</p>' +
+            '<a href="#top" class="btn ghost" style="display:inline-flex;">Back to top <span class="arr">→</span></a>' +
+            '</div>';
+        } else {
+          // Error - show message and re-enable form
+          response.json().then(function(data) {
+            alert('Oops! There was a problem submitting your form. Please try again or email us directly.');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          });
+        }
+      }).catch(function(error) {
+        // Network error
+        alert('Oops! There was a problem submitting your form. Please try again or email us directly.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      });
     });
   }
 
