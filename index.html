@@ -15,8 +15,8 @@
 </script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Blackridge — Runtime Economics for AI Infrastructure | Northwatch Systems</title>
-<meta name="description" content="Your AI spend is bleeding out — one inference call at a time. The Blackridge Runtime Gateway sits inline with your inference traffic to show where spend goes, who owns it, and what you can cut safely.">
+<title>Blackridge — Economic Forensics for AI Workflows | Northwatch Systems</title>
+<meta name="description" content="Blackridge reconstructs why AI workflow spend happened: expected cost vs actual cost, amplification, waste, request evidence, and attribution confidence.">
 <link rel="canonical" href="https://northwatch.systems/">
 <meta name="theme-color" content="#D2762F">
 
@@ -29,8 +29,8 @@
 <!-- Open Graph / Social Media -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/">
-<meta property="og:title" content="Blackridge — Runtime Economics for AI Infrastructure">
-<meta property="og:description" content="Your AI spend is bleeding out — one inference call at a time. The Blackridge Runtime Gateway sits inline with your inference traffic to show where spend goes, who owns it, and what you can cut safely.">
+<meta property="og:title" content="Blackridge — Economic Forensics for AI Workflows">
+<meta property="og:description" content="Blackridge reconstructs why AI workflow spend happened: expected cost vs actual cost, amplification, waste, request evidence, and attribution confidence.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,8 +39,8 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://northwatch.systems/">
-<meta name="twitter:title" content="Blackridge — Runtime Economics for AI Infrastructure">
-<meta name="twitter:description" content="Your AI spend is bleeding out — one inference call at a time. See where every dollar goes at the runtime, this week.">
+<meta name="twitter:title" content="Blackridge — Economic Forensics for AI Workflows">
+<meta name="twitter:description" content="Reconstruct expected vs actual workflow cost, amplification, waste, and request-level evidence.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -441,9 +441,9 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="label">AI Runtime Economics</div>
-        <h1 style="margin-top:24px;">Your AI spend is bleeding out — <em>one inference call at a time.</em></h1>
-        <p class="lede">Provider dashboards show what you spent, after it's gone. The <strong style="color:var(--ink);font-weight:500;">Blackridge Runtime Gateway</strong> sits inline with your inference traffic — so you can see which app, team, retry loop, and model is draining the budget, then cut it with routing, caching, and real-time budgets. No application changes.</p>
+        <div class="label">Economic forensics for AI workflows</div>
+        <h1 style="margin-top:24px;">Reconstruct why AI spend happened — <em>one workflow at a time.</em></h1>
+        <p class="lede">Provider dashboards show what you spent after it's gone. The <strong style="color:var(--ink);font-weight:500;">Blackridge Runtime Gateway</strong> reconstructs expected cost vs actual workflow cost, shows retry and fallback amplification, separates realized waste from modeled opportunity, and ties recommendations to request-level evidence.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#contact-form">Book your 7-day assessment <span class="arr">→</span></a>
           <a class="btn ghost" href="#boundary">See how it works</a>
@@ -457,7 +457,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
 
       <aside class="card" aria-label="What provider dashboards miss">
         <div class="card-head">
-          <span class="t">spend_leaks.live</span>
+          <span class="t">workflow_cost.forensics</span>
           <span class="live-badge" aria-hidden="true"></span>
         </div>
         <div class="card-body">
@@ -491,7 +491,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
     <div class="container strip-grid">
       <div class="strip-item"><strong>Inference is your next cloud bill.</strong><span>And it's growing faster than your visibility into it — across every model and provider.</span></div>
       <div class="strip-item"><strong>Billing is not observability.</strong><span>A spend total doesn't explain causality, ownership, waste, or runtime behavior.</span></div>
-      <div class="strip-item"><strong>Cost is incurred at the runtime.</strong><span>So that is where it has to be seen, attributed, and controlled.</span></div>
+      <div class="strip-item"><strong>Cost is created by workflow behavior.</strong><span>So the evidence has to reconstruct lineage, retries, fallback, and attribution confidence.</span></div>
     </div>
   </div>
 
@@ -531,8 +531,8 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
         </article>
         <article class="pcard last">
           <div class="tag">THE META-PROBLEM</div>
-          <h3>No control point</h3>
-          <p>Inference runs through application code, not infrastructure — so the people who own cost and reliability have nowhere to stand. Blackridge is that control point.</p>
+          <h3>No forensic record</h3>
+          <p>Inference runs through application code, not infrastructure — so the people who own cost and reliability cannot reconstruct why the spend happened. Blackridge is that evidence layer.</p>
         </article>
       </div>
 
@@ -551,8 +551,8 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
           <ul>
             <li>Which app, workflow, team, or tenant caused the spend</li>
             <li>Where retries, duplicates, and premium defaults amplified it</li>
-            <li>Which requests can be cached, routed, downgraded, or blocked</li>
-            <li>What can be cut safely — without slowing teams down</li>
+            <li>Which requests explain retry, fallback, duplicate, or branch waste</li>
+            <li>What engineering should fix first, with modeled opportunity separated from realized waste</li>
           </ul>
         </div>
       </div>
@@ -640,7 +640,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
       <div class="section-head">
         <div class="label">How it works</div>
         <h2>Logging who spent what is the easy part.</h2>
-        <p>Parsing attribution headers is fifty lines of Envoy Lua — anyone can do it. The Blackridge Runtime Gateway sits inline with your traffic and does the part a logging stack can't: it <strong style="color:var(--ink);font-weight:500;">acts</strong> on attribution in real time, routing, cache-scoping, and enforcing budgets across every provider. Attribution is the input. The optimization is the output.</p>
+        <p>Parsing attribution headers is fifty lines of Envoy Lua — anyone can do it. The Blackridge Runtime Gateway does the part a logging stack can't: it <strong style="color:var(--ink);font-weight:500;">reconstructs economic causality</strong> across requests, retries, fallbacks, branches, and confidence gaps. Attribution is the input. Forensic evidence is the output.</p>
       </div>
       <div class="boundary">
         <div class="b-top">
@@ -657,15 +657,15 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
           </div>
         </div>
         <div class="b-bottom">
-          <div class="cap"><div class="cn">01</div><strong>Route</strong><span>Send each team to the right model tier — research to premium, a support bot to economy — by cost, latency, and live budget.</span></div>
-          <div class="cap"><div class="cn">02</div><strong>Cache</strong><span>Scope cache by tenant: teams share safely and never pay for the same answer twice. Isolation a generic proxy can't do.</span></div>
-          <div class="cap"><div class="cn">03</div><strong>Enforce</strong><span>Deny or downshift requests in real time before they breach a budget — prevention, not a next-day alert.</span></div>
-          <div class="cap"><div class="cn">04</div><strong>Detect</strong><span>Find duplicate traffic, retry amplification, and premium overuse per team — normalized across providers.</span></div>
-          <div class="cap"><div class="cn">05</div><strong>Prove</strong><span>Emit an append-only economics ledger: the savings and the exact causes behind them.</span></div>
+          <div class="cap"><div class="cn">01</div><strong>Baseline</strong><span>Compare expected workflow cost against actual cost, with baseline/source provenance.</span></div>
+          <div class="cap"><div class="cn">02</div><strong>Attribute</strong><span>Trace spend through root requests, parent requests, branches, workflow metadata, and confidence gaps.</span></div>
+          <div class="cap"><div class="cn">03</div><strong>Explain</strong><span>Show retry amplification, fallback tax, abandoned branch waste, and semantic duplicate economics when cluster metadata is present.</span></div>
+          <div class="cap"><div class="cn">04</div><strong>Recommend</strong><span>Separate realized waste from modeled opportunity and rank fixes with request-level evidence.</span></div>
+          <div class="cap"><div class="cn">05</div><strong>Control later</strong><span>Budget verdicts and explicit deny scopes are used only where configured; broader enforcement is a future control-plane layer.</span></div>
         </div>
       </div>
       <div class="wedge">
-        <p>Everyone else watches the bill or moves the bytes. <strong>Blackridge is the only layer that understands inference as economics and sits where it can act.</strong></p>
+        <p>Everyone else watches the bill or moves the bytes. <strong>Blackridge reconstructs why AI workflow spend happened, with evidence engineering can act on.</strong></p>
         <a href="compare.html" class="wedge-link">See how we compare to existing tools <span class="arr">→</span></a>
       </div>
     </div>
@@ -675,13 +675,13 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
   <section id="assessment" class="assessment">
     <div class="container assess-grid">
       <div>
-        <div class="label">The 7-Day Runtime Assessment</div>
-        <h2 style="margin-top:18px;">See exactly where your AI spend is going — in a week.</h2>
-        <p class="lede" style="margin-top:18px;">Low commitment, high signal. We deploy inline, watch your real inference traffic, and hand back a runtime economics report: where the spend goes, who owns it, and what you can cut safely. No rewrite. No long pilot.</p>
+        <div class="label">Design-partner assessment</div>
+        <h2 style="margin-top:18px;">Give BRG one expensive AI workflow.</h2>
+        <p class="lede" style="margin-top:18px;">Low commitment, high signal. In import mode, we analyze existing events or logs for a fast forensic report. In runtime mode, you route that workflow through BRG so it can emit canonical economic evidence. The output shows expected vs actual cost, amplification, retry/fallback/branch waste, confidence gaps, and what engineering should fix first.</p>
         <div class="timeline">
-          <div class="tl"><div class="day">DAYS 1–2</div><div class="body"><h4>Deploy inline</h4><p>Point your OpenAI-compatible clients at the gateway — a base-URL change. Traffic starts flowing through Blackridge across every provider.</p></div></div>
-          <div class="tl"><div class="day">DAYS 3–5</div><div class="body"><h4>Attribute &amp; analyze</h4><p>Trace spend to apps, teams, and workflows. Surface retries, duplicates, premium defaults, and routing waste.</p></div></div>
-          <div class="tl"><div class="day">DAYS 6–7</div><div class="body"><h4>Report &amp; recommend</h4><p>Deliver a runtime economics report and a ranked set of controls — by expected savings, risk, and operational impact.</p></div></div>
+          <div class="tl"><div class="day">DAYS 1–2</div><div class="body"><h4>Choose import or runtime</h4><p>Start with existing logs/events for a low-friction assessment, or point one workflow at BRG for higher-fidelity runtime evidence.</p></div></div>
+          <div class="tl"><div class="day">DAYS 3–5</div><div class="body"><h4>Reconstruct &amp; analyze</h4><p>Trace spend to apps, teams, and workflows. Surface retry amplification, fallback tax, duplicate candidates, abandoned branches, and unknown/unattributed cost.</p></div></div>
+          <div class="tl"><div class="day">DAYS 6–7</div><div class="body"><h4>Report &amp; recommend</h4><p>Deliver an economic forensics report and a ranked set of recommended fixes, with modeled opportunity clearly separated from realized waste.</p></div></div>
         </div>
         <div class="hero-actions">
           <a class="btn primary" href="#contact-form">Book your assessment <span class="arr">→</span></a>
@@ -693,7 +693,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
         <div class="deliv"><div class="dn">01</div><div><strong>Runtime spend map</strong><span>Where inference traffic originates, which teams and workflows own it, and which paths drive cost.</span></div></div>
         <div class="deliv"><div class="dn">02</div><div><strong>Attribution, your way</strong><span>We plug into the identity infra you already run — Kubernetes labels, gateway headers, client SDKs. That's the input for every finding below; you don't rebuild a thing.</span></div></div>
         <div class="deliv"><div class="dn">03</div><div><strong>Waste, attributed</strong><span>Duplicate traffic, retry amplification, and premium-model overuse — traced to the team and workflow generating it, normalized across providers.</span></div></div>
-        <div class="deliv"><div class="dn">04</div><div><strong>Optimization plan</strong><span>Which teams to route where, what to cache-scope, and which budgets to enforce — ranked by expected savings, risk, and operational impact.</span></div></div>
+        <div class="deliv"><div class="dn">04</div><div><strong>Evidence-backed recommendations</strong><span>What engineering should fix first, which costs are realized waste, which opportunities are modeled, and where confidence gaps remain.</span></div></div>
         <div class="deliv"><div class="dn">05</div><div><strong>Executive summary</strong><span>A clear, business-facing explanation of what's happening, why it matters, and what to do next.</span></div></div>
       </div>
     </div>

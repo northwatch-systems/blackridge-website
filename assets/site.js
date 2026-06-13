@@ -1,11 +1,11 @@
 const defaultGraphNodes = [
   { id: "agent", name: "Agent Runtime", tag: "customer", x: 70, y: 92, desc: "Customer-owned agents generate model calls and tool intent." },
-  { id: "gateway", name: "Blackridge Gateway", tag: "runtime", x: 268, y: 92, desc: "Runtime boundary for observing, caching, attributing, and governing agent activity." },
-  { id: "econ", name: "Token Economics", tag: "cost", x: 268, y: 228, desc: "Attributes spend, detects waste, and reports avoided cost across teams and workflows." },
-  { id: "cache", name: "Intelligent Cache", tag: "savings", x: 468, y: 92, desc: "Reduces duplicated model calls and repeated context work without hiding provenance." },
-  { id: "policy", name: "Policy Engine", tag: "control", x: 468, y: 228, desc: "Applies budget, authority, and governance controls as the platform expands." },
+  { id: "gateway", name: "Blackridge Gateway", tag: "runtime", x: 268, y: 92, desc: "Runtime boundary for observing AI traffic and emitting canonical economic evidence." },
+  { id: "econ", name: "Token Economics", tag: "forensics", x: 268, y: 228, desc: "Reconstructs expected vs actual workflow cost, waste, confidence, and request evidence." },
+  { id: "cache", name: "Exact Cache Evidence", tag: "signals", x: 468, y: 92, desc: "Records cache verdicts and modeled cache opportunity without hiding provenance." },
+  { id: "policy", name: "Control Roadmap", tag: "roadmap", x: 468, y: 228, desc: "Budget verdicts and explicit deny scopes exist where configured; broader enforcement follows forensic trust." },
   { id: "tools", name: "Tools & Systems", tag: "enterprise", x: 668, y: 92, desc: "Jira, GitHub, Slack, Kubernetes, CI/CD, cloud APIs, and internal systems." },
-  { id: "audit", name: "Audit & Provenance", tag: "trust", x: 668, y: 228, desc: "Preserves the causal chain behind spend, decisions, tool calls, and outcomes." },
+  { id: "audit", name: "Evidence & Provenance", tag: "trust", x: 668, y: 228, desc: "Preserves the causal chain behind spend, route decisions, lineage, and recommendations." },
 ];
 
 const defaultGraphEdges = [
@@ -28,8 +28,8 @@ const brgGraphNodes = [
   { id: "adapter", name: "Provider Adapter", tag: "provider", x: 550, y: 210, desc: "Normalizes calls across OpenAI, Anthropic, Gemini, Azure, Bedrock, and private model runtimes." },
   { id: "llm", name: "LLM Provider", tag: "external", x: 710, y: 210, desc: "The selected model runtime. BRG abstracts and accounts for which provider is actually hit." },
   { id: "telemetry", name: "Telemetry", tag: "off path", x: 230, y: 300, desc: "Fire-and-forget events emitted from the hot path without blocking user-facing latency." },
-  { id: "cost", name: "Cost Engine", tag: "accounting", x: 390, y: 300, desc: "Calculates token spend, cost attribution, route cost, provider cost, and avoided spend." },
-  { id: "dash", name: "Savings Dashboard", tag: "proof", x: 550, y: 300, desc: "Shows spend by tenant, app, user, team, route, model, provider, cache verdict, and savings estimate." },
+  { id: "cost", name: "Forensics Engine", tag: "accounting", x: 390, y: 300, desc: "Calculates token spend, expected vs actual workflow cost, attribution, waste, and modeled opportunity." },
+  { id: "dash", name: "Forensic Report", tag: "proof", x: 550, y: 300, desc: "Shows spend by tenant, app, user, team, workflow, route, model, provider, cache verdict, confidence, and request evidence." },
 ];
 
 const brgGraphEdges = [

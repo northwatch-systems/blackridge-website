@@ -1,6 +1,6 @@
 # Blackridge Website
 
-Production-ready website for Blackridge Runtime Gateway, deployed on GitHub Pages.
+Production-ready website for Blackridge Runtime Gateway, deployed on GitHub Pages. Public positioning: BRG is economic forensics for AI workflows.
 
 **Recent Update**: Site consolidated from 3 pages to 2 streamlined pages:
 - **index.html** - Complete landing page with problem, solution, diagnostic, and integrated contact form
@@ -35,8 +35,8 @@ blackridge-website/
 ├── index.html              # Main landing page
 │                          # - Problem statement & value prop
 │                          # - Interactive diagnostic tool
-│                          # - How it works (runtime boundary)
-│                          # - 7-day assessment details
+│                          # - How it works (forensic evidence path)
+│                          # - design-partner assessment details
 │                          # - Contact form
 │                          # - Deployment & trust section
 │
@@ -123,7 +123,7 @@ Start here based on your needs:
 
 ## 🎯 Key Features
 
-- ✨ Interactive runtime economics diagnostic tool (6-question self-assessment)
+- ✨ Interactive economic forensics diagnostic tool (6-question self-assessment)
 - 🎯 Clear problem/solution narrative with competitive positioning
 - 📝 Integrated contact form for 7-day assessment requests
 - 🔄 Competitive comparison page (vs 5 adjacent tool categories)
@@ -192,4 +192,3 @@ Start here based on your needs:
 ---
 
 **Built by platform engineers who operated distributed systems at scale.**
-
