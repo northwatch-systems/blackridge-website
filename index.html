@@ -155,6 +155,17 @@ a { color: inherit; text-decoration: none; }
 .btn.primary:hover { box-shadow: 0 12px 32px rgba(210,118,47,.36); }
 .btn.ghost { background: rgba(255,255,255,.025); color: var(--ink); }
 .btn.ghost:hover { border-color: var(--line-3); background: rgba(255,255,255,.05); }
+.btn.ghost.demo {
+  min-height: 38px; padding: 0 16px; font-size: 11.5px;
+  background: rgba(45,212,191,.04);
+  border-color: rgba(45,212,191,.18);
+  color: var(--ink-2);
+}
+.btn.ghost.demo:hover {
+  border-color: rgba(45,212,191,.35);
+  background: rgba(45,212,191,.08);
+  color: #2dd4bf;
+}
 .btn .arr { font-family: var(--sans); font-weight: 400; transition: transform .16s ease; }
 .btn:hover .arr { transform: translateX(3px); }
 
@@ -450,6 +461,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
       <a href="#boundary">How It Works</a>
       <a href="#assessment">Assessment</a>
       <a href="compare.html">Compare</a>
+      <a class="btn ghost demo" href="https://demo.northwatch.systems/">Try Demo <span class="arr">&rarr;</span></a>
       <a class="btn ghost" href="#contact-form">Book Assessment</a>
     </nav>
   </div>
