@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-THGE3L4GDD"></script>
 <script>
@@ -32,7 +33,6 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <noscript>
 <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9262050&fmt=gif" />
 </noscript>
-<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Blackridge vs. Existing Tools — Economic Forensics for AI Workflows</title>
 <meta name="description" content="How Blackridge compares to observability tools, API gateways, and FinOps platforms. AI spend forensics with evidence from your own traffic.">
@@ -154,6 +154,9 @@ a { color: inherit; text-decoration: none; }
 .nav-links { display: flex; align-items: center; gap: 26px; }
 .nav-links a { color: var(--ink-2); font-size: 14px; transition: color .14s ease; }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.hamburger { display: none; background: none; border: 1px solid var(--line-2); border-radius: 8px; padding: 8px 10px; cursor: pointer; flex: none; }
+.hamburger span { display: block; width: 20px; height: 2px; background: var(--ink-2); margin: 4px 0; transition: transform .2s ease, opacity .2s ease; }
+.hamburger:hover span { background: var(--ink); }
 
 /* Hero */
 .hero { padding: 88px 0 64px; }
@@ -255,7 +258,21 @@ h1 em { font-style: normal; color: var(--accent-2); }
   .layer-label { width: 150px; }
 }
 @media (max-width: 600px) {
-  .nav-links a:not(.btn) { display: none; }
+  .hamburger { display: flex; flex-direction: column; justify-content: center; }
+  .nav-links {
+    display: none; flex-direction: column; align-items: stretch; gap: 0;
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 50;
+    background: color-mix(in oklab, var(--bg) 96%, transparent);
+    backdrop-filter: blur(16px); border-bottom: 1px solid var(--line);
+    padding: 8px 24px 16px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a:not(.btn) { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); font-size: 15px; }
+  .nav-links a:not(.btn):last-of-type { border-bottom: none; }
+  .nav-links .btn { margin-top: 12px; width: 100%; text-align: center; }
+  .hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   .hero { padding-top: 56px; }
   .layer-label { width: 110px; }
   .layer-label strong { font-size: 13px; }
@@ -283,7 +300,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
       </svg>
       <span class="brand-name">Northwatch <span>Systems</span></span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="index.html#problem">The Problem</a>
       <a href="compare.html" class="active">Compare</a>
@@ -459,5 +477,23 @@ h1 em { font-style: normal; color: var(--accent-2); }
     <span class="meta">northwatch.systems</span>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<script>
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('navLinks');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      toggle.classList.toggle('active');
+      nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        toggle.classList.remove('active');
+        nav.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
+</body>
 </html>
