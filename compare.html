@@ -296,11 +296,11 @@ h1 em { font-style: normal; color: var(--accent-2); }
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
-      <div class="label">Competitive positioning</div>
-      <h1>We don't replace your stack.<br>We <em>sit between</em> it and your bill.</h1>
-      <p class="lede">Most tools adjacent to Blackridge solve a real but different problem. The honest move isn't a comparison table — it's drawing the layer. Here's where everything fits.</p>
+      <div class="label">Different job, different layer</div>
+      <h1>LLM proxies route requests.<br>Blackridge <em>explains money.</em></h1>
+      <p class="lede">If you're evaluating LiteLLM, Portkey, or Bifrost, you're shopping for a routing layer — and you should probably have one. Blackridge is not that. It doesn't compete with your proxy; it answers the questions your proxy can't: why did the bill grow, who caused it, what's wasted, and what should engineering fix first.</p>
       <div class="wedge-hero">
-        <p>Everyone else watches the bill or moves the bytes. <strong>Blackridge is the only layer that understands inference as economics and sits where it can act.</strong></p>
+        <p>Proxies move bytes between your code and model providers. <strong>Blackridge reconstructs the economics of every workflow and tells you where the money went.</strong></p>
       </div>
     </div>
   </section>
@@ -310,8 +310,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
     <div class="container">
       <div class="section-head" style="max-width:780px; margin-bottom:0;">
         <div class="label">Tool by tool</div>
-        <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.06;letter-spacing:-.024em;margin-top:16px;margin-bottom:12px;">Five adjacent tools. One gap they all share.</h2>
-        <p style="color:var(--ink-2);font-size:17px;max-width:700px;">None of them are wrong for what they do. The gap is that none of them reconstruct expected vs actual workflow cost and explain where every dollar went, with supporting evidence.</p>
+        <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.06;letter-spacing:-.024em;margin-top:16px;margin-bottom:12px;">Five categories. None of them do what Blackridge does.</h2>
+        <p style="color:var(--ink-2);font-size:17px;max-width:700px;">Each solves a real problem. None of them reconstruct expected vs actual workflow cost or explain where every dollar went with supporting evidence. That's the job Blackridge was built for.</p>
       </div>
 
       <div class="comp-grid">
@@ -330,12 +330,12 @@ h1 em { font-style: normal; color: var(--accent-2); }
 
         <div class="comp-card">
           <div class="comp-cat">
-            <div class="tool">Generic API gateways</div>
-            <div class="examples">Kong · Apigee · Envoy</div>
+            <div class="tool">API gateways</div>
+            <div class="examples">Kong · Apigee · Envoy · nginx</div>
           </div>
           <div class="comp-body">
-            <p class="what">Route bytes and enforce HTTP policies. They have no concept of model pricing, workflow-level cost, or which requests relate to each other — a request is a request, not an inference call with a cost per token.</p>
-            <p class="win">Blackridge reasons in workflow economics, not just HTTP. Cost reconstruction, pattern detection, and configurable spend controls are model- and token-aware.</p>
+            <p class="what">Route bytes and enforce HTTP policies. They see every request as a generic HTTP call — no concept of model pricing, workflow-level cost, or which requests relate to each other.</p>
+            <p class="win">Blackridge reasons in workflow economics, not HTTP status codes. It knows what a token costs and which workflow generated it.</p>
           </div>
           <div class="comp-tag"><span>Routes bytes, not economics</span></div>
         </div>
@@ -354,14 +354,14 @@ h1 em { font-style: normal; color: var(--accent-2); }
 
         <div class="comp-card">
           <div class="comp-cat">
-            <div class="tool">LLM routers &amp; OSS proxies</div>
-            <div class="examples">Open-source gateways</div>
+            <div class="tool">LLM proxies &amp; routers</div>
+            <div class="examples">LiteLLM · Portkey · Bifrost · etc.</div>
           </div>
           <div class="comp-body">
-            <p class="what">Often built as developer-convenience proxies — useful for switching providers during experimentation, but not built for enterprise-grade spend forensics: limited workflow attribution, coverage reporting, or supporting evidence.</p>
-            <p class="win">Blackridge is Kubernetes-native, observable, air-gap capable, and built to be owned by platform teams — not just used by individual developers.</p>
+            <p class="what">These are routing and abstraction layers — they normalize provider APIs, manage keys, switch models, and handle failover. Good tools for a real job. But routing traffic is not the same as understanding cost. They can tell you a request went to GPT-4; they can't tell you why that workflow cost 3× what it should have, which team is responsible, or what to fix.</p>
+            <p class="win">Blackridge is not a proxy. It doesn't replace your router — it answers the economic questions your router was never designed to ask: where the spend goes, what's wasted, and what engineering should fix first.</p>
           </div>
-          <div class="comp-tag"><span>Dev convenience, not platform infra</span></div>
+          <div class="comp-tag"><span>Routes traffic, doesn't explain cost</span></div>
         </div>
 
         <div class="comp-card">
@@ -385,7 +385,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
     <div class="container">
       <div class="label">Where the layers sit</div>
       <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.022em;line-height:1.06;margin-top:16px;margin-bottom:12px;">The stack, drawn honestly.</h2>
-      <p style="color:var(--ink-2);font-size:17px;max-width:680px;">Each of these tools belongs in its layer. Blackridge fills the gap none of them cover: the forensic boundary where AI workflow spend can be reconstructed and explained.</p>
+      <p style="color:var(--ink-2);font-size:17px;max-width:680px;">LLM proxies live in the routing layer — they move traffic. Blackridge lives above them at the forensic boundary — it explains cost. These are different layers solving different problems. You'll probably want both.</p>
       <div class="layer-diagram">
         <div class="layer-row">
           <div class="ln"></div>
@@ -406,12 +406,13 @@ h1 em { font-style: normal; color: var(--accent-2); }
         </div>
         <div class="layer-row">
           <div class="ln"></div>
-          <div class="layer-label"><strong>HTTP routing</strong><span>gateway layer</span></div>
+          <div class="layer-label"><strong>Routing &amp; proxying</strong><span>traffic layer</span></div>
           <div class="layer-tools">
+            <span class="tool-chip">LiteLLM</span>
+            <span class="tool-chip">Portkey</span>
+            <span class="tool-chip">Bifrost</span>
             <span class="tool-chip">Kong</span>
-            <span class="tool-chip">Apigee</span>
             <span class="tool-chip">Envoy</span>
-            <span class="tool-chip">nginx</span>
           </div>
         </div>
         <div class="layer-row">
