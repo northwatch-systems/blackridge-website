@@ -35,7 +35,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Blackridge vs. Existing Tools — Economic Forensics for AI Workflows</title>
-<meta name="description" content="How Blackridge compares to observability tools, API gateways, and FinOps platforms. Economic forensics for AI workflows with request-level evidence.">
+<meta name="description" content="How Blackridge compares to observability tools, API gateways, and FinOps platforms. AI spend forensics with evidence from your own traffic.">
 <link rel="canonical" href="https://northwatch.systems/compare.html">
 <meta name="theme-color" content="#D2762F">
 
@@ -49,7 +49,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/compare.html">
 <meta property="og:title" content="Blackridge vs. Existing Tools — Economic Forensics for AI Workflows">
-<meta property="og:description" content="How Blackridge compares to observability tools, API gateways, and FinOps platforms. Economic forensics for AI workflows with request-level evidence.">
+<meta property="og:description" content="How Blackridge compares to observability tools, API gateways, and FinOps platforms. AI spend forensics with evidence from your own traffic.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -311,7 +311,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
       <div class="section-head" style="max-width:780px; margin-bottom:0;">
         <div class="label">Tool by tool</div>
         <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.06;letter-spacing:-.024em;margin-top:16px;margin-bottom:12px;">Five adjacent tools. One gap they all share.</h2>
-        <p style="color:var(--ink-2);font-size:17px;max-width:700px;">None of them are wrong for what they do. The gap is that none of them reconstruct expected vs actual workflow cost, attribution confidence, and request-level evidence across the AI runtime path.</p>
+        <p style="color:var(--ink-2);font-size:17px;max-width:700px;">None of them are wrong for what they do. The gap is that none of them reconstruct expected vs actual workflow cost and explain where every dollar went, with supporting evidence.</p>
       </div>
 
       <div class="comp-grid">
@@ -323,7 +323,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
           </div>
           <div class="comp-body">
             <p class="what">Per-provider, after-the-fact reporting. No cross-provider view, no internal attribution — you see what you spent with that provider, not which application, team, or workflow caused it.</p>
-            <p class="win">Blackridge reconstructs spend across providers and attributes it to teams and workflows with request-level evidence.</p>
+            <p class="win">Blackridge reconstructs spend across providers and attributes it to teams and workflows with supporting evidence.</p>
           </div>
           <div class="comp-tag"><span>Observes one provider, after the fact</span></div>
         </div>
@@ -334,8 +334,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <div class="examples">Kong · Apigee · Envoy</div>
           </div>
           <div class="comp-body">
-            <p class="what">Route bytes and enforce HTTP policies. They have no concept of model pricing, token economics, workflow lineage, or event-provided semantic cluster metadata — a request is a request, not an inference call with a cost per token.</p>
-            <p class="win">Blackridge reasons in workflow economics, not just HTTP. Cost reconstruction, retry/fallback provenance, confidence reporting, and configured budget verdicts are model- and token-aware.</p>
+            <p class="what">Route bytes and enforce HTTP policies. They have no concept of model pricing, workflow-level cost, or which requests relate to each other — a request is a request, not an inference call with a cost per token.</p>
+            <p class="win">Blackridge reasons in workflow economics, not just HTTP. Cost reconstruction, pattern detection, and configurable spend controls are model- and token-aware.</p>
           </div>
           <div class="comp-tag"><span>Routes bytes, not economics</span></div>
         </div>
@@ -358,7 +358,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <div class="examples">Open-source gateways</div>
           </div>
           <div class="comp-body">
-            <p class="what">Often built as developer-convenience proxies — useful for switching providers during experimentation, but not built for enterprise runtime forensics: limited workflow attribution, confidence reporting, or request-level economic evidence.</p>
+            <p class="what">Often built as developer-convenience proxies — useful for switching providers during experimentation, but not built for enterprise-grade spend forensics: limited workflow attribution, coverage reporting, or supporting evidence.</p>
             <p class="win">Blackridge is Kubernetes-native, observable, air-gap capable, and built to be owned by platform teams — not just used by individual developers.</p>
           </div>
           <div class="comp-tag"><span>Dev convenience, not platform infra</span></div>
@@ -371,7 +371,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
           </div>
           <div class="comp-body">
             <p class="what">Solve a different problem at a different layer — how to orchestrate multi-step AI workflows. They generate inference traffic; they don't govern it.</p>
-            <p class="win">Blackridge is infrastructure beneath them. Every inference call an orchestration layer makes can become canonical economic evidence.</p>
+            <p class="win">Blackridge is infrastructure beneath them. Every inference call an orchestration layer makes becomes auditable spend evidence.</p>
           </div>
           <div class="comp-tag"><span>Generates traffic, doesn't govern it</span></div>
         </div>
@@ -442,7 +442,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
     <div class="container">
       <div class="label center" style="margin-bottom:20px;">Next step</div>
       <h2>See what's actually happening in your runtime.</h2>
-      <p>The design-partner assessment starts with import mode for existing events/logs or runtime interception for higher-fidelity production evidence, then delivers a report that answers questions no other tool in your stack currently can.</p>
+      <p>The design-partner assessment starts with your existing logs or a live workflow connection for higher-fidelity results, then delivers a report that answers questions no other tool in your stack currently can.</p>
       <div class="cta-actions">
         <a class="btn primary" href="index.html#contact-form">Book your 7-day assessment <span class="arr">→</span></a>
         <a class="btn ghost" href="index.html">Back to overview</a>
@@ -454,7 +454,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
 <footer class="footer">
   <div class="container footer-inner">
     <span class="brand-name" style="font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.26em;text-transform:uppercase;">Northwatch <span style="color:var(--ink-3);font-weight:500;">Systems</span></span>
-    <span class="meta">Runtime Economics for AI Infrastructure</span>
+    <span class="meta">AI Spend Review for Infrastructure Teams</span>
     <span class="meta">northwatch.systems</span>
   </div>
 </footer>

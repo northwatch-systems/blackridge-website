@@ -1,11 +1,11 @@
 const defaultGraphNodes = [
-  { id: "agent", name: "Agent Runtime", tag: "customer", x: 70, y: 92, desc: "Customer-owned agents generate model calls and tool intent." },
-  { id: "gateway", name: "Blackridge Gateway", tag: "runtime", x: 268, y: 92, desc: "Runtime boundary for observing AI traffic and emitting canonical economic evidence." },
-  { id: "econ", name: "Token Economics", tag: "forensics", x: 268, y: 228, desc: "Reconstructs expected vs actual workflow cost, waste, confidence, and request evidence." },
-  { id: "cache", name: "Exact Cache Evidence", tag: "signals", x: 468, y: 92, desc: "Records cache verdicts and modeled cache opportunity without hiding provenance." },
-  { id: "policy", name: "Control Roadmap", tag: "roadmap", x: 468, y: 228, desc: "Budget verdicts and explicit deny scopes exist where configured; broader enforcement follows forensic trust." },
-  { id: "tools", name: "Tools & Systems", tag: "enterprise", x: 668, y: 92, desc: "Jira, GitHub, Slack, Kubernetes, CI/CD, cloud APIs, and internal systems." },
-  { id: "audit", name: "Evidence & Provenance", tag: "trust", x: 668, y: 228, desc: "Preserves the causal chain behind spend, route decisions, lineage, and recommendations." },
+  { id: "agent", name: "Your Applications", tag: "customer", x: 70, y: 92, desc: "Your applications and agent workloads generate inference requests to model providers." },
+  { id: "gateway", name: "Blackridge Gateway", tag: "gateway", x: 268, y: 92, desc: "Sits between your applications and model providers to observe, attribute, and analyze AI spend." },
+  { id: "econ", name: "Spend Analysis", tag: "analysis", x: 268, y: 228, desc: "Reconstructs expected vs actual workflow cost, surfaces waste patterns, and identifies savings." },
+  { id: "cache", name: "Reuse Detection", tag: "savings", x: 468, y: 92, desc: "Identifies duplicate and reusable requests to reduce unnecessary provider calls." },
+  { id: "policy", name: "Spend Controls", tag: "controls", x: 468, y: 228, desc: "Spending limits and access controls applied where you configure them." },
+  { id: "tools", name: "Your Infrastructure", tag: "enterprise", x: 668, y: 92, desc: "Integrates with your existing infrastructure, CI/CD, and operational tools." },
+  { id: "audit", name: "Evidence & Reports", tag: "trust", x: 668, y: 228, desc: "Preserves the full story behind spend decisions and recommendations." },
 ];
 
 const defaultGraphEdges = [
@@ -20,16 +20,16 @@ const defaultGraphEdges = [
 ];
 
 const brgGraphNodes = [
-  { id: "app", name: "App / Agent", tag: "customer", x: 70, y: 90, desc: "Customer application or agent workload that issues OpenAI-compatible inference requests." },
-  { id: "sdk", name: "OpenAI SDK", tag: "drop-in", x: 230, y: 90, desc: "Existing OpenAI-compatible client pointed at BRG's base URL. Fast adoption with minimal rewrite." },
-  { id: "gw", name: "BRG Gateway", tag: "hot path", x: 390, y: 90, desc: "The single ingress for inference requests. It stamps context, normalizes requests, and orchestrates cache, route, provider, response, and telemetry stages." },
-  { id: "cache", name: "Cache Lookup", tag: "savings", x: 550, y: 90, desc: "Checks L0/L1 caches before a provider call. A hit short-circuits directly to response normalization and records avoided spend." },
-  { id: "router", name: "Model Router", tag: "route", x: 390, y: 210, desc: "Selects provider and model by route policy, cost, latency, task class, budget state, and provider health." },
-  { id: "adapter", name: "Provider Adapter", tag: "provider", x: 550, y: 210, desc: "Normalizes calls across OpenAI, Anthropic, Gemini, Azure, Bedrock, and private model runtimes." },
-  { id: "llm", name: "LLM Provider", tag: "external", x: 710, y: 210, desc: "The selected model runtime. BRG abstracts and accounts for which provider is actually hit." },
-  { id: "telemetry", name: "Telemetry", tag: "off path", x: 230, y: 300, desc: "Fire-and-forget events emitted from the hot path without blocking user-facing latency." },
-  { id: "cost", name: "Forensics Engine", tag: "accounting", x: 390, y: 300, desc: "Calculates token spend, expected vs actual workflow cost, attribution, waste, and modeled opportunity." },
-  { id: "dash", name: "Forensic Report", tag: "proof", x: 550, y: 300, desc: "Shows spend by tenant, app, user, team, workflow, route, model, provider, cache verdict, confidence, and request evidence." },
+  { id: "app", name: "App / Agent", tag: "customer", x: 70, y: 90, desc: "Your application or agent workload that issues OpenAI-compatible inference requests." },
+  { id: "sdk", name: "OpenAI SDK", tag: "compatible", x: 230, y: 90, desc: "Existing OpenAI-compatible client pointed at the gateway. Fast adoption with a base-URL change." },
+  { id: "gw", name: "Blackridge Gateway", tag: "gateway", x: 390, y: 90, desc: "The single entry point for inference requests. Observes traffic, attributes spend, and routes to providers." },
+  { id: "cache", name: "Reuse Check", tag: "savings", x: 550, y: 90, desc: "Identifies duplicate requests before they reach a provider. Hits return instantly and record avoided spend." },
+  { id: "router", name: "Smart Routing", tag: "route", x: 390, y: 210, desc: "Selects provider and model based on your configured policies for cost, latency, and availability." },
+  { id: "adapter", name: "Provider Connection", tag: "provider", x: 550, y: 210, desc: "Connects to OpenAI, Anthropic, Gemini, and self-hosted models behind a single interface." },
+  { id: "llm", name: "Model Provider", tag: "external", x: 710, y: 210, desc: "The selected model provider. Blackridge tracks which provider is hit and what it costs." },
+  { id: "telemetry", name: "Telemetry", tag: "async", x: 230, y: 300, desc: "Lightweight events captured without adding latency to user-facing requests." },
+  { id: "cost", name: "Spend Analysis", tag: "analysis", x: 390, y: 300, desc: "Analyzes AI spend, surfaces waste patterns, and identifies savings opportunities." },
+  { id: "dash", name: "Spend Report", tag: "output", x: 550, y: 300, desc: "Shows spend by team, application, workflow, model, and provider — with supporting evidence." },
 ];
 
 const brgGraphEdges = [

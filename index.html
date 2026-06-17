@@ -35,7 +35,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Blackridge — Economic Forensics for AI Workflows | Northwatch Systems</title>
-<meta name="description" content="Blackridge reconstructs why AI workflow spend happened: expected cost vs actual cost, amplification, waste, request evidence, and attribution confidence.">
+<meta name="description" content="Blackridge shows where AI workflow spend goes, why it grew, and what to fix first — with evidence from your own traffic, not estimates.">
 <link rel="canonical" href="https://northwatch.systems/">
 <meta name="theme-color" content="#D2762F">
 
@@ -49,7 +49,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/">
 <meta property="og:title" content="Blackridge — Economic Forensics for AI Workflows">
-<meta property="og:description" content="Blackridge reconstructs why AI workflow spend happened: expected cost vs actual cost, amplification, waste, request evidence, and attribution confidence.">
+<meta property="og:description" content="Blackridge shows where AI workflow spend goes, why it grew, and what to fix first — with evidence from your own traffic, not estimates.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -59,7 +59,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://northwatch.systems/">
 <meta name="twitter:title" content="Blackridge — Economic Forensics for AI Workflows">
-<meta name="twitter:description" content="Reconstruct expected vs actual workflow cost, amplification, waste, and request-level evidence.">
+<meta name="twitter:description" content="See where AI workflow spend goes, why it grew, and what to fix first — with evidence from your own traffic.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -155,17 +155,6 @@ a { color: inherit; text-decoration: none; }
 .btn.primary:hover { box-shadow: 0 12px 32px rgba(210,118,47,.36); }
 .btn.ghost { background: rgba(255,255,255,.025); color: var(--ink); }
 .btn.ghost:hover { border-color: var(--line-3); background: rgba(255,255,255,.05); }
-.btn.ghost.demo {
-  min-height: 38px; padding: 0 16px; font-size: 11.5px;
-  background: rgba(45,212,191,.04);
-  border-color: rgba(45,212,191,.18);
-  color: var(--ink-2);
-}
-.btn.ghost.demo:hover {
-  border-color: rgba(45,212,191,.35);
-  background: rgba(45,212,191,.08);
-  color: #2dd4bf;
-}
 .btn .arr { font-family: var(--sans); font-weight: 400; transition: transform .16s ease; }
 .btn:hover .arr { transform: translateX(3px); }
 
@@ -461,7 +450,6 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
       <a href="#boundary">How It Works</a>
       <a href="#assessment">Assessment</a>
       <a href="compare.html">Compare</a>
-      <a class="btn ghost demo" href="https://demo.northwatch.systems/">Try Demo <span class="arr">&rarr;</span></a>
       <a class="btn ghost" href="#contact-form">Book Assessment</a>
     </nav>
   </div>
@@ -474,21 +462,21 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
       <div>
         <div class="label">Economic forensics for AI workflows</div>
         <h1 style="margin-top:24px;">Reconstruct why AI spend happened — <em>one workflow at a time.</em></h1>
-        <p class="lede">Provider dashboards show what you spent after it's gone. The <strong style="color:var(--ink);font-weight:500;">Blackridge Runtime Gateway</strong> reconstructs expected cost vs actual workflow cost, shows retry and fallback amplification, separates realized waste from modeled opportunity, and ties recommendations to request-level evidence.</p>
+        <p class="lede">Provider dashboards show what you spent after it's gone. The <strong style="color:var(--ink);font-weight:500;">Blackridge Runtime Gateway</strong> shows you where AI spend goes, why it grew, what's wasted, and what to fix first — with evidence from your own traffic, not estimates.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#contact-form">Book your 7-day assessment <span class="arr">→</span></a>
           <a class="btn ghost" href="#boundary">See how it works</a>
         </div>
         <div class="proof">
           <div><span class="k">7 days</span><span class="v">To a real economics report</span></div>
-          <div><span class="k">Low overhead</span><span class="v">Inline, not a sidecar</span></div>
+          <div><span class="k">Low overhead</span><span class="v">Lightweight integration</span></div>
           <div><span class="k">No rewrite</span><span class="v">Just a base-URL change</span></div>
         </div>
       </div>
 
       <aside class="card" aria-label="What provider dashboards miss">
         <div class="card-head">
-          <span class="t">workflow_cost.forensics</span>
+          <span class="t">AI spend diagnostic</span>
           <span class="live-badge" aria-hidden="true"></span>
         </div>
         <div class="card-body">
@@ -499,13 +487,13 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
           </div>
           <div class="metric">
             <div class="n">02</div>
-            <div><h3>Retry amplification</h3><p>One user request quietly becomes three to five billed calls.</p></div>
+            <div><h3>Hidden retries</h3><p>One user request quietly becomes three to five billed calls.</p></div>
             <div class="flag">3–5× calls</div>
           </div>
           <div class="metric">
             <div class="n">03</div>
             <div><h3>Premium-model default</h3><p>The priciest model answers requests a cheaper one would, identically.</p></div>
-            <div class="flag">Overspec</div>
+            <div class="flag">Over-provisioned</div>
           </div>
           <div class="metric">
             <div class="n">04</div>
@@ -522,7 +510,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
     <div class="container strip-grid">
       <div class="strip-item"><strong>Inference is your next cloud bill.</strong><span>And it's growing faster than your visibility into it — across every model and provider.</span></div>
       <div class="strip-item"><strong>Billing is not observability.</strong><span>A spend total doesn't explain causality, ownership, waste, or runtime behavior.</span></div>
-      <div class="strip-item"><strong>Cost is created by workflow behavior.</strong><span>So the evidence has to reconstruct lineage, retries, fallback, and attribution confidence.</span></div>
+      <div class="strip-item"><strong>Cost is created by workflow behavior.</strong><span>So the evidence has to reconstruct the story behind the spend: which teams, which patterns, and how complete the picture is.</span></div>
     </div>
   </div>
 
@@ -532,7 +520,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
       <div class="section-head">
         <div class="label">Where the money goes</div>
         <h2>Your inference bill is growing faster than your visibility into it.</h2>
-        <p>Most teams running production AI can't answer basic operational questions: which team is spending what, how much traffic is duplicate, how often a retry turns one request into five, how much premium-model usage is actually necessary. The spend is real and rising. The attribution isn't there. Here is where it leaks.</p>
+        <p>Most teams running production AI can't answer basic operational questions: which team is spending what, how much traffic is duplicate, how often one request becomes five billed calls, how much premium-model usage is actually necessary. The spend is real and rising. The attribution isn't there. Here is where it leaks.</p>
       </div>
       <div class="leak-grid">
         <article class="pcard">
@@ -552,7 +540,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
         </article>
         <article class="pcard">
           <div class="tag">LEAK 04</div>
-          <h3>Retry amplification</h3>
+          <h3>Hidden retries</h3>
           <p>One user request becomes three to five billed calls under naive retry logic — and never shows up cleanly on the bill.</p>
         </article>
         <article class="pcard">
@@ -567,7 +555,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
         </article>
       </div>
 
-      <div class="compare" aria-label="Provider dashboards compared to runtime economics">
+      <div class="compare" aria-label="Provider dashboards compared to AI spend forensics">
         <div class="col before">
           <div class="ch">What the provider bill tells you</div>
           <ul>
@@ -582,8 +570,8 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
           <ul>
             <li>Which app, workflow, team, or tenant caused the spend</li>
             <li>Where retries, duplicates, and premium defaults amplified it</li>
-            <li>Which requests explain retry, fallback, duplicate, or branch waste</li>
-            <li>What engineering should fix first, with modeled opportunity separated from realized waste</li>
+            <li>Which patterns drive unnecessary spend</li>
+            <li>What engineering should fix first, with estimated savings separated from proven waste</li>
           </ul>
         </div>
       </div>
@@ -600,7 +588,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
       </div>
       <div class="diag" id="diag">
         <div class="diag-top">
-          <span class="dt">Runtime economics · self-diagnostic</span>
+          <span class="dt">AI spend · self-diagnostic</span>
           <div class="diag-score">
             <span class="sc"><b id="gapCount">6</b> / 6 blind spots</span>
             <button class="diag-reset" id="diagReset">Reset</button>
@@ -612,7 +600,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
             <div class="qn"><span class="qx">01</span><span class="qt">Are you multi-model yet?</span></div>
             <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
           </div>
-          <div class="meaning"><span class="maps">Maps to</span>Provider neutrality &amp; routing leverage. <b>If no:</b> your traffic is pinned to one provider with no way to shift on cost, latency, or availability — and no leverage when prices change.</div>
+          <div class="meaning"><span class="maps">Reveals</span>Provider neutrality &amp; routing leverage. <b>If no:</b> your traffic is pinned to one provider with no way to shift on cost, latency, or availability — and no leverage when prices change.</div>
         </div>
 
         <div class="dq">
@@ -620,7 +608,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
             <div class="qn"><span class="qx">02</span><span class="qt">Do you know your cost-per-workflow?</span></div>
             <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
           </div>
-          <div class="meaning"><span class="maps">Maps to</span>Cost attribution. <b>If no:</b> you can see a provider total, but not what a feature or workflow actually costs to run — so you can't price it, forecast it, or prioritize it.</div>
+          <div class="meaning"><span class="maps">Reveals</span>Cost attribution. <b>If no:</b> you can see a provider total, but not what a feature or workflow actually costs to run — so you can't price it, forecast it, or prioritize it.</div>
         </div>
 
         <div class="dq">
@@ -628,15 +616,15 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
             <div class="qn"><span class="qx">03</span><span class="qt">Are teams using premium models by default?</span></div>
             <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
           </div>
-          <div class="meaning"><span class="maps">Maps to</span>Premium-model overuse. <b>If yes or not sure:</b> the priciest model is probably the default for requests a cheaper one would answer identically — and nobody is measuring the gap.</div>
+          <div class="meaning"><span class="maps">Reveals</span>Premium-model overuse. <b>If yes or not sure:</b> the priciest model is probably the default for requests a cheaper one would answer identically — and nobody is measuring the gap.</div>
         </div>
 
         <div class="dq">
           <div class="dq-row">
-            <div class="qn"><span class="qx">04</span><span class="qt">Do you know your retry amplification rate?</span></div>
+            <div class="qn"><span class="qx">04</span><span class="qt">Do you know how often a single request triggers multiple billed calls?</span></div>
             <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
           </div>
-          <div class="meaning"><span class="maps">Maps to</span>Retry amplification. <b>If no:</b> a single user request can quietly become three to five billed calls under naive retry logic — worst during provider hiccups — and it never shows up cleanly on the bill.</div>
+          <div class="meaning"><span class="maps">Reveals</span>Hidden retries. <b>If no:</b> a single user request can quietly become three to five billed calls under naive retry logic — worst during provider hiccups — and it never shows up cleanly on the bill.</div>
         </div>
 
         <div class="dq">
@@ -644,7 +632,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
             <div class="qn"><span class="qx">05</span><span class="qt">Are you measuring duplicate inference traffic?</span></div>
             <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
           </div>
-          <div class="meaning"><span class="maps">Maps to</span>Duplicate inference &amp; caching. <b>If no:</b> identical and near-identical requests are paid for again and again because nothing caches them at the runtime. Pure waste — and usually the fastest dollar to recover.</div>
+          <div class="meaning"><span class="maps">Reveals</span>Duplicate inference &amp; caching. <b>If no:</b> identical and near-identical requests are paid for again and again because nothing caches them at the runtime. Pure waste — and usually the fastest dollar to recover.</div>
         </div>
 
         <div class="dq">
@@ -652,7 +640,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
             <div class="qn"><span class="qx">06</span><span class="qt">Can you attribute spend by tenant, app, and team?</span></div>
             <div class="ans"><button data-v="yes">Yes</button><button data-v="no">No</button><button data-v="unsure">Not sure</button></div>
           </div>
-          <div class="meaning"><span class="maps">Maps to</span>Attribution coverage. <b>If no:</b> spend exists but ownership doesn't — so cost can't be governed, charged back, or forecast.</div>
+          <div class="meaning"><span class="maps">Reveals</span>Spend ownership. <b>If no:</b> spend exists but ownership doesn't — so cost can't be governed, charged back, or forecast.</div>
         </div>
 
         <div class="diag-foot gap-on" id="diagFoot">
@@ -671,7 +659,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
       <div class="section-head">
         <div class="label">How it works</div>
         <h2>Logging who spent what is the easy part.</h2>
-        <p>Parsing attribution headers is fifty lines of Envoy Lua — anyone can do it. The Blackridge Runtime Gateway does the part a logging stack can't: it <strong style="color:var(--ink);font-weight:500;">reconstructs economic causality</strong> across requests, retries, fallbacks, branches, and confidence gaps. Attribution is the input. Forensic evidence is the output.</p>
+        <p>Parsing attribution headers is fifty lines of middleware — anyone can do it. The Blackridge Runtime Gateway does the part a logging stack can't: it <strong style="color:var(--ink);font-weight:500;">reconstructs the economic story</strong> across requests, retries, fallbacks, and coverage gaps. Attribution is the input. Actionable evidence is the output.</p>
       </div>
       <div class="boundary">
         <div class="b-top">
@@ -688,11 +676,11 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
           </div>
         </div>
         <div class="b-bottom">
-          <div class="cap"><div class="cn">01</div><strong>Baseline</strong><span>Compare expected workflow cost against actual cost, with baseline/source provenance.</span></div>
-          <div class="cap"><div class="cn">02</div><strong>Attribute</strong><span>Trace spend through root requests, parent requests, branches, workflow metadata, and confidence gaps.</span></div>
-          <div class="cap"><div class="cn">03</div><strong>Explain</strong><span>Show retry amplification, fallback tax, abandoned branch waste, and semantic duplicate economics when cluster metadata is present.</span></div>
-          <div class="cap"><div class="cn">04</div><strong>Recommend</strong><span>Separate realized waste from modeled opportunity and rank fixes with request-level evidence.</span></div>
-          <div class="cap"><div class="cn">05</div><strong>Control later</strong><span>Budget verdicts and explicit deny scopes are used only where configured; broader enforcement is a future control-plane layer.</span></div>
+          <div class="cap"><div class="cn">01</div><strong>Baseline</strong><span>Compare expected workflow cost against actual cost, with clear sourcing.</span></div>
+          <div class="cap"><div class="cn">02</div><strong>Attribute</strong><span>Trace spend to the teams, workflows, and patterns that created it — and flag where coverage is incomplete.</span></div>
+          <div class="cap"><div class="cn">03</div><strong>Explain</strong><span>Show which patterns caused unnecessary spend — repeated work, expensive paths, over-provisioned models, and duplicate requests.</span></div>
+          <div class="cap"><div class="cn">04</div><strong>Recommend</strong><span>Separate proven waste from estimated savings and rank fixes with supporting evidence.</span></div>
+          <div class="cap"><div class="cn">05</div><strong>Control later</strong><span>Spending limits and access controls are applied only where configured; broader enforcement is a future capability.</span></div>
         </div>
       </div>
       <div class="wedge">
@@ -707,12 +695,12 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
     <div class="container assess-grid">
       <div>
         <div class="label">Design-partner assessment</div>
-        <h2 style="margin-top:18px;">Give BRG one expensive AI workflow.</h2>
-        <p class="lede" style="margin-top:18px;">Low commitment, high signal. In import mode, we analyze existing events or logs for a fast forensic report. In runtime mode, you route that workflow through BRG so it can emit canonical economic evidence. The output shows expected vs actual cost, amplification, retry/fallback/branch waste, confidence gaps, and what engineering should fix first.</p>
+        <h2 style="margin-top:18px;">Give Blackridge one expensive AI workflow.</h2>
+        <p class="lede" style="margin-top:18px;">Low commitment, high signal. We can work with your existing logs for a quick analysis, or you can point one workflow at the gateway for higher-fidelity results. The output shows where the spend goes, what's wasted, and what to fix first.</p>
         <div class="timeline">
-          <div class="tl"><div class="day">DAYS 1–2</div><div class="body"><h4>Choose import or runtime</h4><p>Start with existing logs/events for a low-friction assessment, or point one workflow at BRG for higher-fidelity runtime evidence.</p></div></div>
-          <div class="tl"><div class="day">DAYS 3–5</div><div class="body"><h4>Reconstruct &amp; analyze</h4><p>Trace spend to apps, teams, and workflows. Surface retry amplification, fallback tax, duplicate candidates, abandoned branches, and unknown/unattributed cost.</p></div></div>
-          <div class="tl"><div class="day">DAYS 6–7</div><div class="body"><h4>Report &amp; recommend</h4><p>Deliver an economic forensics report and a ranked set of recommended fixes, with modeled opportunity clearly separated from realized waste.</p></div></div>
+          <div class="tl"><div class="day">DAYS 1–2</div><div class="body"><h4>Choose your starting point</h4><p>Start with existing logs for a low-friction assessment, or point one workflow at the gateway for higher-fidelity evidence.</p></div></div>
+          <div class="tl"><div class="day">DAYS 3–5</div><div class="body"><h4>Reconstruct &amp; analyze</h4><p>Trace spend to apps, teams, and workflows. Surface repeated work, expensive paths, duplicate requests, and unowned costs.</p></div></div>
+          <div class="tl"><div class="day">DAYS 6–7</div><div class="body"><h4>Report &amp; recommend</h4><p>Deliver an economic forensics report and a ranked set of recommended fixes, with estimated savings clearly separated from proven waste.</p></div></div>
         </div>
         <div class="hero-actions">
           <a class="btn primary" href="#contact-form">Book your assessment <span class="arr">→</span></a>
@@ -723,8 +711,8 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
         <div class="dh">Assessment deliverables</div>
         <div class="deliv"><div class="dn">01</div><div><strong>Runtime spend map</strong><span>Where inference traffic originates, which teams and workflows own it, and which paths drive cost.</span></div></div>
         <div class="deliv"><div class="dn">02</div><div><strong>Attribution, your way</strong><span>We plug into the identity infra you already run — Kubernetes labels, gateway headers, client SDKs. That's the input for every finding below; you don't rebuild a thing.</span></div></div>
-        <div class="deliv"><div class="dn">03</div><div><strong>Waste, attributed</strong><span>Duplicate traffic, retry amplification, and premium-model overuse — traced to the team and workflow generating it, normalized across providers.</span></div></div>
-        <div class="deliv"><div class="dn">04</div><div><strong>Evidence-backed recommendations</strong><span>What engineering should fix first, which costs are realized waste, which opportunities are modeled, and where confidence gaps remain.</span></div></div>
+        <div class="deliv"><div class="dn">03</div><div><strong>Waste, attributed</strong><span>Duplicate traffic, repeated work, and premium-model overuse — traced to the team and workflow generating it, compared consistently across providers.</span></div></div>
+        <div class="deliv"><div class="dn">04</div><div><strong>Evidence-backed recommendations</strong><span>What engineering should fix first, which costs are proven waste, which savings are estimated, and where coverage gaps remain.</span></div></div>
         <div class="deliv"><div class="dn">05</div><div><strong>Executive summary</strong><span>A clear, business-facing explanation of what's happening, why it matters, and what to do next.</span></div></div>
       </div>
     </div>
@@ -798,13 +786,12 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
               <select name="concern" required>
                 <option value="">Select primary concern...</option>
                 <option>Cost Visibility</option>
-                <option>Attribution</option>
-                <option>Routing</option>
-                <option>Caching</option>
+                <option>Cost Ownership</option>
+                <option>Multi-Provider Strategy</option>
+                <option>Reducing Duplicate Spend</option>
                 <option>Governance</option>
                 <option>Architecture Planning</option>
                 <option>Growing AI Costs</option>
-                <option>Multi-Provider Strategy</option>
                 <option>Not Sure Yet</option>
               </select>
             </label>
@@ -916,7 +903,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
       foot.innerHTML = '<b class="lead">Six unanswered questions.</b> That’s not a failing grade — almost no one can answer these today, because inference runs through application code, not infrastructure. The <b>7-day assessment</b> answers every one in your own numbers.';
       foot.classList.add('gap-on');
     } else if(gaps === 0){
-      foot.innerHTML = '<b class="lead">Zero blind spots — rare.</b> If you can answer all six with confidence, you’ve effectively built a runtime economics layer already. The real question is what it costs your team to keep maintaining it.';
+      foot.innerHTML = ‘<b class="lead">Zero blind spots — rare.</b> If you can answer all six with confidence, you’ve effectively built an AI spend review layer already. The real question is what it costs your team to keep maintaining it.’;
       foot.classList.remove('gap-on');
     } else {
       foot.innerHTML = '<b class="lead">' + gaps + ' blind spot' + (gaps > 1 ? 's' : '') + ' surfaced.</b> Each one is a place your inference spend is leaking unseen. The <b>7-day assessment</b> below closes every one with your own traffic — no commitment, no app changes.';
@@ -1119,7 +1106,7 @@ h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(32px,4.4vw,50p
 <footer class="footer">
   <div class="container footer-inner">
     <span class="brand-name">Northwatch <span>Systems</span></span>
-    <span class="meta">Runtime Economics for AI Infrastructure</span>
+    <span class="meta">AI Spend Review for Infrastructure Teams</span>
     <span class="meta">northwatch.systems</span>
   </div>
 </footer>
