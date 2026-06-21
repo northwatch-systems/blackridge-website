@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+  if (window.location.protocol.indexOf("http") !== 0) return;
+  if (!window.location.pathname.endsWith("/index.html")) return;
+  window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
+})();
+</script>
 <title>7-Day AI Spend Forensics Assessment | Blackridge</title>
 <meta name="description" content="Find where AI spend is leaking in 7 days. Blackridge reconstructs token economics across LLM and agent workflows by app, team, tenant, retries, fallbacks, duplicate requests, and model choices.">
 <link rel="canonical" href="https://northwatch.systems/brg-ai-spend-assessment/">
