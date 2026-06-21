@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Token Economics Forensics Reconstructs AI Workflow Spend</title>
+<meta name="description" content="How Blackridge reconstructs token economics across LLM and agent workflows, including attribution, retries, fallbacks, duplicate inference, confidence, and evidence rows.">
+<link rel="canonical" href="https://northwatch.systems/how-token-economics-forensics-works/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://northwatch.systems/how-token-economics-forensics-works/">
+<meta property="og:title" content="How Token Economics Forensics Reconstructs AI Workflow Spend">
+<meta property="og:description" content="A technical methodology for AI spend forensics across LLM and agent workflows.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Token Economics Forensics Works">
+<meta name="twitter:description" content="How Blackridge reconstructs AI workflow spend with evidence and confidence.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../assets/brg.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Token Economics Forensics Reconstructs AI Workflow Spend",
+  "author": { "@type": "Organization", "name": "Northwatch Systems" },
+  "publisher": { "@type": "Organization", "name": "Northwatch Systems" },
+  "mainEntityOfPage": "https://northwatch.systems/how-token-economics-forensics-works/"
+}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../">Product</a>
+      <a href="../example-ai-spend-forensics-report/">Example report</a>
+      <a href="../what-is-ai-spend-forensics/">AI spend forensics</a>
+      <a href="../contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Technical methodology</div>
+      <h1>How Token Economics Forensics Reconstructs AI Workflow Spend</h1>
+      <p class="lead">Blackridge treats every spend finding as an evidence problem. A finding should point back to the request, event, workflow, model, token, pricing, attribution, and confidence context that produced it.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container article-body">
+      <h2>Why provider bills are insufficient</h2>
+      <p>Provider dashboards are useful for invoices, aggregate tokens, and model-level usage. They usually do not explain which workflow caused a spike, which retry loop multiplied cost, which fallback changed unit economics, or which app, team, tenant, or customer should own the spend.</p>
+
+      <h2>What data Blackridge can ingest</h2>
+      <p>Blackridge can work from logs, traces, gateway exports, provider usage data, runtime metadata, and application-level ownership signals. When higher-fidelity request evidence is required, Blackridge can collect events inline through an optional runtime collector or OpenAI-compatible collection path.</p>
+      <pre class="code-block">inputs:
+  - provider_usage_export
+  - gateway_request_log
+  - otel_trace
+  - app_log
+  - app_team_tenant_metadata
+outputs:
+  - spend_map
+  - waste_findings
+  - attribution_coverage
+  - evidence_rows</pre>
+
+      <h2>How workflow reconstruction works</h2>
+      <p>Blackridge groups events into workflow boundaries using explicit identifiers where available and conservative inference where they are missing. It then reconstructs request lineage, model choices, token usage, retries, fallbacks, branch execution, and pricing assumptions for the scoped workflow.</p>
+      <pre class="code-block">group events by workflow_id or inferred workflow boundary
+identify repeated calls with shared parent request, similarity, or retry metadata
+compare observed spend against modeled baseline
+attach confidence based on attribution and event completeness
+emit finding with evidence rows</pre>
+
+      <h2>How attribution coverage and confidence work</h2>
+      <p>Attribution is only as strong as the available metadata. Blackridge reports coverage gaps instead of pretending attribution is perfect. A finding can be exact, strong, inferred, weak, or unknown depending on the completeness of request IDs, workflow IDs, team/app/tenant metadata, pricing data, and event lineage.</p>
+
+      <h2>Retry amplification</h2>
+      <p>Retry amplification is detected when one user or workflow action produces repeated model calls that materially increase cost. Blackridge looks for retry metadata, repeated parent requests, repeated prompts or workflow steps, repeated failures, and cost variance against the expected baseline.</p>
+
+      <h2>Fallback tax</h2>
+      <p>Fallback tax appears when failures or routing decisions move requests to a more expensive model or provider. The finding should show the original path, fallback path, model choices, pricing assumptions, and the cost delta that changed unit economics.</p>
+
+      <h2>Duplicate inference</h2>
+      <p>Duplicate inference is flagged when similar prompts, repeated requests, or semantic duplicates are paid for repeatedly. Blackridge identifies candidates and labels confidence based on available request fingerprints, workflow context, and cache verdicts.</p>
+
+      <h2>Premium-model overuse</h2>
+      <p>Premium-model overuse is identified when expensive models appear to be defaults for tasks that may be served by cheaper models. Blackridge does not assume replacement is safe; it produces evidence so engineering can review model choice, task class, quality requirements, and cost impact.</p>
+
+      <h2>Abandoned branch waste</h2>
+      <p>Agent workflows may call models or tools along branches that never influence the final answer. Blackridge looks for branch lineage, tool invocation, final-response paths, and costs attached to abandoned execution branches.</p>
+
+      <h2>Why findings must include evidence</h2>
+      <p>A spend finding should be inspectable. The report should include supporting rows, source events, pricing assumptions, attribution coverage, and confidence notes so engineering and finance can evaluate the claim together.</p>
+
+      <h2>Limits</h2>
+      <p>Incomplete logs, missing request IDs, weak attribution metadata, sampling, privacy filtering, and provider export gaps can limit confidence. Blackridge reports those gaps and distinguishes observed waste from modeled opportunity.</p>
+
+      <h2>Example synthetic investigation</h2>
+      <p>A support-agent workflow shows a spend spike. Blackridge reconstructs the workflow and finds repeated failed calls followed by fallback to a premium model. Attribution is strong for app and team, weaker for customer because fallback events lack the customer header. The report ranks retry fanout first because the finding has clear event evidence and an engineering fix path.</p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Bring one workflow to a 7-day assessment</a>
+        <a class="btn secondary" href="../example-ai-spend-forensics-report/">See example evidence</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <strong>Northwatch Systems</strong>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../about/">About</a>
+      <a href="../docs/">Docs</a>
+      <a href="../contact/">Contact</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

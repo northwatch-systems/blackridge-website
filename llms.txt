@@ -1,0 +1,12 @@
+Northwatch Systems builds Blackridge, an AI spend forensics system for token economics across LLM and agent workflows. Blackridge helps engineering teams reconstruct where AI spend went, why it happened, what was waste, and what to fix first.
+
+Blackridge is not primarily an AI gateway or model router. It ingests logs, traces, gateway exports, provider events, runtime metadata, and optional runtime collection data to produce evidence-backed spend findings.
+
+Primary public pages:
+- https://northwatch.systems/
+- https://northwatch.systems/brg-ai-spend-assessment/
+- https://northwatch.systems/example-ai-spend-forensics-report/
+- https://northwatch.systems/how-token-economics-forensics-works/
+- https://northwatch.systems/what-is-ai-spend-forensics/
+- https://northwatch.systems/compare.html
+- https://northwatch.systems/contact/

@@ -1,35 +1,35 @@
 const defaultGraphNodes = [
   { id: "agent", name: "Your Applications", tag: "customer", x: 70, y: 92, desc: "Your applications and agent workloads generate inference requests to model providers." },
-  { id: "gateway", name: "Blackridge Gateway", tag: "gateway", x: 268, y: 92, desc: "Sits between your applications and model providers to observe, attribute, and analyze AI spend." },
-  { id: "econ", name: "Spend Analysis", tag: "analysis", x: 268, y: 228, desc: "Reconstructs expected vs actual workflow cost, surfaces waste patterns, and identifies savings." },
+  { id: "collector", name: "Runtime Collector", tag: "collection", x: 268, y: 92, desc: "Optional collection path for request-level evidence when existing logs are incomplete." },
+  { id: "econ", name: "Forensics Engine", tag: "analysis", x: 268, y: 228, desc: "Reconstructs expected vs actual workflow cost, surfaces waste patterns, and ranks fixes." },
   { id: "cache", name: "Reuse Detection", tag: "savings", x: 468, y: 92, desc: "Identifies duplicate and reusable requests to reduce unnecessary provider calls." },
-  { id: "policy", name: "Spend Controls", tag: "controls", x: 468, y: 228, desc: "Spending limits and access controls applied where you configure them." },
+  { id: "coverage", name: "Coverage & Confidence", tag: "trust", x: 468, y: 228, desc: "Shows attribution coverage, confidence notes, and data-quality gaps." },
   { id: "tools", name: "Your Infrastructure", tag: "enterprise", x: 668, y: 92, desc: "Integrates with your existing infrastructure, CI/CD, and operational tools." },
   { id: "audit", name: "Evidence & Reports", tag: "trust", x: 668, y: 228, desc: "Preserves the full story behind spend decisions and recommendations." },
 ];
 
 const defaultGraphEdges = [
-  ["agent", "gateway"],
-  ["gateway", "cache"],
+  ["agent", "collector"],
+  ["collector", "cache"],
   ["cache", "tools"],
-  ["gateway", "econ"],
-  ["gateway", "policy"],
-  ["policy", "tools"],
+  ["collector", "econ"],
+  ["collector", "coverage"],
+  ["coverage", "tools"],
   ["econ", "audit"],
-  ["policy", "audit"],
+  ["coverage", "audit"],
 ];
 
 const brgGraphNodes = [
-  { id: "app", name: "App / Agent", tag: "customer", x: 70, y: 90, desc: "Your application or agent workload that issues OpenAI-compatible inference requests." },
-  { id: "sdk", name: "OpenAI SDK", tag: "compatible", x: 230, y: 90, desc: "Existing OpenAI-compatible client pointed at the gateway. Fast adoption with a base-URL change." },
-  { id: "gw", name: "Blackridge Gateway", tag: "gateway", x: 390, y: 90, desc: "The single entry point for inference requests. Observes traffic, attributes spend, and routes to providers." },
-  { id: "cache", name: "Reuse Check", tag: "savings", x: 550, y: 90, desc: "Identifies duplicate requests before they reach a provider. Hits return instantly and record avoided spend." },
-  { id: "router", name: "Smart Routing", tag: "route", x: 390, y: 210, desc: "Selects provider and model based on your configured policies for cost, latency, and availability." },
-  { id: "adapter", name: "Provider Connection", tag: "provider", x: 550, y: 210, desc: "Connects to OpenAI, Anthropic, Gemini, and self-hosted models behind a single interface." },
+  { id: "app", name: "App / Agent", tag: "customer", x: 70, y: 90, desc: "Your application or agent workload that generates LLM and agent workflow events." },
+  { id: "sdk", name: "Logs / Traces", tag: "input", x: 230, y: 90, desc: "Existing logs, traces, gateway exports, provider events, and runtime metadata." },
+  { id: "gw", name: "Runtime Collector", tag: "collection", x: 390, y: 90, desc: "Optional high-fidelity event collection path when existing data is incomplete." },
+  { id: "cache", name: "Duplicate Analysis", tag: "savings", x: 550, y: 90, desc: "Identifies duplicate inference opportunities with supporting evidence and confidence." },
+  { id: "router", name: "Workflow Reconstruction", tag: "analysis", x: 390, y: 210, desc: "Reconstructs requests, retries, fallbacks, branches, attribution, and token economics." },
+  { id: "adapter", name: "Provider Economics", tag: "provider", x: 550, y: 210, desc: "Connects model, token, pricing, provider, and route context where available." },
   { id: "llm", name: "Model Provider", tag: "external", x: 710, y: 210, desc: "The selected model provider. Blackridge tracks which provider is hit and what it costs." },
   { id: "telemetry", name: "Telemetry", tag: "async", x: 230, y: 300, desc: "Lightweight events captured without adding latency to user-facing requests." },
-  { id: "cost", name: "Spend Analysis", tag: "analysis", x: 390, y: 300, desc: "Analyzes AI spend, surfaces waste patterns, and identifies savings opportunities." },
-  { id: "dash", name: "Spend Report", tag: "output", x: 550, y: 300, desc: "Shows spend by team, application, workflow, model, and provider — with supporting evidence." },
+  { id: "cost", name: "Waste Findings", tag: "analysis", x: 390, y: 300, desc: "Surfaces waste patterns, observed vs modeled opportunity, and recommended fixes." },
+  { id: "dash", name: "Evidence Report", tag: "output", x: 550, y: 300, desc: "Shows spend by team, application, workflow, model, and provider with supporting evidence." },
 ];
 
 const brgGraphEdges = [
@@ -46,7 +46,7 @@ const brgGraphEdges = [
 ];
 
 const graphVariants = {
-  default: { nodes: defaultGraphNodes, edges: defaultGraphEdges, focus: "gateway" },
+  default: { nodes: defaultGraphNodes, edges: defaultGraphEdges, focus: "collector" },
   brg: { nodes: brgGraphNodes, edges: brgGraphEdges, focus: "gw" },
 };
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Example AI Spend Forensics Report | Blackridge</title>
+<meta name="description" content="Example Blackridge AI spend forensics report using synthetic data, including spend map, findings, evidence rows, confidence, and ranked fixes.">
+<link rel="canonical" href="https://northwatch.systems/example-ai-spend-forensics-report/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwatch.systems/example-ai-spend-forensics-report/">
+<meta property="og:title" content="Example AI Spend Forensics Report">
+<meta property="og:description" content="A synthetic example Blackridge report showing evidence-backed AI spend findings.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Example AI Spend Forensics Report">
+<meta name="twitter:description" content="Synthetic example report with spend map, findings, evidence, and ranked fixes.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../assets/brg.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="nav"><div class="container nav-inner"><a class="brand" href="../"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a><nav class="nav-links" aria-label="Primary"><a href="../">Product</a><a href="../brg-ai-spend-assessment/">Assessment</a><a href="../how-token-economics-forensics-works/">Methodology</a><a href="../contact/">Contact</a></nav></div></header>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Example artifact</div>
+      <h1>Example AI Spend Forensics Report</h1>
+      <p class="lead">Example report using synthetic data. This is not a customer case study, testimonial, or production deployment claim.</p>
+      <div class="hero-actions"><a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Book a 7-day assessment</a><a class="btn secondary" href="../how-token-economics-forensics-works/">Read methodology</a></div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Executive summary</div><h2>Support-agent workflow shows retry and fallback-driven cost variance.</h2><p>Synthetic workflow: support-agent-prod. Observed events show a 19.0x workflow spend spike during a failure window. Attribution coverage is 63% because customer metadata is missing on fallback events.</p></div>
+      <div class="grid cols-4">
+        <article class="card"><h3>19.0x</h3><p>Workflow spend spike versus modeled baseline.</p></article>
+        <article class="card"><h3>5.66x</h3><p>Customer spend increase in the affected segment.</p></article>
+        <article class="card"><h3>63%</h3><p>Attribution coverage across events.</p></article>
+        <article class="card"><h3>Fix 01</h3><p>Cap retry fanout before fallback escalation.</p></article>
+      </div>
+    </div>
+  </section>
+  <section><div class="container">
+    <div class="section-head"><div class="eyebrow">Workflow spend map</div><h2>Where the synthetic spend accumulated</h2></div>
+    <table class="report-table">
+      <thead><tr><th>Workflow path</th><th>Observed</th><th>Modeled baseline</th><th>Variance driver</th><th>Confidence</th></tr></thead>
+      <tbody>
+        <tr><td>support-agent-prod / issue triage</td><td>$249.91</td><td>$13.15</td><td>Retry amplification and fallback to premium model</td><td>Strong</td></tr>
+        <tr><td>support-agent-prod / summarization</td><td>$31.42</td><td>$28.10</td><td>Normal variance</td><td>Strong</td></tr>
+        <tr><td>support-agent-prod / tool branch</td><td>$42.18</td><td>$8.90</td><td>Abandoned branch waste</td><td>Inferred</td></tr>
+      </tbody>
+    </table>
+  </div></section>
+  <section><div class="container">
+    <div class="section-head"><div class="eyebrow">Findings</div><h2>Evidence-backed waste findings</h2></div>
+    <div class="grid cols-3">
+      <article class="card"><h3>Retry amplification detected</h3><p>Repeated calls share a parent workflow and failure window. Observed waste: $118.40. Recommended fix: cap retry fanout and add failure classification.</p></article>
+      <article class="card"><h3>Fallback tax detected</h3><p>Fallback path moved failed calls to a higher-cost model. Modeled opportunity: $61-$84 depending on acceptable fallback behavior.</p></article>
+      <article class="card"><h3>Duplicate inference opportunity</h3><p>Similar prompts in the same workflow suggest cache or de-duplication opportunity. Confidence: inferred due to partial prompt fingerprint coverage.</p></article>
+    </div>
+  </div></section>
+  <section><div class="container">
+    <div class="section-head"><div class="eyebrow">Evidence rows</div><h2>Rows behind the claims</h2></div>
+    <table class="report-table">
+      <thead><tr><th>Evidence</th><th>What it supports</th><th>Observed vs modeled</th><th>Coverage note</th></tr></thead>
+      <tbody>
+        <tr><td>req_82f4 retry attempts 1-8</td><td>Retry amplification</td><td>Observed waste</td><td>App/team present; customer missing on attempts 6-8</td></tr>
+        <tr><td>fallback edge provider_a to provider_b</td><td>Fallback tax</td><td>Modeled opportunity</td><td>Pricing available; route reason present</td></tr>
+        <tr><td>prompt fingerprint cluster 41</td><td>Duplicate inference</td><td>Modeled opportunity</td><td>Partial fingerprint coverage</td></tr>
+      </tbody>
+    </table>
+  </div></section>
+  <section><div class="container">
+    <div class="section-head"><div class="eyebrow">Recommended fixes</div><h2>What engineering should fix first</h2></div>
+    <div class="grid cols-3">
+      <article class="card"><h3>1. Cap retry fanout</h3><p>Highest confidence and largest observed waste. Add bounded retries and failure classification before fallback.</p></article>
+      <article class="card"><h3>2. Preserve customer metadata on fallback</h3><p>Improves attribution coverage and chargeback confidence.</p></article>
+      <article class="card"><h3>3. Add duplicate request caching</h3><p>Validate prompt fingerprint candidates, then add cache controls where quality risk is low.</p></article>
+    </div>
+  </div></section>
+</main>
+<footer class="footer"><div class="container footer-inner"><strong>Northwatch Systems</strong><nav class="footer-links" aria-label="Footer"><a href="../brg-ai-spend-assessment/">Assessment</a><a href="../what-is-ai-spend-forensics/">AI spend forensics</a><a href="../contact/">Contact</a></nav></div></footer>
+</body>
+</html>

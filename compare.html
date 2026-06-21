@@ -34,8 +34,8 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9262050&fmt=gif" />
 </noscript>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Blackridge vs. Existing Tools — Economic Forensics for AI Workflows</title>
-<meta name="description" content="How Blackridge compares to observability tools, API gateways, and FinOps platforms. AI spend forensics with evidence from your own traffic.">
+<title>Blackridge Compared With AI Gateways, Observability, and FinOps</title>
+<meta name="description" content="Blackridge is adjacent to AI gateways, observability, tracing, provider dashboards, and FinOps tools, but answers a different token economics forensics question.">
 <link rel="canonical" href="https://northwatch.systems/compare.html">
 <meta name="theme-color" content="#D2762F">
 
@@ -48,8 +48,8 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <!-- Open Graph / Social Media -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/compare.html">
-<meta property="og:title" content="Blackridge vs. Existing Tools — Economic Forensics for AI Workflows">
-<meta property="og:description" content="How Blackridge compares to observability tools, API gateways, and FinOps platforms. AI spend forensics with evidence from your own traffic.">
+<meta property="og:title" content="Blackridge Compared With AI Gateways, Observability, and FinOps">
+<meta property="og:description" content="How Blackridge compares with adjacent AI infrastructure and finance tooling.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -58,8 +58,8 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://northwatch.systems/compare.html">
-<meta name="twitter:title" content="Blackridge vs. Existing Tools — Economic Forensics for AI Workflows">
-<meta name="twitter:description" content="How Blackridge compares to observability tools, API gateways, and FinOps platforms.">
+<meta name="twitter:title" content="Blackridge Compared With Adjacent AI Tools">
+<meta name="twitter:description" content="AI gateways, observability, tracing, provider dashboards, FinOps, and Blackridge solve different jobs.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -238,6 +238,32 @@ h1 em { font-style: normal; color: var(--accent-2); }
   background: color-mix(in oklab, var(--accent) 12%, var(--surface-3));
   font-weight: 600;
 }
+.question-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 36px;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.question-table th, .question-table td {
+  border: 1px solid var(--line);
+  padding: 13px 14px;
+  text-align: left;
+  vertical-align: top;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+.question-table th {
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: var(--surface-3);
+}
+.question-table td:last-child { color: var(--accent-2); font-weight: 600; }
 
 /* CTA */
 .cta-section { text-align: center; padding: 20px 0 100px; }
@@ -303,9 +329,9 @@ h1 em { font-style: normal; color: var(--accent-2); }
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="index.html">Product</a>
-      <a href="index.html#problem">The Problem</a>
+      <a href="what-is-ai-spend-forensics/">AI Spend Forensics</a>
       <a href="compare.html" class="active">Compare</a>
-      <a class="btn primary" data-cta="book-assessment-compare-nav" href="brg-ai-spend-assessment/index.html#request-assessment">Book Spend Forensics Assessment <span class="arr">→</span></a>
+      <a class="btn primary" data-cta="book-assessment-compare-nav" href="brg-ai-spend-assessment/#request-assessment">Book Spend Forensics Assessment <span class="arr">→</span></a>
     </nav>
   </div>
 </header>
@@ -314,11 +340,11 @@ h1 em { font-style: normal; color: var(--accent-2); }
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
-      <div class="label">Different job, different layer</div>
-      <h1>LLM proxies route requests.<br>Blackridge <em>explains money.</em></h1>
-      <p class="lede">If you're evaluating LiteLLM, Portkey, or Bifrost, you're shopping for a routing layer — and you should probably have one. Blackridge is not that. It doesn't compete with your proxy; it answers the questions your proxy can't: why did the bill grow, who caused it, what's wasted, and what should engineering fix first.</p>
+      <div class="label">Adjacent tools, different job</div>
+      <h1>Gateways, observability, and FinOps answer different questions.</h1>
+      <p class="lede">Blackridge is adjacent to gateways, observability, tracing, provider dashboards, and FinOps, but it answers a different question: which workflow caused AI spend, why it happened, what was waste, and what engineering should fix first?</p>
       <div class="wedge-hero">
-        <p>Proxies move bytes between your code and model providers. <strong>Blackridge reconstructs the economics of every workflow and tells you where the money went.</strong></p>
+        <p>Gateways route traffic. Observability tools show runtime metrics. Provider dashboards show usage and invoices. FinOps tools allocate cloud costs. <strong>Blackridge reconstructs token economics across AI workflows.</strong></p>
       </div>
     </div>
   </section>
@@ -328,8 +354,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
     <div class="container">
       <div class="section-head" style="max-width:780px; margin-bottom:0;">
         <div class="label">Tool by tool</div>
-        <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.06;letter-spacing:-.024em;margin-top:16px;margin-bottom:12px;">Five categories. None of them do what Blackridge does.</h2>
-        <p style="color:var(--ink-2);font-size:17px;max-width:700px;">Each solves a real problem. None of them reconstruct expected vs actual workflow cost or explain where every dollar went with supporting evidence. That's the job Blackridge was built for.</p>
+        <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.06;letter-spacing:-.024em;margin-top:16px;margin-bottom:12px;">Five adjacent categories. They solve different jobs.</h2>
+        <p style="color:var(--ink-2);font-size:17px;max-width:700px;">These tools can be useful and complementary. Blackridge is used when the buyer needs workflow-level token economics reconstruction, waste findings, attribution coverage, evidence rows, and ranked remediation.</p>
       </div>
 
       <div class="comp-grid">
@@ -340,8 +366,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <div class="examples">OpenAI · Anthropic · Gemini consoles</div>
           </div>
           <div class="comp-body">
-            <p class="what">Per-provider, after-the-fact reporting. No cross-provider view, no internal attribution — you see what you spent with that provider, not which application, team, or workflow caused it.</p>
-            <p class="win">Blackridge reconstructs spend across providers and attributes it to teams and workflows with supporting evidence.</p>
+            <p class="what">Useful for provider-specific usage, invoice totals, token counts, and model-level billing history.</p>
+            <p class="win">Blackridge is used when teams need to connect spend to workflows, apps, teams, tenants, retries, fallbacks, duplicate calls, and remediation evidence.</p>
           </div>
           <div class="comp-tag"><span>Observes one provider, after the fact</span></div>
         </div>
@@ -352,8 +378,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <div class="examples">Kong · Apigee · Envoy · nginx</div>
           </div>
           <div class="comp-body">
-            <p class="what">Route bytes and enforce HTTP policies. They see every request as a generic HTTP call — no concept of model pricing, workflow-level cost, or which requests relate to each other.</p>
-            <p class="win">Blackridge reasons in workflow economics, not HTTP status codes. It knows what a token costs and which workflow generated it.</p>
+            <p class="what">Useful for routing, authentication, traffic policy, and request forwarding.</p>
+            <p class="win">Blackridge can use gateway logs or exports when the buyer needs token economics reconstruction and evidence-backed cost findings.</p>
           </div>
           <div class="comp-tag"><span>Routes bytes, not economics</span></div>
         </div>
@@ -364,8 +390,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <div class="examples">Generic cost platforms</div>
           </div>
           <div class="comp-body">
-            <p class="what">Excellent at aggregating and reporting cloud spend across services. They work from billing exports — which means they see cost after it's incurred and can't change it.</p>
-            <p class="win">Blackridge reconstructs why the cost happened and can use runtime interception for production evidence quality before teams add controls.</p>
+            <p class="what">Useful for allocation, budget review, chargeback, forecasting, and cloud cost reporting.</p>
+            <p class="win">Blackridge produces the workflow-level evidence that helps engineering explain and remediate AI spend before finance conversations become guesswork.</p>
           </div>
           <div class="comp-tag"><span>Reports cost, can't change it</span></div>
         </div>
@@ -376,8 +402,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <div class="examples">LiteLLM · Portkey · Bifrost · etc.</div>
           </div>
           <div class="comp-body">
-            <p class="what">These are routing and abstraction layers — they normalize provider APIs, manage keys, switch models, and handle failover. Good tools for a real job. But routing traffic is not the same as understanding cost. They can tell you a request went to GPT-4; they can't tell you why that workflow cost 3× what it should have, which team is responsible, or what to fix.</p>
-            <p class="win">Blackridge is not another gateway. It answers the economic questions routing tools were never designed to ask: where the spend goes, what's wasted, and what engineering should fix first.</p>
+            <p class="what">LiteLLM, Portkey, Bifrost, and similar tools are useful for routing, provider abstraction, policy hooks, gateway control, retries, fallbacks, caching, and usage visibility.</p>
+            <p class="win">Blackridge is used when teams need workflow-level spend reconstruction, attribution confidence, retry amplification analysis, fallback tax analysis, duplicate inference detection, and ranked remediation evidence.</p>
           </div>
           <div class="comp-tag"><span>Routes traffic, doesn't explain cost</span></div>
         </div>
@@ -388,8 +414,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <div class="examples">Orchestration suites</div>
           </div>
           <div class="comp-body">
-            <p class="what">Solve a different problem at a different layer — how to orchestrate multi-step AI workflows. They generate inference traffic; they don't govern it.</p>
-            <p class="win">Blackridge is infrastructure beneath them. Every inference call an orchestration layer makes becomes auditable spend evidence.</p>
+            <p class="what">Useful for building multi-step LLM and agent workflows.</p>
+            <p class="win">Blackridge helps inspect the token economics those workflows create, especially retries, tool branches, fallbacks, and abandoned execution paths.</p>
           </div>
           <div class="comp-tag"><span>Generates traffic, doesn't govern it</span></div>
         </div>
@@ -456,14 +482,59 @@ h1 em { font-style: normal; color: var(--accent-2); }
     </div>
   </section>
 
+  <section class="layer-section">
+    <div class="container">
+      <div class="label">Specific adjacent tools</div>
+      <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.022em;line-height:1.06;margin-top:16px;margin-bottom:12px;">What about LiteLLM, Portkey, Bifrost, LangSmith, Arize, and Helicone?</h2>
+      <p style="color:var(--ink-2);font-size:17px;max-width:760px;">Blackridge does not replace every adjacent tool. It is used when the cost question requires workflow-level token economics reconstruction and evidence-backed findings.</p>
+      <div class="comp-grid">
+        <div class="comp-card">
+          <div class="comp-cat"><div class="tool">LiteLLM / Bifrost / Portkey</div><div class="examples">Gateway · routing · provider abstraction</div></div>
+          <div class="comp-body"><p class="what">Useful for routing, provider abstraction, policy hooks, gateway control, retries, fallbacks, caching, and usage visibility.</p><p class="win">Blackridge is used when the buyer needs workflow-level spend reconstruction, attribution confidence, retry amplification analysis, fallback tax analysis, duplicate inference detection, and ranked remediation evidence.</p></div>
+          <div class="comp-tag"><span>Complementary</span></div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-cat"><div class="tool">LangSmith / tracing tools</div><div class="examples">Tracing · chains · debugging</div></div>
+          <div class="comp-body"><p class="what">Useful for tracing LLM applications, debugging chains, and reviewing application behavior.</p><p class="win">Blackridge focuses specifically on token economics, waste classes, attribution coverage, and spend-forensics reporting.</p></div>
+          <div class="comp-tag"><span>Different focus</span></div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-cat"><div class="tool">Arize / Phoenix</div><div class="examples">AI observability · evals · monitoring</div></div>
+          <div class="comp-body"><p class="what">Useful for evaluation, traces, quality, monitoring, and model/application observability.</p><p class="win">Blackridge focuses on explaining spend causality and evidence-backed cost findings.</p></div>
+          <div class="comp-tag"><span>Different focus</span></div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-cat"><div class="tool">Helicone / provider dashboards</div><div class="examples">Request logs · usage summaries</div></div>
+          <div class="comp-body"><p class="what">Useful for request logs, usage, latency, cost summaries, and dashboards.</p><p class="win">Blackridge focuses on reconstructing economics across workflows, retries, fallbacks, duplicate inference, app/team/tenant attribution, and remediation priority.</p></div>
+          <div class="comp-tag"><span>Evidence layer</span></div>
+        </div>
+      </div>
+
+      <table class="question-table">
+        <thead><tr><th>Question</th><th>Gateway / Proxy</th><th>Observability / Tracing</th><th>Provider Dashboard</th><th>Blackridge</th></tr></thead>
+        <tbody>
+          <tr><td>Which provider/model handled the request?</td><td>Usually</td><td>Sometimes</td><td>Yes, per provider</td><td>Yes, when present in data</td></tr>
+          <tr><td>What was total token usage?</td><td>Sometimes</td><td>Sometimes</td><td>Yes</td><td>Yes, tied to workflow evidence</td></tr>
+          <tr><td>Which workflow caused the spike?</td><td>Sometimes, if tagged</td><td>Sometimes, if traced</td><td>Usually no</td><td>Primary use case</td></tr>
+          <tr><td>Which retry loop amplified cost?</td><td>Sometimes</td><td>Sometimes</td><td>No</td><td>Primary use case</td></tr>
+          <tr><td>Which fallback path changed unit economics?</td><td>Sometimes</td><td>Sometimes</td><td>No</td><td>Primary use case</td></tr>
+          <tr><td>Which duplicate calls were waste?</td><td>Sometimes</td><td>Sometimes</td><td>No</td><td>Primary use case</td></tr>
+          <tr><td>Which app/team/tenant owns the spend?</td><td>Sometimes, if tagged</td><td>Sometimes, if tagged</td><td>Usually no</td><td>Yes, with coverage/confidence notes</td></tr>
+          <tr><td>What should engineering fix first?</td><td>No</td><td>Sometimes for reliability</td><td>No</td><td>Ranked remediation evidence</td></tr>
+          <tr><td>What evidence supports the finding?</td><td>Logs/events</td><td>Traces/logs</td><td>Usage exports</td><td>Evidence rows, confidence, coverage, and pricing assumptions</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
       <div class="label center" style="margin-bottom:20px;">Next step</div>
       <h2>See what's actually happening in your runtime.</h2>
-      <p>The design-partner assessment starts with your existing logs or a live workflow connection for higher-fidelity results, then delivers a report that answers questions no other tool in your stack currently can.</p>
+      <p>The assessment starts with your existing logs, traces, gateway exports, provider events, or optional runtime collection, then delivers a report focused on what happened, what was waste, and what to fix first.</p>
       <div class="cta-actions">
-        <a class="btn primary" data-cta="book-assessment-compare-final" href="brg-ai-spend-assessment/index.html#request-assessment">Book your spend forensics assessment <span class="arr">→</span></a>
+        <a class="btn primary" data-cta="book-assessment-compare-final" href="brg-ai-spend-assessment/#request-assessment">Book your spend forensics assessment <span class="arr">→</span></a>
         <a class="btn ghost" href="index.html">Back to overview</a>
       </div>
     </div>
@@ -474,7 +545,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
   <div class="container footer-inner">
     <span class="brand-name" style="font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.26em;text-transform:uppercase;">Northwatch <span style="color:var(--ink-3);font-weight:500;">Systems</span></span>
     <span class="meta">Blackridge AI Spend Forensics</span>
-    <span class="meta"><a href="brg-ai-spend-assessment/index.html">7-day assessment</a></span>
+    <span class="meta"><a href="brg-ai-spend-assessment/">7-day assessment</a></span>
+    <span class="meta"><a href="contact/">Contact</a></span>
   </div>
 </footer>
 <script>
