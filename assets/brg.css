@@ -92,6 +92,62 @@ h3 { font-size: 20px; }
 .lead { margin: 22px 0 0; color: var(--muted); font-size: clamp(17px, 1.6vw, 20px); max-width: 780px; }
 .hero-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px; }
 .trust-line { margin-top: 20px; color: var(--dim); font-family: var(--mono); font-size: 12px; letter-spacing: .03em; }
+.hero-shot {
+  border: 1px solid var(--line-2);
+  border-radius: 10px;
+  background: #0b0b0f;
+  box-shadow: 0 28px 76px rgba(0,0,0,.38);
+  overflow: hidden;
+}
+.hero-shot-topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 15px;
+  border-bottom: 1px solid #222230;
+  color: #8a8a9a;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.hero-shot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+  background: #05070b;
+}
+.hero-shot-caption {
+  display: grid;
+  gap: 12px;
+  padding: 14px 15px 15px;
+  border-top: 1px solid #222230;
+  color: #8a8a9a;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+.hero-shot-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.hero-shot-tags b {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 9px;
+  border: 1px solid rgba(240, 161, 78, .34);
+  border-radius: 999px;
+  color: var(--accent-2);
+  background: rgba(240, 161, 78, .08);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
 .artifact {
   border: 1px solid var(--line-2);
   border-radius: 10px;
@@ -237,23 +293,66 @@ section { padding: 82px 0; border-bottom: 1px solid var(--line); }
 .proof-strip {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: rgba(255,255,255,.02);
-  padding: 18px 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)),
+    radial-gradient(38rem 20rem at 18% 0, rgba(210,118,47,.09), transparent 68%);
+  padding: 34px 0;
+}
+.proof-band {
+  display: grid;
+  grid-template-columns: minmax(240px, .52fr) minmax(0, 1.48fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.proof-intro {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255,255,255,.025);
+  padding: 22px;
+}
+.proof-intro h2 {
+  margin-top: 12px;
+  font-size: clamp(24px, 3vw, 36px);
 }
 .proof-items {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
 }
 .proof-item {
   border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: 10px;
+  padding: 16px;
   color: var(--muted);
+  background: linear-gradient(180deg, var(--surface), rgba(18,24,33,.78));
+  min-height: 154px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.proof-item:hover {
+  border-color: var(--line-2);
+  transform: translateY(-1px);
+}
+.proof-item span {
+  color: var(--accent-2);
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .04em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
   text-transform: uppercase;
+}
+.proof-item strong {
+  color: var(--ink);
+  font-family: var(--disp);
+  font-size: 18px;
+  line-height: 1.12;
+}
+.proof-item em {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.45;
 }
 .page-hero {
   padding: 72px 0 64px;
@@ -410,7 +509,7 @@ textarea { min-height: 112px; resize: vertical; }
 
 @media (max-width: 860px) {
   .hero { padding: 46px 0 54px; }
-  .hero-grid, .grid.cols-2, .grid.cols-3, .grid.cols-4, .timeline, .split, .report-grid, .proof-items { grid-template-columns: 1fr; }
+  .hero-grid, .grid.cols-2, .grid.cols-3, .grid.cols-4, .timeline, .split, .report-grid, .proof-band, .proof-items { grid-template-columns: 1fr; }
   .demo-grid, .demo-kpis { grid-template-columns: 1fr; }
   .carousel-caption { flex-direction: column; gap: 4px; }
   .nav-inner { align-items: flex-start; flex-direction: column; padding: 14px 0; }
