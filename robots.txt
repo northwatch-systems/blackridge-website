@@ -1,10 +1,16 @@
-# northwatch.systems robots.txt
-
 User-agent: *
 Allow: /
+Disallow: /.git/
+Disallow: /.agents/
+Disallow: /.codex/
+Disallow: /.claude/
+Disallow: /.serena/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /build/
+Disallow: /coverage/
+Disallow: /tmp/
+Disallow: /test/
+Disallow: /tests/
 
-# Sitemap
 Sitemap: https://northwatch.systems/sitemap.xml
-
-# Crawl delay (be respectful)
-Crawl-delay: 1

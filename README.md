@@ -1,9 +1,9 @@
 # Blackridge Website
 
-Production-ready website for Blackridge Runtime Gateway, deployed on GitHub Pages. Public positioning: BRG is economic forensics for AI workflows.
+Production-ready website for Blackridge AI Spend Forensics, deployed on GitHub Pages. Public positioning: Blackridge is a token economics forensics system for AI applications, agents, and LLM workflows.
 
 **Recent Update**: Site consolidated from 3 pages to 2 streamlined pages:
-- **index.html** - Complete landing page with problem, solution, diagnostic, and integrated contact form
+- **index.html** - Complete landing page with problem, solution, product UI artifact, and assessment CTA
 - **compare.html** - Competitive positioning vs 5 adjacent tool categories
 
 ## 🚀 Quick Deploy (10 minutes)
@@ -34,9 +34,9 @@ See **QUICK_START.md** for details.
 blackridge-website/
 ├── index.html              # Main landing page
 │                          # - Problem statement & value prop
-│                          # - Interactive diagnostic tool
+│                          # - Product UI demo artifact
 │                          # - How it works (forensic evidence path)
-│                          # - design-partner assessment details
+│                          # - Blackridge AI Spend Assessment details
 │                          # - Contact form
 │                          # - Deployment & trust section
 │

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7-Day AI Spend Forensics Assessment | Blackridge</title>
+<meta name="description" content="Find where AI spend is leaking in 7 days. Blackridge reconstructs token economics across LLM and agent workflows by app, team, tenant, retries, fallbacks, duplicate requests, and model choices.">
+<link rel="canonical" href="https://northwatch.systems/brg-ai-spend-assessment">
+<meta name="theme-color" content="#D2762F">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwatch.systems/brg-ai-spend-assessment">
+<meta property="og:title" content="7-Day AI Spend Forensics Assessment | Blackridge">
+<meta property="og:description" content="Find where AI spend is leaking in 7 days with workflow-level token economics forensics from Blackridge.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Northwatch Systems">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://northwatch.systems/brg-ai-spend-assessment">
+<meta name="twitter:title" content="7-Day AI Spend Forensics Assessment | Blackridge">
+<meta name="twitter:description" content="Blackridge reconstructs token economics by workflow, retries, fallbacks, duplicate requests, model choice, app, team, and tenant.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/brg.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-THGE3L4GDD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title: "7-Day AI Spend Forensics Assessment" });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://northwatch.systems/#organization",
+      "name": "Northwatch Systems",
+      "url": "https://northwatch.systems/",
+      "logo": "https://northwatch.systems/assets/logo_full.png"
+    },
+    {
+      "@type": "Product",
+      "@id": "https://northwatch.systems/#brg",
+      "name": "Blackridge Forensics",
+      "brand": { "@id": "https://northwatch.systems/#organization" },
+      "description": "A token economics forensics system for AI applications, agents, and LLM workflows."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://northwatch.systems/brg-ai-spend-assessment#service",
+      "name": "Blackridge AI Spend Assessment",
+      "provider": { "@id": "https://northwatch.systems/#organization" },
+      "serviceType": "AI spend forensics assessment",
+      "url": "https://northwatch.systems/brg-ai-spend-assessment",
+      "description": "A 7-day AI spend forensics assessment that shows where AI spend went, why it happened, what was waste, and what to fix first."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../index.html" aria-label="Northwatch Systems home">
+      <span class="brand-mark">N</span>
+      <span class="brand-name">Northwatch <span>Systems</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#problem">Problem</a>
+      <a href="#product-ui">Product UI</a>
+      <a href="../compare.html">Compare</a>
+      <a class="btn secondary" data-cta="assessment-form-nav" href="#request-assessment">Request assessment</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Blackridge AI Spend Assessment</div>
+        <h1>Find where your AI spend is leaking.</h1>
+        <p class="lead">Bring one expensive AI workflow. Blackridge reconstructs token economics across apps, teams, tenants, retries, fallback paths, duplicate requests, and model choices, then gives engineering the evidence needed to fix the first problem.</p>
+        <div class="hero-actions">
+          <a class="btn primary" data-cta="book-assessment-hero" href="#request-assessment">Book a 7-day AI Spend Forensics Assessment</a>
+          <a class="btn secondary" data-cta="open-demo-ui" href="https://demo.northwatch.systems/">Open the product UI demo</a>
+        </div>
+        <p class="trust-line">The demo uses deterministic seeded event data. It proves the token-economics report contract, guided investigation flow, request evidence, and confidence reporting; it does not claim live customer traffic or guaranteed savings.</p>
+      </div>
+
+      <aside class="demo-preview" aria-labelledby="demo-preview-title">
+        <div class="demo-topbar">
+          <span id="demo-preview-title">Blackridge product UI</span>
+          <span>token-economics/v1</span>
+        </div>
+        <div class="demo-grid">
+          <div class="demo-nav">
+            <span class="active">Guided Investigation</span>
+            <span>Token Economics</span>
+            <span>Request Ledger</span>
+            <span>Workflow Traces</span>
+            <span>Attribution</span>
+            <span>Raw Evidence</span>
+          </div>
+          <div class="demo-main">
+            <div class="demo-kpis">
+              <div class="demo-kpi"><span>Modeled opportunity</span><strong>$618-$803</strong></div>
+              <div class="demo-kpi"><span>Realized waste</span><strong>$249.91</strong></div>
+              <div class="demo-kpi"><span>Top driver</span><strong>Retry</strong></div>
+            </div>
+            <div class="demo-panel">
+              <span>Selected finding</span>
+              <div class="demo-row"><strong>Retry amplification</strong><div>github-issue-136</div><div class="demo-pill">observed</div></div>
+              <div class="demo-row"><strong>Abandoned branch waste</strong><div>71 workflows</div><div class="demo-pill">observed</div></div>
+              <div class="demo-row"><strong>Duplicate-request caching</strong><div>code_generation</div><div class="demo-pill">modeled</div></div>
+            </div>
+            <div class="demo-panel">
+              <span>Evidence views</span>
+              <div class="demo-row"><strong>Request inspector</strong><div>cost, tokens, route</div><div>per request</div></div>
+              <div class="demo-row"><strong>Attribution</strong><div>tenant, app, team</div><div>confidence</div></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="deliverables" class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Assessment output</div>
+        <h2>What you get, without a platform migration</h2>
+      </div>
+      <div class="grid cols-3">
+        <article class="card"><h3>Spend reconstruction</h3><p>Expected baseline vs actual cost, workflow amplification, retry/fallback/branch waste, and modeled opportunity.</p></article>
+        <article class="card"><h3>Evidence packet</h3><p>Request-level rows, lineage, route decisions, token economics, attribution confidence, and data-quality gaps.</p></article>
+        <article class="card"><h3>Ranked fixes</h3><p>Recommended engineering actions with severity, estimated impact, confidence, and supporting event evidence.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="product-ui" class="compact-section">
+    <div class="container">
+      <div>
+        <div class="eyebrow">Product artifact</div>
+        <h2>Inspect the evidence in the product UI.</h2>
+        <p class="lead">Blackridge does not just hand over a slide. The assessment produces explorable evidence: guided investigation, full report mode, request ledger, workflow traces, attribution, signals, data confidence, request inspector, and raw source events.</p>
+      </div>
+      <div class="screenshot-carousel" data-carousel aria-label="Blackridge product UI screenshots">
+        <div class="carousel-stage">
+          <figure class="carousel-slide active">
+            <img src="../assets/screenshots/blackridge-workflow-traces.png" alt="Blackridge Workflow Traces view showing a Sankey graph of observed workflow lineage and cost flow">
+            <figcaption class="carousel-caption"><span>Workflow Traces</span><span>Actual demo screenshot · Sankey graph</span></figcaption>
+          </figure>
+          <figure class="carousel-slide inspector">
+            <img src="../assets/screenshots/blackridge-request-inspector.png" alt="Blackridge Request Inspector showing request economics, attribution, usage, cache, and route plan evidence" loading="lazy">
+            <figcaption class="carousel-caption"><span>Request Inspector</span><span>Actual demo screenshot · close-up evidence</span></figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img src="../assets/screenshots/blackridge-request-ledger.png" alt="Blackridge Request Evidence Ledger with selected request and inspector panel" loading="lazy">
+            <figcaption class="carousel-caption"><span>Request Ledger</span><span>Actual demo screenshot · rows behind claims</span></figcaption>
+          </figure>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" type="button" data-carousel-prev aria-label="Previous screenshot">‹</button>
+          <div class="carousel-dots" aria-label="Screenshot selector">
+            <button class="carousel-dot active" type="button" data-carousel-dot="0" aria-label="Show Workflow Traces screenshot"></button>
+            <button class="carousel-dot" type="button" data-carousel-dot="1" aria-label="Show Request Inspector screenshot"></button>
+            <button class="carousel-dot" type="button" data-carousel-dot="2" aria-label="Show Request Ledger screenshot"></button>
+          </div>
+          <button class="carousel-btn" type="button" data-carousel-next aria-label="Next screenshot">›</button>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;">
+        <div class="card">
+          <span class="label">Public demo</span>
+          <p>The demo at <a href="https://demo.northwatch.systems/">demo.northwatch.systems</a> loads a Blackridge-generated seeded report and starts in Guided Investigation. Use it to inspect the real Workflow Traces view, Sankey graph, request inspector, and raw evidence.</p>
+          <div class="hero-actions">
+            <a class="btn primary" data-cta="open-demo-ui-section" href="https://demo.northwatch.systems/">Open the product UI demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scope" class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Scope</div>
+        <h2>Available now vs roadmap</h2>
+        <p>Blackridge findings are auditable economic claims, not dashboard annotations. Each finding links type, evidence rows, confidence, provenance, resolver, importer, source events, pricing, and reproducibility hash.</p>
+      </div>
+      <div class="split">
+        <article class="card">
+          <span class="label">Available now</span>
+          <div class="list">
+            <div>12 active derivations: retry amplification, fallback tax, failed requests, abandoned branches, semantic duplicates, cache misses, unattributed spend, attribution conflicts, release regression, tool dead-ends, context bloat, and retrieval bloat.</div>
+            <div>20 derivation types defined, including P2 research categories for agentic monoliths, provider arbitrage, policy bypass, blast radius, prompt churn, budget burn, overqualified models, and exact duplicates.</div>
+            <div>Evidence chain from finding to evidence rows, source events, pricing, confidence, provenance, and reproducibility hash.</div>
+            <div>9 attribution resolvers, 7 importer paths, and provider economics for OpenAI, Anthropic, Bedrock, and multi-vendor event data where available.</div>
+          </div>
+        </article>
+        <article class="card">
+          <span class="label">Roadmap / design-partner dependent</span>
+          <div class="list">
+            <div>Hard budget enforcement</div>
+            <div>Automated governance actions</div>
+            <div>Broad provider policy controls</div>
+            <div>Advanced agent/tool control-plane features</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Ways to start</div>
+        <h2>Start with one workflow. Expand when the evidence is useful.</h2>
+      </div>
+      <div class="grid cols-2">
+        <article class="card"><h3>7-day spend assessment</h3><p>Seven days, one workflow, spend reconstruction, evidence, and ranked fixes.</p></article>
+        <article class="card"><h3>Forensics workspace</h3><p>Use the product UI to inspect workflow traces, request evidence, attribution, confidence, and raw source events.</p></article>
+        <article class="card"><h3>Runtime evidence collection</h3><p>Start from logs or add the Blackridge Runtime Collector when you need inline evidence.</p></article>
+        <article class="card"><h3>Enterprise rollout</h3><p>Expand coverage across teams, workflows, importers, review processes, and private deployment requirements.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="request-assessment" class="cta-band">
+    <div class="container">
+      <div class="eyebrow">Request the assessment</div>
+      <h2>Bring one expensive AI workflow.</h2>
+      <p>We will show where the spend went, what drove it, what looks wasted, and which fixes should move first.</p>
+      <div class="card form-card">
+        <form id="assessmentForm" action="https://formspree.io/f/mbdeozdy" method="POST">
+          <div class="form-row">
+            <label><span>Name</span><input type="text" name="name" required></label>
+            <label><span>Company</span><input type="text" name="company" required></label>
+          </div>
+          <div class="form-row">
+            <label><span>Work email</span><input type="email" name="email" required></label>
+            <label><span>Role</span><select name="role" required><option value="">Select role</option><option>VP Engineering</option><option>Head of Platform</option><option>AI Platform Lead</option><option>SRE / Infrastructure Leader</option><option>FinOps-adjacent Engineering Leader</option><option>Founder / CTO</option><option>Other</option></select></label>
+          </div>
+            <label><span>Which AI workflow should Blackridge inspect?</span><textarea name="notes" required></textarea></label>
+          <input type="hidden" name="_subject" value="7-Day AI Spend Forensics Assessment Request">
+          <button class="btn primary" data-cta="submit-assessment-form" type="submit">Book a 7-day AI Spend Forensics Assessment</button>
+        </form>
+        <p class="trust-line">This request goes to Northwatch Systems. If the form fails, email contact@northwatch.systems.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Northwatch Systems</strong><br>
+      <span>Blackridge AI Spend Forensics</span>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../index.html">Product</a>
+      <a href="https://demo.northwatch.systems/">Demo UI</a>
+      <a href="../compare.html">Compare</a>
+      <a href="mailto:contact@northwatch.systems" data-cta="contact-footer">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll("[data-carousel]").forEach(function(carousel) {
+  var slides = Array.prototype.slice.call(carousel.querySelectorAll(".carousel-slide"));
+  var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-carousel-dot]"));
+  var prev = carousel.querySelector("[data-carousel-prev]");
+  var next = carousel.querySelector("[data-carousel-next]");
+  var index = 0;
+  var timer = null;
+
+  function show(nextIndex) {
+    index = (nextIndex + slides.length) % slides.length;
+    slides.forEach(function(slide, i) { slide.classList.toggle("active", i === index); });
+    dots.forEach(function(dot, i) { dot.classList.toggle("active", i === index); });
+  }
+
+  function start() {
+    stop();
+    timer = window.setInterval(function() { show(index + 1); }, 5000);
+  }
+
+  function stop() {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  }
+
+  if (prev) prev.addEventListener("click", function() { show(index - 1); start(); });
+  if (next) next.addEventListener("click", function() { show(index + 1); start(); });
+  dots.forEach(function(dot) {
+    dot.addEventListener("click", function() {
+      show(parseInt(dot.getAttribute("data-carousel-dot"), 10) || 0);
+      start();
+    });
+  });
+  carousel.addEventListener("mouseenter", stop);
+  carousel.addEventListener("mouseleave", start);
+  carousel.addEventListener("focusin", stop);
+  carousel.addEventListener("focusout", start);
+  start();
+});
+
+document.querySelectorAll("[data-cta]").forEach(function(el) {
+  el.addEventListener("click", function() {
+    if (typeof gtag === "function") {
+      gtag("event", "click", { event_category: "CTA", event_label: el.getAttribute("data-cta") });
+    }
+  });
+});
+</script>
+</body>
+</html>
