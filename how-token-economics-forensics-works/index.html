@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How Token Economics Forensics Reconstructs AI Workflow Spend</title>
-<meta name="description" content="How Blackridge reconstructs token economics across LLM and agent workflows, including attribution, retries, fallbacks, duplicate inference, confidence, and evidence rows.">
+<title>How Blackridge Reports AI Workflow Spend | Token Economics Forensics</title>
+<meta name="description" content="A buyer-safe explanation of how Blackridge reports token economics findings: data sources, evidence standards, confidence, coverage, and assessment limits.">
 <link rel="canonical" href="https://northwatch.systems/how-token-economics-forensics-works/">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://northwatch.systems/how-token-economics-forensics-works/">
-<meta property="og:title" content="How Token Economics Forensics Reconstructs AI Workflow Spend">
-<meta property="og:description" content="A technical methodology for AI spend forensics across LLM and agent workflows.">
+<meta property="og:title" content="How Blackridge Reports AI Workflow Spend">
+<meta property="og:description" content="How Blackridge presents AI spend findings with evidence, confidence, and coverage boundaries.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How Token Economics Forensics Works">
-<meta name="twitter:description" content="How Blackridge reconstructs AI workflow spend with evidence and confidence.">
+<meta name="twitter:title" content="How Blackridge Reports AI Workflow Spend">
+<meta name="twitter:description" content="A buyer-safe explanation of Blackridge evidence, confidence, and coverage.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
@@ -24,7 +24,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "How Token Economics Forensics Reconstructs AI Workflow Spend",
+  "headline": "How Blackridge Reports AI Workflow Spend",
   "author": { "@type": "Organization", "name": "Northwatch Systems" },
   "publisher": { "@type": "Organization", "name": "Northwatch Systems" },
   "mainEntityOfPage": "https://northwatch.systems/how-token-economics-forensics-works/"
@@ -46,57 +46,40 @@
 <main>
   <section class="page-hero">
     <div class="container">
-      <div class="eyebrow">Technical methodology</div>
-      <h1>How Token Economics Forensics Reconstructs AI Workflow Spend</h1>
-      <p class="lead">Blackridge treats every spend finding as an evidence problem. A finding should point back to the request, event, workflow, model, token, pricing, attribution, and confidence context that produced it.</p>
+      <div class="eyebrow">Technical overview</div>
+      <h1>How Blackridge reports AI workflow spend</h1>
+      <p class="lead">This page explains the evidence standard behind Blackridge reports without exposing proprietary detection logic. The goal is simple: engineering and finance should be able to inspect why a spend finding was made, what data supports it, and where confidence is limited.</p>
     </div>
   </section>
   <section>
     <div class="container article-body">
-      <h2>Why provider bills are insufficient</h2>
-      <p>Provider dashboards are useful for invoices, aggregate tokens, and model-level usage. They usually do not explain which workflow caused a spike, which retry loop multiplied cost, which fallback changed unit economics, or which app, team, tenant, or customer should own the spend.</p>
+      <h2>What the report is designed to answer</h2>
+      <p>Provider dashboards are useful for invoices, aggregate tokens, and model-level usage. A Blackridge report is designed for a different review: which workflow drove spend, which ownership signals are present, what looks wasted, and which fixes engineering should evaluate first.</p>
 
-      <h2>What data Blackridge can ingest</h2>
-      <p>Blackridge can work from logs, traces, gateway exports, provider usage data, runtime metadata, and application-level ownership signals. When higher-fidelity request evidence is required, Blackridge can collect events inline through an optional runtime collector or OpenAI-compatible collection path.</p>
+      <h2>What Blackridge can use</h2>
+      <p>Blackridge can work from existing logs, traces, gateway exports, provider usage data, runtime metadata, and app/team/tenant ownership signals. When existing data is incomplete, a scoped runtime collection path may be used to improve evidence quality.</p>
       <div class="grid cols-2">
-        <article class="card"><h3>Data Blackridge can use</h3><p>Provider usage exports, gateway request logs, OpenTelemetry traces, application logs, and app/team/tenant metadata where available.</p></article>
-        <article class="card"><h3>What Blackridge produces</h3><p>A workflow spend map, waste findings, attribution coverage notes, confidence labels, ranked fixes, and evidence rows engineering can inspect.</p></article>
+        <article class="card"><h3>Common inputs</h3><p>Provider usage exports, gateway request logs, traces, application logs, pricing context, and ownership metadata where available.</p></article>
+        <article class="card"><h3>Report outputs</h3><p>A workflow spend map, waste findings, attribution coverage notes, confidence labels, ranked fixes, and evidence rows engineering can inspect.</p></article>
       </div>
 
-      <h2>How workflow reconstruction works</h2>
-      <p>Blackridge groups events into workflow boundaries using explicit identifiers where available and conservative inference where they are missing. It then reconstructs request lineage, model choices, token usage, retries, fallbacks, branch execution, and pricing assumptions for the scoped workflow.</p>
-      <pre class="code-block">group events by workflow_id or inferred workflow boundary
-identify repeated calls with shared parent request, similarity, or retry metadata
-compare observed spend against modeled baseline
-attach confidence based on attribution and event completeness
-emit finding with evidence rows</pre>
+      <h2>The evidence standard</h2>
+      <p>Each finding should include the supporting context needed to review it: affected workflow, request or event references, model and pricing assumptions, ownership metadata, coverage notes, and confidence. Weak or missing data should be visible in the report instead of hidden behind a chart.</p>
 
-      <h2>How attribution coverage and confidence work</h2>
-      <p>Attribution is only as strong as the available metadata. Blackridge reports coverage gaps instead of pretending attribution is perfect. A finding can be exact, strong, inferred, weak, or unknown depending on the completeness of request IDs, workflow IDs, team/app/tenant metadata, pricing data, and event lineage.</p>
+      <h2>Observed vs modeled</h2>
+      <p>Blackridge separates observed waste from modeled opportunity. Observed findings are tied to available events. Modeled opportunity is presented as an estimate that engineering should validate before treating it as savings.</p>
 
-      <h2>Retry amplification</h2>
-      <p>Retry amplification is detected when one user or workflow action produces repeated model calls that materially increase cost. Blackridge looks for retry metadata, repeated parent requests, repeated prompts or workflow steps, repeated failures, and cost variance against the expected baseline.</p>
+      <h2>Coverage and confidence</h2>
+      <p>Attribution is only as strong as the available metadata. Blackridge reports coverage gaps so teams can tell when a finding is well-supported, when it is inferred, and when better instrumentation is needed.</p>
 
-      <h2>Fallback tax</h2>
-      <p>Fallback tax appears when failures or routing decisions move requests to a more expensive model or provider. The finding should show the original path, fallback path, model choices, pricing assumptions, and the cost delta that changed unit economics.</p>
+      <h2>Waste classes covered in review</h2>
+      <p>Blackridge reports can cover retry amplification, fallback tax, duplicate inference, premium-model overuse, abandoned branch waste, failed request waste, cache-miss opportunity, context bloat, retrieval bloat, and unattributed spend when the source data supports those findings.</p>
 
-      <h2>Duplicate inference</h2>
-      <p>Duplicate inference is flagged when similar prompts, repeated requests, or semantic duplicates are paid for repeatedly. Blackridge identifies candidates and labels confidence based on available request fingerprints, workflow context, and cache verdicts.</p>
+      <h2>What the report does not claim</h2>
+      <p>Blackridge does not guarantee savings, replace engineering judgment, or claim perfect attribution when metadata is incomplete. It gives engineering and finance a structured evidence packet for deciding what to fix first.</p>
 
-      <h2>Premium-model overuse</h2>
-      <p>Premium-model overuse is identified when expensive models appear to be defaults for tasks that may be served by cheaper models. Blackridge does not assume replacement is safe; it produces evidence so engineering can review model choice, task class, quality requirements, and cost impact.</p>
-
-      <h2>Abandoned branch waste</h2>
-      <p>Agent workflows may call models or tools along branches that never influence the final answer. Blackridge looks for branch lineage, tool invocation, final-response paths, and costs attached to abandoned execution branches.</p>
-
-      <h2>Why findings must include evidence</h2>
-      <p>A spend finding should be inspectable. The report should include supporting rows, source events, pricing assumptions, attribution coverage, and confidence notes so engineering and finance can evaluate the claim together.</p>
-
-      <h2>Limits</h2>
-      <p>Incomplete logs, missing request IDs, weak attribution metadata, sampling, privacy filtering, and provider export gaps can limit confidence. Blackridge reports those gaps and distinguishes observed waste from modeled opportunity.</p>
-
-      <h2>Example synthetic investigation</h2>
-      <p>A support-agent workflow shows a spend spike. Blackridge reconstructs the workflow and finds repeated failed calls followed by fallback to a premium model. Attribution is strong for app and team, weaker for customer because fallback events lack the customer header. The report ranks retry fanout first because the finding has clear event evidence and an engineering fix path.</p>
+      <h2>Example review surface</h2>
+      <p>A typical finding includes the affected workflow, the spend pattern, confidence, attribution coverage, observed vs modeled impact, supporting rows, and the recommended engineering fix. The public example report uses synthetic data to show the artifact without exposing customer data.</p>
 
       <div class="hero-actions">
         <a class="btn primary" href="../brg-ai-spend-assessment/index.html#request-assessment">Bring one workflow to a 7-day assessment</a>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anonymous Field Note | AI Workflow Evidence Gaps</title>
+<meta name="description" content="Noindex draft field note about Blackridge token economics forensics and evidence gaps in a multi-agent workflow.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://northwatch.systems/anonymous-ai-workflow-evidence-gaps/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Anonymous Field Note: AI Workflow Evidence Gaps">
+<meta property="og:description" content="A noindex draft showing how Blackridge frames evidence gaps before any remediation work.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anonymous Field Note: AI Workflow Evidence Gaps">
+<meta name="twitter:description" content="Noindex draft field note about Blackridge token economics forensics.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../assets/brg.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html">Product</a>
+      <a href="../brg-ai-spend-assessment/index.html#request-assessment">Assessment</a>
+      <a href="../contact/index.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Noindex draft · anonymous field note</div>
+      <h1>Reconstructing evidence gaps in a multi-agent workflow</h1>
+      <p class="lead">This draft is based on an anonymized engagement. It is intentionally generalized, not linked from the public site, and should not be treated as a public customer reference without explicit approval.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container article-body">
+      <div class="note">
+        <strong>Publication status:</strong> draft only. The client requested anonymity. Details that could identify the organization, scope, implementation, exact timeline, and downstream remediation have been removed or generalized.
+      </div>
+
+      <h2>Forensics question</h2>
+      <p>The initial Blackridge question was not whether the AI workflow was useful. It was whether engineering could reconstruct how the workflow produced its outputs, which runtime paths consumed tokens, which ownership signals were present, and where evidence was missing.</p>
+
+      <h2>What Blackridge reviewed</h2>
+      <div class="grid cols-2">
+        <article class="card"><h3>Workflow lineage</h3><p>Whether the team could follow a workflow from user action through intermediate agent steps, model calls, tool calls, and final output.</p></article>
+        <article class="card"><h3>Spend attribution</h3><p>Whether app, team, workflow, tenant, route, or request metadata was available consistently enough to support cost ownership.</p></article>
+        <article class="card"><h3>Evidence completeness</h3><p>Whether source events, prompt/configuration context, model choice, and downstream consumption path were available for review.</p></article>
+        <article class="card"><h3>Human review context</h3><p>Whether reviewers could see enough provenance to challenge an expensive or high-authority AI output before accepting it.</p></article>
+      </div>
+
+      <h2>Findings before remediation</h2>
+      <p>The Blackridge review found that the workflow had become operationally important before its evidence model was mature enough for audit, attribution, or spend review. The issue was not only model quality. The issue was missing reconstructability.</p>
+      <div class="grid cols-3">
+        <article class="card"><h3>Unclear ownership</h3><p>Some workflow paths crossed team and system boundaries without consistent ownership metadata. That made spend and responsibility hard to assign.</p></article>
+        <article class="card"><h3>Incomplete provenance</h3><p>Some outputs could not be traced cleanly back to the input state, intermediate context, model choice, and downstream consumer.</p></article>
+        <article class="card"><h3>Review without evidence</h3><p>Human reviewers saw confident outputs without always seeing the derivation context needed to evaluate cost, risk, or correctness.</p></article>
+      </div>
+
+      <h2>Why this matters for token economics</h2>
+      <p>AI spend forensics depends on evidence. If an organization cannot reconstruct the workflow path, ownership metadata, model choices, and event context behind an AI output, it also cannot reliably explain why the workflow cost what it did or which fix should move first.</p>
+
+      <h2>Blackridge framing</h2>
+      <p>The useful deliverable was an evidence map: where the workflow could be reconstructed, where attribution was strong, where metadata was missing, and which runtime paths needed better instrumentation before recurring spend review would be trustworthy.</p>
+
+      <table class="report-table">
+        <thead>
+          <tr><th>Review area</th><th>What Blackridge assessed</th><th>Why it matters</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Workflow traceability</td><td>Can the path from request to output be reconstructed?</td><td>Without traceability, spend cannot be tied to workflow behavior.</td></tr>
+          <tr><td>Attribution coverage</td><td>Are app, team, tenant, and workflow signals present?</td><td>Without ownership signals, chargeback and remediation conversations become guesswork.</td></tr>
+          <tr><td>Evidence quality</td><td>Are source events and context available for inspection?</td><td>Without evidence rows, findings are assertions rather than reviewable claims.</td></tr>
+          <tr><td>Review context</td><td>Can engineering challenge expensive outputs with enough provenance?</td><td>Without provenance, human approval can become a rubber stamp.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What is intentionally omitted</h2>
+      <p>This draft does not describe the client, industry, exact team size, exact workflow count, timeline, implementation details, or later private remediation work. It also does not claim public endorsement, live deployment, quantified savings, or a named customer relationship.</p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="../brg-ai-spend-assessment/index.html#request-assessment">Book a 7-day assessment</a>
+        <a class="btn secondary" href="../how-token-economics-forensics-works/index.html">Read the public methodology overview</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <strong>Northwatch Systems</strong>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../contact/index.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
