@@ -1,7 +1,7 @@
 var SITE_CONFIG = {
   siteName: "Northwatch Systems",
-  productName: "Blackridge",
-  category: "AI Spend Forensics",
+  productName: "Blackridge Runtime Gateway",
+  category: "AI runtime economics infrastructure",
   canonicalDomain: "https://northwatch.systems",
   contactEmail: "sales@northwatch.systems",
   adminEmail: "admin@northwatch.systems",

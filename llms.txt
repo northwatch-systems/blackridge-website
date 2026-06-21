@@ -1,6 +1,6 @@
-Northwatch Systems builds Blackridge, an AI spend forensics system for token economics across LLM and agent workflows. Blackridge helps engineering teams reconstruct where AI spend went, why it happened, what was waste, and what to fix first.
+Northwatch Systems builds Blackridge Runtime Gateway, AI runtime economics infrastructure for enterprise inference spend. BRG sits between AI applications and model providers to make inference spend attributable, explainable, and controllable.
 
-Blackridge is not primarily an AI gateway or model router. It ingests logs, traces, gateway exports, provider events, runtime metadata, and optional runtime collector data to produce evidence-backed spend findings.
+The one-workflow assessment is the entry motion for evaluating BRG. It uses logs, traces, gateway exports, provider events, runtime metadata, and scoped runtime evidence to determine whether BRG should be deployed for ongoing control.
 
 Primary public pages:
 - https://northwatch.systems/
