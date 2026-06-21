@@ -74,8 +74,8 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
       <span class="brand-name">Northwatch <span>Systems</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="../index.html#problem">Problem</a>
       <a href="#product-ui">Product UI</a>
+      <a href="#scope">Scope</a>
       <a href="../compare.html">Compare</a>
       <a class="btn secondary" data-cta="assessment-form-nav" href="#request-assessment">Request assessment</a>
     </nav>
@@ -152,7 +152,7 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
       <div>
         <div class="eyebrow">Product artifact</div>
         <h2>Inspect the evidence in the product UI.</h2>
-        <p class="lead">Blackridge does not just hand over a slide. The assessment produces explorable evidence: guided investigation, full report mode, request ledger, workflow traces, attribution, signals, data confidence, request inspector, and raw source events.</p>
+        <p class="lead">Blackridge does not just hand over a slide. The assessment produces explorable evidence: workflow traces, request-level economics, attribution, confidence, and source events.</p>
       </div>
       <div class="screenshot-carousel" data-carousel aria-label="Blackridge product UI screenshots">
         <div class="carousel-stage">
@@ -177,16 +177,6 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
             <button class="carousel-dot" type="button" data-carousel-dot="2" aria-label="Show Request Ledger screenshot"></button>
           </div>
           <button class="carousel-btn" type="button" data-carousel-next aria-label="Next screenshot">›</button>
-        </div>
-      </div>
-
-      <div style="margin-top:14px;">
-        <div class="card">
-          <span class="label">Assessment preview</span>
-          <p>The screenshots are captured from an internal Blackridge report environment using seeded assessment data. During an assessment, Northwatch can walk through the workflow traces, Sankey graph, request inspector, and raw evidence without exposing the internal demo publicly.</p>
-          <div class="hero-actions">
-            <a class="btn primary" data-cta="request-ui-walkthrough" href="#request-assessment">Request an assessment walkthrough</a>
-          </div>
         </div>
       </div>
     </div>
@@ -223,21 +213,6 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
     </div>
   </section>
 
-  <section id="packages" class="compact-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Ways to start</div>
-        <h2>Start with one workflow. Expand when the evidence is useful.</h2>
-      </div>
-      <div class="grid cols-2">
-        <article class="card"><h3>7-day spend assessment</h3><p>Seven days, one workflow, spend reconstruction, evidence, and ranked fixes.</p></article>
-        <article class="card"><h3>Forensics workspace</h3><p>Use the product UI to inspect workflow traces, request evidence, attribution, confidence, and raw source events.</p></article>
-        <article class="card"><h3>Runtime evidence collection</h3><p>Start from logs or add the Blackridge Runtime Collector when you need inline evidence.</p></article>
-        <article class="card"><h3>Enterprise rollout</h3><p>Expand coverage across teams, workflows, importers, review processes, and private deployment requirements.</p></article>
-      </div>
-    </div>
-  </section>
-
   <section id="request-assessment" class="cta-band">
     <div class="container">
       <div class="eyebrow">Request the assessment</div>
@@ -255,7 +230,7 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
           </div>
           <label><span>Which AI workflow should Blackridge inspect?</span><textarea name="notes" required></textarea></label>
           <input type="hidden" name="_subject" value="7-Day AI Spend Forensics Assessment Request">
-          <button class="btn primary" data-cta="submit-assessment-form" type="submit">Book a 7-day AI Spend Forensics Assessment</button>
+          <button class="btn primary" data-cta="submit-assessment-form" type="submit">Submit assessment request</button>
           <p class="form-status" id="assessmentStatus" role="status" aria-live="polite"></p>
         </form>
         <p class="trust-line">This request goes to Northwatch Systems. If the form fails, email contact@northwatch.systems.</p>
