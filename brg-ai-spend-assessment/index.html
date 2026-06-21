@@ -76,15 +76,16 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
 <body>
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="../index.html" aria-label="Northwatch Systems home">
+    <a class="brand" href="../" aria-label="Northwatch Systems home">
       <span class="brand-mark">N</span>
       <span class="brand-name">Northwatch <span>Systems</span></span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#product-ui">Product UI</a>
-      <a href="#exactly-what-you-receive">Deliverables</a>
-      <a href="#scope">Scope</a>
-      <a href="../example-ai-spend-forensics-report/index.html">Example report</a>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="../brg-ai-spend-assessment/">Assessment</a>
+      <a href="../how-token-economics-forensics-works/">Methodology</a>
+      <a href="../compare.html">Compare</a>
+      <a href="../about/">About</a>
       <a class="btn secondary" data-cta="assessment-form-nav" href="#request-assessment">Request assessment</a>
     </nav>
   </div>
@@ -99,7 +100,7 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
         <p class="lead">Bring one expensive AI workflow. Blackridge reconstructs token economics across apps, teams, tenants, retries, fallback paths, duplicate requests, and model choices, then gives engineering the evidence needed to fix the first problem.</p>
         <div class="hero-actions">
           <a class="btn primary" data-cta="book-assessment-hero" href="#request-assessment">Book a 7-day assessment</a>
-          <a class="btn secondary" data-cta="see-example-report" href="../example-ai-spend-forensics-report/index.html">See example report</a>
+          <a class="btn secondary" data-cta="see-example-report" href="../example-ai-spend-forensics-report/">See example report</a>
         </div>
         <p class="trust-line">Screenshots show the kind of evidence review produced during an assessment, using seeded report data.</p>
       </div>
@@ -185,15 +186,15 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
         <div class="carousel-stage">
           <figure class="carousel-slide active">
             <img src="../assets/screenshots/blackridge-workflow-traces.png" alt="Blackridge Workflow Traces view showing a Sankey graph of observed workflow lineage and cost flow">
-            <figcaption class="carousel-caption"><span>Workflow Traces</span><span>Product screenshot · Sankey graph</span></figcaption>
+            <figcaption class="carousel-caption"><span>Workflow Traces</span><span>Shows how one workflow fans out across requests, retries, branches, fallbacks, models, and cost flow.</span></figcaption>
           </figure>
           <figure class="carousel-slide inspector">
-            <img src="../assets/screenshots/blackridge-request-inspector.png" alt="Blackridge Request Inspector showing request economics, attribution, usage, cache, and route plan evidence" loading="lazy">
-            <figcaption class="carousel-caption"><span>Request Inspector</span><span>Product screenshot · close-up evidence</span></figcaption>
+            <img src="../assets/screenshots/blackridge-request-inspector.png" alt="Blackridge Request Inspector showing request economics, attribution, model choice, token usage, cache status, and routing context" loading="lazy">
+            <figcaption class="carousel-caption"><span>Request Inspector</span><span>Shows request-level economics, attribution, model choice, token usage, cache status, and evidence behind a finding.</span></figcaption>
           </figure>
           <figure class="carousel-slide">
-            <img src="../assets/screenshots/blackridge-request-ledger.png" alt="Blackridge Request Evidence Ledger with selected request and inspector panel" loading="lazy">
-            <figcaption class="carousel-caption"><span>Request Ledger</span><span>Product screenshot · rows behind claims</span></figcaption>
+            <img src="../assets/screenshots/blackridge-request-ledger.png" alt="Blackridge Request Evidence Ledger showing event rows behind each finding for engineering and finance review" loading="lazy">
+            <figcaption class="carousel-caption"><span>Request Ledger</span><span>Shows the event rows behind each finding so engineering and finance can inspect the evidence trail.</span></figcaption>
           </figure>
         </div>
         <div class="carousel-controls">
@@ -209,7 +210,7 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
     </div>
   </section>
 
-  <section id="scope" class="compact-section">
+  <section id="product-scope" class="compact-section">
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Product scope</div>
@@ -304,7 +305,8 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
           <button class="btn primary" data-cta="submit-assessment-form" type="submit">Submit assessment request</button>
           <p class="form-status" id="assessmentStatus" role="status" aria-live="polite"></p>
         </form>
-        <p class="trust-line">This request goes to Northwatch Systems. If the form fails, email sales@northwatch.systems.</p>
+        <p class="form-privacy">By submitting this form, you agree that Northwatch Systems may use the information you provide to respond to your request. Do not submit sensitive logs or production data through this form. We will coordinate secure data sharing separately if an assessment moves forward. See our <a href="../privacy/">Privacy Policy</a> · <a href="../terms/">Terms</a></p>
+        <p class="trust-line">This request goes to Northwatch Systems. If the form fails, email <a href="mailto:sales@northwatch.systems">sales@northwatch.systems</a>.</p>
       </div>
     </div>
   </section>
@@ -312,17 +314,20 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
 
 <footer class="footer">
   <div class="container footer-inner">
-    <div>
-      <strong>Northwatch Systems</strong><br>
-      <span>Blackridge AI Spend Forensics</span>
-    </div>
+    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge AI Spend Forensics</div>
     <nav class="footer-links" aria-label="Footer">
-      <a href="../index.html">Product</a>
-      <a href="../about/index.html">About</a>
-      <a href="../how-token-economics-forensics-works/index.html">Methodology</a>
+      <a href="../brg-ai-spend-assessment/">Assessment</a>
+      <a href="../example-ai-spend-forensics-report/">Example report</a>
+      <a href="../how-token-economics-forensics-works/">Methodology</a>
       <a href="../compare.html">Compare</a>
-      <a href="../contact/index.html" data-cta="contact-footer">Contact</a>
+      <a href="../about/">About</a>
+      <a href="../contact/" data-cta="contact-footer">Contact</a>
     </nav>
+    <div class="footer-legal">
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+    </div>
+    <div class="footer-meta">Last updated June 2026</div>
   </div>
 </footer>
 
@@ -416,6 +421,15 @@ document.querySelectorAll("[data-cta]").forEach(function(el) {
     }
   });
 });
+
+(function(){
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("navLinks");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
+  }
+})();
 </script>
 </body>
 </html>

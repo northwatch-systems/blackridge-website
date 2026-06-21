@@ -273,7 +273,16 @@ h1 em { font-style: normal; color: var(--accent-2); }
 
 /* Footer */
 .footer { border-top: 1px solid var(--line); padding: 36px 0; }
-.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.footer-inner { display: grid; gap: 14px; color: var(--ink-3); font-size: 14px; }
+.footer-brand { font-size: 13px; color: var(--ink-2); }
+.footer-brand strong { color: var(--ink); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+.footer-links a { color: var(--ink-3); }
+.footer-links a:hover { color: var(--ink); }
+.footer-legal { display: flex; flex-wrap: wrap; gap: 18px; font-size: 12px; color: var(--ink-3); }
+.footer-legal a { color: var(--ink-3); }
+.footer-legal a:hover { color: var(--ink); }
+.footer-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: .04em; }
 .meta { font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
 
 @media (max-width: 860px) {
@@ -311,7 +320,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
 
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="index.html" aria-label="Northwatch Systems — return to home">
+    <a class="brand" href="./" aria-label="Northwatch Systems — return to home">
       <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <rect x="1" y="1" width="38" height="38" rx="9" fill="#12161D" stroke="#2A323D"/>
         <rect x="11" y="10" width="4.4" height="20" rx="1" fill="#9aa4b0"/>
@@ -328,10 +337,11 @@ h1 em { font-style: normal; color: var(--accent-2); }
     </a>
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="index.html">Product</a>
-      <a href="what-is-ai-spend-forensics/index.html">AI Spend Forensics</a>
+      <a href="brg-ai-spend-assessment/">Assessment</a>
+      <a href="how-token-economics-forensics-works/">Methodology</a>
       <a href="compare.html" class="active">Compare</a>
-      <a class="btn primary" data-cta="book-assessment-compare-nav" href="brg-ai-spend-assessment/index.html#request-assessment">Book Spend Forensics Assessment <span class="arr">→</span></a>
+      <a href="about/">About</a>
+      <a class="btn primary" data-cta="book-assessment-compare-nav" href="brg-ai-spend-assessment/#request-assessment">Book assessment <span class="arr">→</span></a>
     </nav>
   </div>
 </header>
@@ -534,8 +544,8 @@ h1 em { font-style: normal; color: var(--accent-2); }
       <h2>See what's actually happening in your runtime.</h2>
       <p>The assessment starts with your existing logs, traces, gateway exports, provider events, or optional runtime collection, then delivers a report focused on what happened, what was waste, and what to fix first.</p>
       <div class="cta-actions">
-        <a class="btn primary" data-cta="book-assessment-compare-final" href="brg-ai-spend-assessment/index.html#request-assessment">Book your spend forensics assessment <span class="arr">→</span></a>
-        <a class="btn ghost" href="index.html">Back to overview</a>
+        <a class="btn primary" data-cta="book-assessment-compare-final" href="brg-ai-spend-assessment/#request-assessment">See how Blackridge fits <span class="arr">→</span></a>
+        <a class="btn ghost" href="./">Back to overview</a>
       </div>
     </div>
   </section>
@@ -543,10 +553,20 @@ h1 em { font-style: normal; color: var(--accent-2); }
 
 <footer class="footer">
   <div class="container footer-inner">
-    <span class="brand-name" style="font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.26em;text-transform:uppercase;">Northwatch <span style="color:var(--ink-3);font-weight:500;">Systems</span></span>
-    <span class="meta">Blackridge AI Spend Forensics</span>
-    <span class="meta"><a href="brg-ai-spend-assessment/index.html">7-day assessment</a></span>
-    <span class="meta"><a href="contact/index.html">Contact</a></span>
+    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge AI Spend Forensics</div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="brg-ai-spend-assessment/">Assessment</a>
+      <a href="example-ai-spend-forensics-report/">Example report</a>
+      <a href="how-token-economics-forensics-works/">Methodology</a>
+      <a href="compare.html">Compare</a>
+      <a href="about/">About</a>
+      <a href="contact/">Contact</a>
+    </nav>
+    <div class="footer-legal">
+      <a href="privacy/">Privacy</a>
+      <a href="terms/">Terms</a>
+    </div>
+    <div class="footer-meta">Last updated June 2026</div>
   </div>
 </footer>
 <script>
