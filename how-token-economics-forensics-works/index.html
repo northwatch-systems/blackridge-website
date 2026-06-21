@@ -58,17 +58,10 @@
 
       <h2>What data Blackridge can ingest</h2>
       <p>Blackridge can work from logs, traces, gateway exports, provider usage data, runtime metadata, and application-level ownership signals. When higher-fidelity request evidence is required, Blackridge can collect events inline through an optional runtime collector or OpenAI-compatible collection path.</p>
-      <pre class="code-block">inputs:
-  - provider_usage_export
-  - gateway_request_log
-  - otel_trace
-  - app_log
-  - app_team_tenant_metadata
-outputs:
-  - spend_map
-  - waste_findings
-  - attribution_coverage
-  - evidence_rows</pre>
+      <div class="grid cols-2">
+        <article class="card"><h3>Data Blackridge can use</h3><p>Provider usage exports, gateway request logs, OpenTelemetry traces, application logs, and app/team/tenant metadata where available.</p></article>
+        <article class="card"><h3>What Blackridge produces</h3><p>A workflow spend map, waste findings, attribution coverage notes, confidence labels, ranked fixes, and evidence rows engineering can inspect.</p></article>
+      </div>
 
       <h2>How workflow reconstruction works</h2>
       <p>Blackridge groups events into workflow boundaries using explicit identifiers where available and conservative inference where they are missing. It then reconstructs request lineage, model choices, token usage, retries, fallbacks, branch execution, and pricing assumptions for the scoped workflow.</p>
