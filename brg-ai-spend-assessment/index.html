@@ -252,9 +252,10 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
             <label><span>Work email</span><input type="email" name="email" required></label>
             <label><span>Role</span><select name="role" required><option value="">Select role</option><option>VP Engineering</option><option>Head of Platform</option><option>AI Platform Lead</option><option>SRE / Infrastructure Leader</option><option>FinOps-adjacent Engineering Leader</option><option>Founder / CTO</option><option>Other</option></select></label>
           </div>
-            <label><span>Which AI workflow should Blackridge inspect?</span><textarea name="notes" required></textarea></label>
+          <label><span>Which AI workflow should Blackridge inspect?</span><textarea name="notes" required></textarea></label>
           <input type="hidden" name="_subject" value="7-Day AI Spend Forensics Assessment Request">
           <button class="btn primary" data-cta="submit-assessment-form" type="submit">Book a 7-day AI Spend Forensics Assessment</button>
+          <p class="form-status" id="assessmentStatus" role="status" aria-live="polite"></p>
         </form>
         <p class="trust-line">This request goes to Northwatch Systems. If the form fails, email contact@northwatch.systems.</p>
       </div>
@@ -316,6 +317,49 @@ document.querySelectorAll("[data-carousel]").forEach(function(carousel) {
   carousel.addEventListener("focusout", start);
   start();
 });
+
+var assessmentForm = document.getElementById("assessmentForm");
+if (assessmentForm) {
+  var assessmentStatus = document.getElementById("assessmentStatus");
+  var assessmentButton = assessmentForm.querySelector("button[type=\"submit\"]");
+  var originalButtonText = assessmentButton ? assessmentButton.textContent : "";
+
+  function setAssessmentStatus(message, state) {
+    if (!assessmentStatus) return;
+    assessmentStatus.textContent = message;
+    assessmentStatus.className = "form-status" + (state ? " " + state : "");
+  }
+
+  assessmentForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    setAssessmentStatus("", "");
+
+    if (assessmentButton) {
+      assessmentButton.disabled = true;
+      assessmentButton.textContent = "Sending request...";
+    }
+
+    window.fetch(assessmentForm.action, {
+      method: "POST",
+      body: new FormData(assessmentForm),
+      headers: { "Accept": "application/json" }
+    }).then(function(response) {
+      if (!response.ok) throw new Error("Form submission failed");
+      assessmentForm.reset();
+      setAssessmentStatus("Request sent. Northwatch Systems will follow up by email.", "success");
+      if (typeof gtag === "function") {
+        gtag("event", "generate_lead", { event_category: "Form", event_label: "7-day AI Spend Forensics Assessment" });
+      }
+    }).catch(function() {
+      setAssessmentStatus("The form did not send. Email contact@northwatch.systems and include the workflow you want inspected.", "error");
+    }).finally(function() {
+      if (assessmentButton) {
+        assessmentButton.disabled = false;
+        assessmentButton.textContent = originalButtonText;
+      }
+    });
+  });
+}
 
 document.querySelectorAll("[data-cta]").forEach(function(el) {
   el.addEventListener("click", function() {
