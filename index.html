@@ -10,22 +10,22 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>Blackridge AI Spend Forensics | Northwatch Systems</title>
-<meta name="description" content="Blackridge reconstructs token economics across LLM and agent workflows so engineering teams can see where AI spend went, why it happened, what was waste, and what to fix first.">
+<title>Blackridge Runtime Gateway | AI Runtime Economics</title>
+<meta name="description" content="Blackridge Runtime Gateway gives platform teams request-level evidence for the workflows, retries, fallbacks, and model choices driving production AI spend.">
 <link rel="canonical" href="https://northwatch.systems/">
 <meta name="theme-color" content="#D2762F">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/">
-<meta property="og:title" content="Blackridge AI Spend Forensics | Northwatch Systems">
-<meta property="og:description" content="Blackridge reconstructs token economics across LLM and agent workflows to explain spend causality and ranked fixes.">
+<meta property="og:title" content="Blackridge Runtime Gateway | Northwatch Systems">
+<meta property="og:description" content="Understand the runtime behavior driving production AI spend, from workflow to request.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Northwatch Systems">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://northwatch.systems/">
-<meta name="twitter:title" content="Blackridge AI Spend Forensics">
-<meta name="twitter:description" content="Blackridge shows where AI spend went, why it happened, what was waste, and what to fix first.">
+<meta name="twitter:title" content="Blackridge Runtime Gateway">
+<meta name="twitter:description" content="Request-level runtime economics for production AI infrastructure.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -40,7 +40,7 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag("js", new Date());
-gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title: "Blackridge AI Spend Forensics" });
+gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title: "Blackridge Runtime Gateway" });
 </script>
 <script>
 _linkedin_partner_id = "9262050";
@@ -68,10 +68,10 @@ s.parentNode.insertBefore(b, s);
     {
       "@type": "SoftwareApplication",
       "@id": "https://northwatch.systems/#brg",
-      "name": "Blackridge Forensics",
+      "name": "Blackridge Runtime Gateway",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Cloud infrastructure",
-      "description": "Blackridge is a token economics forensics system for AI applications, agents, and LLM workflows.",
+      "description": "Blackridge Runtime Gateway is infrastructure software for understanding request-level runtime economics across production AI workflows.",
       "publisher": { "@id": "https://northwatch.systems/#organization" },
       "url": "https://northwatch.systems/"
     },
@@ -97,11 +97,11 @@ s.parentNode.insertBefore(b, s);
     </a>
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="brg-ai-spend-assessment/">Assessment</a>
-      <a href="how-token-economics-forensics-works/">Methodology</a>
-      <a href="compare.html">Compare</a>
+      <a href="#product">Product</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#assessment">Assessment</a>
       <a href="about/">About</a>
-      <a class="btn secondary" data-cta="book-assessment-nav" href="brg-ai-spend-assessment/#request-assessment">Book assessment</a>
+      <a class="btn secondary" data-cta="discuss-workflow-nav" href="brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
     </nav>
   </div>
 </header>
@@ -110,36 +110,35 @@ s.parentNode.insertBefore(b, s);
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Blackridge AI Spend Forensics</div>
-        <h1>Find where your AI spend is leaking.</h1>
-        <p class="lead">Blackridge reconstructs token economics across LLM and agent workflows so engineering teams can see which apps, teams, tenants, retries, fallbacks, duplicate requests, and model choices caused the bill.</p>
-        <p class="lead">In 7 days, you receive an evidence-backed spend forensics report for one expensive workflow: spend map, attribution coverage, waste findings, ranked fixes, and supporting request-level evidence.</p>
+        <div class="eyebrow">Blackridge Runtime Gateway</div>
+        <h1>Know what every AI workflow costs—and why.</h1>
+        <p class="lead">Blackridge gives platform teams request-level evidence for the workflows, retries, fallbacks, and model choices driving production AI spend.</p>
+        <p class="hero-offer">Start with one expensive workflow. Establish the evidence and determine where BRG fits in seven days.</p>
         <div class="hero-actions">
-          <a class="btn primary" data-cta="book-assessment-hero" href="brg-ai-spend-assessment/#request-assessment">Book a 7-day assessment</a>
-          <a class="btn secondary" data-cta="see-example-evidence" href="example-ai-spend-forensics-report/">See example evidence</a>
+          <a class="btn primary" data-cta="discuss-workflow-hero" href="brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
+          <a class="btn secondary" data-cta="inspect-evidence-hero" href="example-ai-spend-forensics-report/">Inspect example evidence</a>
         </div>
-        <p class="trust-line">Built for engineering teams running AI applications, agents, LLM workflows, and multi-provider inference infrastructure.</p>
+        <p class="trust-line">For platform and infrastructure teams operating production AI workloads.</p>
       </div>
       <aside class="hero-shot" aria-labelledby="hero-shot-title">
         <div class="hero-shot-topbar">
-          <span id="hero-shot-title">Blackridge Evidence UI</span>
-          <span>Workflow traces</span>
+          <span id="hero-shot-title">Blackridge Runtime Gateway</span>
+          <span>Evidence UI</span>
         </div>
         <img src="assets/screenshots/blackridge-workflow-traces.png" alt="Blackridge Workflow Traces view showing a Sankey graph of workflow lineage and cost flow">
         <div class="hero-shot-caption">
-          <span>Product screenshot using seeded assessment data</span>
+          <span>Product interface · seeded example data</span>
           <div class="hero-shot-tags" aria-label="Visible evidence types">
             <b>workflow traces</b>
-            <b>request inspector</b>
-            <b>evidence rows</b>
-            <b>confidence</b>
+            <b>request evidence</b>
+            <b>cost attribution</b>
           </div>
         </div>
       </aside>
     </div>
   </section>
 
-  <section class="proof-strip" aria-label="Proof without fake traction">
+  <section class="proof-strip" aria-label="Proof without fake traction" hidden>
     <div class="container proof-band">
       <div class="proof-intro">
         <div class="eyebrow">Proof without fake traction</div>
@@ -170,7 +169,7 @@ s.parentNode.insertBefore(b, s);
     </div>
   </section>
 
-  <section id="seven-day-output" class="compact-section">
+  <section id="seven-day-output" class="compact-section" hidden>
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Seven-day output</div>
@@ -189,17 +188,19 @@ s.parentNode.insertBefore(b, s);
   <section id="problem">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Problem</div>
-        <h2>Provider bills show totals. They do not explain causes.</h2>
-        <p>Your AI provider can tell you tokens, models, and invoice totals. It usually cannot tell you which workflow caused the spike, which retry loop multiplied spend, which fallback path changed unit economics, or which app/team/tenant should own the cost.</p>
+        <div class="eyebrow">The operating gap</div>
+        <h2>Your invoice records usage. It does not explain runtime behavior.</h2>
+        <p>A single user action can become dozens of model calls across retries, agent branches, and fallback paths. Provider totals rarely retain the workflow and ownership context needed to explain that cost.</p>
       </div>
-      <div class="card">
-        <p>Provider dashboards show what you spent after it is gone. Blackridge shows which workflow, retry loop, fallback path, duplicate request, premium-model default, app, team, or tenant caused the spend — and what to fix first.</p>
+      <div class="signal-grid">
+        <article class="signal"><span>01</span><h3>Runtime amplification</h3><p>Retries, fallbacks, and branches multiply requests behind one user action.</p></article>
+        <article class="signal"><span>02</span><h3>Lost ownership</h3><p>Provider totals lose the workflow, application, team, and tenant context.</p></article>
+        <article class="signal"><span>03</span><h3>No decision trail</h3><p>Engineering cannot see which change to test first or how to validate it.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="leaks">
+  <section id="leaks" hidden>
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Waste classes</div>
@@ -216,7 +217,7 @@ s.parentNode.insertBefore(b, s);
     </div>
   </section>
 
-  <section id="contrast">
+  <section id="contrast" hidden>
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Competitive contrast</div>
@@ -232,7 +233,7 @@ s.parentNode.insertBefore(b, s);
     </div>
   </section>
 
-  <section id="personas">
+  <section id="personas" hidden>
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Buyer context</div>
@@ -247,17 +248,62 @@ s.parentNode.insertBefore(b, s);
     </div>
   </section>
 
-  <section id="how-it-works">
+  <section id="product">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">How it works</div>
-        <h2>From traffic or logs to evidence-backed findings</h2>
+        <div class="eyebrow">The product</div>
+        <h2>A runtime economics layer for production AI.</h2>
+        <p>BRG connects model requests to the workflow and owner that created them, reconstructs runtime behavior, and preserves the evidence behind each finding.</p>
       </div>
-      <div class="grid cols-2 steps">
-        <article class="card step"><h3>Connect one workflow</h3><p>Use existing logs, traces, provider events, gateway exports, or the optional Blackridge Runtime Collector.</p></article>
-        <article class="card step"><h3>Reconstruct execution</h3><p>Requests, retries, fallbacks, branches, attribution, and token economics.</p></article>
-        <article class="card step"><h3>Produce findings</h3><p>Waste classes, confidence, supporting events, estimated savings, and recommended fixes.</p></article>
-        <article class="card step"><h3>Export evidence</h3><p>Report artifacts that engineering and finance can inspect.</p></article>
+      <div class="architecture" aria-label="Blackridge Runtime Gateway architecture">
+        <div class="architecture-flow">
+          <div class="architecture-node"><span>01</span><strong>AI applications</strong><small>Agents, services, workflows</small></div>
+          <div class="architecture-arrow" aria-hidden="true">→</div>
+          <div class="architecture-node architecture-node-accent"><span>02</span><strong>Blackridge Runtime Gateway</strong><small>Request economics and runtime evidence</small></div>
+          <div class="architecture-arrow" aria-hidden="true">→</div>
+          <div class="architecture-node"><span>03</span><strong>Model providers</strong><small>Models, routes, usage events</small></div>
+        </div>
+        <div class="architecture-output"><span>Evidence path</span><strong>Workflow traces · request ledger · attribution · confidence</strong></div>
+      </div>
+      <div class="product-jobs">
+        <article><h3>Attribute</h3><p>Connect spend to workflows, applications, teams, tenants, and request paths where the metadata exists.</p></article>
+        <article><h3>Explain</h3><p>Reconstruct retries, fallbacks, branches, model choices, and the economics behind a finding.</p></article>
+        <article><h3>Act with evidence</h3><p>Rank changes for engineering review and retain the event trail needed to validate the result.</p></article>
+      </div>
+      <div class="product-evidence" id="evidence">
+        <div class="product-evidence-head">
+          <div>
+            <div class="eyebrow">Product evidence</div>
+            <h2>Inspect the software behind the assessment.</h2>
+            <p>Three views of the same evidence trail: workflow behavior, request-level economics, and the underlying event ledger. Screenshots use seeded example data.</p>
+          </div>
+          <a class="btn secondary" data-cta="example-report-product" href="example-ai-spend-forensics-report/">Inspect example report</a>
+        </div>
+        <div class="screenshot-carousel" data-carousel aria-label="Blackridge product UI screenshots">
+          <div class="carousel-stage">
+            <figure class="carousel-slide active">
+              <img src="assets/screenshots/blackridge-workflow-traces.png" alt="Blackridge Workflow Traces showing workflow lineage and cost flow">
+              <figcaption class="carousel-caption"><span>Workflow traces</span><span>See how one workflow fans out across requests, retries, branches, fallbacks, models, and cost.</span></figcaption>
+            </figure>
+            <figure class="carousel-slide inspector">
+              <img src="assets/screenshots/blackridge-request-inspector.png" alt="Blackridge Request Inspector showing request economics and attribution context" loading="lazy">
+              <figcaption class="carousel-caption"><span>Request inspector</span><span>Inspect cost, tokens, attribution, model choice, cache status, and route context for one request.</span></figcaption>
+            </figure>
+            <figure class="carousel-slide">
+              <img src="assets/screenshots/blackridge-request-ledger.png" alt="Blackridge Request Ledger showing the event rows behind each finding" loading="lazy">
+              <figcaption class="carousel-caption"><span>Request ledger</span><span>Follow the event-level evidence behind each conclusion for engineering and finance review.</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn" type="button" data-carousel-prev aria-label="Previous screenshot">‹</button>
+            <div class="carousel-dots" aria-label="Screenshot selector">
+              <button class="carousel-dot active" type="button" data-carousel-dot="0" aria-label="Show Workflow Traces screenshot"></button>
+              <button class="carousel-dot" type="button" data-carousel-dot="1" aria-label="Show Request Inspector screenshot"></button>
+              <button class="carousel-dot" type="button" data-carousel-dot="2" aria-label="Show Request Ledger screenshot"></button>
+            </div>
+            <button class="carousel-btn" type="button" data-carousel-next aria-label="Next screenshot">›</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -265,21 +311,23 @@ s.parentNode.insertBefore(b, s);
   <section id="assessment">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">7-day assessment</div>
-        <h2>What you get after 7 days</h2>
+        <div class="eyebrow">The entry point</div>
+        <h2>Start with a Runtime Economics Assessment.</h2>
+        <p>The assessment is a bounded way to establish the evidence for one material production workflow and determine whether an ongoing BRG deployment is justified.</p>
       </div>
       <div class="timeline">
-        <article class="card"><div class="day">Day 1-2</div><h3>Connect and baseline</h3><p>Connect one workflow and establish a spend baseline from logs, traces, or inline traffic.</p></article>
-        <article class="card"><div class="day">Day 3-5</div><h3>Reconstruct spend</h3><p>Analyze attribution, retries, duplicate inference, fallbacks, and premium-model usage.</p></article>
-        <article class="card"><div class="day">Day 6-7</div><h3>Deliver the report</h3><p>Receive a spend-forensics report with ranked fixes and supporting evidence.</p></article>
+        <article class="card"><div class="day">Scope</div><h3>One production workflow</h3><p>Begin with existing logs, traces, gateway exports, provider events, or scoped runtime collection.</p></article>
+        <article class="card"><div class="day">Establish</div><h3>Runtime economics</h3><p>Reconstruct cost, attribution, amplification, and data-quality gaps at request level.</p></article>
+        <article class="card"><div class="day">Decide</div><h3>What happens next</h3><p>Receive ranked actions, supporting evidence, and a clear recommendation on BRG fit.</p></article>
       </div>
-      <div class="hero-actions">
-        <a class="btn primary" data-cta="book-assessment-midpage" href="brg-ai-spend-assessment/#request-assessment">Bring one expensive workflow</a>
+      <div class="assessment-fit">
+        <div><span>Best fit</span><strong>Production AI workload · meaningful or unexplained inference cost · accountable engineering owner</strong></div>
+        <a class="btn primary" data-cta="discuss-workflow-assessment" href="brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
       </div>
     </div>
   </section>
 
-  <section id="product-ui">
+  <section id="product-ui" hidden>
     <div class="container">
       <div>
         <div class="eyebrow">Product artifact</div>
@@ -290,7 +338,7 @@ s.parentNode.insertBefore(b, s);
           <a class="btn secondary" data-cta="book-ui-walkthrough-home" href="brg-ai-spend-assessment/#request-assessment">Request an assessment walkthrough</a>
         </div>
       </div>
-      <div class="screenshot-carousel" data-carousel aria-label="Blackridge product UI screenshots">
+      <div class="screenshot-carousel" data-legacy-carousel aria-label="Blackridge product UI screenshots">
         <div class="carousel-stage">
           <figure class="carousel-slide active">
             <img src="assets/screenshots/blackridge-workflow-traces.png" alt="Blackridge Workflow Traces view showing a Sankey graph of observed workflow lineage and cost flow">
@@ -318,7 +366,7 @@ s.parentNode.insertBefore(b, s);
     </div>
   </section>
 
-  <section id="product-layers">
+  <section id="product-layers" hidden>
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Product layers</div>
@@ -336,7 +384,7 @@ s.parentNode.insertBefore(b, s);
     </div>
   </section>
 
-  <section id="integrations">
+  <section id="integrations" hidden>
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Integration paths</div>
@@ -354,7 +402,7 @@ s.parentNode.insertBefore(b, s);
     </div>
   </section>
 
-  <section id="available-now">
+  <section id="available-now" hidden>
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Product scope</div>
@@ -412,19 +460,20 @@ s.parentNode.insertBefore(b, s);
   <section id="after-assessment">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">After delivery</div>
-        <h2>After the assessment</h2>
-        <p>The assessment is the starting point, not the whole relationship. After the 7-day review, teams can choose one of three paths.</p>
+        <div class="eyebrow">From assessment to software</div>
+        <h2>The report is not the product.</h2>
+        <p>The assessment establishes a baseline and an adoption decision. When BRG is a fit, the next step is a scoped software deployment and validation against that baseline.</p>
       </div>
-      <div class="grid cols-3">
-        <article class="card"><h3>Report only</h3><p>You keep the findings, evidence packet, and remediation plan. Your team implements fixes independently.</p></article>
-        <article class="card"><h3>Follow-up investigation</h3><p>Blackridge analyzes additional workflows or validates whether fixes reduced spend.</p></article>
-        <article class="card"><h3>Design-partner deployment</h3><p>For recurring analysis, Blackridge can run as a private token-economics forensics deployment using logs, traces, gateway exports, provider events, or optional runtime collection.</p></article>
+      <div class="adoption-path">
+        <article><span>01</span><h3>Baseline</h3><p>Establish what the workflow costs and why.</p></article>
+        <article><span>02</span><h3>Deployment plan</h3><p>Define the evidence path, boundaries, and success criteria.</p></article>
+        <article><span>03</span><h3>Design-partner validation</h3><p>Deploy BRG for the scoped workflow and measure against the baseline.</p></article>
+        <article><span>04</span><h3>Ongoing software</h3><p>Expand only when the evidence supports recurring use.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="proof-substitute">
+  <section id="proof-substitute" hidden>
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Proof without hand-waving</div>
@@ -442,11 +491,11 @@ s.parentNode.insertBefore(b, s);
   <section class="cta-band" id="final-cta">
     <div class="container">
       <div class="eyebrow">Next step</div>
-      <h2>Bring one expensive AI workflow.</h2>
-      <p>We will show where the spend went, what drove it, what looks wasted, and which fixes should move first.</p>
+      <h2>Bring one production workflow you cannot explain.</h2>
+      <p>We will determine whether the available evidence can establish its runtime economics and whether BRG is a fit.</p>
       <div class="hero-actions" style="justify-content:center;">
-        <a class="btn primary" data-cta="book-assessment-final" href="brg-ai-spend-assessment/#request-assessment">Book the assessment</a>
-        <a class="btn secondary" data-cta="methodology-final" href="how-token-economics-forensics-works/">Read the methodology</a>
+        <a class="btn primary" data-cta="discuss-workflow-final" href="brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
+        <a class="btn secondary" data-cta="inspect-evidence-final" href="example-ai-spend-forensics-report/">Inspect example evidence</a>
       </div>
     </div>
   </section>
@@ -454,7 +503,7 @@ s.parentNode.insertBefore(b, s);
 
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge AI Spend Forensics</div>
+    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge Runtime Gateway</div>
     <nav class="footer-links" aria-label="Footer">
       <a href="brg-ai-spend-assessment/">Assessment</a>
       <a href="example-ai-spend-forensics-report/">Example report</a>
