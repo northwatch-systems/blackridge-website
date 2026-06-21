@@ -208,7 +208,7 @@ s.parentNode.insertBefore(b, s);
       <div>
         <div class="eyebrow">Product artifact</div>
         <h2>Inspect the evidence in the product UI.</h2>
-        <p class="lead">Blackridge assessment output is explorable: guided investigation, token economics, request ledger, workflow traces, attribution, signals, request inspector, data confidence, and raw evidence. Screenshots show an internal report environment with seeded assessment data; full interactive access is shared only in assessment or NDA contexts.</p>
+        <p class="lead">Blackridge assessment output is explorable: guided investigation, token economics, request ledger, workflow traces, attribution, signals, request inspector, data confidence, and raw evidence. Screenshots show the kind of evidence review produced during an assessment, using seeded report data.</p>
         <div class="hero-actions">
           <a class="btn primary" data-cta="book-ui-walkthrough-home" href="brg-ai-spend-assessment/index.html#request-assessment">Request an assessment walkthrough</a>
         </div>
@@ -264,32 +264,32 @@ s.parentNode.insertBefore(b, s);
       <div class="section-head">
         <div class="eyebrow">Trust boundary</div>
         <h2>What is available now</h2>
-        <p>Blackridge is a factored forensic reasoning engine. Each finding is a simple, auditable tuple: finding type, evidence rows, confidence, provenance source, resolver name, and importer source.</p>
+        <p>Blackridge is available today for spend-forensics assessments and evidence review. The boundary is intentionally clear: it reconstructs what happened and ranks fixes; it does not claim autonomous enforcement or broad policy control.</p>
       </div>
       <div class="split">
         <article class="card">
-          <span class="label">Active derivations</span>
+          <span class="label">Available now</span>
           <div class="list">
-            <div>12 derivations active across P0 and P1 waste classes.</div>
-            <div>Retry amplification, fallback tax, failed request waste, abandoned branch waste, semantic duplicate waste, cache miss opportunity.</div>
-            <div>Unattributed spend, attribution conflicts, release regression, tool dead-end waste, context bloat tax, retrieval bloat tax.</div>
-            <div>20 derivation types defined, including P2 research categories such as provider arbitrage, policy bypass, budget burn, overqualified models, and exact duplicates.</div>
+            <div>Reconstruct spend for one expensive workflow from available logs, traces, gateway events, or imported runtime records.</div>
+            <div>Attribute costs by app, team, tenant, workflow, customer, or request metadata where those signals exist.</div>
+            <div>Surface common waste patterns, including retries, fallbacks, duplicate requests, failed calls, abandoned branches, cache misses, and oversized context.</div>
+            <div>Produce a ranked assessment report with evidence-backed findings, confidence notes, and recommended engineering fixes.</div>
           </div>
         </article>
         <article class="card">
-          <span class="label">Evidence chain</span>
+          <span class="label">Evidence standard</span>
           <div class="list">
-            <div>Evidence rows trace from finding to source events, pricing, confidence, provenance, and reproducibility hash.</div>
-            <div>12 evidence types defined, including source event, price provenance, attribution field, cache verdict, retry/fallback attempts, fingerprint match, lineage edge, cost delta, workflow context, tool invocation, and context token usage.</div>
-            <div>5 confidence levels: exact, strong, inferred, weak, unknown.</div>
-            <div>6 provenance sources: caller_provided, gateway_generated, route_default, inferred, weak, missing.</div>
+            <div>Every finding includes supporting events or rows that engineering can inspect.</div>
+            <div>Pricing assumptions, attribution coverage, and confidence are shown with the finding instead of hidden behind a chart.</div>
+            <div>Weak or missing metadata is called out explicitly so teams know which claims are measured, inferred, or blocked by data quality.</div>
+            <div>The assessment separates observed waste from modeled opportunity and avoids guaranteed-savings claims.</div>
           </div>
         </article>
       </div>
       <div class="grid cols-3" style="margin-top:14px;">
-        <article class="card"><h3>Attribution resolvers</h3><p>9 resolver paths for identity, team, and app inference from headers, OAuth, API keys, Kubernetes metadata, environment variables, and inference.</p></article>
-        <article class="card"><h3>Importers</h3><p>7 importer paths: Blackridge canonical, Portkey, LiteLLM, LangSmith, OpenAI, Bedrock, and OTEL.</p></article>
-        <article class="card"><h3>Provider economics</h3><p>OpenAI, Anthropic, Bedrock, and multi-vendor support where event and pricing data are available.</p></article>
+        <article class="card"><h3>Assessment path</h3><p>Start with existing logs or traces. Add runtime collection only when the workflow needs higher-fidelity evidence.</p></article>
+        <article class="card"><h3>Provider data</h3><p>Works from available request, token, model, pricing, and workflow context across OpenAI-compatible and multi-provider event data.</p></article>
+        <article class="card"><h3>Review workflow</h3><p>Findings are prepared for engineering and finance review, with enough context to decide what to fix first.</p></article>
       </div>
       <div class="card" style="margin-top:14px;">
         <span class="label">Roadmap / design-partner dependent</span>
