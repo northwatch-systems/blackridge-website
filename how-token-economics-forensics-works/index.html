@@ -10,16 +10,16 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>How BRG Evaluates AI Workflow Spend | Northwatch Systems</title>
-<meta name="description" content="A buyer-safe explanation of how Blackridge Runtime Gateway evaluates workflow spend: data sources, evidence standards, confidence, coverage, and deployment limits.">
+<title>How Blackridge Evaluates AI Workflow Spend | Northwatch Systems</title>
+<meta name="description" content="A buyer-safe explanation of how Blackridge evaluates workflow spend: data sources, evidence standards, confidence, coverage, and deployment limits.">
 <link rel="canonical" href="https://northwatch.systems/how-token-economics-forensics-works/">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://northwatch.systems/how-token-economics-forensics-works/">
-<meta property="og:title" content="How BRG Evaluates AI Workflow Spend">
-<meta property="og:description" content="How BRG presents runtime economics evidence with confidence and coverage boundaries.">
+<meta property="og:title" content="How Blackridge Evaluates AI Workflow Spend">
+<meta property="og:description" content="How Blackridge presents token forensics evidence with confidence and coverage boundaries.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How BRG Evaluates AI Workflow Spend">
+<meta name="twitter:title" content="How Blackridge Evaluates AI Workflow Spend">
 <meta name="twitter:description" content="A buyer-safe explanation of Blackridge evidence, confidence, and coverage.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -31,7 +31,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "How BRG Evaluates AI Workflow Spend",
+  "headline": "How Blackridge Evaluates AI Workflow Spend",
   "author": { "@type": "Organization", "name": "Northwatch Systems" },
   "publisher": { "@type": "Organization", "name": "Northwatch Systems" },
   "mainEntityOfPage": "https://northwatch.systems/how-token-economics-forensics-works/"
@@ -57,36 +57,36 @@
   <section class="page-hero">
     <div class="container">
       <div class="eyebrow">Technical overview</div>
-      <h1>How BRG evaluates AI workflow spend</h1>
-      <p class="lead">This page explains the evidence standard behind BRG workflow evaluation without exposing proprietary detection logic. The goal is simple: engineering and finance should be able to inspect why a runtime economics finding was made, what data supports it, and where confidence is limited.</p>
+      <h1>How Blackridge evaluates AI workflow spend</h1>
+      <p class="lead">This page explains the evidence standard behind Blackridge workflow assessment without exposing proprietary detection logic. The goal is simple: engineering and finance should be able to inspect why a token forensics finding was made, what data supports it, and where confidence is limited.</p>
     </div>
   </section>
   <section>
     <div class="container article-body">
       <h2>What the evaluation is designed to answer</h2>
-      <p>Provider dashboards are useful for invoices, aggregate tokens, and model-level usage. A BRG workflow evaluation is designed for a different review: which workflow drove spend, which ownership signals are present, what looks wasted, which controls are safe to test, and whether BRG should be deployed for ongoing control.</p>
+      <p>Provider dashboards are useful for invoices, aggregate tokens, and model-level usage. A Blackridge workflow assessment is designed for a different review: which workflow drove spend, which ownership signals are present, what looks wasted, which controls are safe to test, and whether Blackridge should be deployed for ongoing control.</p>
 
       <h2>What Blackridge can use</h2>
-      <p>BRG can work from existing logs, traces, gateway exports, provider usage data, runtime metadata, and app/team/tenant ownership signals. When existing data is incomplete, a scoped runtime collection path may be used to improve evidence quality.</p>
+      <p>Blackridge can work from existing logs, traces, gateway exports, provider usage data, runtime metadata, and app/team/tenant ownership signals. When existing data is incomplete, a scoped runtime collection path may be used to improve evidence quality.</p>
       <div class="grid cols-2">
         <article class="card"><h3>Common inputs</h3><p>Provider usage exports, gateway request logs, traces, application logs, pricing context, and ownership metadata where available.</p></article>
-        <article class="card"><h3>Evidence outputs</h3><p>A workflow spend map, waste findings, attribution coverage notes, confidence labels, safe tests, BRG fit decision, and evidence rows engineering can inspect.</p></article>
+        <article class="card"><h3>Evidence outputs</h3><p>A workflow spend map, waste findings, attribution coverage notes, confidence labels, safe tests, Blackridge fit decision, and evidence rows engineering can inspect.</p></article>
       </div>
 
       <h2>The evidence standard</h2>
       <p>Each finding should include the supporting context needed to review it: affected workflow, request or event references, model and pricing assumptions, ownership metadata, coverage notes, and confidence. Weak or missing data should be visible in the evidence instead of hidden behind a chart.</p>
 
       <h2>Observed vs modeled</h2>
-      <p>BRG separates observed waste from modeled opportunity. Observed findings are tied to available events. Modeled opportunity is presented as an estimate that engineering should validate before treating it as savings.</p>
+      <p>Blackridge separates observed waste from modeled opportunity. Observed findings are tied to available events. Modeled opportunity is presented as an estimate that engineering should validate before treating it as savings.</p>
 
       <h2>Coverage and confidence</h2>
-      <p>Attribution is only as strong as the available metadata. BRG reports coverage gaps so teams can tell when a finding is well-supported, when it is inferred, and when better instrumentation is needed.</p>
+      <p>Attribution is only as strong as the available metadata. Blackridge reports coverage gaps so teams can tell when a finding is well-supported, when it is inferred, and when better instrumentation is needed.</p>
 
       <h2>Waste classes covered in review</h2>
-      <p>BRG evaluation can cover retry amplification, fallback tax, duplicate inference, premium-model overuse, abandoned branch waste, failed request waste, cache-miss opportunity, context bloat, retrieval bloat, and unattributed spend when the source data supports those findings.</p>
+      <p>Blackridge evaluation can cover retry amplification, fallback tax, duplicate inference, premium-model overuse, abandoned branch waste, failed request waste, cache-miss opportunity, context bloat, retrieval bloat, and unattributed spend when the source data supports those findings.</p>
 
       <h2>What the evaluation does not claim</h2>
-      <p>BRG evaluation does not guarantee savings, replace engineering judgment, or claim perfect attribution when metadata is incomplete. It gives engineering and finance structured evidence for deciding what to test and whether ongoing BRG deployment is justified.</p>
+      <p>Blackridge evaluation does not guarantee savings, replace engineering judgment, or claim perfect attribution when metadata is incomplete. It gives engineering and finance structured evidence for deciding what to test and whether ongoing Blackridge deployment is justified.</p>
 
       <h2>Example review surface</h2>
       <p>A typical finding includes the affected workflow, the spend pattern, confidence, attribution coverage, observed vs modeled impact, supporting rows, and the recommended engineering test. The public example uses synthetic data to show the artifact without exposing customer data.</p>
@@ -100,7 +100,7 @@
 </main>
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge Runtime Gateway</div>
+    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge</div>
     <nav class="footer-links" aria-label="Footer">
       <a href="../#product">Product</a>
       <a href="../#how-it-works">How it works</a>
