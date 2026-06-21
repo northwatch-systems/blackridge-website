@@ -34,7 +34,7 @@ See **QUICK_START.md** for details.
 blackridge-website/
 ├── index.html              # Main landing page
 │                          # - Problem statement & value prop
-│                          # - Product UI demo artifact
+│                          # - Product UI screenshot artifact
 │                          # - How it works (forensic evidence path)
 │                          # - Blackridge AI Spend Assessment details
 │                          # - Contact form
