@@ -379,7 +379,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <p class="what">Useful for provider-specific usage, invoice totals, token counts, and model-level billing history.</p>
             <p class="win">Blackridge is used when teams need to connect spend to workflows, apps, teams, tenants, retries, fallbacks, duplicate calls, and remediation evidence.</p>
           </div>
-          <div class="comp-tag"><span>Observes one provider, after the fact</span></div>
+          <div class="comp-tag"><span>Useful for per-provider usage</span></div>
         </div>
 
         <div class="comp-card">
@@ -391,7 +391,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <p class="what">Useful for routing, authentication, traffic policy, and request forwarding.</p>
             <p class="win">Blackridge can use gateway logs or exports when the buyer needs token economics reconstruction and evidence-backed cost findings.</p>
           </div>
-          <div class="comp-tag"><span>Routes bytes, not economics</span></div>
+          <div class="comp-tag"><span>Routes requests, not workflow economics</span></div>
         </div>
 
         <div class="comp-card">
@@ -403,7 +403,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <p class="what">Useful for allocation, budget review, chargeback, forecasting, and cloud cost reporting.</p>
             <p class="win">Blackridge produces the workflow-level evidence that helps engineering explain and remediate AI spend before finance conversations become guesswork.</p>
           </div>
-          <div class="comp-tag"><span>Reports cost, can't change it</span></div>
+          <div class="comp-tag"><span>Reports allocation, not runtime causality</span></div>
         </div>
 
         <div class="comp-card">
@@ -415,7 +415,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <p class="what">LiteLLM, Portkey, Bifrost, and similar tools are useful for routing, provider abstraction, policy hooks, gateway control, retries, fallbacks, caching, and usage visibility.</p>
             <p class="win">Blackridge is used when teams need workflow-level spend reconstruction, attribution confidence, retry amplification analysis, fallback tax analysis, duplicate inference detection, and ranked remediation evidence.</p>
           </div>
-          <div class="comp-tag"><span>Routes traffic, doesn't explain cost</span></div>
+          <div class="comp-tag"><span>Complementary</span></div>
         </div>
 
         <div class="comp-card">
@@ -427,7 +427,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
             <p class="what">Useful for building multi-step LLM and agent workflows.</p>
             <p class="win">Blackridge helps inspect the token economics those workflows create, especially retries, tool branches, fallbacks, and abandoned execution paths.</p>
           </div>
-          <div class="comp-tag"><span>Generates traffic, doesn't govern it</span></div>
+          <div class="comp-tag"><span>Creates workflow traffic; different job</span></div>
         </div>
 
       </div>
@@ -439,7 +439,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
     <div class="container">
       <div class="label">Where the layers sit</div>
       <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.022em;line-height:1.06;margin-top:16px;margin-bottom:12px;">The stack, drawn honestly.</h2>
-      <p style="color:var(--ink-2);font-size:17px;max-width:680px;">LLM proxies live in the routing layer — they move traffic. Blackridge lives above them at the forensic boundary — it explains cost. These are different layers solving different problems. You'll probably want both.</p>
+      <p style="color:var(--ink-2);font-size:17px;max-width:680px;">LLM proxies live in the routing layer — they move traffic. Blackridge lives above them at the forensic boundary — it explains cost. These are different layers solving different problems. Most production teams keep their gateway. Blackridge explains the economics around it.</p>
       <div class="layer-diagram">
         <div class="layer-row">
           <div class="ln"></div>
