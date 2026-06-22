@@ -25,16 +25,16 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://northwatch.systems/what-is-ai-spend-forensics/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://northwatch.systems/security-deployment/</loc>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://northwatch.systems/compare.html</loc>
+    <loc>https://northwatch.systems/what-is-ai-spend-forensics/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://northwatch.systems/docs/</loc>
