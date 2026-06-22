@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+  if (window.location.protocol.indexOf("http") !== 0) return;
+  if (!window.location.pathname.endsWith("/index.html")) return;
+  window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
+})();
+</script>
+<title>Security &amp; Deployment | Blackridge</title>
+<meta name="description" content="Review Blackridge deployment modes, data boundaries, credential handling, event storage, failure behavior, observability, and current production-hardening responsibilities.">
+<link rel="canonical" href="https://northwatch.systems/security-deployment/">
+<meta name="theme-color" content="#D2762F">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwatch.systems/security-deployment/">
+<meta property="og:title" content="Blackridge Security &amp; Deployment">
+<meta property="og:description" content="How Blackridge is evaluated, deployed, secured, observed, and bounded in production-adjacent environments.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta property="og:site_name" content="Northwatch Systems">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blackridge Security &amp; Deployment">
+<meta name="twitter:description" content="Deployment modes, data handling, failure behavior, observability, and current security boundaries.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../assets/brg.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Blackridge Security and Deployment",
+  "description": "Blackridge deployment modes, data boundaries, credential handling, event storage, failure behavior, observability, and current security responsibilities.",
+  "url": "https://northwatch.systems/security-deployment/",
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "Blackridge",
+    "applicationCategory": "BusinessApplication",
+    "publisher": { "@type": "Organization", "name": "Northwatch Systems" }
+  }
+}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="../how-token-economics-forensics-works/">How it works</a>
+      <a href="../example-ai-spend-forensics-report/">Evidence</a>
+      <a href="../brg-ai-spend-assessment/">Assessment</a>
+      <a href="../security-deployment/" aria-current="page">Security &amp; deployment</a>
+      <a href="../about/">About</a>
+      <a class="btn secondary" data-cta="discuss-workflow-nav" href="../brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Security &amp; deployment</div>
+      <h1>Evaluate Blackridge inside an explicit technical boundary.</h1>
+      <p class="lead">Blackridge can begin from existing evidence or observe a scoped workflow at runtime. Deployment, access, storage, retention, and failure behavior are agreed with each design partner rather than hidden behind a generic “enterprise ready” claim.</p>
+      <p class="trust-line">Body-free economics records by default · Customer-controlled perimeter · Explicit retention and failure tradeoffs</p>
+    </div>
+  </section>
+
+  <section id="evaluation-modes" class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Evaluation modes</div>
+        <h2>Begin without changing traffic, or observe one workflow inline.</h2>
+        <p>The lowest-risk path depends on the evidence already available and the confidence required from the assessment.</p>
+      </div>
+      <div class="grid cols-2">
+        <article class="card"><span class="label">Import assessment</span><h3>No initial request-path change</h3><p>Northwatch can analyze supported logs, traces, gateway exports, provider usage records, and operational metadata through an agreed secure handoff. Raw source exports may contain sensitive information and must be protected before and during normalization.</p></article>
+        <article class="card"><span class="label">Runtime observation</span><h3>Scoped production-adjacent deployment</h3><p>For supported request paths, a selected workflow can run through Blackridge in an observe-oriented configuration. The workflow boundary, upstream providers, evidence storage, access controls, and success criteria are agreed before traffic moves.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="data-boundary">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Data boundary</div>
+        <h2>Economic evidence is designed to avoid prompt and response retention.</h2>
+        <p>An inline gateway necessarily handles a request payload in order to forward it. Blackridge does not persist prompt or response body content in default economics records or expose that content as operator evidence.</p>
+      </div>
+      <div class="split">
+        <article class="card">
+          <span class="label">Default economics evidence</span>
+          <div class="list">
+            <div>Request and correlation identifiers.</div>
+            <div>Provider, model, timing, status, and usage context.</div>
+            <div>Pricing and cost context where available.</div>
+            <div>Route, cache, attempt, fallback, and workflow relationships where available.</div>
+            <div>Tenant, application, team, user, and workflow attribution when supplied.</div>
+          </div>
+        </article>
+        <article class="card">
+          <span class="label">Do not place in evidence metadata</span>
+          <div class="list">
+            <div>Prompts, instructions, messages, tool content, or response bodies.</div>
+            <div>Provider API keys, bearer tokens, or application secrets.</div>
+            <div>Customer documents or raw personally identifiable information.</div>
+            <div>Sensitive values that can be represented by stable identifiers and joined inside customer-controlled systems.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="security-boundary" class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Security responsibilities</div>
+        <h2>Blackridge is deployed behind customer-controlled security boundaries.</h2>
+        <p>The current runtime is an infrastructure component, not a public SaaS endpoint. Production hardening depends on the surrounding environment and must be reviewed as part of deployment scope.</p>
+      </div>
+      <table class="report-table">
+        <thead><tr><th>Area</th><th>Current Blackridge behavior</th><th>Deployment responsibility</th></tr></thead>
+        <tbody>
+          <tr><td>Network encryption</td><td>The current service listens over HTTP.</td><td>Terminate TLS at the customer ingress, load balancer, or service mesh.</td></tr>
+          <tr><td>Request authentication</td><td>Current inference routes require an external trust boundary before untrusted access.</td><td>Place Blackridge behind existing ingress, service-mesh, workload-identity, or authentication controls.</td></tr>
+          <tr><td>Provider credentials</td><td>Clients generally supply provider credentials and Blackridge forwards them upstream.</td><td>Keep provider keys in existing customer secret-management or workload-identity systems; do not place them in economics metadata.</td></tr>
+          <tr><td>Authorization and exposure</td><td>Operational and administrative surfaces are not intended for direct public exposure.</td><td>Restrict access using customer-controlled network and identity policy.</td></tr>
+          <tr><td>Security assurance</td><td>Security and deployment boundaries are reviewed with each design partner.</td><td>No certification or compliance status should be inferred unless explicitly documented.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="storage-retention">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Storage &amp; retention</div>
+        <h2>Evidence location and lifecycle are part of the deployment decision.</h2>
+        <p>Blackridge currently supports file-backed and database-backed economics-event storage. Retention is not silently managed by a hosted Blackridge service; it must be defined operationally for each environment.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card"><h3>Event storage</h3><p>Assessment deployments can use append-only file storage. Database-backed storage is the stronger fit for durable or multi-instance collection.</p></article>
+        <article class="card"><h3>Retention and deletion</h3><p>Retention for events, persistent volumes, database rows, imported raw records, and exported reports must be agreed and implemented as part of the deployment process.</p></article>
+        <article class="card"><h3>Imported records</h3><p>Raw exports may contain fields that are excluded from normalized economics evidence. They require separate protection, access, and deletion handling.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="failure-behavior" class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Failure behavior</div>
+        <h2>Inference continuity and evidence durability are explicit tradeoffs.</h2>
+        <p>Runtime evidence writes are asynchronous by default so event I/O does not block model responses. That choice protects the request path but means evidence can be dropped when queues or sinks fail.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card"><h3>Default continuity posture</h3><p>Event writes default toward fail-open behavior. Inference continues when an asynchronous evidence queue cannot accept another event.</p></article>
+        <article class="card"><h3>Visible evidence gaps</h3><p>Queue depth, dropped events, sink errors, and flush behavior are measurable. Reports should disclose incomplete evidence rather than imply full coverage.</p></article>
+        <article class="card"><h3>Stricter collection</h3><p>A fail-closed queue-full mode can be configured, but asynchronous sink failures can still occur after the response path. The desired posture must be tested for the scoped workflow.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="operations">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Deployment &amp; operations</div>
+        <h2>Current deployment surfaces are assessment-oriented and observable.</h2>
+        <p>Blackridge can run locally, in containers, or through the current Kubernetes assessment chart. This is not a claim of a general-purpose operator or turnkey production platform.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card"><h3>Container and Kubernetes</h3><p>The current Kubernetes surface includes an assessment-oriented deployment, service account, service, persistent storage, pricing configuration, resource settings, and health probes.</p></article>
+        <article class="card"><h3>Health and observability</h3><p>Blackridge exposes liveness and readiness signals, structured logs, Prometheus metrics, and optional OpenTelemetry export for deployment monitoring.</p></article>
+        <article class="card"><h3>Scaling boundary</h3><p>File storage on a single persistent volume is not a horizontally scalable shared event store. Durable multi-instance designs should use an appropriate database-backed deployment.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="assessment-process" class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Design-partner process</div>
+        <h2>Security review happens before evidence or traffic moves.</h2>
+        <p>The website form is only for initial workflow context. Do not submit logs, credentials, prompts, or production data through it. If an assessment is accepted, Northwatch and the design partner agree the scope, transfer path, deployment boundary, retention, access, and start date separately.</p>
+      </div>
+      <div class="adoption-path">
+        <article><span>01</span><h3>Qualify</h3><p>Confirm the workflow, production context, available evidence, and technical owner.</p></article>
+        <article><span>02</span><h3>Define boundaries</h3><p>Agree data types, access, transfer, storage, retention, and evaluation mode.</p></article>
+        <article><span>03</span><h3>Validate deployment</h3><p>Review request compatibility, health signals, failure posture, and success criteria.</p></article>
+        <article><span>04</span><h3>Begin assessment</h3><p>The seven-day clock starts only after scope, access, and the start date are mutually confirmed.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="eyebrow">Technical fit</div>
+      <h2>Start with the workflow and its boundary.</h2>
+      <p>Northwatch will review whether the available evidence, supported request path, and deployment constraints make Blackridge a responsible fit.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a class="btn primary" data-cta="assessment-security" href="../brg-ai-spend-assessment/">Review the assessment</a>
+        <a class="btn secondary" data-cta="how-it-works-security" href="../how-token-economics-forensics-works/">See how Blackridge works</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge</div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../brg-ai-spend-assessment/">Assessment</a>
+      <a href="../example-ai-spend-forensics-report/">Evidence</a>
+      <a href="../how-token-economics-forensics-works/">How it works</a>
+      <a href="../security-deployment/">Security &amp; deployment</a>
+      <a href="../about/">About</a>
+      <a href="mailto:sales@northwatch.systems">Email</a>
+    </nav>
+    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></div>
+    <div class="footer-meta">Last updated June 2026</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("navLinks");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
+  }
+})();
+</script>
+</body>
+</html>
