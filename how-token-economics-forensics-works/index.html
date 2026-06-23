@@ -45,57 +45,138 @@
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="../#product">Product</a>
-      <a href="../#how-it-works">How it works</a>
       <a href="../#product-evidence">Evidence</a>
       <a href="../compare.html">Compare</a>
-      <a href="../#deployment-scope">Security / Deployment</a>
       <a href="../about/">Company</a>
-      <a class="btn secondary" data-cta="workflow-discussion-nav" href="../brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
+      <a class="btn secondary" data-cta="workflow-discussion-nav" href="../brg-ai-spend-assessment/#request-assessment">Schedule a call</a>
     </nav>
   </div>
 </header>
 <main>
   <section class="page-hero">
     <div class="container">
-      <div class="eyebrow">Technical overview</div>
-      <h1>How Blackridge evaluates AI workflow spend</h1>
-      <p class="lead">Provider bills show totals. Blackridge shows causes. This page explains the evidence standard behind that claim without exposing proprietary detection logic.</p>
-      <p class="lead">The goal is simple: engineering and finance should be able to inspect why a finding was made, what rows support it, and where confidence is limited.</p>
+      <div class="eyebrow">Methodology</div>
+      <h1>How Blackridge explains AI spend</h1>
+      <p class="lead">Provider bills show totals. Blackridge shows causes. Every finding carries evidence rows, confidence, and coverage so engineering and finance can inspect why it was made.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Schedule a demo <span class="arr">→</span></a>
+        <a class="btn ghost" href="../example-ai-spend-forensics-report/">See example evidence</a>
+      </div>
     </div>
   </section>
-  <section>
-    <div class="container article-body">
-      <h2>What the evaluation is designed to answer</h2>
-      <p>Provider dashboards are useful for invoices, aggregate tokens, and model-level usage. A Blackridge workflow assessment is designed for a different review: which workflow drove spend, which runtime behavior caused it, which ownership signals are present, what looks wasted, which tests are safe to run, and whether Blackridge should be deployed for ongoing near real-time forensics.</p>
 
-      <h2>What Blackridge can use</h2>
-      <p>Blackridge can work from existing logs, traces, gateway exports, provider usage data, runtime metadata, and app/team/tenant ownership signals. When existing data is incomplete, a scoped runtime collection path may be used to improve evidence quality.</p>
-      <div class="grid cols-2">
-        <article class="card"><h3>Common inputs</h3><p>Provider usage exports, gateway request logs, traces, application logs, pricing context, and ownership metadata where available.</p></article>
-        <article class="card"><h3>Evidence outputs</h3><p>A workflow spend map, waste findings, attribution coverage notes, confidence labels, safe tests, Blackridge fit decision, and evidence rows engineering and finance can inspect.</p></article>
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">The question</div>
+        <h2>Not how much — but why.</h2>
+        <p>Provider dashboards show invoices, aggregate tokens, and model-level usage. Blackridge answers a different question: which workflow drove spend, which runtime behavior caused it, who owns it, what looks wasted, and what to fix first.</p>
       </div>
+    </div>
+  </section>
 
-      <h2>The evidence standard</h2>
-      <p>Each finding should include the supporting context needed to review it: affected workflow, request or event references, model and pricing assumptions, ownership metadata, coverage notes, and confidence. Weak or missing data should be visible in the evidence instead of hidden behind a chart.</p>
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Inputs &amp; outputs</div>
+        <h2>Start with what you have.</h2>
+      </div>
+      <div class="methodology-io">
+        <div class="method-panel">
+          <div class="method-panel-kicker">What goes in</div>
+          <div class="method-panel-list">
+            <div>Provider usage exports</div>
+            <div>Gateway request logs</div>
+            <div>OpenTelemetry traces</div>
+            <div>Application logs</div>
+            <div>Pricing context</div>
+            <div>Ownership metadata</div>
+          </div>
+          <p class="method-note">When existing data is incomplete, a scoped runtime collection path can improve evidence quality.</p>
+        </div>
+        <div class="method-arrow" aria-hidden="true"></div>
+        <div class="method-panel hot">
+          <div class="method-panel-kicker">What comes out</div>
+          <div class="method-panel-list">
+            <div>Workflow spend map</div>
+            <div>Waste findings with evidence rows</div>
+            <div>Attribution coverage notes</div>
+            <div>Confidence labels</div>
+            <div>Recommended safe tests</div>
+            <div>Blackridge fit decision</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <h2>Observed vs modeled</h2>
-      <p>Blackridge separates observed waste from modeled opportunity. Observed findings are tied to available events. Modeled opportunity is presented as an estimate that engineering should validate before treating it as savings.</p>
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Evidence standard</div>
+        <h2>Findings carry proof, not charts.</h2>
+        <p>Each finding includes the supporting context needed to review it. Weak or missing data is visible in the evidence instead of hidden behind a visualization.</p>
+      </div>
+      <div class="method-principles">
+        <article>
+          <span class="layer-num">01</span>
+          <h3>Observed vs modeled</h3>
+          <p>Observed waste is tied to real events. Modeled opportunity is an estimate — clearly labeled — that engineering should validate before treating it as savings.</p>
+        </article>
+        <article>
+          <span class="layer-num">02</span>
+          <h3>Coverage and confidence</h3>
+          <p>Attribution is only as strong as the available metadata. Blackridge reports gaps so teams know when a finding is well-supported, inferred, or needs better instrumentation.</p>
+        </article>
+        <article>
+          <span class="layer-num">03</span>
+          <h3>No hidden assumptions</h3>
+          <p>Affected workflow, request references, model and pricing assumptions, ownership metadata, and coverage notes — all visible. Nothing behind a black box.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      <h2>Coverage and confidence</h2>
-      <p>Attribution is only as strong as the available metadata. Blackridge reports coverage gaps so teams can tell when a finding is well-supported, when it is inferred, and when better instrumentation is needed.</p>
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Waste classes</div>
+        <h2>What Blackridge detects.</h2>
+        <p>Each class is detected when source data supports the finding. No class is reported without evidence rows.</p>
+      </div>
+      <div class="method-waste-list">
+        <span>Retry amplification</span>
+        <span>Fallback tax</span>
+        <span>Duplicate inference</span>
+        <span>Premium-model overuse</span>
+        <span>Abandoned branch waste</span>
+        <span>Failed request waste</span>
+        <span>Cache-miss opportunity</span>
+        <span>Context bloat</span>
+        <span>Retrieval bloat</span>
+        <span>Unattributed spend</span>
+      </div>
+    </div>
+  </section>
 
-      <h2>Waste classes covered in review</h2>
-      <p>Blackridge evaluation can cover retry amplification, fallback tax, duplicate inference, premium-model overuse, abandoned branch waste, failed request waste, cache-miss opportunity, context bloat, retrieval bloat, and unattributed spend when the source data supports those findings.</p>
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Boundaries</div>
+        <h2>What Blackridge does not claim.</h2>
+        <p>Blackridge does not guarantee savings, replace engineering judgment, or claim perfect attribution when metadata is incomplete. It gives leaders structured evidence they can share with finance, executives, and application teams.</p>
+      </div>
+    </div>
+  </section>
 
-      <h2>What the evaluation does not claim</h2>
-      <p>Blackridge evaluation does not guarantee savings, replace engineering judgment, or claim perfect attribution when metadata is incomplete. It gives platform and engineering leaders structured evidence they can share with finance, executives, and application teams when deciding what to test and whether ongoing Blackridge deployment is justified.</p>
-
-      <h2>Example review surface</h2>
-      <p>A typical finding includes the affected workflow, the spend pattern, confidence, attribution coverage, observed vs modeled impact, supporting rows, and the recommended engineering test. The public example uses synthetic data to show the artifact without exposing customer data.</p>
-
-      <div class="hero-actions">
-        <a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Bring one spend mystery</a>
-        <a class="btn secondary" href="../example-ai-spend-forensics-report/">See example evidence</a>
+  <section class="cta-band">
+    <div class="container">
+      <div class="eyebrow">Next step</div>
+      <h2>See Blackridge on your data.</h2>
+      <p>Schedule a call and we will show you how Blackridge explains AI spend — with your workflows, your teams, and your providers.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Schedule a demo</a>
+        <a class="btn secondary" href="../example-ai-spend-forensics-report/">Inspect example evidence</a>
       </div>
     </div>
   </section>
@@ -105,10 +186,8 @@
     <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge</div>
     <nav class="footer-links" aria-label="Footer">
       <a href="../#product">Product</a>
-      <a href="../#how-it-works">How it works</a>
       <a href="../#product-evidence">Evidence</a>
       <a href="../compare.html">Compare</a>
-      <a href="../#deployment-scope">Security / Deployment</a>
       <a href="../about/">Company</a>
       <a href="../contact/">Contact</a>
     </nav>
