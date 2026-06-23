@@ -10,23 +10,49 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>About Northwatch Systems | Blackridge</title>
-<meta name="description" content="Northwatch Systems builds Blackridge, a Token Forensics Engine / Gateway for enterprise inference spend.">
+<title>About Northwatch Systems | Builders of Blackridge</title>
+<meta name="description" content="Northwatch Systems is the founder-led infrastructure company building Blackridge for production AI runtime economics. Meet co-founders Geoffrey Abbott and Daniel Kendrick.">
 <link rel="canonical" href="https://northwatch.systems/about/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/about/">
 <meta property="og:title" content="About Northwatch Systems">
-<meta property="og:description" content="Northwatch Systems builds Blackridge, a Token Forensics Engine / Gateway.">
+<meta property="og:description" content="Northwatch Systems builds Blackridge to make production AI spend explainable, attributable, and controllable.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About Northwatch Systems">
-<meta name="twitter:description" content="Northwatch Systems builds Blackridge.">
+<meta name="twitter:description" content="Meet the infrastructure engineers building Blackridge.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://northwatch.systems/#organization",
+  "name": "Northwatch Systems",
+  "url": "https://northwatch.systems/",
+  "logo": "https://northwatch.systems/assets/logo_full.png",
+  "foundingDate": "2026",
+  "description": "A founder-led infrastructure company building Blackridge for production AI runtime economics.",
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Geoffrey Abbott",
+      "jobTitle": "Co-Founder",
+      "sameAs": "https://www.linkedin.com/in/geoffreyabbott/"
+    },
+    {
+      "@type": "Person",
+      "name": "Daniel Kendrick",
+      "jobTitle": "Co-Founder",
+      "sameAs": "https://www.linkedin.com/in/shellfu/"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header class="nav">
@@ -35,54 +61,114 @@
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="../#product">Product</a>
-      <a href="../#how-it-works">How it works</a>
       <a href="../#product-evidence">Evidence</a>
       <a href="../compare.html">Compare</a>
-      <a href="../#deployment-scope">Security / Deployment</a>
-      <a href="../about/">Company</a>
-      <a class="btn secondary" data-cta="workflow-discussion-nav" href="../brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
+      <a href="../about/" aria-current="page">Company</a>
+      <a class="btn secondary" data-cta="workflow-discussion-nav" href="../brg-ai-spend-assessment/#request-assessment">Schedule a call</a>
     </nav>
   </div>
 </header>
 <main>
-  <section class="page-hero">
-    <div class="container">
-      <div class="eyebrow">Company</div>
-      <h1>Northwatch Systems builds Blackridge.</h1>
-      <p class="lead">Blackridge is a Token Forensics Engine / Gateway for enterprise inference spend. It sits between AI applications and model providers to make inference spend attributable, explainable, and controllable.</p>
+  <section class="page-hero about-hero">
+    <div class="container about-hero-grid">
+      <div>
+        <div class="eyebrow">Company</div>
+        <h1>Northwatch Systems builds Blackridge.</h1>
+        <p class="lead">Northwatch is a founder-led infrastructure company building Blackridge to make the ownership, runtime behavior, and economics of production AI systems inspectable.</p>
+        <p class="trust-line">Founded in 2026 · Approximately 50 years of combined systems, infrastructure, platform, and reliability experience</p>
+      </div>
+      <aside class="about-proof" aria-label="Northwatch credibility summary">
+        <span>Why this team</span>
+        <h2>Built by operators, not dashboard tourists.</h2>
+        <p>The founders have worked across grid-compute infrastructure, adversarial security systems, Kubernetes platforms, service mesh, regulated distributed systems, telemetry, SRE, and early-stage product delivery.</p>
+      </aside>
     </div>
   </section>
-  <section>
+
+  <section id="why-northwatch" class="compact-section">
     <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Mission</div>
-        <h2>Make token spend controllable.</h2>
-        <p>AI costs increasingly come from runtime behavior: retries, fallbacks, agent branches, duplicate requests, model defaults, missing attribution, and data-quality gaps. Northwatch Systems builds Blackridge so engineering and finance can inspect evidence and decide which runtime controls are safe to deploy.</p>
-      </div>
-      <div class="grid cols-3">
-        <article class="card"><h3>Infrastructure-native</h3><p>Blackridge is built for engineering teams working with runtime traffic, logs, traces, provider events, metadata, and workflow evidence.</p></article>
-        <article class="card"><h3>Evidence first</h3><p>Findings should point back to supporting events, confidence, coverage, and pricing assumptions.</p></article>
-        <article class="card"><h3>Honest scope</h3><p>Available-now capabilities are separated from private deployment work and roadmap items.</p></article>
+      <div class="about-manifesto">
+        <div>
+          <div class="eyebrow">Why Northwatch exists</div>
+          <h2>Production AI needs infrastructure-grade economic accountability.</h2>
+          <p>AI workloads moved into production faster than most teams gained the evidence needed to explain runtime behavior and spend. Provider invoices show totals. Application logs show fragments. Blackridge exists to reconstruct the economic story between them.</p>
+        </div>
+        <div class="about-principles">
+          <div><span>01</span><b>Build for operators</b><p>Blackridge is designed for platform, infrastructure, SRE, AI platform, and engineering leaders responsible for production behavior, reliability, and cost.</p></div>
+          <div><span>02</span><b>Evidence before claims</b><p>Economic findings remain connected to request evidence, attribution, pricing context, confidence, and coverage.</p></div>
+          <div><span>03</span><b>Earn broader control</b><p>Blackridge begins by observing, explaining, and recommending. Runtime controls follow only after the evidence is trusted.</p></div>
+        </div>
       </div>
     </div>
   </section>
-  <section>
+
+  <section id="founders" class="compact-section founders-section">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Team</div>
-        <h2>Founder credibility needs approved public details</h2>
-        <!-- TODO before publishing: Add approved founder names, roles, infrastructure/runtime background, LinkedIn/GitHub profile links, and public design-partner proof when verified and approved. -->
+        <div class="eyebrow">Founders</div>
+        <h2>Built by engineers who have operated consequential systems.</h2>
+        <p>Northwatch is led directly by its founders. Prior-employer references are biographical context only; they do not imply endorsement, partnership, or sponsorship.</p>
       </div>
-      <div class="grid cols-2">
-        <article class="card"><h3>Who is building this?</h3><p>Northwatch Systems is a founder-led infrastructure company building Blackridge for teams running expensive production LLM and agent workflows. Specific founder bios should be added here only after public claims are verified and approved.</p></article>
-        <article class="card"><h3>Why trust the team?</h3><p>The site can safely claim the product approach: evidence-backed token forensics, scoped deployment, clear capability status, and no fake customer logos or unsupported security claims. Founder-specific credentials remain a publishing TODO.</p></article>
-        <article class="card"><h3>Who should contact Northwatch?</h3><p>VP Engineering, platform, infrastructure, AI platform, SRE, and finance-adjacent leaders who need to explain and control production AI inference spend.</p></article>
-        <article class="card"><h3>Design partner fit</h3><p>Teams with one expensive production workflow, available runtime evidence, and a real decision about whether Blackridge should be deployed for ongoing control.</p></article>
+      <div class="founder-grid">
+        <article class="founder-card">
+          <div class="founder-card-head">
+            <div class="founder-photo"><img src="../assets/founders/geoffrey-abbott.jpeg" width="400" height="400" alt="Geoffrey Abbott, co-founder of Northwatch Systems" loading="lazy"></div>
+            <div><span class="label">Co-Founder</span><h3>Geoffrey Abbott</h3><a href="https://www.linkedin.com/in/geoffreyabbott/" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a></div>
+          </div>
+          <p>Infrastructure engineer and technology leader with roughly 25 years building and operating reliability-critical systems.</p>
+          <div class="founder-history">
+            <div><span>IBM</span> Grid-compute infrastructure supporting semiconductor engineering</div>
+            <div><span>Ntrepid</span> R&amp;D lead for security and intelligence systems in adversarial environments</div>
+            <div><span>Later work</span> Real-time data platforms, cybersecurity telemetry, Kubernetes, SRE, and early-stage product delivery</div>
+          </div>
+        </article>
+        <article class="founder-card">
+          <div class="founder-card-head">
+            <div class="founder-photo founder-photo-daniel"><img src="../assets/founders/daniel-kendrick.jpeg" width="400" height="400" alt="Daniel Kendrick, co-founder of Northwatch Systems" loading="lazy"></div>
+            <div><span class="label">Co-Founder</span><h3>Daniel Kendrick</h3><a href="https://www.linkedin.com/in/shellfu/" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a></div>
+          </div>
+          <p>Production-systems founder with more than two decades building infrastructure where reliability, auditability, cost, and operational control matter.</p>
+          <div class="founder-history">
+            <div><span>Comcast</span> Principal Architect — large-scale infrastructure and platform initiatives across reliability, developer experience, service mesh, automation, observability, and security</div>
+            <div><span>PENN Entertainment</span> Distributed-services and platform architecture for regulated systems across millions of users and multiple jurisdictions</div>
+            <div><span>Earlier</span> Healthcare infrastructure, regulated platforms, Go, Kubernetes, distributed systems, CI/CD, observability, network automation, and incident response</div>
+          </div>
+          <p class="founder-thesis">Founded Northwatch after seeing the same failure pattern repeat across generations of technology: teams adopt a powerful runtime, then spend, ownership, governance, and operational evidence disappear into the platform. Blackridge exists to solve that problem for enterprise AI.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="credibility" class="compact-section credibility-section">
+    <div class="container credibility-board">
+      <div>
+        <div class="eyebrow">Product credibility</div>
+        <h2>Blackridge is built from production-infrastructure instincts.</h2>
+        <p>The product is opinionated because the founders have lived the failure modes: missing ownership, partial telemetry, unreliable attribution, finance pressure, expensive retries, and controls nobody trusts enough to deploy.</p>
+      </div>
+      <div class="credibility-ledger">
+        <div><span>Evidence model</span><b>Findings point back to rows, coverage, confidence, and pricing assumptions.</b></div>
+        <div><span>Deployment posture</span><b>Start outside the traffic path; move inline only when evidence earns it.</b></div>
+        <div><span>Report artifact</span><b>Blackridge produces a shareable cause file for engineering, finance, executives, and application teams.</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="design-partners" class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Founder-led design partnership</div>
+        <h2>Work directly with the people building Blackridge.</h2>
+        <p>Northwatch is an early-stage company building Blackridge with selected design partners. The workflow assessment is the first proof point: one expensive production workflow, agreed evidence access, technical participation, and direct product feedback.</p>
+      </div>
+      <div class="decision-outcomes about-outcomes">
+        <div><span>Founder reviewed</span><b>Assessment requests are reviewed by a Northwatch founder, not routed through a generic sales queue.</b></div>
+        <div><span>Technically direct</span><b>Design partners work with the people making product and architecture decisions.</b></div>
+        <div><span>Evidence-led scope</span><b>The engagement expands only when the findings support ongoing Blackridge deployment.</b></div>
       </div>
       <div class="hero-actions">
-        <a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
-        <a class="btn secondary" href="../contact/">Contact Northwatch</a>
-        <a class="btn secondary" href="../#deployment-scope">Review capability scope</a>
+        <a class="btn primary" data-cta="discuss-workflow-about" href="../brg-ai-spend-assessment/#request-assessment">Schedule a call</a>
+        <a class="btn secondary" data-cta="how-it-works-about" href="../brg-ai-spend-assessment/#request-assessment">Schedule a demo</a>
       </div>
     </div>
   </section>
@@ -92,10 +178,8 @@
     <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge</div>
     <nav class="footer-links" aria-label="Footer">
       <a href="../#product">Product</a>
-      <a href="../#how-it-works">How it works</a>
       <a href="../#product-evidence">Evidence</a>
       <a href="../compare.html">Compare</a>
-      <a href="../#deployment-scope">Security / Deployment</a>
       <a href="../about/">Company</a>
       <a href="../contact/">Contact</a>
     </nav>
