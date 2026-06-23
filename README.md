@@ -125,7 +125,7 @@ Start here based on your needs:
 
 - ✨ Interactive economic forensics diagnostic tool (6-question self-assessment)
 - 🎯 Clear problem/solution narrative with competitive positioning
-- 📝 Integrated contact form for 7-day assessment requests
+- 📝 Integrated contact form for focused workflow assessment requests
 - 🔄 Competitive comparison page (vs 5 adjacent tool categories)
 - 🎨 Professional B2B SaaS design with custom dark theme
 - 📱 Fully responsive mobile design

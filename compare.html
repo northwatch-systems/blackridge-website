@@ -1,338 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-THGE3L4GDD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-THGE3L4GDD', {
-    'page_location': window.location.href,
-    'page_title': 'Blackridge - Comparison'
-  });
-</script>
-<!-- LinkedIn Insight Tag -->
-<script type="text/javascript">
-_linkedin_partner_id = "9262050";
-window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-</script>
-<script type="text/javascript">
-(function(l) {
-if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-window.lintrk.q=[]}
-var s = document.getElementsByTagName("script")[0];
-var b = document.createElement("script");
-b.type = "text/javascript";b.async = true;
-b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-s.parentNode.insertBefore(b, s);})(window.lintrk);
-</script>
-<noscript>
-<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9262050&fmt=gif" />
-</noscript>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blackridge Compared With AI Gateways, Observability, and FinOps</title>
-<meta name="description" content="Blackridge adds Token Forensics Engine / Gateway to AI traffic: attribution, causality, evidence, and scoped controls.">
+<meta name="description" content="Provider bills show totals. Compare how Blackridge finds AI spend causes across workflows, retries, fallbacks, attribution gaps, and evidence rows.">
 <link rel="canonical" href="https://northwatch.systems/compare.html">
 <meta name="theme-color" content="#D2762F">
-
-<!-- Favicons -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwatch.systems/compare.html">
+<meta property="og:title" content="Blackridge Compared With AI Gateways, Observability, and FinOps">
+<meta property="og:description" content="How Blackridge compares with gateways, observability, provider dashboards, and FinOps when buyers need AI spend causes, not just totals.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Northwatch Systems">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://northwatch.systems/compare.html">
+<meta name="twitter:title" content="Blackridge Compared With Adjacent AI Tools">
+<meta name="twitter:description" content="Gateways, observability, provider dashboards, FinOps, and Blackridge solve different jobs. Blackridge shows AI spend causes.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-
-<!-- Open Graph / Social Media -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://northwatch.systems/compare.html">
-<meta property="og:title" content="Blackridge Compared With AI Gateways, Observability, and FinOps">
-<meta property="og:description" content="How Blackridge compares with adjacent AI infrastructure and finance tooling.">
-<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Blackridge by Northwatch Systems">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://northwatch.systems/compare.html">
-<meta name="twitter:title" content="Blackridge Compared With Adjacent AI Tools">
-<meta name="twitter:description" content="AI gateways, observability, tracing, provider dashboards, FinOps, and Blackridge solve different jobs.">
-<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg:        #090B0F;
-  --bg-2:      #0C0F14;
-  --surface:   #12161D;
-  --surface-2: #171C24;
-  --surface-3: #0E1219;
-  --ink:       #ECEEF1;
-  --ink-2:     #A4ACB6;
-  --ink-3:     #69727D;
-  --line:      #1E242D;
-  --line-2:    #2A323D;
-  --line-3:    #3A434F;
-  --accent:    #D2762F;
-  --accent-2:  #F0A14E;
-  --accent-3:  #F7C27E;
-  --steel:     #8B95A1;
-  --good:      oklch(0.74 0.075 155);
-
-  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --disp: 'Space Grotesk', var(--sans);
-  --max: 1100px;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-weight: 400;
-  line-height: 1.62;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-.field {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background:
-    radial-gradient(60rem 40rem at 82% -6%, rgba(210,118,47,.09), transparent 60%),
-    radial-gradient(50rem 40rem at 2% 4%, rgba(90,108,128,.06), transparent 55%);
-}
-a { color: inherit; text-decoration: none; }
-.container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; position: relative; z-index: 1; }
-
-.label {
-  display: inline-flex; align-items: center; gap: 12px;
-  font-family: var(--mono); font-size: 11.5px; font-weight: 500;
-  letter-spacing: .22em; text-transform: uppercase; color: var(--accent-2);
-  white-space: nowrap;
-}
-.label::before { content: ''; width: 30px; height: 1px; flex: none; background: linear-gradient(90deg, transparent, var(--accent)); }
-.label.center { justify-content: center; }
-.label.center::after { content: ''; width: 30px; height: 1px; background: linear-gradient(90deg, var(--accent), transparent); }
-
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-  min-height: 46px; padding: 0 22px; border-radius: 9px;
-  border: 1px solid var(--line-2);
-  font-family: var(--mono); font-size: 12px; font-weight: 600;
-  letter-spacing: .06em; text-transform: uppercase;
-  transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
-}
-.btn:hover { transform: translateY(-1px); }
-.btn.primary {
-  background: linear-gradient(180deg, var(--accent-2), var(--accent));
-  border-color: var(--accent); color: #160C04;
-  box-shadow: 0 8px 26px rgba(210,118,47,.26);
-}
-.btn.primary:hover { box-shadow: 0 12px 32px rgba(210,118,47,.36); }
-.btn.ghost { background: rgba(255,255,255,.025); color: var(--ink); }
-.btn.ghost:hover { border-color: var(--line-3); background: rgba(255,255,255,.05); }
-.arr { transition: transform .16s ease; }
-.btn:hover .arr { transform: translateX(3px); }
-
-/* Nav */
-.nav {
-  position: sticky; top: 0; z-index: 40;
-  background: color-mix(in oklab, var(--bg) 78%, transparent);
-  backdrop-filter: blur(16px) saturate(120%);
-  border-bottom: 1px solid var(--line);
-}
-.nav-inner { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.brand { display: flex; align-items: center; gap: 13px; }
-.brand-mark { width: 34px; height: 34px; flex: none; }
-.brand-name { font-family: var(--disp); font-weight: 600; font-size: 16px; letter-spacing: .26em; text-transform: uppercase; }
-.brand-name span { color: var(--ink-3); font-weight: 500; }
-.nav-links { display: flex; align-items: center; gap: 26px; }
-.nav-links a { color: var(--ink-2); font-size: 14px; transition: color .14s ease; }
-.nav-links a:hover, .nav-links a.active { color: var(--ink); }
-.hamburger { display: none; background: none; border: 1px solid var(--line-2); border-radius: 8px; padding: 8px 10px; cursor: pointer; flex: none; }
-.hamburger span { display: block; width: 20px; height: 2px; background: var(--ink-2); margin: 4px 0; transition: transform .2s ease, opacity .2s ease; }
-.hamburger:hover span { background: var(--ink); }
-
-/* Hero */
-.hero { padding: 88px 0 64px; }
-.hero-inner { max-width: 800px; }
-h1 { font-family: var(--disp); font-weight: 600; font-size: clamp(38px, 5.4vw, 62px); line-height: 1.04; letter-spacing: -.026em; text-wrap: balance; margin-top: 22px; }
-h1 em { font-style: normal; color: var(--accent-2); }
-.lede { margin-top: 20px; color: var(--ink-2); font-size: clamp(16px, 1.4vw, 18px); max-width: 680px; line-height: 1.6; }
-
-/* Wedge callout */
-.wedge-hero {
-  margin-top: 36px;
-  border-left: 3px solid var(--accent);
-  padding: 16px 22px;
-  background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 9%, transparent), transparent 70%);
-  border-radius: 0 10px 10px 0;
-}
-.wedge-hero p { font-family: var(--disp); font-size: 19px; font-weight: 500; line-height: 1.4; color: var(--ink); }
-.wedge-hero p strong { color: var(--accent-2); font-weight: 700; }
-
-/* Comp table */
-.comp-section { padding: 16px 0 100px; }
-.comp-grid { display: grid; gap: 14px; margin-top: 44px; }
-.comp-card {
-  display: grid; grid-template-columns: 280px 1fr auto;
-  gap: 0; border: 1px solid var(--line-2); border-radius: 14px;
-  background: var(--surface-3); overflow: hidden;
-  transition: border-color .18s ease;
-}
-.comp-card:hover { border-color: var(--line-3); }
-.comp-cat {
-  padding: 26px 26px; border-right: 1px solid var(--line);
-  background: var(--surface);
-}
-.comp-cat .tool { font-family: var(--disp); font-weight: 600; font-size: 18px; color: var(--ink); margin-bottom: 5px; }
-.comp-cat .examples { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--ink-3); }
-.comp-body { padding: 26px 28px; }
-.comp-body .what { font-size: 15px; color: var(--ink-2); line-height: 1.55; margin-bottom: 14px; }
-.comp-body .win { font-size: 15px; color: var(--ink); line-height: 1.55; font-weight: 500; padding-left: 18px; position: relative; }
-.comp-body .win::before { content: ''; position: absolute; left: 0; top: 9px; width: 10px; height: 2px; background: var(--accent); }
-.comp-tag {
-  display: grid; place-items: center; width: 100px;
-  border-left: 1px solid var(--line); padding: 0 16px;
-}
-.comp-tag span {
-  font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
-  text-transform: uppercase; text-align: center; line-height: 1.5;
-  color: var(--accent-2);
-}
-
-/* Layer diagram */
-.layer-section { padding: 0 0 100px; }
-.layer-diagram {
-  border: 1px solid var(--line-2); border-radius: 16px;
-  background: var(--surface); overflow: hidden; margin-top: 44px;
-}
-.layer-row {
-  display: flex; align-items: stretch; border-bottom: 1px solid var(--line);
-  transition: background .14s ease;
-}
-.layer-row:last-child { border-bottom: none; }
-.layer-row:hover { background: rgba(255,255,255,.015); }
-.layer-row.hl { background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 10%, transparent), transparent 60%); }
-.layer-row.hl:hover { background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 14%, transparent), transparent 60%); }
-.ln { width: 5px; flex: none; }
-.layer-row.hl .ln { background: linear-gradient(180deg, var(--accent-3), var(--accent)); }
-.layer-row:not(.hl) .ln { background: var(--line); }
-.layer-label { width: 200px; flex: none; padding: 22px 22px 22px 20px; border-right: 1px solid var(--line); }
-.layer-label strong { display: block; font-family: var(--disp); font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
-.layer-label span { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: .04em; }
-.layer-row.hl .layer-label strong { color: var(--accent-2); }
-.layer-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 22px 24px; flex: 1; }
-.tool-chip {
-  font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em;
-  padding: 6px 13px; border-radius: 7px; border: 1px solid var(--line-2);
-  color: var(--ink-3); background: var(--surface-3);
-}
-.tool-chip.ours {
-  color: var(--accent-2); border-color: color-mix(in oklab, var(--accent) 45%, var(--line-2));
-  background: color-mix(in oklab, var(--accent) 12%, var(--surface-3));
-  font-weight: 600;
-}
-.question-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 36px;
-  border: 1px solid var(--line-2);
-  background: var(--surface);
-  border-radius: 14px;
-  overflow: hidden;
-}
-.question-table th, .question-table td {
-  border: 1px solid var(--line);
-  padding: 13px 14px;
-  text-align: left;
-  vertical-align: top;
-  color: var(--ink-2);
-  font-size: 14px;
-}
-.question-table th {
-  color: var(--ink);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  background: var(--surface-3);
-}
-.question-table td:last-child { color: var(--accent-2); font-weight: 600; }
-
-/* CTA */
-.cta-section { text-align: center; padding: 20px 0 100px; }
-.cta-section h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(28px, 3.8vw, 44px); letter-spacing: -.022em; max-width: 740px; margin: 0 auto 14px; }
-.cta-section p { color: var(--ink-2); font-size: 17px; max-width: 580px; margin: 0 auto 28px; }
-.cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-
-/* Footer */
-.footer { border-top: 1px solid var(--line); padding: 36px 0; }
-.footer-inner { display: grid; gap: 14px; color: var(--ink-3); font-size: 14px; }
-.footer-brand { font-size: 13px; color: var(--ink-2); }
-.footer-brand strong { color: var(--ink); }
-.footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
-.footer-links a { color: var(--ink-3); }
-.footer-links a:hover { color: var(--ink); }
-.footer-legal { display: flex; flex-wrap: wrap; gap: 18px; font-size: 12px; color: var(--ink-3); }
-.footer-legal a { color: var(--ink-3); }
-.footer-legal a:hover { color: var(--ink); }
-.footer-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: .04em; }
-.meta { font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
-
-@media (max-width: 860px) {
-  .comp-card { grid-template-columns: 1fr; }
-  .comp-cat { border-right: none; border-bottom: 1px solid var(--line); }
-  .comp-tag { width: auto; border-left: none; border-top: 1px solid var(--line); padding: 14px 26px; place-items: start; }
-  .comp-tag span { writing-mode: horizontal-tb; }
-  .layer-label { width: 150px; }
-}
-@media (max-width: 600px) {
-  .hamburger { display: flex; flex-direction: column; justify-content: center; }
-  .nav-links {
-    display: none; flex-direction: column; align-items: stretch; gap: 0;
-    position: absolute; top: 100%; left: 0; right: 0; z-index: 50;
-    background: color-mix(in oklab, var(--bg) 96%, transparent);
-    backdrop-filter: blur(16px); border-bottom: 1px solid var(--line);
-    padding: 8px 24px 16px;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a:not(.btn) { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); font-size: 15px; }
-  .nav-links a:not(.btn):last-of-type { border-bottom: none; }
-  .nav-links .btn { margin-top: 12px; width: 100%; text-align: center; }
-  .hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-  .hamburger.active span:nth-child(2) { opacity: 0; }
-  .hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-  .hero { padding-top: 56px; }
-  .layer-label { width: 110px; }
-  .layer-label strong { font-size: 13px; }
-  .cta-actions .btn { width: 100%; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/brg.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-THGE3L4GDD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title: "Blackridge - Comparison" });
+</script>
+<script>
+_linkedin_partner_id = "9262050";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])}; window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript"; b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);
+})(window.lintrk);
+</script>
 </head>
 <body>
-<div class="field" aria-hidden="true"></div>
-
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="./" aria-label="Northwatch Systems — return to home">
-      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <rect x="1" y="1" width="38" height="38" rx="9" fill="#12161D" stroke="#2A323D"/>
-        <rect x="11" y="10" width="4.4" height="20" rx="1" fill="#9aa4b0"/>
-        <rect x="24.6" y="10" width="4.4" height="20" rx="1" fill="#9aa4b0"/>
-        <path d="M14.4 11 L26 29.5" stroke="url(#seam)" stroke-width="3" stroke-linecap="round"/>
-        <defs>
-          <linearGradient id="seam" x1="14" y1="11" x2="26" y2="30" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#F7C27E"/>
-            <stop offset="1" stop-color="#D2762F"/>
-          </linearGradient>
-        </defs>
-      </svg>
+    <a class="brand" href="./" aria-label="Northwatch Systems home">
+      <span class="brand-mark">N</span>
       <span class="brand-name">Northwatch <span>Systems</span></span>
     </a>
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -340,215 +60,170 @@ h1 em { font-style: normal; color: var(--accent-2); }
       <a href="./#product">Product</a>
       <a href="./#how-it-works">How it works</a>
       <a href="./#product-evidence">Evidence</a>
-      <a href="compare.html" class="active">Compare</a>
+      <a href="compare.html" aria-current="page">Compare</a>
       <a href="./#deployment-scope">Security / Deployment</a>
       <a href="about/">Company</a>
-      <a class="btn primary" data-cta="workflow-discussion-compare-nav" href="brg-ai-spend-assessment/#request-assessment">Discuss one workflow <span class="arr">→</span></a>
+      <a class="btn secondary" data-cta="discuss-workflow-nav" href="brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="label">Adjacent tools, different jobs</div>
-      <h1>Blackridge adds token forensics to the AI traffic layer.</h1>
-      <p class="lede">Blackridge is adjacent to gateways, observability, tracing, provider dashboards, and FinOps, but it answers a different infrastructure question: how should inference spend be attributed, explained, and controlled at runtime?</p>
-      <div class="wedge-hero">
-        <p>Most AI gateways route and meter traffic. Observability tools show runtime metrics. Provider dashboards show usage and invoices. FinOps tools allocate cloud costs. <strong>Blackridge adds attribution, workflow causality, waste classification, evidence, and policy-ready controls.</strong></p>
+  <section class="hero compare-hero">
+    <canvas class="hero-three" data-three-hero aria-hidden="true"></canvas>
+    <div class="container compare-hero-grid">
+      <div>
+        <div class="announce">
+          <span class="pill">Compare</span>
+          <span>Most AI tools help run traffic. <b>They do not explain the bill.</b></span>
+        </div>
+        <div class="label">Adjacent tools, different jobs</div>
+        <h1>Provider bills show totals. Blackridge shows <em>causes.</em></h1>
+        <p class="lede">Gateways, observability, tracing, provider dashboards, and FinOps all help. Blackridge is for the painful question they usually leave behind: which workflow, retry loop, fallback path, duplicate request, model choice, app, team, or tenant caused the spend?</p>
+        <div class="hero-actions">
+          <a class="btn primary" data-cta="workflow-discussion-compare-hero" href="brg-ai-spend-assessment/#request-assessment">Bring one spend mystery <span class="arr">→</span></a>
+          <a class="btn ghost" href="example-ai-spend-forensics-report/">Inspect example evidence</a>
+        </div>
+      </div>
+      <aside class="compare-finding" aria-label="Comparison summary">
+        <div class="finding-head">
+          <span class="t">comparison · spend causality</span>
+          <span class="synthetic">Plain-English position</span>
+        </div>
+        <div class="compare-equation">
+          <span>Gateway</span>
+          <b>routes calls</b>
+        </div>
+        <div class="compare-equation">
+          <span>Observability</span>
+          <b>shows behavior</b>
+        </div>
+        <div class="compare-equation">
+          <span>FinOps</span>
+          <b>allocates totals</b>
+        </div>
+        <div class="compare-equation hot">
+          <span>Blackridge</span>
+          <b>finds where AI spend is leaking</b>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="compare-map" class="compact-section compare-map">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Tool by tool</div>
+        <h2>Keep the tools that work. Add Blackridge when the bill needs a cause.</h2>
+        <p>Blackridge is not a generic gateway, dashboard, or trace viewer. It turns runtime evidence into an AI spend case file that engineering, finance, executives, and application teams can act on.</p>
+      </div>
+      <div class="compare-cards">
+        <article>
+          <span>Provider dashboards</span>
+          <h3>They show usage totals.</h3>
+          <p>Helpful for provider-specific invoices, token counts, and model-level history.</p>
+          <strong>Blackridge connects that spend to workflows, owners, retries, fallbacks, and duplicate calls.</strong>
+        </article>
+        <article>
+          <span>API gateways</span>
+          <h3>They route requests.</h3>
+          <p>Helpful for authentication, forwarding, policy hooks, and traffic shape.</p>
+          <strong>Blackridge uses gateway evidence to correlate token economics and explain causality.</strong>
+        </article>
+        <article>
+          <span>Observability</span>
+          <h3>It shows behavior.</h3>
+          <p>Helpful for traces, debugging, latency, quality, and runtime health.</p>
+          <strong>Blackridge turns behavior into a spend finding with rows, coverage, and confidence.</strong>
+        </article>
+        <article>
+          <span>FinOps</span>
+          <h3>It allocates totals.</h3>
+          <p>Helpful for budgets, chargeback, forecasting, and cloud cost reporting.</p>
+          <strong>Blackridge gives finance a defensible engineering explanation for the AI line item.</strong>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- COMPETITIVE POSITIONING -->
-  <section class="comp-section">
+  <section class="compact-section stack-section">
     <div class="container">
-      <div class="section-head" style="max-width:780px; margin-bottom:0;">
-        <div class="label">Tool by tool</div>
-        <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.06;letter-spacing:-.024em;margin-top:16px;margin-bottom:12px;">Five adjacent categories. They solve different jobs.</h2>
-        <p style="color:var(--ink-2);font-size:17px;max-width:700px;">These tools can be useful and complementary. Blackridge is used when the buyer needs workflow-level token forensics reconstruction, attribution coverage, evidence rows, and a decision about ongoing controls.</p>
+      <div class="section-head">
+        <div class="eyebrow">Where the layers sit</div>
+        <h2>The stack, drawn honestly.</h2>
+        <p>Most production teams can evaluate Blackridge from one expensive workflow before changing the broader platform or deploying inline.</p>
       </div>
-
-      <div class="comp-grid">
-
-        <div class="comp-card">
-          <div class="comp-cat">
-            <div class="tool">Provider dashboards</div>
-            <div class="examples">OpenAI · Anthropic · Gemini consoles</div>
-          </div>
-          <div class="comp-body">
-            <p class="what">Useful for provider-specific usage, invoice totals, token counts, and model-level billing history.</p>
-            <p class="win">Blackridge is used when teams need to connect spend to workflows, apps, teams, tenants, retries, fallbacks, duplicate calls, and runtime control decisions.</p>
-          </div>
-          <div class="comp-tag"><span>Useful for per-provider usage</span></div>
-        </div>
-
-        <div class="comp-card">
-          <div class="comp-cat">
-            <div class="tool">API gateways</div>
-            <div class="examples">Kong · Apigee · Envoy · nginx</div>
-          </div>
-          <div class="comp-body">
-            <p class="what">Useful for routing, authentication, traffic policy, and request forwarding.</p>
-            <p class="win">Blackridge can use gateway logs or exports when the buyer needs token forensics reconstruction and evidence-backed control decisions.</p>
-          </div>
-          <div class="comp-tag"><span>Routes requests, not workflow economics</span></div>
-        </div>
-
-        <div class="comp-card">
-          <div class="comp-cat">
-            <div class="tool">Cloud cost &amp; FinOps tools</div>
-            <div class="examples">Generic cost platforms</div>
-          </div>
-          <div class="comp-body">
-            <p class="what">Useful for allocation, budget review, chargeback, forecasting, and cloud cost reporting.</p>
-            <p class="win">Blackridge produces workflow-level evidence that helps engineering explain and control AI inference spend before finance conversations become guesswork.</p>
-          </div>
-          <div class="comp-tag"><span>Reports allocation, not runtime causality</span></div>
-        </div>
-
-        <div class="comp-card">
-          <div class="comp-cat">
-            <div class="tool">LLM proxies &amp; routers</div>
-            <div class="examples">LiteLLM · Portkey · Bifrost · etc.</div>
-          </div>
-          <div class="comp-body">
-            <p class="what">LiteLLM, Portkey, Bifrost, and similar tools are useful for routing, provider abstraction, policy hooks, gateway control, retries, fallbacks, caching, and usage visibility.</p>
-            <p class="win">Blackridge is used when teams need workflow-level spend reconstruction, attribution confidence, retry amplification analysis, fallback tax analysis, duplicate inference detection, and scoped runtime control decisions.</p>
-          </div>
-          <div class="comp-tag"><span>Complementary</span></div>
-        </div>
-
-        <div class="comp-card">
-          <div class="comp-cat">
-            <div class="tool">Agentic AI platforms</div>
-            <div class="examples">Orchestration suites</div>
-          </div>
-          <div class="comp-body">
-            <p class="what">Useful for building multi-step LLM and agent workflows.</p>
-            <p class="win">Blackridge helps inspect and control the token costs those workflows create, especially retries, tool branches, fallbacks, and abandoned execution paths.</p>
-          </div>
-          <div class="comp-tag"><span>Creates workflow traffic; different job</span></div>
-        </div>
-
+      <div class="stack-map" aria-label="AI stack comparison">
+        <article>
+          <span>Workflow layer</span>
+          <h3>Orchestration</h3>
+          <p>LangChain, LlamaIndex, AutoGen, internal agents</p>
+        </article>
+        <article class="hot">
+          <span>Forensics boundary</span>
+          <h3>Blackridge</h3>
+          <p>Attribution, waste classes, coverage, evidence rows, recommended operator tests</p>
+        </article>
+        <article>
+          <span>Traffic layer</span>
+          <h3>Routing and proxying</h3>
+          <p>LiteLLM, Portkey, Bifrost, Kong, Envoy</p>
+        </article>
+        <article>
+          <span>Inference layer</span>
+          <h3>Model providers</h3>
+          <p>OpenAI, Anthropic, Gemini, Azure OpenAI, Bedrock, self-hosted</p>
+        </article>
+        <article>
+          <span>Reporting layer</span>
+          <h3>Cost and finance</h3>
+          <p>Provider consoles, cloud cost platforms, FinOps reporting</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- LAYER DIAGRAM -->
-  <section class="layer-section">
+  <section id="compare-questions" class="compact-section compare-questions">
     <div class="container">
-      <div class="label">Where the layers sit</div>
-      <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.022em;line-height:1.06;margin-top:16px;margin-bottom:12px;">The stack, drawn honestly.</h2>
-      <p style="color:var(--ink-2);font-size:17px;max-width:680px;">LLM proxies live in the routing layer: they move traffic. Blackridge lives at the token forensics boundary: it attributes, explains, and scopes controls for inference spend. Most production teams can evaluate Blackridge from one workflow before changing the broader platform.</p>
-      <div class="layer-diagram">
-        <div class="layer-row">
-          <div class="ln"></div>
-          <div class="layer-label"><strong>Orchestration</strong><span>workflow layer</span></div>
-          <div class="layer-tools">
-            <span class="tool-chip">LangChain</span>
-            <span class="tool-chip">LlamaIndex</span>
-            <span class="tool-chip">AutoGen</span>
-            <span class="tool-chip">Your agent framework</span>
-          </div>
-        </div>
-        <div class="layer-row hl">
-          <div class="ln"></div>
-          <div class="layer-label"><strong>Runtime boundary</strong><span>Blackridge layer</span></div>
-          <div class="layer-tools">
-            <span class="tool-chip ours">Blackridge</span>
-          </div>
-        </div>
-        <div class="layer-row">
-          <div class="ln"></div>
-          <div class="layer-label"><strong>Routing &amp; proxying</strong><span>traffic layer</span></div>
-          <div class="layer-tools">
-            <span class="tool-chip">LiteLLM</span>
-            <span class="tool-chip">Portkey</span>
-            <span class="tool-chip">Bifrost</span>
-            <span class="tool-chip">Kong</span>
-            <span class="tool-chip">Envoy</span>
-          </div>
-        </div>
-        <div class="layer-row">
-          <div class="ln"></div>
-          <div class="layer-label"><strong>Model providers</strong><span>inference layer</span></div>
-          <div class="layer-tools">
-            <span class="tool-chip">OpenAI</span>
-            <span class="tool-chip">Anthropic</span>
-            <span class="tool-chip">Gemini</span>
-            <span class="tool-chip">Self-hosted</span>
-          </div>
-        </div>
-        <div class="layer-row">
-          <div class="ln"></div>
-          <div class="layer-label"><strong>Cost reporting</strong><span>FinOps layer</span></div>
-          <div class="layer-tools">
-            <span class="tool-chip">Provider consoles</span>
-            <span class="tool-chip">Cloud cost platforms</span>
-            <span class="tool-chip">FinOps tools</span>
-          </div>
-        </div>
+      <div class="section-head">
+        <div class="eyebrow">Painful questions</div>
+        <h2>What buyers ask when the bill lands.</h2>
+        <p>The point is not whether another tool has logs. The point is whether it can answer the spend question with enough proof to act.</p>
+      </div>
+      <div class="question-grid">
+        <article><span>Usually not</span><h3>Which workflow caused the spike?</h3><p>Provider dashboards and FinOps tools usually stop at totals or coarse allocation.</p></article>
+        <article><span>Sometimes</span><h3>Which retry loop amplified cost?</h3><p>Tracing may show behavior, but the spend case still has to be tied to token economics.</p></article>
+        <article><span>Usually not</span><h3>Which fallback changed unit economics?</h3><p>Routing tools can execute fallback paths without explaining the bill impact.</p></article>
+        <article><span>Primary use case</span><h3>What should engineering fix first?</h3><p>Blackridge ranks observed waste, modeled opportunity, coverage gaps, and safe tests. The buyer takes the action.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="layer-section">
+  <section class="compact-section">
     <div class="container">
-      <div class="label">Specific adjacent tools</div>
-      <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.022em;line-height:1.06;margin-top:16px;margin-bottom:12px;">What about LiteLLM, Portkey, Bifrost, LangSmith, Arize, and Helicone?</h2>
-      <p style="color:var(--ink-2);font-size:17px;max-width:760px;">Blackridge does not replace every adjacent tool. It is used when the spend question requires workflow-level token forensics reconstruction, evidence-backed findings, and a decision about ongoing controls.</p>
-      <div class="comp-grid">
-        <div class="comp-card">
-          <div class="comp-cat"><div class="tool">LiteLLM / Bifrost / Portkey</div><div class="examples">Gateway · routing · provider abstraction</div></div>
-          <div class="comp-body"><p class="what">Useful for routing, provider abstraction, policy hooks, gateway control, retries, fallbacks, caching, and usage visibility.</p><p class="win">Blackridge is used when the buyer needs workflow-level spend reconstruction, attribution confidence, retry amplification analysis, fallback tax analysis, duplicate inference detection, and scoped runtime control decisions.</p></div>
-          <div class="comp-tag"><span>Complementary</span></div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-cat"><div class="tool">LangSmith / tracing tools</div><div class="examples">Tracing · chains · debugging</div></div>
-          <div class="comp-body"><p class="what">Useful for tracing LLM applications, debugging chains, and reviewing application behavior.</p><p class="win">Blackridge focuses specifically on token forensics, waste classes, attribution coverage, and evidence for control decisions.</p></div>
-          <div class="comp-tag"><span>Different focus</span></div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-cat"><div class="tool">Arize / Phoenix</div><div class="examples">AI observability · evals · monitoring</div></div>
-          <div class="comp-body"><p class="what">Useful for evaluation, traces, quality, monitoring, and model/application observability.</p><p class="win">Blackridge focuses on explaining spend causality and evidence-backed token forensics decisions.</p></div>
-          <div class="comp-tag"><span>Different focus</span></div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-cat"><div class="tool">Helicone / provider dashboards</div><div class="examples">Request logs · usage summaries</div></div>
-          <div class="comp-body"><p class="what">Useful for request logs, usage, latency, cost summaries, and dashboards.</p><p class="win">Blackridge focuses on reconstructing economics across workflows, retries, fallbacks, duplicate inference, app/team/tenant attribution, and control priority.</p></div>
-          <div class="comp-tag"><span>Evidence layer</span></div>
-        </div>
+      <div class="section-head">
+        <div class="eyebrow">Objections</div>
+        <h2>What if you already have the adjacent tool?</h2>
+        <p>Good. Blackridge can use those systems as evidence sources. The assessment proves whether the missing layer is worth deploying.</p>
       </div>
-
-      <table class="question-table">
-        <thead><tr><th>Question</th><th>Gateway / Proxy</th><th>Observability / Tracing</th><th>Provider Dashboard</th><th>Blackridge</th></tr></thead>
-        <tbody>
-          <tr><td>Which provider/model handled the request?</td><td>Usually</td><td>Sometimes</td><td>Yes, per provider</td><td>Yes, when present in data</td></tr>
-          <tr><td>What was total token usage?</td><td>Sometimes</td><td>Sometimes</td><td>Yes</td><td>Yes, tied to workflow evidence</td></tr>
-          <tr><td>Which workflow caused the spike?</td><td>Sometimes, if tagged</td><td>Sometimes, if traced</td><td>Usually no</td><td>Primary use case</td></tr>
-          <tr><td>Which retry loop amplified cost?</td><td>Sometimes</td><td>Sometimes</td><td>No</td><td>Primary use case</td></tr>
-          <tr><td>Which fallback path changed unit economics?</td><td>Sometimes</td><td>Sometimes</td><td>No</td><td>Primary use case</td></tr>
-          <tr><td>Which duplicate calls were waste?</td><td>Sometimes</td><td>Sometimes</td><td>No</td><td>Primary use case</td></tr>
-          <tr><td>Which app/team/tenant owns the spend?</td><td>Sometimes, if tagged</td><td>Sometimes, if tagged</td><td>Usually no</td><td>Yes, with coverage/confidence notes</td></tr>
-          <tr><td>What should engineering fix first?</td><td>No</td><td>Sometimes for reliability</td><td>No</td><td>Ranked evidence and safe control options</td></tr>
-          <tr><td>What evidence supports the finding?</td><td>Logs/events</td><td>Traces/logs</td><td>Usage exports</td><td>Evidence rows, confidence, coverage, and pricing assumptions</td></tr>
-        </tbody>
-      </table>
+      <div class="objection-wall compare-objections">
+        <article><span>Gateway</span><h3>We already have a gateway.</h3><p>Use it as evidence. Blackridge adds spend causality, attribution confidence, waste classes, and evidence rows.</p></article>
+        <article><span>Observability</span><h3>We already have observability.</h3><p>Use the traces. Blackridge turns runtime behavior into a spend case file that can be shared beyond engineering.</p></article>
+        <article><span>Deployment</span><h3>We do not want inline deployment yet.</h3><p>Start with logs, traces, provider events, and gateway exports. Inline collection is scoped only when evidence requires it.</p></article>
+        <article><span>Trust</span><h3>We do not trust savings estimates.</h3><p>Blackridge separates observed waste from modeled opportunity and shows pricing assumptions, coverage, and confidence.</p></article>
+        <article><span>Proof</span><h3>We need proof before buying a platform.</h3><p>The one-workflow assessment exists for that reason: inspect the rows, then decide whether deployment is justified.</p></article>
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="label center" style="margin-bottom:20px;">Next step</div>
-      <h2>See whether Blackridge fits one production workflow.</h2>
-      <p>The workflow assessment starts with existing logs, traces, gateway exports, provider events, or scoped runtime evidence, then determines what happened, which changes are safe to test, and whether Blackridge should be deployed for ongoing control.</p>
-      <div class="cta-actions">
-        <a class="btn primary" data-cta="workflow-discussion-compare-final" href="brg-ai-spend-assessment/#request-assessment">Discuss one workflow <span class="arr">→</span></a>
-        <a class="btn ghost" href="./">Back to overview</a>
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <div>
+        <div class="eyebrow">Next step</div>
+        <h2>Bring one AI spend mystery.</h2>
+        <p>The assessment starts with existing logs, traces, gateway exports, provider events, or scoped runtime evidence, then determines what caused the bill and whether Blackridge should be deployed for ongoing near real-time forensics.</p>
       </div>
+      <a class="btn primary" data-cta="workflow-discussion-compare-final" href="brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
     </div>
   </section>
 </main>
@@ -560,7 +235,7 @@ h1 em { font-style: normal; color: var(--accent-2); }
       <a href="./#product">Product</a>
       <a href="./#how-it-works">How it works</a>
       <a href="./#product-evidence">Evidence</a>
-      <a href="compare.html" class="active">Compare</a>
+      <a href="compare.html" aria-current="page">Compare</a>
       <a href="./#deployment-scope">Security / Deployment</a>
       <a href="about/">Company</a>
       <a href="contact/">Contact</a>
@@ -572,21 +247,25 @@ h1 em { font-style: normal; color: var(--accent-2); }
     <div class="footer-meta">Last updated June 2026</div>
   </div>
 </footer>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9262050&amp;fmt=gif">
+</noscript>
+<script type="module" src="assets/brg-three.js"></script>
 <script>
+document.querySelectorAll("[data-cta]").forEach(function(el) {
+  el.addEventListener("click", function() {
+    if (typeof gtag === "function") {
+      gtag("event", "click", { event_category: "CTA", event_label: el.getAttribute("data-cta") });
+    }
+  });
+});
+
 (function(){
-  var toggle = document.getElementById('menuToggle');
-  var nav = document.getElementById('navLinks');
-  if(toggle && nav){
-    toggle.addEventListener('click', function(){
-      toggle.classList.toggle('active');
-      nav.classList.toggle('open');
-    });
-    nav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){
-        toggle.classList.remove('active');
-        nav.classList.remove('open');
-      });
-    });
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("navLinks");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
   }
 })();
 </script>

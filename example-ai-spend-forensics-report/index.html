@@ -10,17 +10,17 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>Example Blackridge Evidence Artifact | Northwatch Systems</title>
-<meta name="description" content="Example Blackridge evidence artifact using synthetic data, including spend map, request evidence, confidence, and ranked safe tests.">
+<title>Redacted Blackridge Token Economics Report | Northwatch Systems</title>
+<meta name="description" content="A sanitized Blackridge token-economics report artifact showing request volume, token usage, findings, evidence coverage, and safe engineering actions without exposing request IDs or proprietary detection logic.">
 <link rel="canonical" href="https://northwatch.systems/example-ai-spend-forensics-report/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/example-ai-spend-forensics-report/">
-<meta property="og:title" content="Example Blackridge Evidence Artifact">
-<meta property="og:description" content="A synthetic example Blackridge evidence artifact showing token forensics findings.">
+<meta property="og:title" content="Redacted Blackridge Token Economics Report">
+<meta property="og:description" content="A sanitized Blackridge report artifact showing the shape of spend proof without exposing raw request IDs or detection logic.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Example Blackridge Evidence Artifact">
-<meta name="twitter:description" content="Synthetic example evidence with spend map, findings, confidence, and safe tests.">
+<meta name="twitter:title" content="Redacted Blackridge Token Economics Report">
+<meta name="twitter:description" content="Request volume, token economics, findings, evidence coverage, and safe engineering actions from a sanitized Blackridge report artifact.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
@@ -29,69 +29,140 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="nav"><div class="container nav-inner"><a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a><button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button><nav class="nav-links" id="navLinks" aria-label="Primary"><a href="../#product">Product</a><a href="../#how-it-works">How it works</a><a href="../#product-evidence">Evidence</a>
-      <a href="../compare.html">Compare</a><a href="../#deployment-scope">Security / Deployment</a><a href="../about/">Company</a><a class="btn secondary" data-cta="workflow-discussion-nav" href="../brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a></nav></div></header>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="../#product">Product</a>
+      <a href="../#how-it-works">How it works</a>
+      <a href="../#product-evidence">Evidence</a>
+      <a href="../compare.html">Compare</a>
+      <a href="../#deployment-scope">Security / Deployment</a>
+      <a href="../about/">Company</a>
+      <a class="btn secondary" data-cta="workflow-discussion-nav" href="../brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a>
+    </nav>
+  </div>
+</header>
 <main>
-  <section class="page-hero">
+  <section class="page-hero report-artifact-hero">
     <div class="container">
-      <div class="eyebrow">Example artifact</div>
-      <h1>Example Blackridge evidence artifact</h1>
-      <p class="lead">Example evidence using synthetic data. This is not a customer case study, testimonial, or production deployment claim.</p>
-      <div class="hero-actions"><a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Discuss one workflow</a><a class="btn secondary" href="../#product-evidence">View product screenshots</a></div>
-    </div>
-  </section>
-  <section>
-    <div class="container">
-      <div class="section-head"><div class="eyebrow">Executive summary</div><h2>Support-agent workflow shows retry and fallback-driven cost variance.</h2><p>Synthetic workflow: support-agent-prod. Observed events show a 19.0x workflow spend spike during a failure window. Attribution coverage is 63% because customer metadata is missing on fallback events.</p></div>
-      <div class="grid cols-4">
-        <article class="card"><h3>19.0x</h3><p>Workflow spend spike versus modeled baseline.</p></article>
-        <article class="card"><h3>5.66x</h3><p>Customer spend increase in the affected segment.</p></article>
-        <article class="card"><h3>63%</h3><p>Attribution coverage across events.</p></article>
-        <article class="card"><h3>Fix 01</h3><p>Cap retry fanout before fallback escalation.</p></article>
+      <div class="eyebrow">Redacted report artifact</div>
+      <h1>What a Blackridge token-economics report looks like.</h1>
+      <p class="lead">This sanitized artifact uses aggregate output from a real Blackridge report window. It keeps raw request IDs, exact workflow identifiers, detection logic, and implementation hints out of the public page.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Bring one spend mystery</a>
+        <a class="btn secondary" href="../#product-evidence">View product screens</a>
       </div>
     </div>
   </section>
-  <section><div class="container">
-    <div class="section-head"><div class="eyebrow">Workflow spend map</div><h2>Where the synthetic spend accumulated</h2></div>
-    <table class="report-table">
-      <thead><tr><th>Workflow path</th><th>Observed</th><th>Modeled baseline</th><th>Variance driver</th><th>Confidence</th></tr></thead>
-      <tbody>
-        <tr><td>support-agent-prod / issue triage</td><td>$249.91</td><td>$13.15</td><td>Retry amplification and fallback to premium model</td><td>Strong</td></tr>
-        <tr><td>support-agent-prod / summarization</td><td>$31.42</td><td>$28.10</td><td>Normal variance</td><td>Strong</td></tr>
-        <tr><td>support-agent-prod / tool branch</td><td>$42.18</td><td>$8.90</td><td>Abandoned branch waste</td><td>Inferred</td></tr>
-      </tbody>
-    </table>
-  </div></section>
-  <section><div class="container">
-    <div class="section-head"><div class="eyebrow">Findings</div><h2>Evidence-backed waste findings</h2></div>
-    <div class="grid cols-3">
-      <article class="card"><h3>Retry amplification detected</h3><p>Repeated calls share a parent workflow and failure window. Observed waste: $118.40. Recommended fix: cap retry fanout and add failure classification.</p></article>
-      <article class="card"><h3>Fallback tax detected</h3><p>Fallback path moved failed calls to a higher-cost model. Modeled opportunity: $61-$84 depending on acceptable fallback behavior.</p></article>
-      <article class="card"><h3>Duplicate inference opportunity</h3><p>Similar prompts in the same workflow suggest cache or de-duplication opportunity. Confidence: inferred due to partial prompt fingerprint coverage.</p></article>
+
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Executive summary</div>
+        <h2>6,001 requests. 647.7M tokens. 75 workflows.</h2>
+        <p>Blackridge reconstructed a 14-day token-economics window and separated observed waste from modeled opportunity. The report produced five findings and nine evidence bundles.</p>
+      </div>
+      <div class="report-stats">
+        <div><span>Observed spend</span><b>$3,018.63</b><em>report window</em></div>
+        <div><span>Realized waste</span><b>$249.91</b><em>already incurred</em></div>
+        <div><span>Modeled opportunity</span><b>$460.88</b><em>not counted as waste</em></div>
+        <div><span>Savings opportunity</span><b>$710.79</b><em>24% of observed spend</em></div>
+        <div><span>Lineage graph</span><b>5,926 edges</b><em>6,001 request nodes</em></div>
+        <div><span>Cache hits</span><b>2,345</b><em>cache status covered</em></div>
+      </div>
     </div>
-  </div></section>
-  <section><div class="container">
-    <div class="section-head"><div class="eyebrow">Evidence rows</div><h2>Rows behind the claims</h2></div>
-    <table class="report-table">
-      <thead><tr><th>Evidence</th><th>What it supports</th><th>Observed vs modeled</th><th>Coverage note</th></tr></thead>
-      <tbody>
-        <tr><td>req_82f4 retry attempts 1-8</td><td>Retry amplification</td><td>Observed waste</td><td>App/team present; customer missing on attempts 6-8</td></tr>
-        <tr><td>fallback edge provider_a to provider_b</td><td>Fallback tax</td><td>Modeled opportunity</td><td>Pricing available; route reason present</td></tr>
-        <tr><td>prompt fingerprint cluster 41</td><td>Duplicate inference</td><td>Modeled opportunity</td><td>Partial fingerprint coverage</td></tr>
-      </tbody>
-    </table>
-  </div></section>
-  <section><div class="container">
-    <div class="section-head"><div class="eyebrow">Safe tests</div><h2>What engineering could test first</h2></div>
-    <div class="grid cols-3">
-      <article class="card"><h3>1. Cap retry fanout</h3><p>Highest confidence and largest observed waste. Add bounded retries and failure classification before fallback.</p></article>
-      <article class="card"><h3>2. Preserve customer metadata on fallback</h3><p>Improves attribution coverage and chargeback confidence.</p></article>
-      <article class="card"><h3>3. Add duplicate request caching</h3><p>Validate prompt fingerprint candidates, then add cache controls where quality risk is low.</p></article>
+  </section>
+
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Findings</div>
+        <h2>The report separates what happened from what might be improved.</h2>
+        <p>Public copy uses category-level summaries only. Raw IDs, grouping details, and detection rules remain private.</p>
+      </div>
+      <div class="report-table-wrap">
+        <table class="report-table">
+          <thead><tr><th>Finding class</th><th>Economic impact</th><th>Evidence type</th><th>Public-safe interpretation</th></tr></thead>
+          <tbody>
+            <tr><td>Retry amplification</td><td>$126.97 observed waste</td><td>177 affected requests · 65 workflows</td><td>Cost from failed or repeated attempts before success.</td></tr>
+            <tr><td>Abandoned branch waste</td><td>$122.94 observed waste</td><td>173 affected requests · 71 workflows</td><td>Cost from workflow branches that did not contribute to final output.</td></tr>
+            <tr><td>Cache miss opportunity</td><td>$460.88 modeled opportunity</td><td>Cache and duplicate-group metadata</td><td>Future avoidable spend, explicitly separated from realized waste.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div></section>
+  </section>
+
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Coverage</div>
+        <h2>The artifact says what it can prove and what it cannot.</h2>
+        <p>Coverage is part of the product output. Blackridge should not ask a buyer to trust numbers without knowing which evidence was present.</p>
+      </div>
+      <div class="matrix report-coverage">
+        <table class="report-table">
+          <thead><tr><th>Coverage area</th><th>Status</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td>Cost coverage</td><td class="status-now">100%</td><td>Every included request had usable cost context.</td></tr>
+            <tr><td>Lineage coverage</td><td class="status-now">100%</td><td>Request relationships could be reconstructed for the report window.</td></tr>
+            <tr><td>Workflow coverage</td><td class="status-now">100%</td><td>Requests were grouped into workflows for economics analysis.</td></tr>
+            <tr><td>Provider pricing coverage</td><td class="status-now">100%</td><td>Pricing assumptions were available for the included provider/model data.</td></tr>
+            <tr><td>Semantic duplicate coverage</td><td class="status-roadmap">Warning</td><td>Semantic duplicate opportunity may be understated when semantic cluster metadata is missing.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Recommended actions</div>
+        <h2>Safe actions are ranked from evidence, not from a generic savings estimate.</h2>
+      </div>
+      <div class="decision-outcomes">
+        <div><span>High confidence</span><b>Cap repeated failed attempts in the affected operation. Estimated public-safe impact shown as $3.92 for the redacted workflow slice.</b></div>
+        <div><span>Observed waste</span><b>Prune abandoned branches that consumed $122.94 without contributing to final output.</b></div>
+        <div><span>Modeled opportunity</span><b>Evaluate duplicate-request caching where repeated misses created $6.75 of modeled opportunity in a redacted slice.</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compact-section">
+    <div class="container proof-close">
+      <div>
+        <div class="eyebrow">What is withheld</div>
+        <h2>The public artifact shows proof shape, not IP.</h2>
+        <p>This page intentionally withholds raw request IDs, exact workflow identifiers, grouping internals, detection rules, and implementation hints. Buyers can inspect those under an appropriate assessment or deployment scope.</p>
+      </div>
+      <div class="proof-artifact" aria-label="Sanitized report contents">
+        <div class="artifact-strip"><span>included</span><b>Aggregates and categories</b><em>public-safe</em></div>
+        <div class="artifact-strip"><span>included</span><b>Coverage and warnings</b><em>public-safe</em></div>
+        <div class="artifact-strip"><span>withheld</span><b>Raw request identifiers</b><em>private</em></div>
+        <div class="artifact-strip hot"><span>withheld</span><b>Detection logic and implementation hints</b><em>IP protected</em></div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="footer"><div class="container footer-inner"><div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge</div><nav class="footer-links" aria-label="Footer"><a href="../#product">Product</a><a href="../#how-it-works">How it works</a><a href="../#product-evidence">Evidence</a>
-      <a href="../compare.html">Compare</a><a href="../#deployment-scope">Security / Deployment</a><a href="../about/">Company</a><a href="../contact/">Contact</a></nav><div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></div><div class="footer-meta">Last updated June 2026</div></div></footer>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge</div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../#product">Product</a>
+      <a href="../#how-it-works">How it works</a>
+      <a href="../#product-evidence">Evidence</a>
+      <a href="../compare.html">Compare</a>
+      <a href="../#deployment-scope">Security / Deployment</a>
+      <a href="../about/">Company</a>
+      <a href="../contact/">Contact</a>
+    </nav>
+    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></div>
+    <div class="footer-meta">Last updated June 2026</div>
+  </div>
+</footer>
 <script>
 (function(){
   var toggle = document.getElementById("menuToggle");

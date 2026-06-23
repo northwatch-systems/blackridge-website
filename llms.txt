@@ -1,6 +1,6 @@
-Northwatch Systems builds Blackridge, a Token Forensics Engine / Gateway for enterprise inference spend. Blackridge sits between AI applications and model providers to make inference spend attributable, explainable, and controllable.
+Northwatch Systems builds Blackridge to help teams find where AI spend is leaking. Provider bills show totals. Blackridge shows near real-time causes with workflow correlation, request-level evidence rows, attribution coverage, confidence notes, and safe tests.
 
-The one-workflow assessment is the entry motion for evaluating Blackridge. It uses logs, traces, gateway exports, provider events, runtime metadata, and scoped runtime evidence to determine whether Blackridge should be deployed for ongoing control.
+The one-workflow assessment is the entry motion for evaluating Blackridge. It uses logs, traces, gateway exports, provider events, runtime metadata, and scoped runtime evidence to determine what caused spend and decide whether Blackridge should be deployed for ongoing near real-time token forensics. Blackridge explains and recommends; it does not take action or enforce changes for the user today.
 
 Primary public pages:
 - https://northwatch.systems/

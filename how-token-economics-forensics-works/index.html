@@ -11,16 +11,16 @@
 })();
 </script>
 <title>How Blackridge Evaluates AI Workflow Spend | Northwatch Systems</title>
-<meta name="description" content="A buyer-safe explanation of how Blackridge evaluates workflow spend: data sources, evidence standards, confidence, coverage, and deployment limits.">
+<meta name="description" content="How Blackridge finds AI spend causes with data sources, evidence rows, observed vs modeled findings, confidence, coverage, and deployment limits.">
 <link rel="canonical" href="https://northwatch.systems/how-token-economics-forensics-works/">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://northwatch.systems/how-token-economics-forensics-works/">
 <meta property="og:title" content="How Blackridge Evaluates AI Workflow Spend">
-<meta property="og:description" content="How Blackridge presents token forensics evidence with confidence and coverage boundaries.">
+<meta property="og:description" content="How Blackridge turns AI spend totals into evidence about causes, confidence, and coverage boundaries.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How Blackridge Evaluates AI Workflow Spend">
-<meta name="twitter:description" content="A buyer-safe explanation of Blackridge evidence, confidence, and coverage.">
+<meta name="twitter:description" content="How Blackridge shows AI spend causes with evidence, confidence, and coverage.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
@@ -59,19 +59,20 @@
     <div class="container">
       <div class="eyebrow">Technical overview</div>
       <h1>How Blackridge evaluates AI workflow spend</h1>
-      <p class="lead">This page explains the evidence standard behind Blackridge workflow assessment without exposing proprietary detection logic. The goal is simple: engineering and finance should be able to inspect why a token forensics finding was made, what data supports it, and where confidence is limited.</p>
+      <p class="lead">Provider bills show totals. Blackridge shows causes. This page explains the evidence standard behind that claim without exposing proprietary detection logic.</p>
+      <p class="lead">The goal is simple: engineering and finance should be able to inspect why a finding was made, what rows support it, and where confidence is limited.</p>
     </div>
   </section>
   <section>
     <div class="container article-body">
       <h2>What the evaluation is designed to answer</h2>
-      <p>Provider dashboards are useful for invoices, aggregate tokens, and model-level usage. A Blackridge workflow assessment is designed for a different review: which workflow drove spend, which ownership signals are present, what looks wasted, which controls are safe to test, and whether Blackridge should be deployed for ongoing control.</p>
+      <p>Provider dashboards are useful for invoices, aggregate tokens, and model-level usage. A Blackridge workflow assessment is designed for a different review: which workflow drove spend, which runtime behavior caused it, which ownership signals are present, what looks wasted, which tests are safe to run, and whether Blackridge should be deployed for ongoing near real-time forensics.</p>
 
       <h2>What Blackridge can use</h2>
       <p>Blackridge can work from existing logs, traces, gateway exports, provider usage data, runtime metadata, and app/team/tenant ownership signals. When existing data is incomplete, a scoped runtime collection path may be used to improve evidence quality.</p>
       <div class="grid cols-2">
         <article class="card"><h3>Common inputs</h3><p>Provider usage exports, gateway request logs, traces, application logs, pricing context, and ownership metadata where available.</p></article>
-        <article class="card"><h3>Evidence outputs</h3><p>A workflow spend map, waste findings, attribution coverage notes, confidence labels, safe tests, Blackridge fit decision, and evidence rows engineering can inspect.</p></article>
+        <article class="card"><h3>Evidence outputs</h3><p>A workflow spend map, waste findings, attribution coverage notes, confidence labels, safe tests, Blackridge fit decision, and evidence rows engineering and finance can inspect.</p></article>
       </div>
 
       <h2>The evidence standard</h2>
@@ -87,13 +88,13 @@
       <p>Blackridge evaluation can cover retry amplification, fallback tax, duplicate inference, premium-model overuse, abandoned branch waste, failed request waste, cache-miss opportunity, context bloat, retrieval bloat, and unattributed spend when the source data supports those findings.</p>
 
       <h2>What the evaluation does not claim</h2>
-      <p>Blackridge evaluation does not guarantee savings, replace engineering judgment, or claim perfect attribution when metadata is incomplete. It gives engineering and finance structured evidence for deciding what to test and whether ongoing Blackridge deployment is justified.</p>
+      <p>Blackridge evaluation does not guarantee savings, replace engineering judgment, or claim perfect attribution when metadata is incomplete. It gives platform and engineering leaders structured evidence they can share with finance, executives, and application teams when deciding what to test and whether ongoing Blackridge deployment is justified.</p>
 
       <h2>Example review surface</h2>
       <p>A typical finding includes the affected workflow, the spend pattern, confidence, attribution coverage, observed vs modeled impact, supporting rows, and the recommended engineering test. The public example uses synthetic data to show the artifact without exposing customer data.</p>
 
       <div class="hero-actions">
-        <a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Discuss one expensive workflow</a>
+        <a class="btn primary" href="../brg-ai-spend-assessment/#request-assessment">Bring one spend mystery</a>
         <a class="btn secondary" href="../example-ai-spend-forensics-report/">See example evidence</a>
       </div>
     </div>

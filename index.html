@@ -10,14 +10,14 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>Blackridge Token Forensics Engine / Gateway | Northwatch Systems</title>
-<meta name="description" content="Blackridge is a Token Forensics Engine / Gateway that makes AI inference spend attributable, explainable, and controllable from a single control point.">
+<title>Find Where Your AI Spend Is Leaking | Blackridge by Northwatch Systems</title>
+<meta name="description" content="Provider AI bills show totals. Blackridge shows near real-time causes, with request-level evidence for the workflows, retries, fallbacks, and model choices driving spend.">
 <link rel="canonical" href="https://northwatch.systems/">
 <meta name="theme-color" content="#D2762F">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/">
-<meta property="og:title" content="Blackridge Token Forensics Engine / Gateway | Northwatch Systems">
-<meta property="og:description" content="Blackridge attributes, analyzes, routes, and optimizes AI inference traffic while preserving request-level token forensics evidence.">
+<meta property="og:title" content="Find Where Your AI Spend Is Leaking | Blackridge">
+<meta property="og:description" content="Provider bills show totals. Blackridge shows near real-time workflow, retry, fallback, and model-choice causes behind AI spend.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://northwatch.systems/">
 <meta name="twitter:title" content="Blackridge">
-<meta name="twitter:description" content="Token forensics for enterprise AI spend. Attribute, analyze, route, and optimize inference traffic across providers.">
+<meta name="twitter:description" content="Provider bills show totals. Blackridge shows causes, with request-level evidence behind every finding.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -71,7 +71,7 @@ s.parentNode.insertBefore(b, s);
       "name": "Blackridge",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Cloud infrastructure",
-      "description": "Blackridge is a Token Forensics Engine / Gateway for attributing, analyzing, routing, and optimizing enterprise inference traffic.",
+      "description": "Blackridge is a near real-time Token Economics and Forensics Engine for attributing and analyzing enterprise inference traffic.",
       "publisher": { "@id": "https://northwatch.systems/#organization" },
       "url": "https://northwatch.systems/"
     },
@@ -82,7 +82,7 @@ s.parentNode.insertBefore(b, s);
       "provider": { "@id": "https://northwatch.systems/#organization" },
       "serviceType": "Blackridge workflow assessment",
       "url": "https://northwatch.systems/brg-ai-spend-assessment",
-      "description": "A seven-day assessment of one expensive production AI workflow that determines whether Blackridge is a fit for ongoing token spend control."
+      "description": "A focused assessment of one expensive production AI workflow that shows where AI spend is leaking before a broader deployment decision."
     }
   ]
 }
@@ -98,7 +98,7 @@ s.parentNode.insertBefore(b, s);
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="#product">Product</a>
-      <a href="#how-it-works">How it works</a>
+      <a href="how-token-economics-forensics-works/">Methodology</a>
       <a href="#product-evidence">Evidence</a>
       <a href="compare.html">Compare</a>
       <a href="#deployment-scope">Security / Deployment</a>
@@ -110,65 +110,206 @@ s.parentNode.insertBefore(b, s);
 
 <main>
   <section class="hero">
+    <canvas class="hero-three" data-three-hero aria-hidden="true"></canvas>
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Northwatch Systems</div>
-        <h1>Blackridge</h1>
-        <p class="lead">The Token Forensics Engine / Gateway for enterprise AI spend.</p>
-        <p class="lead">Attribute, analyze, route, and optimize AI inference traffic across providers from a single control point, with request-level evidence behind every finding.</p>
-        <p class="lead">Start with one expensive production workflow. In seven days, Northwatch shows where spend went, what caused it, which changes are safe to make, and whether Blackridge is a fit for ongoing control.</p>
+        <div class="announce">
+          <span class="pill">Hotpath forensics</span>
+          <span>Inference is your fastest-growing cloud bill, <b>and your least inspected live system.</b></span>
+        </div>
+        <div class="label">AI Spend Forensics</div>
+        <h1>Find where your AI spend is <em>leaking.</em></h1>
+        <p class="lede">Blackridge sits in the inference hotpath to track <strong>token economics</strong> as traffic runs, so the business can see which apps, teams, tenants, retries, fallbacks, duplicate requests, and model choices are causing spend.</p>
         <div class="hero-actions">
-          <a class="btn primary" data-cta="discuss-workflow-hero" href="brg-ai-spend-assessment/#request-assessment">Discuss one production workflow</a>
-          <a class="btn secondary" data-cta="inspect-example-evidence" href="#product-evidence">Inspect example evidence</a>
+          <a class="btn primary" data-cta="discuss-workflow-hero" href="brg-ai-spend-assessment/#request-assessment">Book an assessment <span class="arr">→</span></a>
+          <a class="btn ghost" data-cta="inspect-example-report" href="example-ai-spend-forensics-report/">Inspect product evidence</a>
+          <a class="tlink" data-cta="read-methodology-hero" href="how-token-economics-forensics-works/">Read the methodology <span class="arr">→</span></a>
         </div>
-        <p class="trust-line">Built for engineering teams running production AI applications, agents, LLM workflows, and multi-provider inference infrastructure.</p>
+        <p class="hero-note">Start with one expensive workflow and see Blackridge identify live cause patterns: <span>near real-time spend movement, attribution coverage, waste findings, recommended tests, and supporting request-level evidence.</span></p>
+        <div class="proof">
+          <div><span class="k">6,001 requests</span><span class="v">Blackridge evidence</span></div>
+          <div><span class="k">647.7M tokens</span><span class="v">Reconstructed economics</span></div>
+          <div><span class="k">75 workflows</span><span class="v">Cause-level attribution</span></div>
+        </div>
       </div>
-      <aside class="hero-shot" aria-labelledby="hero-shot-title">
-        <div class="hero-shot-topbar">
-          <span id="hero-shot-title">Blackridge Evidence UI</span>
-          <span>Workflow traces</span>
+
+      <aside class="finding" aria-label="Redacted Blackridge evidence finding">
+        <div class="finding-head">
+          <span class="t">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            token-economics/v1
+          </span>
+          <span class="synthetic">Internal artifact · redacted</span>
         </div>
-        <img src="assets/screenshots/blackridge-workflow-traces.png" alt="Blackridge Workflow Traces view showing a Sankey graph of workflow lineage and cost flow">
-        <div class="hero-shot-caption">
-          <span>Product screenshot from Northwatch's own Blackridge development workflow</span>
-          <div class="hero-shot-tags" aria-label="Visible evidence types">
-            <b>workflow traces</b>
-            <b>request inspector</b>
-            <b>evidence rows</b>
-            <b>confidence</b>
-          </div>
+        <div class="finding-type">
+          <div class="ft-tag">Near real-time finding · retry amplification</div>
+          <h3>Retries were climbing while Claude was degraded.</h3>
+          <p>Blackridge showed one workflow retrying into a provider issue without fallback or model failover. It separated observed waste from modeled opportunity and kept the evidence trail inspectable.</p>
+        </div>
+        <div class="metric-grid">
+          <div class="mpill"><div class="ml">Observed spend</div><div class="mv warn">$3,018.63</div></div>
+          <div class="mpill"><div class="ml">Realized waste</div><div class="mv">$249.91</div></div>
+          <div class="mpill"><div class="ml">Modeled opportunity</div><div class="mv warn">$460.88</div></div>
+          <div class="mpill"><div class="ml">Confidence</div><div class="mv good">100<small>%</small></div></div>
+        </div>
+        <div class="evidence">
+          <div class="eh">Evidence · redacted Blackridge aggregate</div>
+          <div class="erow"><span class="ek">requests analyzed</span><span class="ev flag">6,001</span></div>
+          <div class="erow"><span class="ek">lineage graph</span><span class="ev">6,001 nodes / 5,926 edges</span></div>
+          <div class="erow"><span class="ek">workflows grouped</span><span class="ev flag">75</span></div>
+        </div>
+        <div class="finding-fix">
+          <span class="fx">Forensics output</span>
+          <p>Blackridge names the issue and the evidence. <b>It does not take action, enforce policy, or change model routing for the user today.</b></p>
         </div>
       </aside>
     </div>
   </section>
 
-  <section class="proof-strip" aria-label="Evidence available before a call">
-    <div class="container proof-band">
-      <div class="proof-intro">
-        <div class="eyebrow">What you can inspect before a call</div>
-        <h2>Product evidence, not a logo wall.</h2>
+  <section class="forensics-strip" aria-label="Why billing totals are not forensics">
+    <div class="container forensics-band">
+      <article>
+        <strong>Hotpath analytics.</strong>
+        <span>Blackridge sees token economics close to when cost is created, not only after the invoice arrives.</span>
+      </article>
+      <article>
+        <strong>Failure economics.</strong>
+        <span>It can show retries rising during a provider issue and whether the workflow lacked fallback or model failover.</span>
+      </article>
+      <article>
+        <strong>Forensics, not enforcement.</strong>
+        <span>Blackridge explains and recommends. It does not take action or enforce changes for the user today.</span>
+      </article>
+    </div>
+  </section>
+
+  <div class="providers" aria-label="Provider and deployment evidence sources">
+    <div class="container provider-band">
+      <span class="provider-label">Reconstructs spend from</span>
+      <div class="provider-row">
+        <span class="provider-logo openai" aria-label="OpenAI"><i></i><b>OpenAI</b></span>
+        <span class="provider-logo anthropic" aria-label="Anthropic"><i></i><b>Anthropic</b></span>
+        <span class="provider-logo gemini" aria-label="Google Gemini"><i></i><b>Gemini</b></span>
+        <span class="provider-logo azure" aria-label="Azure OpenAI"><i></i><b>Azure OpenAI</b></span>
+        <span class="provider-logo bedrock" aria-label="AWS Bedrock"><i></i><b>AWS Bedrock</b></span>
+        <span class="provider-logo self-hosted" aria-label="Self-hosted models"><i></i><b>Self-hosted</b></span>
       </div>
-      <div class="proof-items">
-        <a class="proof-item" href="example-ai-spend-forensics-report/">
-          <span>Example evidence</span>
-          <strong>Synthetic data, real evidence shape</strong>
-          <em>Spend map, request ledger, findings, confidence, and ranked control options.</em>
-        </a>
-        <a class="proof-item" href="#product-ui">
-          <span>Product screenshots</span>
-          <strong>Workflow traces and request evidence</strong>
-          <em>Actual Blackridge UI screenshots from Northwatch's own Blackridge development workflow.</em>
-        </a>
-        <div class="proof-item">
-          <span>Evidence standard</span>
-          <strong>Observed and modeled kept separate</strong>
-          <em>Findings show confidence and coverage instead of pretending every claim is exact.</em>
+    </div>
+  </div>
+
+  <section id="product-evidence" class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Product evidence</div>
+        <h2>The screens answer painful spend questions.</h2>
+        <p>Blackridge correlates live inference traffic into workflows, individual requests, and evidence rows. The point is not another dashboard. The point is proof your platform, finance, and application teams can inspect together.</p>
+      </div>
+      <div class="showcase">
+        <div class="showcase-tabs" role="tablist" aria-label="Product evidence surfaces">
+          <button class="showcase-tab active" data-tab="workflows" role="tab" aria-selected="true">
+            <span class="tab-icon">01</span>
+            <span><strong>Workflow Traces</strong><em>Which workflow caused the spike?</em></span>
+          </button>
+          <button class="showcase-tab" data-tab="inspector" role="tab" aria-selected="false">
+            <span class="tab-icon">02</span>
+            <span><strong>Request Ledger</strong><em>Can we prove the finding?</em></span>
+          </button>
+          <button class="showcase-tab" data-tab="request-inspector" role="tab" aria-selected="false">
+            <span class="tab-icon">03</span>
+            <span><strong>Request Inspector</strong><em>Why did this row cost money?</em></span>
+          </button>
         </div>
-        <div class="proof-item">
-          <span>Scope clarity</span>
-          <strong>Available-now separated from roadmap</strong>
-          <em>Runtime deployment claims are scoped clearly instead of implied.</em>
+        <div class="showcase-stage">
+          <article class="showcase-panel active" data-panel="workflows">
+            <div class="shot-frame">
+              <div class="shot-chrome"><span>workflow-traces</span><span>redacted internal artifact · Blackridge UI</span></div>
+              <img src="assets/screenshots/demo-trace.png" alt="Blackridge workflow traces screenshot showing ranked workflow spend and evidence quality" loading="lazy">
+              <div class="shot-caption"><strong>Workflow Traces</strong><span>Answers: which workflow leaked spend, where the fanout happened, and which branch deserves the first engineering review.</span></div>
+            </div>
+          </article>
+          <article class="showcase-panel" data-panel="inspector">
+            <div class="shot-frame">
+              <div class="shot-chrome"><span>request-ledger</span><span>row-level proof · request inspector attached</span></div>
+              <img src="assets/screenshots/demo-ledger.png" alt="Blackridge append-only request ledger screenshot showing auditable inference call rows" loading="lazy">
+              <div class="shot-caption"><strong>Request Ledger</strong><span>Answers: which rows support the claim, what is observed versus modeled, which request was inspected, and whether finance can trust the number.</span></div>
+            </div>
+          </article>
+          <article class="showcase-panel" data-panel="request-inspector">
+            <div class="shot-frame inspector-shot">
+              <div class="shot-chrome"><span>request-inspector</span><span>selected ledger row · redacted fields</span></div>
+              <div class="inspector-composite">
+                <div class="inspector-proof">
+                  <span>Selected row drill-down</span>
+                  <h3>One request, all the economics behind it.</h3>
+                  <p>The inspector is not another dashboard view. It is the evidence drawer for a ledger row: provider cost, attribution, usage, cache verdict, route plan, and timing.</p>
+                  <div>
+                    <b>Cost</b><em>provider, estimated, selected, observed delta</em>
+                    <b>Attribution</b><em>tenant, app, team, user, workflow, logical operation</em>
+                    <b>Runtime state</b><em>cache, route, model, timing, usage status</em>
+                  </div>
+                </div>
+                <div class="inspector-arrow" aria-hidden="true"><span></span></div>
+                <div class="inspector-image-wrap">
+                  <img src="assets/screenshots/blackridge-request-inspector.png" alt="Blackridge request inspector screenshot showing request economics, attribution, usage, cache, route, and timing for one selected row" loading="lazy">
+                </div>
+              </div>
+              <div class="shot-caption"><strong>Request Inspector</strong><span>Answers: why this selected row cost what it did, which attribution fields were present, whether cache/route state mattered, and what evidence is safe to share.</span></div>
+            </div>
+          </article>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="forensics-flow" class="compact-section flow-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Forensics flow</div>
+        <h2>See which workflow is turning provider trouble into spend.</h2>
+        <p>Blackridge gives buyers a defensible view of what is driving AI cost now: request traffic, provider behavior, ownership, token economics, and the first safe test to consider.</p>
+      </div>
+      <div class="spend-flow" aria-label="How Blackridge identifies AI spend causes">
+        <article class="flow-card bill">
+          <span class="flow-step">01</span>
+          <h3>The bill is climbing</h3>
+          <p>Provider totals show usage is up. They do not show which live workflow, retry loop, fallback path, or model choice is creating the spend pattern.</p>
+          <div class="bill-mini">
+            <div><span>Model usage</span><strong>$18,420</strong></div>
+            <div><span>Cause</span><strong class="muted">Unknown</strong></div>
+          </div>
+        </article>
+        <div class="flow-bridge" aria-hidden="true"><span></span></div>
+        <article class="flow-card evidence-in">
+          <span class="flow-step">02</span>
+          <h3>Blackridge watches the signals</h3>
+          <p>Request traffic, traces, provider events, pricing context, and ownership metadata become request-level evidence.</p>
+          <div class="signal-stack">
+            <span>gateway log</span>
+            <span>OTel trace</span>
+            <span>provider event</span>
+            <span>team metadata</span>
+          </div>
+        </article>
+        <div class="flow-bridge" aria-hidden="true"><span></span></div>
+        <article class="flow-card reconstruct">
+          <span class="flow-step">03</span>
+          <h3>The cause pattern appears</h3>
+          <p>Blackridge ties the spend movement to workflow paths, retries, missing fallback, token usage, model choice, and attribution coverage.</p>
+          <div class="trace-map" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </article>
+        <div class="flow-bridge" aria-hidden="true"><span></span></div>
+        <article class="flow-card finding-card">
+          <span class="flow-step">04</span>
+          <h3>The team has a next test</h3>
+          <p>Findings separate observed waste from modeled opportunity, cite rows, expose coverage gaps, and recommend safe tests. Blackridge does not apply the change.</p>
+          <div class="cause-mini">
+            <div><span>Cause</span><strong>Retry amplification</strong></div>
+            <div><span>Proof</span><strong>18 rows</strong></div>
+            <div><span>Coverage</span><strong>63%</strong></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -177,58 +318,152 @@ s.parentNode.insertBefore(b, s);
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Product architecture</div>
-        <h2>Blackridge sits between AI applications and model providers.</h2>
-        <p>Blackridge is both a token forensics engine and, where deployed inline, a gateway. It turns request traffic into evidence, then uses that evidence to evaluate policy, routing, caching, and budget controls where deployment scope supports them.</p>
+        <h2>First see the leak live. Then decide what to change.</h2>
+        <p>Blackridge is a token economics and forensics system for inference traffic. It can sit in the hotpath to show what caused the bill, who owns it, and what a team should test, without taking action or enforcing policy for the user today.</p>
       </div>
-      <div class="architecture-flow">
-        <div class="flow-main" aria-label="AI application to Blackridge gateway to model providers">
-          <div class="flow-node"><strong>AI application</strong><span>Agents, copilots, workflows, and product features issuing inference requests.</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Blackridge</strong><span>Token attribution, forensics analysis, evidence capture, and scoped gateway controls.</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Model providers</strong><span>OpenAI-compatible and provider event data where available in the deployment.</span></div>
+      <div class="architecture-flow live-architecture architecture-diagram" aria-label="Blackridge hotpath token forensics architecture diagram">
+        <div class="diagram-bar">
+          <span><i class="sw hot"></i>Hot path</span>
+          <span><i class="sw evidence"></i>Forensics evidence</span>
+          <span><i class="sw external"></i>Buyer-owned action</span>
+          <b>Near real-time visibility · no automated enforcement</b>
         </div>
-        <div class="flow-sides">
-          <div class="flow-side"><strong>Request economics + attribution</strong><span>Feeds evidence UI and exportable rows for engineering, platform, and finance review.</span></div>
-          <div class="flow-side"><strong>Policy / routing / caching decisions</strong><span>Evaluated from evidence first; runtime enforcement is scoped for private/design-partner deployment unless listed as available.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="diagram-stage">
+          <canvas class="hotpath-three" data-three-hotpath aria-hidden="true"></canvas>
+          <svg class="architecture-svg" viewBox="0 0 1200 560" role="img" aria-labelledby="architecture-title architecture-desc">
+            <title id="architecture-title">Blackridge hotpath token forensics architecture</title>
+            <desc id="architecture-desc">AI applications send inference traffic through Blackridge, Blackridge observes token economics and provider behavior, evidence flows off path, and the buyer decides what to change.</desc>
+            <defs>
+              <marker id="arch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z"></path>
+              </marker>
+              <marker id="arch-arrow-hot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z"></path>
+              </marker>
+            </defs>
 
-  <section id="product-evidence" class="compact-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Product evidence</div>
-        <h2>Evidence you can inspect in Blackridge.</h2>
-        <p>These screenshots come from Northwatch's own use of Blackridge to develop Blackridge. They show the software surface: request attribution, workflow causality, request-level inspection, and evidence behind token forensics findings.</p>
-      </div>
-      <div class="evidence-grid">
-        <figure>
-          <img src="assets/screenshots/blackridge-request-ledger.png" alt="Blackridge Request Ledger showing request attribution and event rows">
-          <figcaption><strong>Request Ledger</strong>Answers which requests, models, tokens, attribution fields, and costs support a finding.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/screenshots/blackridge-workflow-traces.png" alt="Blackridge Workflow Trace showing workflow lineage and cost flow">
-          <figcaption><strong>Workflow Trace</strong>Shows how one user action fans out across retries, branches, fallbacks, models, and cost.</figcaption>
-        </figure>
-        <figure class="inspector">
-          <img src="assets/screenshots/blackridge-request-inspector.png" alt="Blackridge Request Inspector showing request-level evidence">
-          <figcaption><strong>Request Inspector</strong>Shows request-level evidence including attribution, model choice, token usage, cache status, and routing context.</figcaption>
-        </figure>
+            <g class="arch-groups">
+              <rect x="28" y="48" width="220" height="380" rx="12"></rect>
+              <text x="48" y="82">Customer environment</text>
+              <rect x="292" y="48" width="300" height="380" rx="12"></rect>
+              <text x="312" y="82">Blackridge hot path</text>
+              <rect x="636" y="48" width="240" height="380" rx="12"></rect>
+              <text x="656" y="82">Provider execution</text>
+              <rect x="920" y="48" width="252" height="380" rx="12"></rect>
+              <text x="940" y="82">Operator decision</text>
+              <rect x="292" y="456" width="584" height="72" rx="12"></rect>
+              <text x="312" y="486">Off-path evidence surface</text>
+            </g>
+
+            <path class="arch-edge hot" d="M178 192 C250 192 270 170 338 170"></path>
+            <path class="arch-edge hot" d="M500 170 C574 170 596 170 670 170"></path>
+            <path class="arch-edge hot degraded" d="M790 226 C696 306 560 284 500 226"></path>
+            <path class="arch-edge evidence" d="M438 262 C438 338 484 392 548 456"></path>
+            <path class="arch-edge evidence" d="M746 262 C720 334 676 402 634 456"></path>
+            <path class="arch-edge recommend" d="M876 492 C930 492 958 360 1010 300"></path>
+
+            <g class="arch-node external" transform="translate(62 132)">
+              <rect width="150" height="90" rx="8"></rect>
+              <text x="18" y="34">AI application</text>
+              <text class="sub" x="18" y="58">agents · copilots</text>
+            </g>
+            <g class="arch-node hot" transform="translate(336 120)">
+              <rect width="160" height="100" rx="8"></rect>
+              <text x="18" y="34">Blackridge</text>
+              <text class="sub" x="18" y="58">token economics</text>
+              <text class="sub" x="18" y="76">hotpath visibility</text>
+            </g>
+            <g class="arch-node hot" transform="translate(660 132)">
+              <rect width="160" height="90" rx="8"></rect>
+              <text x="18" y="34">Model provider</text>
+              <text class="sub" x="18" y="58">latency · errors</text>
+            </g>
+            <g class="arch-node finding" transform="translate(336 248)">
+              <rect width="208" height="92" rx="8"></rect>
+              <text x="18" y="34">Live finding</text>
+              <text class="sub" x="18" y="58">retry amplification rising</text>
+              <text class="sub" x="18" y="76">no fallback / failover</text>
+            </g>
+            <g class="arch-node finding" transform="translate(626 248)">
+              <rect width="200" height="92" rx="8"></rect>
+              <text x="18" y="34">Provider signal</text>
+              <text class="sub" x="18" y="58">Claude degraded</text>
+              <text class="sub" x="18" y="76">cost impact observed</text>
+            </g>
+            <g class="arch-node evidence" transform="translate(420 476)">
+              <rect width="150" height="42" rx="7"></rect>
+              <text x="16" y="27">request rows</text>
+            </g>
+            <g class="arch-node evidence" transform="translate(592 476)">
+              <rect width="150" height="42" rx="7"></rect>
+              <text x="16" y="27">attribution</text>
+            </g>
+            <g class="arch-node external" transform="translate(982 242)">
+              <rect width="150" height="112" rx="8"></rect>
+              <text x="18" y="32">Buyer action</text>
+              <text class="sub" x="18" y="56">add fallback</text>
+              <text class="sub" x="18" y="74">change model</text>
+              <text class="sub" x="18" y="92">adjust retry policy</text>
+            </g>
+            <g class="arch-boundary" transform="translate(918 448)">
+              <text x="0" y="0">Blackridge explains and recommends. It does not enforce the change.</text>
+            </g>
+          </svg>
+        </div>
+        <div class="diagram-notes">
+          <div><span>01</span><strong>Hotpath visibility</strong><em>Cost behavior is observed close to request time, not only after billing export.</em></div>
+          <div><span>02</span><strong>Forensic evidence</strong><em>Live findings point to request rows, attribution, provider state, and confidence.</em></div>
+          <div><span>03</span><strong>Operator boundary</strong><em>The buyer decides and applies fallback, failover, routing, or retry changes.</em></div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="problem">
     <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Problem</div>
-        <h2>Provider bills show totals. They do not explain causes.</h2>
-        <p>Your AI provider can tell you tokens, models, and invoice totals. It usually cannot tell you which workflow caused the spike, which retry loop multiplied spend, which fallback path changed unit economics, or which app/team/tenant should own the cost.</p>
+      <div class="cause-gap">
+        <div class="cause-copy">
+          <div class="eyebrow">Problem</div>
+          <h2>Provider bills show totals. They do not show live causes.</h2>
+          <p>Your AI provider can tell you tokens, models, and invoice totals. It usually cannot tell you, while the system is running, which workflow is retrying into a provider issue, which path lacks fallback or model failover, or which app, team, or tenant owns the spend pattern.</p>
+          <div class="cause-punch">Provider bills summarize spend later. Blackridge shows the cause pattern while there is still time to decide what to change.</div>
+        </div>
+        <div class="cause-exhibit" aria-label="Provider usage total compared with Blackridge live cause evidence">
+          <article class="invoice-panel">
+            <div class="panel-kicker">Provider total</div>
+            <div class="invoice-total">$18,420</div>
+            <div class="invoice-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="invoice-row"><span>Models</span><b>Visible</b></div>
+            <div class="invoice-row"><span>Tokens</span><b>Visible</b></div>
+            <div class="invoice-row missing"><span>Cause</span><b>Missing</b></div>
+          </article>
+          <article class="cause-file-panel">
+            <div class="panel-kicker">Blackridge cause file</div>
+            <div class="cause-file-row hot"><span>Cause</span><b>Retry amplification</b></div>
+            <div class="cause-file-row"><span>Workflow</span><b>support-agent / triage</b></div>
+            <div class="cause-file-row"><span>Owner</span><b>support platform</b></div>
+            <div class="cause-file-row"><span>Live signal</span><b>retry rate rising</b></div>
+            <div class="cause-file-row"><span>Next test</span><b>add fallback / failover</b></div>
+          </article>
+        </div>
       </div>
-      <div class="card">
-        <p>Provider dashboards show what you spent after it is gone. Blackridge shows which workflow, retry loop, fallback path, duplicate request, premium-model default, app, team, or tenant caused the spend — and what to fix first.</p>
+    </div>
+  </section>
+
+  <section id="objections">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Common objections</div>
+        <h2>Use what you already have. Blackridge fills the cause gap.</h2>
+        <p>Most buyers are not starting from zero. The assessment is designed to test whether Blackridge adds evidence your current stack cannot produce.</p>
+      </div>
+      <div class="objection-wall">
+        <article><span>01</span><h3>We already have a gateway.</h3><p>Keep it. Blackridge uses gateway logs or exports as evidence and adds workflow spend causality on top.</p></article>
+        <article><span>02</span><h3>We already have observability.</h3><p>Good. Traces help tell the story. Blackridge focuses that story on live spend causes, evidence rows, confidence, and the first safe test.</p></article>
+        <article><span>03</span><h3>We do not want inline deployment yet.</h3><p>Start from existing logs, traces, provider events, and gateway exports where data quality is sufficient.</p></article>
+        <article><span>04</span><h3>We do not trust savings estimates.</h3><p>Neither should you without evidence. Observed waste, modeled opportunity, coverage, and blocked claims are separated.</p></article>
+        <article><span>05</span><h3>We need proof before buying a platform.</h3><p>That is the assessment: let Blackridge identify live cause patterns in one workflow, then decide whether ongoing deployment is justified.</p></article>
+        <article><span>06</span><h3>Finance needs the story.</h3><p>Blackridge turns raw runtime behavior into a shareable explanation for finance, executives, and application teams.</p></article>
       </div>
     </div>
   </section>
@@ -237,15 +472,16 @@ s.parentNode.insertBefore(b, s);
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Waste classes</div>
-        <h2>The leaks Blackridge looks for</h2>
+        <h2>The leaks Blackridge hunts first.</h2>
+        <p>Each class maps to a painful question your bill usually cannot answer. The assessment ranks what is observed, what is modeled, and what engineering can test safely.</p>
       </div>
-      <div class="grid cols-3">
-        <article class="card"><h3>Zero attribution</h3><p>Spend exists, but nobody can assign it to an app, team, tenant, workflow, or customer.</p></article>
-        <article class="card"><h3>Retry amplification</h3><p>A single user action fans out into repeated model calls.</p></article>
-        <article class="card"><h3>Duplicate inference</h3><p>Similar prompts or semantic duplicates are paid for repeatedly.</p></article>
-        <article class="card"><h3>Fallback tax</h3><p>Failures silently route to more expensive models or providers.</p></article>
-        <article class="card"><h3>Premium-model overuse</h3><p>Expensive models become defaults for work cheaper models could handle.</p></article>
-        <article class="card"><h3>Abandoned branch waste</h3><p>Agent branches call models or tools but never affect the final answer.</p></article>
+      <div class="waste-radar">
+        <article><span class="radar-glyph zero"></span><h3>Zero attribution</h3><p>Spend exists, but nobody can assign it to an app, team, tenant, workflow, or customer.</p><b>Question: who owns this?</b></article>
+        <article class="hot"><span class="radar-glyph retry"></span><h3>Retry amplification</h3><p>A single user action fans out into repeated model calls during soft failures.</p><b>Question: why did one action bill many times?</b></article>
+        <article><span class="radar-glyph duplicate"></span><h3>Duplicate inference</h3><p>Similar prompts or semantic duplicates are paid for repeatedly.</p><b>Question: did we pay twice for the same work?</b></article>
+        <article><span class="radar-glyph fallback"></span><h3>Fallback tax</h3><p>Failures silently route to more expensive models or providers.</p><b>Question: when did premium become default?</b></article>
+        <article><span class="radar-glyph premium"></span><h3>Premium-model overuse</h3><p>Expensive models become defaults for work cheaper models could handle.</p><b>Question: which calls need the expensive model?</b></article>
+        <article><span class="radar-glyph branch"></span><h3>Abandoned branch waste</h3><p>Agent branches call models or tools but never affect the final answer.</p><b>Question: what was computed then discarded?</b></article>
       </div>
     </div>
   </section>
@@ -254,225 +490,181 @@ s.parentNode.insertBefore(b, s);
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Token forensics</div>
-        <h2>Most AI gateways route and meter traffic. Blackridge adds token forensics.</h2>
-        <p>Blackridge adds attribution, workflow causality, waste classification, evidence, and policy-ready controls so teams can understand which workflows, retries, fallbacks, duplicate requests, model choices, apps, teams, or tenants caused the bill.</p>
+        <h2>Most AI gateways route and meter traffic. Blackridge adds near real-time token forensics.</h2>
+        <p>Blackridge adds attribution, workflow causality, waste classification, and evidence so teams can understand which workflows, retries, fallbacks, duplicate requests, model choices, apps, teams, or tenants caused the bill. It does not enforce or change traffic for the user today.</p>
       </div>
-      <div class="grid cols-2">
-        <article class="card"><h3>Inline Blackridge gateway</h3><p>Scoped private/design-partner deployment where Blackridge can sit in the request path and capture high-fidelity token forensics evidence.</p></article>
-        <article class="card"><h3>Assessment from exported evidence</h3><p>For the first workflow, Northwatch can evaluate Blackridge fit using existing logs, traces, provider events, gateway exports, and available metadata.</p></article>
-        <article class="card"><h3>Mirrored or sidecar evaluation</h3><p>Considered when a buyer needs higher-fidelity evidence without immediately changing the primary production request path.</p></article>
-        <article class="card"><h3>Private design-partner deployment</h3><p>For ongoing token spend control when the evidence shows Blackridge is a fit and security/deployment scope is agreed.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="personas">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Buyer context</div>
-        <h2>Who uses Blackridge findings</h2>
-      </div>
-      <div class="grid cols-4">
-        <article class="card"><h3>VP Engineering</h3><p>See which teams, applications, and workflows are driving AI cost growth, and which fixes should move first.</p></article>
-        <article class="card"><h3>Platform / Infrastructure</h3><p>Find where runtime behavior is amplifying inference calls through retries, fallbacks, duplicate requests, or inefficient model defaults.</p></article>
-        <article class="card"><h3>AI Platform</h3><p>Understand token economics across providers, models, workflows, apps, teams, tenants, and agent execution paths.</p></article>
-        <article class="card"><h3>FinOps / Finance</h3><p>Get evidence-backed attribution and confidence notes for AI spend conversations, chargeback, forecasting, and budget review.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="how-it-works">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">How it works</div>
-        <h2>From runtime traffic or logs to evidence-backed control decisions</h2>
-      </div>
-      <div class="grid cols-2 steps">
-        <article class="card step"><h3>Connect one workflow</h3><p>Use exported logs, traces, provider events, gateway exports, mirrored evidence, or scoped Blackridge runtime deployment.</p></article>
-        <article class="card step"><h3>Reconstruct execution</h3><p>Requests, retries, fallbacks, branches, attribution, model choice, token economics, and data-quality gaps.</p></article>
-        <article class="card step"><h3>Classify waste and controls</h3><p>Separate observed waste from modeled opportunity and identify which routing, caching, attribution, or budget changes are safe to test.</p></article>
-        <article class="card step"><h3>Decide Blackridge fit</h3><p>Use the evidence to decide whether Blackridge should be deployed for ongoing token spend control.</p></article>
+      <div class="stack-contrast">
+        <article><span>Route</span><h3>Gateways</h3><p>Move traffic, enforce policy, and produce useful logs.</p></article>
+        <article><span>Observe</span><h3>Tracing</h3><p>Shows latency, errors, spans, and runtime behavior.</p></article>
+        <article><span>Allocate</span><h3>FinOps</h3><p>Maps totals to budgets, forecasts, and chargeback views.</p></article>
+        <article class="ours"><span>Explain</span><h3>Blackridge</h3><p>Connects spend to workflow causes, confidence, coverage, and evidence rows.</p></article>
       </div>
     </div>
   </section>
 
   <section id="assessment">
     <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Workflow evaluation</div>
-        <h2>The assessment is the safest way to evaluate Blackridge.</h2>
-        <p>Start with one expensive production workflow before changing the broader AI platform. The assessment uses Blackridge's evidence model and token forensics engine to determine whether Blackridge should be deployed for ongoing control.</p>
-      </div>
-      <div class="timeline">
-        <article class="card"><div class="day">Day 1-2</div><h3>Connect and baseline</h3><p>Scope one workflow and establish spend, request, attribution, and data-quality baselines from available evidence.</p></article>
-        <article class="card"><div class="day">Day 3-5</div><h3>Reconstruct behavior</h3><p>Analyze attribution, retries, duplicate inference, fallback paths, branches, model choice, and runtime behavior that caused spend.</p></article>
-        <article class="card"><div class="day">Day 6-7</div><h3>Decide the next step</h3><p>Review evidence, safe fixes to test, and whether private Blackridge deployment is justified for ongoing control.</p></article>
-      </div>
-      <div class="hero-actions">
-        <a class="btn primary" data-cta="discuss-workflow-midpage" href="brg-ai-spend-assessment/#request-assessment">Discuss one expensive workflow</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="product-ui">
-    <div class="container">
-      <div>
-        <div class="eyebrow">Product UI</div>
-        <h2>Blackridge turns runtime behavior into inspectable evidence.</h2>
-        <p class="lead">The evidence model is explorable: guided investigation, token economics, request ledger, workflow traces, attribution, signals, request inspector, data confidence, and raw events. Screenshots come from Northwatch's own use of Blackridge to develop Blackridge.</p>
-        <div class="hero-actions">
-          <a class="btn primary" data-cta="example-evidence-home" href="example-ai-spend-forensics-report/">Inspect example evidence</a>
-          <a class="btn secondary" data-cta="workflow-discussion-home" href="brg-ai-spend-assessment/#request-assessment">Request workflow discussion</a>
-        </div>
-      </div>
-      <div class="screenshot-carousel" data-carousel aria-label="Blackridge product UI screenshots">
-        <div class="carousel-stage">
-          <figure class="carousel-slide active">
-            <img src="assets/screenshots/blackridge-workflow-traces.png" alt="Blackridge Workflow Traces view showing a Sankey graph of observed workflow lineage and cost flow">
-            <figcaption class="carousel-caption"><span>Workflow Traces</span><span>Shows how one workflow fans out across requests, retries, branches, fallbacks, models, and cost flow.</span></figcaption>
-          </figure>
-          <figure class="carousel-slide inspector">
-            <img src="assets/screenshots/blackridge-request-inspector.png" alt="Blackridge Request Inspector showing request economics, attribution, model choice, token usage, cache status, and routing context" loading="lazy">
-            <figcaption class="carousel-caption"><span>Request Inspector</span><span>Shows request-level economics, attribution, model choice, token usage, cache status, and evidence behind a finding.</span></figcaption>
-          </figure>
-          <figure class="carousel-slide">
-            <img src="assets/screenshots/blackridge-request-ledger.png" alt="Blackridge Request Evidence Ledger showing event rows behind each finding for engineering and finance review" loading="lazy">
-            <figcaption class="carousel-caption"><span>Request Ledger</span><span>Shows the event rows behind each finding so engineering and finance can inspect the evidence trail.</span></figcaption>
-          </figure>
-        </div>
-        <div class="carousel-controls">
-          <button class="carousel-btn" type="button" data-carousel-prev aria-label="Previous screenshot">‹</button>
-          <div class="carousel-dots" aria-label="Screenshot selector">
-            <button class="carousel-dot active" type="button" data-carousel-dot="0" aria-label="Show Workflow Traces screenshot"></button>
-            <button class="carousel-dot" type="button" data-carousel-dot="1" aria-label="Show Request Inspector screenshot"></button>
-            <button class="carousel-dot" type="button" data-carousel-dot="2" aria-label="Show Request Ledger screenshot"></button>
+      <div class="assessment-dossier">
+        <div>
+          <div class="eyebrow">Workflow evaluation</div>
+          <h2>The assessment turns a spend mystery into a shareable case file.</h2>
+          <p>Start with one expensive production workflow before changing the broader AI platform. The assessment gives platform and engineering leaders evidence they can take to finance, executives, and application teams without asking anyone to trust a black-box savings estimate.</p>
+          <div class="hero-actions">
+            <a class="btn primary" data-cta="discuss-workflow-midpage" href="brg-ai-spend-assessment/#request-assessment">Discuss one expensive workflow</a>
           </div>
-          <button class="carousel-btn" type="button" data-carousel-next aria-label="Next screenshot">›</button>
+        </div>
+        <div class="dossier-timeline">
+          <article><span>Scope</span><h3>Connect and baseline</h3><p>Scope one workflow and establish spend, request, attribution, and data-quality baselines.</p></article>
+          <article><span>Reconstruct</span><h3>Show live behavior</h3><p>Analyze retries, duplicate inference, fallback paths, provider issues, model choice, and ownership.</p></article>
+          <article><span>Decide</span><h3>Pick the next test</h3><p>Review evidence, safe fixes, and whether Blackridge belongs in the workflow for ongoing forensics.</p></article>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="product-layers">
+  <section id="product-layers" class="product-system-section">
     <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Product layers</div>
-        <h2>Blackridge product layers</h2>
-        <p>Publicly, Blackridge is positioned as a Token Forensics Engine / Gateway. The one-workflow assessment is an entry motion that uses Blackridge's evidence model to decide whether ongoing deployment makes sense.</p>
-      </div>
-      <div class="grid cols-3">
-        <article class="card"><h3>Gateway mode</h3><p>Scoped control point for AI inference traffic, attribution, evidence capture, and private/design-partner controls.</p></article>
-        <article class="card"><h3>Token forensics engine</h3><p>Reconstructs token economics from logs, traces, gateway exports, provider events, inline evidence, and runtime metadata.</p></article>
-        <article class="card"><h3>Evidence UI</h3><p>Shows workflow traces, request inspection, ledger rows, findings, attribution, and confidence.</p></article>
-        <article class="card"><h3>Import and collection paths</h3><p>Existing logs/traces/imports for evaluation, with scoped collection paths when available data is incomplete.</p></article>
-        <article class="card"><h3>Private deployment</h3><p>Design-partner deployment for teams that need ongoing token spend control.</p></article>
-        <article class="card"><h3>Workflow assessment</h3><p>Seven-day evaluation of one production workflow to decide safe fixes and Blackridge deployment fit.</p></article>
+      <div class="product-system">
+        <div>
+          <div class="eyebrow">Product architecture</div>
+          <h2>One product, three jobs.</h2>
+          <p>Blackridge is not another dashboard bolted onto an invoice. It tracks token economics in the traffic path, shows the evidence, and helps operators decide what to change. Today, the buyer takes the action.</p>
+        </div>
+        <div class="system-stack" aria-label="Blackridge product jobs">
+          <article>
+            <span>Forensics engine</span>
+            <h3>Reconstruct why spend is moving.</h3>
+            <p>Logs, traces, gateway exports, provider events, inline evidence, pricing context, and runtime metadata become workflow-level spend evidence.</p>
+          </article>
+          <article class="hot">
+            <span>Evidence surface</span>
+            <h3>Make the finding inspectable.</h3>
+            <p>Workflow traces, request inspection, ledger rows, findings, attribution coverage, and confidence notes turn spend into a case file.</p>
+          </article>
+          <article>
+            <span>Hotpath mode</span>
+            <h3>See issues close to when they happen.</h3>
+            <p>Inline visibility can reveal retry growth, provider degradation, missing fallback, model choice, and attribution gaps while the workflow is running.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="integrations">
+  <section id="integrations" class="evidence-intake-section">
     <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Integration paths</div>
-        <h2>Bring the data you already have.</h2>
-        <p>Blackridge can analyze existing data first. For high-fidelity request evidence, it can also collect events inline through an optional runtime collector or OpenAI-compatible collection path.</p>
-      </div>
-      <div class="grid cols-3">
-        <article class="card"><h3>Provider exports</h3><p>Usage and pricing context where available from provider or billing exports.</p></article>
-        <article class="card"><h3>Gateway logs</h3><p>Request, route, retry, fallback, provider, model, and token context from an existing gateway.</p></article>
-        <article class="card"><h3>OpenTelemetry traces</h3><p>Trace and span context for workflow reconstruction when emitted by your applications.</p></article>
-        <article class="card"><h3>Application logs</h3><p>Workflow IDs, request IDs, tenant metadata, and application-side execution context.</p></article>
-        <article class="card"><h3>Kubernetes metadata</h3><p>Use labels and deployment context where available.</p></article>
-        <article class="card"><h3>Runtime Collector</h3><p>Optional collection path when logs are incomplete or request-path evidence is required.</p></article>
+      <div class="intake-board">
+        <div>
+          <div class="eyebrow">Evidence intake</div>
+          <h2>Bring the data you already have.</h2>
+          <p>Blackridge starts with available evidence. If the spend question cannot be answered, it names the missing signal before recommending collection.</p>
+        </div>
+        <div class="intake-flow" aria-label="Evidence sources feeding Blackridge cause file">
+          <div class="source-cluster">
+            <span>Provider exports</span>
+            <span>Gateway logs</span>
+            <span>OpenTelemetry traces</span>
+            <span>Application logs</span>
+            <span>Kubernetes metadata</span>
+            <span>Runtime collector</span>
+          </div>
+          <div class="intake-arrow" aria-hidden="true"></div>
+          <div class="cause-file-mini">
+            <span>Output</span>
+            <h3>Spend cause file</h3>
+            <p>workflow, owner, retry path, fallback path, token usage, pricing assumptions, evidence rows, coverage, confidence</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="deployment-scope">
+  <section id="deployment-scope" class="deployment-section">
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Security / Deployment</div>
-        <h2>Capability scope is explicit.</h2>
-        <p>Blackridge is evaluated through one workflow first. Available evidence analysis is separated from private/design-partner deployment and roadmap runtime controls.</p>
+        <h2>Start outside the traffic path. Move inline only when near real-time evidence matters.</h2>
+        <p>Blackridge does not ask teams to bet the platform on day one. The assessment begins with evidence you already have, then shows whether hotpath token economics would answer questions your exports cannot.</p>
       </div>
-      <div class="split">
-        <article class="card">
-          <span class="label">Available and tested now</span>
-          <div class="list">
-            <div>Reconstruct spend for one expensive workflow from available logs, traces, runtime events, or imported records.</div>
-            <div>Attribute costs by app, team, tenant, workflow, customer, or request metadata where those signals exist.</div>
-            <div>Surface common waste patterns, including retries, fallbacks, duplicate requests, failed calls, abandoned branches, cache misses, and oversized context.</div>
-            <div>Produce evidence-backed findings, confidence notes, and recommended engineering fixes for Blackridge evaluation.</div>
+      <div class="deployment-path" aria-label="Blackridge deployment path">
+        <article>
+          <span>01</span>
+          <h3>Evidence-first assessment</h3>
+          <p>Start from logs, traces, gateway exports, provider events, pricing context, and ownership metadata.</p>
+          <strong>No inline deployment required to begin.</strong>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Coverage decision</h3>
+          <p>Blackridge shows what is measured, inferred, or blocked by missing metadata before recommending any collection change.</p>
+          <strong>Blackridge exposes the evidence gap.</strong>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Scoped hotpath visibility</h3>
+          <p>If ongoing forensics is justified, Northwatch scopes a private path for attribution and evidence capture close to live traffic.</p>
+          <strong>Visibility follows proof, not promises.</strong>
+        </article>
+      </div>
+      <div class="deployment-proof">
+        <article class="scope-case">
+          <div class="panel-kicker">What engineering sees</div>
+          <h3>Measured, inferred, or missing.</h3>
+          <p>Each finding carries evidence rows, attribution coverage, confidence notes, and pricing assumptions so the team knows exactly which claims are supported.</p>
+          <div class="scope-rows">
+            <div><span>Observed waste</span><b>request rows</b></div>
+            <div><span>Modeled opportunity</span><b>assumptions shown</b></div>
+            <div><span>Coverage gaps</span><b>called out</b></div>
           </div>
         </article>
-        <article class="card">
-          <span class="label">Evidence standard</span>
-          <div class="list">
-            <div>Every finding includes supporting events or rows that engineering can inspect.</div>
-            <div>Pricing assumptions, attribution coverage, and confidence are shown with the finding instead of hidden behind a chart.</div>
-            <div>Weak or missing metadata is called out explicitly so teams know which claims are measured, inferred, or blocked by data quality.</div>
-            <div>The assessment separates observed waste from modeled opportunity and avoids guaranteed-savings claims.</div>
+        <article class="scope-case hot">
+          <div class="panel-kicker">What security hears</div>
+          <h3>No forced inline leap.</h3>
+          <p>The first conversation is about available evidence, data quality, and secure handoff. Runtime collection is scoped only when existing evidence cannot answer the spend question.</p>
+          <div class="scope-rows">
+            <div><span>Assessment</span><b>existing evidence first</b></div>
+            <div><span>Collection</span><b>only if needed</b></div>
+            <div><span>Hotpath visibility</span><b>private scope</b></div>
           </div>
         </article>
-      </div>
-      <div class="grid cols-3" style="margin-top:14px;">
-        <article class="card"><h3>Assessment path</h3><p>Start with existing logs or traces. Add runtime collection only when the workflow needs higher-fidelity evidence.</p></article>
-        <article class="card"><h3>Provider data</h3><p>Works from available request, token, model, pricing, and workflow context across OpenAI-compatible and multi-provider event data.</p></article>
-        <article class="card"><h3>Review workflow</h3><p>Findings are prepared for engineering and finance review, with enough context to decide what to fix first.</p></article>
-      </div>
-      <div style="margin-top:18px; overflow-x:auto;">
-        <table class="matrix">
-          <thead>
-            <tr><th>Capability</th><th>Status</th><th>Scope note</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Inline proxying</td><td class="status-private">Available in scoped private/design-partner deployment</td><td>Not claimed as public self-serve.</td></tr>
-            <tr><td>Provider compatibility</td><td class="status-private">Available in scoped private/design-partner deployment</td><td>OpenAI-compatible and provider event data where supported by the scoped environment.</td></tr>
-            <tr><td>Streaming</td><td class="status-roadmap">Roadmap</td><td>No public production guarantee stated here.</td></tr>
-            <tr><td>Tool calls</td><td class="status-roadmap">Roadmap</td><td>Can be analyzed from logs/traces if present; runtime support is not publicly guaranteed.</td></tr>
-            <tr><td>Route decisions</td><td class="status-private">Available in scoped private/design-partner deployment</td><td>Assessment may recommend safe route tests before enforcement.</td></tr>
-            <tr><td>Semantic caching</td><td>Assessment / analysis recommendation only</td><td>Duplicate inference and cache-miss opportunities can be identified; enforcement is not claimed as generally available.</td></tr>
-            <tr><td>Budget enforcement</td><td class="status-roadmap">Roadmap</td><td>No public runtime guarantee.</td></tr>
-            <tr><td>Fail-open behavior</td><td class="status-roadmap">Roadmap</td><td>Must be validated per deployment before any production claim.</td></tr>
-            <tr><td>Private deployment</td><td class="status-private">Available in scoped private/design-partner deployment</td><td>Commercial and security scope depend on the buyer environment.</td></tr>
-            <tr><td>Data retention</td><td class="status-private">Available in scoped private/design-partner deployment</td><td>Retention expectations are set during qualification and secure handoff.</td></tr>
-            <tr><td>Latency overhead</td><td class="status-roadmap">Roadmap</td><td>No latency numbers are claimed publicly.</td></tr>
-            <tr><td>Existing logs/traces import</td><td class="status-now">Available and tested now</td><td>Used for one-workflow assessment when data quality is sufficient.</td></tr>
-            <tr><td>Gateway export import</td><td class="status-now">Available and tested now</td><td>Used where exports include request, provider, model, token, route, retry, or attribution context.</td></tr>
-            <tr><td>OpenTelemetry / GenAI import</td><td class="status-now">Available and tested now</td><td>Used when traces include workflow and request context needed for reconstruction.</td></tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </section>
 
-  <section id="after-assessment">
+  <section id="after-assessment" class="decision-section">
     <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">After delivery</div>
-        <h2>After the workflow assessment</h2>
-        <p>The assessment is the entry motion, not the product. After the seven-day review, the buyer decides whether Blackridge deployment is justified.</p>
-      </div>
-      <div class="grid cols-3">
-        <article class="card"><h3>If Blackridge is a fit</h3><p>Northwatch scopes private/design-partner deployment for ongoing attribution, evidence, and token spend control.</p></article>
-        <article class="card"><h3>If fixes should come first</h3><p>Your team receives evidence-backed changes to test before committing to broader runtime infrastructure.</p></article>
-        <article class="card"><h3>If data is insufficient</h3><p>Northwatch identifies the missing instrumentation, attribution, or provider evidence needed before Blackridge can be evaluated honestly.</p></article>
+      <div class="decision-board">
+        <div>
+          <div class="eyebrow">After delivery</div>
+          <h2>The assessment proves whether Blackridge belongs in the workflow.</h2>
+          <p>After the assessment, the buyer has a defensible decision: deploy Blackridge for ongoing forensics, test a specific fix first, or instrument the missing evidence before anyone claims savings.</p>
+        </div>
+        <div class="decision-outcomes">
+          <div><span>Deploy</span><b>Blackridge is justified for ongoing attribution and near real-time token forensics.</b></div>
+          <div><span>Fix first</span><b>Engineering receives evidence-backed changes to test before platform commitment.</b></div>
+          <div><span>Instrument</span><b>The missing metadata or provider evidence is named before anyone claims savings.</b></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="proof-substitute">
+  <section id="proof-substitute" class="proof-close-section">
     <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Evidence standard</div>
-        <h2>Credibility without unsupported claims</h2>
-        <p>No logos, testimonials, or deployment claims are shown unless they are approved and verifiable.</p>
-      </div>
-      <div class="grid cols-3">
-        <article class="card"><h3>Product artifacts</h3><p>Product screenshots come from Northwatch's own Blackridge development workflow. Example evidence remains synthetic/example data and is labeled separately.</p></article>
-        <article class="card"><h3>Evidence standard</h3><p>Findings separate observed waste from modeled opportunity and include confidence and attribution coverage.</p></article>
-        <article class="card"><h3>Bounded evaluation</h3><p>The first engagement is limited to one workflow in seven days, with available-now scope separated from private deployment and roadmap.</p></article>
+      <div class="proof-close">
+        <div>
+          <div class="eyebrow">Evidence standard</div>
+          <h2>Close with proof, not promises.</h2>
+          <p>The strongest proof is not a claim about savings. It is Blackridge showing the buyer an inspectable finding: rows, coverage, pricing assumptions, screenshots, methodology notes, and evidence they can forward.</p>
+          <div class="hero-actions">
+            <a class="btn ghost" data-cta="proof-example-report" href="example-ai-spend-forensics-report/">Inspect example evidence</a>
+          </div>
+        </div>
+        <div class="proof-artifact" aria-label="Redacted proof artifact">
+          <div class="artifact-strip"><span>finding</span><b>Retry amplification</b><em>$126.97 observed</em></div>
+          <div class="artifact-strip"><span>coverage</span><b>Complete cost lineage</b><em>warning shown</em></div>
+          <div class="artifact-strip"><span>method</span><b>Observed vs modeled</b><em>$460.88 modeled</em></div>
+          <div class="artifact-strip hot"><span>share</span><b>Finance-ready cause file</b><em>redacted artifact</em></div>
+        </div>
       </div>
     </div>
   </section>
@@ -480,8 +672,8 @@ s.parentNode.insertBefore(b, s);
   <section class="cta-band" id="final-cta">
     <div class="container">
       <div class="eyebrow">Next step</div>
-      <h2>Discuss one expensive production workflow.</h2>
-      <p>Northwatch will determine whether the workflow is a good Blackridge evaluation candidate and how evidence can be handed off securely after qualification.</p>
+      <h2>Bring one spend mystery.</h2>
+      <p>Northwatch will determine whether the workflow is a good Blackridge evaluation candidate and whether existing evidence can show where your AI spend is leaking.</p>
       <div class="hero-actions" style="justify-content:center;">
         <a class="btn primary" data-cta="discuss-workflow-final" href="brg-ai-spend-assessment/#request-assessment">Discuss one production workflow</a>
         <a class="btn secondary" data-cta="evidence-final" href="#product-evidence">Inspect example evidence</a>
@@ -495,7 +687,7 @@ s.parentNode.insertBefore(b, s);
     <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge</div>
     <nav class="footer-links" aria-label="Footer">
       <a href="#product">Product</a>
-      <a href="#how-it-works">How it works</a>
+      <a href="how-token-economics-forensics-works/">Methodology</a>
       <a href="#product-evidence">Evidence</a>
       <a href="compare.html">Compare</a>
       <a href="#deployment-scope">Security / Deployment</a>
@@ -513,6 +705,7 @@ s.parentNode.insertBefore(b, s);
 <noscript>
 <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9262050&amp;fmt=gif">
 </noscript>
+<script type="module" src="assets/brg-three.js"></script>
 <script>
 document.querySelectorAll("[data-carousel]").forEach(function(carousel) {
   var slides = Array.prototype.slice.call(carousel.querySelectorAll(".carousel-slide"));
@@ -551,6 +744,24 @@ document.querySelectorAll("[data-carousel]").forEach(function(carousel) {
   carousel.addEventListener("focusin", stop);
   carousel.addEventListener("focusout", start);
   start();
+});
+
+document.querySelectorAll(".showcase").forEach(function(showcase) {
+  var tabs = Array.prototype.slice.call(showcase.querySelectorAll(".showcase-tab"));
+  var panels = Array.prototype.slice.call(showcase.querySelectorAll(".showcase-panel"));
+  tabs.forEach(function(tab) {
+    tab.addEventListener("click", function() {
+      var name = tab.getAttribute("data-tab");
+      tabs.forEach(function(item) {
+        var active = item === tab;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-selected", active ? "true" : "false");
+      });
+      panels.forEach(function(panel) {
+        panel.classList.toggle("active", panel.getAttribute("data-panel") === name);
+      });
+    });
+  });
 });
 
 document.querySelectorAll("[data-cta]").forEach(function(el) {
