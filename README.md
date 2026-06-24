@@ -1,9 +1,9 @@
 # Blackridge Website
 
-Production-ready website for Blackridge, deployed on GitHub Pages. Public positioning: Blackridge is a Token Forensics Engine / Gateway for enterprise inference spend; the one-workflow assessment is the entry motion for evaluating Blackridge deployment.
+Production-ready website for Blackridge, deployed on GitHub Pages. Public positioning: Blackridge is a Token Forensics Engine / Gateway for enterprise inference spend; the technical call is the entry motion for evaluating Blackridge fit deployment.
 
 **Recent Update**: Site consolidated from 3 pages to 2 streamlined pages:
-- **index.html** - Complete landing page with problem, solution, product UI artifact, and assessment CTA
+- **index.html** - Complete landing page with problem, solution, product UI artifact, and technical call CTA
 - **compare.html** - Competitive positioning vs 5 adjacent tool categories
 
 ## 🚀 Quick Deploy (10 minutes)
@@ -13,7 +13,7 @@ Production-ready website for Blackridge, deployed on GitHub Pages. Public positi
 # - See serverless/SERVERLESS_SETUP.md for AWS/GCP
 # - Or use Formspree temporarily (free tier)
 
-# 2. Update your API endpoint in index.html (search for "assessment-form")
+# 2. Update your API endpoint in schedule-call/index.html (search for "callForm")
 
 # 3. Deploy
 git add .
@@ -36,7 +36,7 @@ blackridge-website/
 │                          # - Problem statement & value prop
 │                          # - Product UI screenshot artifact
 │                          # - How it works (forensic evidence path)
-│                          # - Blackridge AI Spend Assessment details
+│                          # - Blackridge Technical Call details
 │                          # - Contact form
 │                          # - Deployment & trust section
 │
@@ -58,7 +58,7 @@ blackridge-website/
     ├── QUICK_START.md           # 10-minute deployment
     ├── DEPLOYMENT.md            # Comprehensive guide
     ├── UPDATED_SUMMARY.md       # Latest changes & recommendations
-    └── PRODUCTION_REVIEW_SUMMARY.md  # Full site assessment
+    └── PRODUCTION_REVIEW_SUMMARY.md  # Full site review
 ```
 
 ---
@@ -117,15 +117,15 @@ Start here based on your needs:
 2. **Form backend setup**: Read **serverless/SERVERLESS_SETUP.md** (20 min)
 3. **Cost analysis**: Read **serverless/COST_COMPARISON.md**
 4. **Full deployment guide**: Read **DEPLOYMENT.md**
-5. **Assessment findings**: Read **PRODUCTION_REVIEW_SUMMARY.md**
+5. **Site review findings**: Read **PRODUCTION_REVIEW_SUMMARY.md**
 
 ---
 
 ## 🎯 Key Features
 
-- ✨ Interactive economic forensics diagnostic tool (6-question self-assessment)
+- ✨ Interactive economic forensics diagnostic tool (6-question self-check)
 - 🎯 Clear problem/solution narrative with competitive positioning
-- 📝 Integrated contact form for focused workflow assessment requests
+- 📝 Integrated contact form for technical call requests
 - 🔄 Competitive comparison page (vs 5 adjacent tool categories)
 - 🎨 Professional B2B SaaS design with custom dark theme
 - 📱 Fully responsive mobile design
@@ -143,7 +143,7 @@ Start here based on your needs:
    ```
 
 2. **Update index.html** with your API endpoint
-   - Find the `<form class="assessment-form">` section
+   - Find the `callForm` section
    - Add form submission handler with your API endpoint
    ```javascript
    const API_ENDPOINT = 'https://your-api-gateway-url/submit';
@@ -158,7 +158,7 @@ Start here based on your needs:
 4. **Test everything**
    - Both pages load (index.html, compare.html)
    - Navigation between pages works
-   - All anchor links work (#assessment, #contact-form, etc.)
+   - All anchor links work (#request-call, #contact-form, etc.)
    - Form submits successfully
    - Mobile view looks good on both pages
 
