@@ -159,41 +159,6 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
     </div>
   </section>
 
-  <section id="product-ui" class="compact-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">The product</div>
-        <h2>Evidence you can inspect, share, and act on.</h2>
-        <p>Blackridge produces explorable evidence: workflow traces for "where did it leak?", request economics for "why was this call expensive?", and evidence rows for "can we prove it?"</p>
-      </div>
-      <div class="screenshot-carousel" data-carousel aria-label="Blackridge product UI screenshots">
-        <div class="carousel-stage">
-          <figure class="carousel-slide active">
-            <img src="../assets/screenshots/blackridge-workflow-traces.png" alt="Blackridge Workflow Traces view showing a Sankey graph of observed workflow lineage and cost flow">
-            <figcaption class="carousel-caption"><span>Workflow Traces</span><span>Which path leaked spend across requests, retries, branches, fallbacks, models, and cost flow.</span></figcaption>
-          </figure>
-          <figure class="carousel-slide inspector">
-            <img src="../assets/screenshots/blackridge-request-inspector.png" alt="Blackridge Request Inspector showing request economics, attribution, model choice, token usage, cache status, and routing context" loading="lazy">
-            <figcaption class="carousel-caption"><span>Request Inspector</span><span>Why a call was expensive: attribution, model choice, token usage, cache status, and evidence.</span></figcaption>
-          </figure>
-          <figure class="carousel-slide">
-            <img src="../assets/screenshots/blackridge-request-ledger.png" alt="Blackridge Request Evidence Ledger showing event rows behind each finding for engineering and finance review" loading="lazy">
-            <figcaption class="carousel-caption"><span>Request Ledger</span><span>Whether the finding can be defended with rows engineering and finance can inspect.</span></figcaption>
-          </figure>
-        </div>
-        <div class="carousel-controls">
-          <button class="carousel-btn" type="button" data-carousel-prev aria-label="Previous screenshot">‹</button>
-          <div class="carousel-dots" aria-label="Screenshot selector">
-            <button class="carousel-dot active" type="button" data-carousel-dot="0" aria-label="Show Workflow Traces screenshot"></button>
-            <button class="carousel-dot" type="button" data-carousel-dot="1" aria-label="Show Request Inspector screenshot"></button>
-            <button class="carousel-dot" type="button" data-carousel-dot="2" aria-label="Show Request Ledger screenshot"></button>
-          </div>
-          <button class="carousel-btn" type="button" data-carousel-next aria-label="Next screenshot">›</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="request-call" class="cta-band">
     <div class="container">
       <div class="eyebrow">Get started</div>
@@ -238,46 +203,6 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
     <div class="footer-meta">Last updated June 2026</div>
   </div>
 </footer>
-
-<script>
-document.querySelectorAll("[data-carousel]").forEach(function(carousel) {
-  var slides = Array.prototype.slice.call(carousel.querySelectorAll(".carousel-slide"));
-  var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-carousel-dot]"));
-  var prev = carousel.querySelector("[data-carousel-prev]");
-  var next = carousel.querySelector("[data-carousel-next]");
-  var index = 0;
-  var timer = null;
-
-  function show(nextIndex) {
-    index = (nextIndex + slides.length) % slides.length;
-    slides.forEach(function(slide, i) { slide.classList.toggle("active", i === index); });
-    dots.forEach(function(dot, i) { dot.classList.toggle("active", i === index); });
-  }
-
-  function start() {
-    stop();
-    timer = window.setInterval(function() { show(index + 1); }, 5000);
-  }
-
-  function stop() {
-    if (timer) window.clearInterval(timer);
-    timer = null;
-  }
-
-  if (prev) prev.addEventListener("click", function() { show(index - 1); start(); });
-  if (next) next.addEventListener("click", function() { show(index + 1); start(); });
-  dots.forEach(function(dot) {
-    dot.addEventListener("click", function() {
-      show(parseInt(dot.getAttribute("data-carousel-dot"), 10) || 0);
-      start();
-    });
-  });
-  carousel.addEventListener("mouseenter", stop);
-  carousel.addEventListener("mouseleave", start);
-  carousel.addEventListener("focusin", stop);
-  carousel.addEventListener("focusout", start);
-  start();
-});
 
 var callForm = document.getElementById("callForm");
 if (callForm) {
