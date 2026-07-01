@@ -99,7 +99,7 @@ s.parentNode.insertBefore(b, s);
       <a href="#product-evidence">Evidence</a>
       <a href="compare.html">Compare</a>
       <a href="about/">Company</a>
-      <a class="btn secondary" data-cta="discuss-workflow-nav" href="schedule-call/#request-call">Schedule a call</a>
+      <a class="btn secondary" data-cta="spend-review-nav" href="#quick-review">Get a spend review</a>
     </nav>
   </div>
 </header>
@@ -117,7 +117,7 @@ s.parentNode.insertBefore(b, s);
         <h1>Find where your AI spend is <em>leaking.</em></h1>
         <p class="lede">Blackridge sits in the inference hotpath to track <strong>token economics</strong> as traffic runs, so the business can see which apps, teams, tenants, retries, fallbacks, duplicate requests, and model choices are causing spend.</p>
         <div class="hero-actions">
-          <a class="btn primary" data-cta="discuss-workflow-hero" href="schedule-call/#request-call">Schedule a call <span class="arr">→</span></a>
+          <a class="btn primary" data-cta="spend-review-hero" href="#quick-review">Get a free spend review <span class="arr">→</span></a>
           <a class="btn ghost" data-cta="inspect-example-report" href="example-ai-spend-forensics-report/">Inspect product evidence</a>
 
         </div>
@@ -176,6 +176,32 @@ s.parentNode.insertBefore(b, s);
         <strong>Forensics, not enforcement.</strong>
         <span>Blackridge explains and recommends. It does not take action or enforce changes for the user today.</span>
       </article>
+    </div>
+  </section>
+
+  <section class="cta-band" id="quick-review">
+    <div class="container">
+      <div class="eyebrow">Free review</div>
+      <h2>Send one expensive AI workflow.</h2>
+      <p>We will tell you whether Blackridge is likely to find useful spend evidence. No credentials, payloads, secrets, or raw logs in this form.</p>
+      <div class="card form-card">
+        <form id="homeLeadForm" action="https://formspree.io/f/mbdeozdy" method="POST">
+          <div class="form-row">
+            <label><span>Work email</span><input type="email" name="email" autocomplete="email" required></label>
+            <label><span>Company</span><input type="text" name="company" autocomplete="organization" required></label>
+          </div>
+          <div class="form-row">
+            <label><span>Name</span><input type="text" name="name" autocomplete="name"></label>
+            <label><span>Monthly AI spend</span><select name="monthly_ai_spend"><option value="">Select if known</option><option>Under $10k/month</option><option>$10k-$50k/month</option><option>$50k-$250k/month</option><option>Over $250k/month</option><option>Not sure</option></select></label>
+          </div>
+          <label><span>What is hard to explain?</span><textarea name="notes" placeholder="Example: support agent retries spiked, fallback is expensive, finance needs owner attribution, model bill doubled"></textarea></label>
+          <input type="hidden" name="_subject" value="Blackridge AI Spend Leak Review">
+          <input type="hidden" name="lead_source" value="homepage_quick_review">
+          <button class="btn primary" data-cta="submit-home-lead-form" type="submit">Get my spend review</button>
+          <p class="form-status" id="homeLeadStatus" role="status" aria-live="polite"></p>
+        </form>
+        <p class="form-privacy">Northwatch founders review these directly. We will reply by email if the workflow looks like a fit for Blackridge. Prefer email? <a href="mailto:sales@northwatch.systems?subject=Blackridge%20AI%20spend%20review">sales@northwatch.systems</a></p>
+      </div>
     </div>
   </section>
 
@@ -532,7 +558,7 @@ s.parentNode.insertBefore(b, s);
       <h2>See Blackridge on your data.</h2>
       <p>Schedule a call and we will show you how Blackridge explains AI spend — with your workflows, your teams, and your providers.</p>
       <div class="hero-actions" style="justify-content:center;">
-        <a class="btn primary" data-cta="discuss-workflow-final" href="schedule-call/#request-call">Schedule a call</a>
+        <a class="btn primary" data-cta="spend-review-final" href="#quick-review">Get a spend review</a>
         <a class="btn secondary" data-cta="evidence-final" href="#product-evidence">Inspect example evidence</a>
       </div>
     </div>
@@ -626,6 +652,57 @@ document.querySelectorAll("[data-cta]").forEach(function(el) {
     }
   });
 });
+
+function wireLeadForm(formId, statusId, successMessage, failureMessage) {
+  var form = document.getElementById(formId);
+  if (!form) return;
+  var status = document.getElementById(statusId);
+  var button = form.querySelector("button[type=\"submit\"]");
+  var originalButtonText = button ? button.textContent : "";
+
+  function setStatus(message, state) {
+    if (!status) return;
+    status.textContent = message;
+    status.className = "form-status" + (state ? " " + state : "");
+  }
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    setStatus("", "");
+
+    if (button) {
+      button.disabled = true;
+      button.textContent = "Sending...";
+    }
+
+    window.fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    }).then(function(response) {
+      if (!response.ok) throw new Error("Lead request failed");
+      form.reset();
+      setStatus(successMessage, "success");
+      if (typeof gtag === "function") {
+        gtag("event", "generate_lead", { event_category: "Form", event_label: formId });
+      }
+    }).catch(function() {
+      setStatus(failureMessage, "error");
+    }).finally(function() {
+      if (button) {
+        button.disabled = false;
+        button.textContent = originalButtonText;
+      }
+    });
+  });
+}
+
+wireLeadForm(
+  "homeLeadForm",
+  "homeLeadStatus",
+  "Request sent. A Northwatch founder will reply by email.",
+  "The form did not send. Email sales@northwatch.systems with the workflow you want reviewed."
+);
 
 (function(){
   var toggle = document.getElementById("menuToggle");

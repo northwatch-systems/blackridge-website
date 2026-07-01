@@ -10,17 +10,17 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>Redacted Blackridge Token Economics Report | Northwatch Systems</title>
-<meta name="description" content="A sanitized Blackridge token-economics report artifact showing request volume, token usage, findings, evidence coverage, and safe engineering actions without exposing request IDs or proprietary detection logic.">
+<title>Sample AI Spend Forensics Report | Blackridge by Northwatch Systems</title>
+<meta name="description" content="A sample Blackridge AI spend forensics report showing request volume, token usage, findings, evidence coverage, and recommended engineering actions.">
 <link rel="canonical" href="https://northwatch.systems/example-ai-spend-forensics-report/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/example-ai-spend-forensics-report/">
-<meta property="og:title" content="Redacted Blackridge Token Economics Report">
-<meta property="og:description" content="A sanitized Blackridge report artifact showing the shape of spend proof without exposing raw request IDs or detection logic.">
+<meta property="og:title" content="Sample AI Spend Forensics Report">
+<meta property="og:description" content="A sample Blackridge report showing AI spend findings, evidence coverage, and recommended engineering actions.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Redacted Blackridge Token Economics Report">
-<meta name="twitter:description" content="Request volume, token economics, findings, evidence coverage, and safe engineering actions from a sanitized Blackridge report artifact.">
+<meta name="twitter:title" content="Sample AI Spend Forensics Report">
+<meta name="twitter:description" content="Request volume, token economics, findings, evidence coverage, and recommended engineering actions from a sample Blackridge report.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
@@ -38,109 +38,96 @@
       <a href="../#product-evidence">Evidence</a>
       <a href="../compare.html">Compare</a>
       <a href="../about/">Company</a>
-      <a class="btn secondary" data-cta="workflow-discussion-nav" href="../schedule-call/#request-call">Schedule a call</a>
+      <a class="btn secondary" data-cta="spend-review-nav" href="../schedule-call/#request-call">Get a spend review</a>
     </nav>
   </div>
 </header>
 <main>
-  <section class="page-hero report-artifact-hero">
-    <div class="container">
-      <div class="eyebrow">Redacted report artifact</div>
-      <h1>What a Blackridge token-economics report looks like.</h1>
-      <p class="lead">This sanitized artifact uses aggregate output from a real Blackridge report window. It keeps raw request IDs, exact workflow identifiers, detection logic, and implementation hints out of the public page.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="../schedule-call/#request-call">Schedule a call</a>
-        <a class="btn secondary" href="../#product-evidence">View product screens</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="compact-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Executive summary</div>
-        <h2>6,001 requests. 647.7M tokens. 75 workflows.</h2>
-        <p>Blackridge reconstructed a 14-day token-economics window and separated observed waste from modeled opportunity. The report produced five findings and nine evidence bundles.</p>
-      </div>
-      <div class="report-stats">
-        <div><span>Observed spend</span><b>$3,018.63</b><em>report window</em></div>
-        <div><span>Realized waste</span><b>$249.91</b><em>already incurred</em></div>
-        <div><span>Modeled opportunity</span><b>$460.88</b><em>not counted as waste</em></div>
-        <div><span>Savings opportunity</span><b>$710.79</b><em>24% of observed spend</em></div>
-        <div><span>Lineage graph</span><b>5,926 edges</b><em>6,001 request nodes</em></div>
-        <div><span>Cache hits</span><b>2,345</b><em>cache status covered</em></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="compact-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Findings</div>
-        <h2>The report separates what happened from what might be improved.</h2>
-        <p>Public copy uses category-level summaries only. Raw IDs, grouping details, and detection rules remain private.</p>
-      </div>
-      <div class="report-table-wrap">
-        <table class="report-table">
-          <thead><tr><th>Finding class</th><th>Economic impact</th><th>Evidence type</th><th>Public-safe interpretation</th></tr></thead>
-          <tbody>
-            <tr><td>Retry amplification</td><td>$126.97 observed waste</td><td>177 affected requests · 65 workflows</td><td>Cost from failed or repeated attempts before success.</td></tr>
-            <tr><td>Abandoned branch waste</td><td>$122.94 observed waste</td><td>173 affected requests · 71 workflows</td><td>Cost from workflow branches that did not contribute to final output.</td></tr>
-            <tr><td>Cache miss opportunity</td><td>$460.88 modeled opportunity</td><td>Cache and duplicate-group metadata</td><td>Future avoidable spend, explicitly separated from realized waste.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="compact-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Coverage</div>
-        <h2>The artifact says what it can prove and what it cannot.</h2>
-        <p>Coverage is part of the product output. Blackridge should not ask a buyer to trust numbers without knowing which evidence was present.</p>
-      </div>
-      <div class="matrix report-coverage">
-        <table class="report-table">
-          <thead><tr><th>Coverage area</th><th>Status</th><th>Why it matters</th></tr></thead>
-          <tbody>
-            <tr><td>Cost coverage</td><td class="status-now">100%</td><td>Every included request had usable cost context.</td></tr>
-            <tr><td>Lineage coverage</td><td class="status-now">100%</td><td>Request relationships could be reconstructed for the report window.</td></tr>
-            <tr><td>Workflow coverage</td><td class="status-now">100%</td><td>Requests were grouped into workflows for economics analysis.</td></tr>
-            <tr><td>Provider pricing coverage</td><td class="status-now">100%</td><td>Pricing assumptions were available for the included provider/model data.</td></tr>
-            <tr><td>Semantic duplicate coverage</td><td class="status-roadmap">Warning</td><td>Semantic duplicate opportunity may be understated when semantic cluster metadata is missing.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="compact-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Recommended actions</div>
-        <h2>Safe actions are ranked from evidence, not from a generic savings estimate.</h2>
-      </div>
-      <div class="decision-outcomes">
-        <div><span>High confidence</span><b>Cap repeated failed attempts in the affected operation. Estimated public-safe impact shown as $3.92 for the redacted workflow slice.</b></div>
-        <div><span>Observed waste</span><b>Prune abandoned branches that consumed $122.94 without contributing to final output.</b></div>
-        <div><span>Modeled opportunity</span><b>Evaluate duplicate-request caching where repeated misses created $6.75 of modeled opportunity in a redacted slice.</b></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="compact-section">
-    <div class="container proof-close">
+  <section class="hero page-hero report-artifact-hero evidence-hero">
+    <canvas class="hero-three" data-three-hero aria-hidden="true"></canvas>
+    <div class="container evidence-hero-grid">
       <div>
-        <div class="eyebrow">What is withheld</div>
-        <h2>The public artifact shows proof shape, not IP.</h2>
-        <p>This page intentionally withholds raw request IDs, exact workflow identifiers, grouping internals, detection rules, and implementation hints. Buyers can inspect those under an appropriate technical-call or deployment scope.</p>
+        <div class="eyebrow">Sample investigation</div>
+        <h1>From one AI spend window to an engineering work queue.</h1>
+        <p class="lead">Blackridge loaded a 14-day report, ranked the highest-value actions, and kept the product path inspectable down to request rows and workflow evidence.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="../schedule-call/#request-call">Get a spend review</a>
+          <a class="btn secondary" href="#product-surfaces">See product surfaces</a>
+        </div>
       </div>
-      <div class="proof-artifact" aria-label="Sanitized report contents">
-        <div class="artifact-strip"><span>included</span><b>Aggregates and categories</b><em>public-safe</em></div>
-        <div class="artifact-strip"><span>included</span><b>Coverage and warnings</b><em>public-safe</em></div>
-        <div class="artifact-strip"><span>withheld</span><b>Raw request identifiers</b><em>private</em></div>
-        <div class="artifact-strip hot"><span>withheld</span><b>Detection logic and implementation hints</b><em>IP protected</em></div>
+      <aside class="report-brief" aria-label="Demo report brief">
+        <div class="brief-row headline"><span>Total opportunity</span><b>$710.79</b><em>23.5% of observed spend</em></div>
+        <div class="brief-row"><span>Window</span><b>6,001 requests</b><em>647.7M tokens · 75 workflows</em></div>
+        <div class="brief-row"><span>Queue</span><b>3 ranked actions</b><em>retry cap · branch pruning · cache test</em></div>
+        <div class="brief-row"><span>Evidence path</span><b>5,926 lineage edges</b><em>request ledger and inspector views</em></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="compact-section action-queue-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Action queue</div>
+        <h2>The report becomes a short list of things to test.</h2>
+        <p>Every recommendation points to a workflow, operation, estimated impact, confidence, and the evidence that made it worth reviewing.</p>
+      </div>
+      <div class="action-cards">
+        <article>
+          <span>High severity</span>
+          <h3>Cap failed-attempt retries for test_repair.</h3>
+          <p>Reduce realized retry waste by up to $3.92 in this window.</p>
+          <div class="evidence-chips"><b>workflow=support-ticket-resolution</b><b>attempts=3</b><b>amplification_factor=2.8</b><b>confidence=90%</b></div>
+        </article>
+        <article>
+          <span>Medium severity</span>
+          <h3>Prune abandoned branches across affected workflows.</h3>
+          <p>Avoid up to $122.94 of speculative branch spend from 173 abandoned branch requests.</p>
+          <div class="evidence-chips"><b>affected_workflows=71</b><b>abandoned_branch_requests=173</b><b>confidence=90%</b></div>
+        </article>
+        <article>
+          <span>Medium severity</span>
+          <h3>Evaluate duplicate-request caching for code_generation.</h3>
+          <p>Repeated misses created a modeled $6.75 opportunity in document-ingestion-agent.</p>
+          <div class="evidence-chips"><b>requests=26</b><b>misses=26</b><b>modeled_opportunity=$6.75</b><b>confidence=80%</b></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="compact-section report-screens-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Product surfaces</div>
+        <h2>Reviewers can move from action to evidence without leaving the demo.</h2>
+        <p>The product UI loads the same report into guided workflows, request ledger, workflow trace, and inspector screens.</p>
+      </div>
+      <div class="report-screen-grid">
+        <figure>
+          <img src="../assets/screenshots/demo-guided-workflows.png" alt="Blackridge guided workflow investigation screenshot" loading="lazy">
+          <figcaption><strong>Guided investigation</strong><span>Shows where to start and which workflow deserves review.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/demo-ledger.png" alt="Blackridge request ledger screenshot" loading="lazy">
+          <figcaption><strong>Request ledger</strong><span>Lets the team inspect request-level cost, status, attribution, and model data.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/demo-ledger-inspector.png" alt="Blackridge request inspector screenshot" loading="lazy">
+          <figcaption><strong>Request inspector</strong><span>Connects a selected row to workflow lineage, findings, and evidence gaps.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="compact-section report-close-section">
+    <div class="container report-close">
+      <div class="section-head">
+        <div class="eyebrow">Use it on your workflow</div>
+        <h2>Send one expensive workflow and the evidence you already have.</h2>
+        <p>We will tell you whether Blackridge can turn it into a useful action queue without requiring credentials or raw payloads in the first conversation.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="../schedule-call/#request-call">Get a spend review</a>
+        <a class="btn secondary" href="mailto:sales@northwatch.systems?subject=Blackridge%20AI%20spend%20review">Email Northwatch</a>
       </div>
     </div>
   </section>
@@ -169,5 +156,6 @@
   }
 })();
 </script>
+<script type="module" src="../assets/brg-three.js"></script>
 </body>
 </html>

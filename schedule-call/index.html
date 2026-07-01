@@ -10,22 +10,22 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>Schedule a Blackridge Technical Call | Northwatch Systems</title>
-<meta name="description" content="Provider bills show totals. Blackridge helps explain causes for expensive AI workflows, with evidence rows your team can inspect.">
+<title>Free AI Spend Leak Review | Blackridge by Northwatch Systems</title>
+<meta name="description" content="Send one expensive AI workflow and Northwatch will tell you whether Blackridge is likely to find useful spend evidence.">
 <link rel="canonical" href="https://northwatch.systems/schedule-call/">
 <meta name="theme-color" content="#D2762F">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/schedule-call/">
-<meta property="og:title" content="Find Where One AI Workflow Is Leaking Spend">
-<meta property="og:description" content="Schedule a technical call to discuss where AI spend is becoming hard to explain and whether Blackridge fits your environment.">
+<meta property="og:title" content="Free AI Spend Leak Review">
+<meta property="og:description" content="Send one expensive AI workflow and see whether Blackridge is likely to find useful spend evidence.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Northwatch Systems">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://northwatch.systems/schedule-call/">
-<meta name="twitter:title" content="Find Where One AI Workflow Is Leaking Spend">
-<meta name="twitter:description" content="Schedule a technical call to discuss where AI spend is becoming hard to explain.">
+<meta name="twitter:title" content="Free AI Spend Leak Review">
+<meta name="twitter:description" content="Send one expensive AI workflow and see whether Blackridge is likely to find useful spend evidence.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -40,7 +40,7 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag("js", new Date());
-gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title: "Find Where One AI Workflow Is Leaking Spend" });
+gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title: "Free AI Spend Leak Review" });
 </script>
 <script type="application/ld+json">
 {
@@ -84,7 +84,7 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
       <a href="../#product-evidence">Evidence</a>
       <a href="../compare.html">Compare</a>
       <a href="../about/">Company</a>
-      <a class="btn secondary" data-cta="workflow-form-nav" href="#request-call">Schedule a call</a>
+      <a class="btn secondary" data-cta="workflow-form-nav" href="#request-call">Get a spend review</a>
     </nav>
   </div>
 </header>
@@ -98,11 +98,11 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
           <span class="pill">AI spend forensics</span>
           <span>Your fastest-growing cloud bill, <b>explained with evidence.</b></span>
         </div>
-        <div class="eyebrow">Schedule a technical call</div>
-        <h1>See where your AI spend is leaking.</h1>
-        <p class="lead">Blackridge shows which workflows, retries, fallbacks, model choices, and attribution gaps caused the bill — with request-level evidence your team can inspect.</p>
+        <div class="eyebrow">Free AI spend leak review</div>
+        <h1>Send one expensive AI workflow.</h1>
+        <p class="lead">Tell us what is hard to explain. A Northwatch founder will reply with whether Blackridge is likely to find useful spend evidence.</p>
         <div class="hero-actions">
-          <a class="btn primary" data-cta="workflow-discussion-hero" href="#request-call">Schedule a technical call</a>
+          <a class="btn primary" data-cta="workflow-discussion-hero" href="#request-call">Get my spend review</a>
           <a class="btn secondary" data-cta="see-example-evidence" href="../example-ai-spend-forensics-report/">Inspect example evidence</a>
         </div>
         <p class="trust-line">Do not submit credentials, production payloads, secrets, or raw sensitive logs through the public form.</p>
@@ -162,24 +162,24 @@ gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title
   <section id="request-call" class="cta-band">
     <div class="container">
       <div class="eyebrow">Get started</div>
-      <h2>Talk with Northwatch about Blackridge.</h2>
-      <p>Tell us what you are running, where AI spend is becoming difficult to explain, and who should be involved. A Northwatch founder will follow up if there is a strong technical fit.</p>
+      <h2>Get a Blackridge spend review.</h2>
+      <p>Share the basics. Do not include credentials, payloads, secrets, or raw sensitive logs. Secure handoff can happen later if there is a fit.</p>
       <div class="card form-card">
         <form id="callForm" action="https://formspree.io/f/mbdeozdy" method="POST">
           <div class="form-row">
-            <label><span>Name</span><input type="text" name="name" required></label>
+            <label><span>Name</span><input type="text" name="name" autocomplete="name"></label>
             <label><span>Work email</span><input type="email" name="email" required></label>
           </div>
           <div class="form-row">
-            <label><span>Company</span><input type="text" name="company" required></label>
-            <label><span>Production status / monthly inference spend</span><select name="production_status_spend" required><option value="">Select range</option><option>Production, under $10k/month</option><option>Production, $10k-$50k/month</option><option>Production, $50k-$250k/month</option><option>Production, over $250k/month</option><option>Pilot or pre-production</option><option>Not sure</option></select></label>
+            <label><span>Company</span><input type="text" name="company" autocomplete="organization" required></label>
+            <label><span>Production status / monthly inference spend</span><select name="production_status_spend"><option value="">Select if known</option><option>Production, under $10k/month</option><option>Production, $10k-$50k/month</option><option>Production, $50k-$250k/month</option><option>Production, over $250k/month</option><option>Pilot or pre-production</option><option>Not sure</option></select></label>
           </div>
-          <label><span>What changed, or what can't you explain?</span><textarea name="notes" required></textarea></label>
-          <input type="hidden" name="_subject" value="Blackridge Technical Call Request">
-          <button class="btn primary" data-cta="submit-workflow-form" type="submit">Schedule a technical call</button>
+          <label><span>What changed, or what can't you explain?</span><textarea name="notes" placeholder="Example: retries spiked, fallback is expensive, model bill doubled, finance needs owner attribution"></textarea></label>
+          <input type="hidden" name="_subject" value="Blackridge AI Spend Leak Review">
+          <button class="btn primary" data-cta="submit-workflow-form" type="submit">Get my spend review</button>
           <p class="form-status" id="callStatus" role="status" aria-live="polite"></p>
         </form>
-        <p class="form-privacy">Northwatch Systems reviews submissions directly and typically follows up by email. Do not submit credentials, production payloads, secrets, raw sensitive logs, or regulated data through this form. Secure handoff happens after qualification. See our <a href="../privacy/">Privacy Policy</a> · <a href="../terms/">Terms</a></p>
+        <p class="form-privacy">Northwatch Systems reviews submissions directly and typically follows up by email. Do not submit credentials, production payloads, secrets, raw sensitive logs, or regulated data through this form. See our <a href="../privacy/">Privacy Policy</a> · <a href="../terms/">Terms</a></p>
         <p class="trust-line">If the form fails, email <a href="mailto:sales@northwatch.systems">sales@northwatch.systems</a>.</p>
       </div>
     </div>
