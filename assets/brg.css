@@ -1630,6 +1630,10 @@ h3 { font-size: 20px; }
   box-shadow: 0 24px 70px rgba(0,0,0,.34);
   overflow: hidden;
 }
+.shot-frame.demo-shot {
+  max-width: 900px;
+  margin-inline: auto;
+}
 .shot-chrome {
   display: flex;
   align-items: center;
@@ -1652,6 +1656,7 @@ h3 { font-size: 20px; }
 }
 .shot-frame video {
   aspect-ratio: 16 / 10;
+  max-height: min(58vh, 520px);
   object-fit: contain;
 }
 .shot-frame.inspector-shot img {
