@@ -202,21 +202,34 @@ s.parentNode.insertBefore(b, s);
       </div>
       <div class="showcase">
         <div class="showcase-tabs" role="tablist" aria-label="Product evidence surfaces">
-          <button class="showcase-tab active" data-tab="workflows" role="tab" aria-selected="true">
+          <button class="showcase-tab active" data-tab="quick-demo" role="tab" aria-selected="true">
             <span class="tab-icon">01</span>
+            <span><strong>Quick Demo</strong><em>See the evidence path end to end.</em></span>
+          </button>
+          <button class="showcase-tab" data-tab="workflows" role="tab" aria-selected="false">
+            <span class="tab-icon">02</span>
             <span><strong>Workflow Traces</strong><em>Which workflow caused the spike?</em></span>
           </button>
           <button class="showcase-tab" data-tab="inspector" role="tab" aria-selected="false">
-            <span class="tab-icon">02</span>
+            <span class="tab-icon">03</span>
             <span><strong>Request Ledger</strong><em>Can we prove the finding?</em></span>
           </button>
           <button class="showcase-tab" data-tab="request-inspector" role="tab" aria-selected="false">
-            <span class="tab-icon">03</span>
+            <span class="tab-icon">04</span>
             <span><strong>Request Inspector</strong><em>Why did this row cost money?</em></span>
           </button>
         </div>
         <div class="showcase-stage">
-          <article class="showcase-panel active" data-panel="workflows">
+          <article class="showcase-panel active" data-panel="quick-demo">
+            <div class="shot-frame">
+              <div class="shot-chrome"><span>quick-demo</span><span>walkthrough · sample cause file</span></div>
+              <video class="demo-video" controls autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/demo-trace.png" aria-label="Blackridge quick demo showing workflow traces, request ledger, and request inspector">
+                <source src="assets/quick-demo.webm" type="video/webm">
+              </video>
+              <div class="shot-caption"><strong>Quick Demo</strong><span>Shows the path from workflow-level spend to row-level evidence and the request inspector behind a selected ledger entry.</span></div>
+            </div>
+          </article>
+          <article class="showcase-panel" data-panel="workflows">
             <div class="shot-frame">
               <div class="shot-chrome"><span>workflow-traces</span><span>sample cause file · design partner data, anonymized</span></div>
               <img src="assets/screenshots/demo-trace.png" alt="Blackridge workflow traces screenshot showing ranked workflow spend and evidence quality" loading="lazy">
