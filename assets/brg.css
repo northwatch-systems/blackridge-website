@@ -1657,10 +1657,6 @@ h3 { font-size: 20px; }
   aspect-ratio: 16 / 10;
   object-fit: contain;
 }
-.demo-shot .demo-video {
-  width: 68%;
-  margin-inline: auto;
-}
 .shot-frame.inspector-shot img {
   width: auto;
   max-width: 100%;
@@ -4501,7 +4497,6 @@ textarea { min-height: 112px; resize: vertical; }
   .question-grid article { min-height: 0; }
   .question-grid p { margin-top: 12px; padding-top: 0; }
   .demo-grid, .demo-kpis { grid-template-columns: 1fr; }
-  .demo-shot .demo-video { width: 100%; }
   .shot-chrome { align-items: flex-start; flex-direction: column; gap: 5px; }
   .carousel-caption { flex-direction: column; gap: 4px; }
   .nav-inner { flex-wrap: nowrap; }
