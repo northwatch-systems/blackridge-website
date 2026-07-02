@@ -3,15 +3,13 @@ var SITE_CONFIG = {
   productName: "Blackridge",
   category: "Token Forensics Engine / Gateway",
   canonicalDomain: "https://northwatch.systems",
-  contactEmail: "sales@northwatch.systems",
-  adminEmail: "admin@northwatch.systems",
-  lastUpdated: "June 2026",
+  contactEmail: "founders@northwatch.systems",
+  adminEmail: "founders@northwatch.systems",
+  securityEmail: "security@northwatch.systems",
+  lastUpdated: "July 2026",
 
   // TODO: Add approved company LinkedIn URL
   companyLinkedIn: "",
-
-  // TODO: Add approved founder LinkedIn profile URLs
-  founderLinkedIn: [],
 
   // TODO: Add approved GitHub organization URL
   github: "",

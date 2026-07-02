@@ -1,9 +1,9 @@
 # Blackridge Website
 
-Production-ready website for Blackridge, deployed on GitHub Pages. Public positioning: Blackridge is a Token Forensics Engine / Gateway for enterprise inference spend; the technical call is the entry motion for evaluating Blackridge fit deployment.
+Production-ready website for Blackridge, deployed on GitHub Pages. Public positioning: Blackridge is a Token Forensics Engine / Gateway for enterprise inference spend; the spend review is the entry motion for evaluating Blackridge fit deployment.
 
 **Recent Update**: Site consolidated from 3 pages to 2 streamlined pages:
-- **index.html** - Complete landing page with problem, solution, product UI artifact, and technical call CTA
+- **index.html** - Complete landing page with problem, solution, product UI artifact, and spend review CTA
 - **compare.html** - Competitive positioning vs 5 adjacent tool categories
 
 ## 🚀 Quick Deploy (10 minutes)
@@ -13,7 +13,7 @@ Production-ready website for Blackridge, deployed on GitHub Pages. Public positi
 # - See serverless/SERVERLESS_SETUP.md for AWS/GCP
 # - Or use Formspree temporarily (free tier)
 
-# 2. Update your API endpoint in schedule-call/index.html (search for "callForm")
+# 2. Update your API endpoint in spend-review/index.html (search for "callForm")
 
 # 3. Deploy
 git add .
@@ -125,7 +125,7 @@ Start here based on your needs:
 
 - ✨ Interactive economic forensics diagnostic tool (6-question self-check)
 - 🎯 Clear problem/solution narrative with competitive positioning
-- 📝 Integrated contact form for technical call requests
+- 📝 Integrated contact form for spend review requests
 - 🔄 Competitive comparison page (vs 5 adjacent tool categories)
 - 🎨 Professional B2B SaaS design with custom dark theme
 - 📱 Fully responsive mobile design
@@ -158,7 +158,7 @@ Start here based on your needs:
 4. **Test everything**
    - Both pages load (index.html, compare.html)
    - Navigation between pages works
-   - All anchor links work (#request-call, #contact-form, etc.)
+   - All anchor links work (#request-review, #contact-form, etc.)
    - Form submits successfully
    - Mobile view looks good on both pages
 

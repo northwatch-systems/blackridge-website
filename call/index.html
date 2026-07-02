@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+  if (window.location.protocol.indexOf("http") !== 0) return;
+  if (!window.location.pathname.endsWith("/index.html")) return;
+  window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
+})();
+</script>
+<title>20 Minutes with a Founder | Blackridge</title>
+<meta name="description" content="Book 20 minutes with a Blackridge founder. No deck, no discovery script: bring your AI bill or your questions.">
+<link rel="canonical" href="https://northwatch.systems/call/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwatch.systems/call/">
+<meta property="og:title" content="20 Minutes with a Founder | Blackridge">
+<meta property="og:description" content="Bring your AI bill or just your questions. We'll tell you whether Blackridge would find anything worth your time.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="20 Minutes with a Founder | Blackridge">
+<meta name="twitter:description" content="Bring your AI bill or just your questions.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../assets/brg.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="../#forensics-flow">How it works</a>
+      <a href="../example-ai-spend-forensics-report/">Example report</a>
+      <a href="../design-partners/">Design partners</a>
+      <a href="../security/">Security</a>
+      <a class="btn secondary" data-cta="call-nav" href="../call/" aria-current="page">Book a call</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero page-hero">
+    <canvas class="hero-three" data-three-hero aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="eyebrow">Founder call</div>
+      <h1>20 minutes with a founder.</h1>
+      <p class="lead">No deck, no discovery script. Bring your AI bill or just your questions — we'll tell you within the call whether Blackridge would find anything worth your time.</p>
+    </div>
+  </section>
+  <section class="compact-section">
+    <div class="container">
+      <div class="cal-embed" data-cal-link="northwatch/blackridge-founder-20min">
+        <div class="eyebrow">Calendar</div>
+        <h2>Book a founder slot.</h2>
+        <iframe class="cal-frame" title="Book 20 minutes with a Blackridge founder" src="https://cal.com/northwatch/blackridge-founder-20min?embed=true"></iframe>
+        <a class="btn primary" data-cta="cal-fallback" href="https://cal.com/northwatch/blackridge-founder-20min">Open calendar</a>
+      </div>
+      <p class="form-privacy">Prefer async? <a href="../spend-review/#request-review">Get a written spend leak review instead →</a></p>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><strong>Blackridge</strong> — AI spend forensics by Northwatch Systems</div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example report</a><a href="../design-partners/">Design partners</a><a href="../security/">Security</a><a href="../about/">About</a><a href="../faq/">FAQ</a>
+    </nav>
+    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("navLinks");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
+  }
+})();
+</script>
+<script type="module" src="../assets/brg-three.js"></script>
+</body>
+</html>

@@ -10,17 +10,17 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>About Northwatch Systems | Builders of Blackridge</title>
-<meta name="description" content="Northwatch Systems is the company behind Blackridge, software for explaining production AI usage and spend from runtime evidence.">
+<title>Why We Built Blackridge | Northwatch Systems</title>
+<meta name="description" content="Blackridge is built by principal-level infrastructure engineers for teams that need AI spend explained with defensible runtime evidence.">
 <link rel="canonical" href="https://northwatch.systems/about/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/about/">
-<meta property="og:title" content="About Northwatch Systems">
-<meta property="og:description" content="Northwatch Systems is the company behind Blackridge, software for explaining production AI usage and spend from runtime evidence.">
+<meta property="og:title" content="Why We Built Blackridge">
+<meta property="og:description" content="Gateway-level AI spend forensics from principal-level infrastructure engineers.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About Northwatch Systems">
-<meta name="twitter:description" content="Northwatch Systems is the company behind Blackridge, software for explaining production AI usage and spend from runtime evidence.">
+<meta name="twitter:title" content="Why We Built Blackridge">
+<meta name="twitter:description" content="Gateway-level AI spend forensics from principal-level infrastructure engineers.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
@@ -36,7 +36,7 @@
   "url": "https://northwatch.systems/",
   "logo": "https://northwatch.systems/assets/logo_full.png",
   "foundingDate": "2026",
-  "description": "Northwatch Systems is the company behind Blackridge, software for explaining production AI usage and spend from runtime evidence."
+  "description": "Northwatch Systems is the company behind Blackridge, AI spend forensics software."
 }
 </script>
 </head>
@@ -46,123 +46,60 @@
     <a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="../#product">Product</a>
-      <a href="../#product-evidence">Evidence</a>
-      <a href="../compare.html">Compare</a>
-      <a href="../about/" aria-current="page">Company</a>
-      <a class="btn secondary" data-cta="spend-review-nav" href="../schedule-call/#request-call">Get a spend review</a>
+      <a href="../#forensics-flow">How it works</a>
+      <a href="../example-ai-spend-forensics-report/">Example report</a>
+      <a href="../design-partners/">Design partners</a>
+      <a href="../security/">Security</a>
+      <a class="btn secondary" data-cta="call-nav" href="../call/">Book a call</a>
     </nav>
   </div>
 </header>
 <main>
-  <section class="hero page-hero about-hero company-hero">
+  <section class="hero page-hero company-hero">
     <canvas class="hero-three" data-three-hero aria-hidden="true"></canvas>
     <div class="container company-hero-inner">
       <div class="company-hero-copy">
-        <div class="eyebrow">Company</div>
-        <h1>Northwatch Systems is the company behind Blackridge.</h1>
-        <p class="lead">We build software for teams that need to understand where production AI usage and spend came from, who owns it, and what evidence supports the explanation.</p>
+        <div class="eyebrow">About</div>
+        <h1>Why we built Blackridge</h1>
+        <p class="lead">We spent our careers inside large-scale platform engineering — the kind of environments where 33 million users depend on your systems, regulators in 17 jurisdictions audit your decisions, and a memory regression is measured in real money.</p>
       </div>
     </div>
   </section>
-
-  <section id="company-overview" class="compact-section company-section">
-    <div class="container">
-      <div class="company-profile">
-        <div class="company-profile-main">
-          <div class="eyebrow">Overview</div>
-          <h2>A software company focused on production AI economics.</h2>
-          <p>Northwatch Systems works on the operational gap between AI applications and the financial systems that pay for them. Companies are adding language-model calls to support tools, copilots, document workflows, internal agents, and customer-facing products. The resulting spend is often visible before the cause is understood.</p>
-          <p>Blackridge is being built to make that cause easier to inspect. The product is intended for engineering, platform, finance, and application teams that need a shared view of AI usage without exposing sensitive prompts or relying only on monthly provider invoices.</p>
-        </div>
-        <dl class="company-facts" aria-label="Company facts">
-          <div><dt>Company</dt><dd>Northwatch Systems</dd></div>
-          <div><dt>Product</dt><dd>Blackridge</dd></div>
-          <div><dt>Category</dt><dd>AI spend forensics</dd></div>
-          <div><dt>Stage</dt><dd>Early customer development</dd></div>
-        </dl>
-      </div>
+  <section class="compact-section company-section">
+    <div class="container article-body">
+      <p>We've architected ground-up rewrites of revenue-critical monoliths, run Kubernetes fleets under GitOps, and built evaluation engines that process tens of millions of telemetry rows without breaking a sweat.</p>
+      <p>Then AI spend arrived, and we watched disciplined engineering organizations lose the ability to answer a basic question: <em>what did we get for that money?</em> Cloud cost had FinOps. AI cost had a shrug.</p>
+      <p>Blackridge is our answer: gateway-level forensics that turn an opaque invoice into an attributed, defensible cause file.</p>
     </div>
   </section>
-
-  <section id="what-we-build" class="compact-section company-section company-section-alt">
-    <div class="container">
-      <div class="company-two-column">
-        <div>
-          <div class="eyebrow">What we build</div>
-          <h2>Blackridge organizes AI usage records into cost evidence.</h2>
-        </div>
-        <div class="company-copy">
-          <p>Blackridge is not a replacement for observability, finance tooling, or model-provider billing. It sits between those views and produces cause files: structured explanations of where AI cost came from, what evidence supports the finding, and what remains uncertain.</p>
-          <p>The work starts with specific questions: which workflow caused a spend increase, whether repeated calls were useful, where attribution is missing, which model choices changed cost, and whether a suspected waste pattern can be proven from available data.</p>
-        </div>
-      </div>
+  <section class="compact-section company-section company-section-alt">
+    <div class="container article-body">
+      <h2>Why no names on this page</h2>
+      <p>We're operators, not marketers, and we're building this the way we built everything else — heads down, with design partners, letting the artifact speak. When you book a call, you talk directly to a founding engineer, not a sales rep. Ask us anything technical; that's the part we enjoy.</p>
     </div>
   </section>
-
-  <section id="operating-principles" class="compact-section company-section">
+  <section class="compact-section company-section">
     <div class="container">
-      <div class="company-two-column">
-        <div>
-          <div class="eyebrow">Operating principles</div>
-          <h2>How the product is designed to behave.</h2>
-        </div>
-        <div class="company-principles">
-          <article>
-            <h3>Evidence before recommendation</h3>
-            <p>The system should show what it observed before suggesting what to change.</p>
-          </article>
-          <article>
-            <h3>Uncertainty stays visible</h3>
-            <p>Missing attribution, missing prices, sampled logs, and modeled estimates should be labeled clearly.</p>
-          </article>
-          <article>
-            <h3>Sensitive data is treated as unnecessary by default</h3>
-            <p>Cost accountability should not require broadcasting prompts, documents, or customer content across an organization.</p>
-          </article>
-          <article>
-            <h3>Engineering and finance need the same object</h3>
-            <p>A useful finding should be detailed enough for engineers and legible enough for budget owners.</p>
-          </article>
-        </div>
+      <div class="section-head">
+        <div class="eyebrow">How we work</div>
+        <h2>Evidence first, founder-led, narrow blast radius.</h2>
       </div>
-    </div>
-  </section>
-
-  <section id="current-focus" class="compact-section company-section company-section-alt">
-    <div class="container">
-      <div class="company-two-column">
-        <div>
-          <div class="eyebrow">Current focus</div>
-          <h2>Blackridge is currently focused on deployed AI workflows.</h2>
-        </div>
-        <div class="company-copy">
-          <p>The most relevant cases are workflows already running in production: support automation, internal copilots, document-processing pipelines, agent workflows, and customer-facing AI features with unclear cost behavior.</p>
-          <p>Initial work is narrow. We look at the evidence already available for one workflow, determine whether a useful cause file can be produced, and define the boundaries for any deeper technical review.</p>
-          <div class="company-links">
-            <a class="tlink" data-cta="contact-about" href="../contact/">Contact Northwatch <span class="arr">→</span></a>
-            <a class="tlink" data-cta="evidence-about" href="../example-ai-spend-forensics-report/">See an example report <span class="arr">→</span></a>
-          </div>
-        </div>
+      <div class="grid cols-3">
+        <article class="card"><h3>Design-partner first.</h3><p>Five partners per quarter, founder-led, no handoffs.</p></article>
+        <article class="card"><h3>Evidence over estimates.</h3><p>If we can't attribute it, we don't claim it.</p></article>
+        <article class="card"><h3>In the path, out of the way.</h3><p>Fail-open gateway, single-digit-ms overhead, no payload retention.</p></article>
       </div>
+      <div class="hero-actions"><a class="btn primary" data-cta="call-about" href="../call/">Book 20 minutes with a founder <span class="arr">→</span></a></div>
     </div>
   </section>
 </main>
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge</div>
+    <div class="footer-brand"><strong>Blackridge</strong> — AI spend forensics by Northwatch Systems</div>
     <nav class="footer-links" aria-label="Footer">
-      <a href="../#product">Product</a>
-      <a href="../#product-evidence">Evidence</a>
-      <a href="../compare.html">Compare</a>
-      <a href="../about/">Company</a>
-      <a href="../contact/">Contact</a>
+      <a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example report</a><a href="../design-partners/">Design partners</a><a href="../security/">Security</a><a href="../about/">About</a><a href="../faq/">FAQ</a>
     </nav>
-    <div class="footer-legal">
-      <a href="../privacy/">Privacy</a>
-      <a href="../terms/">Terms</a>
-    </div>
-    <div class="footer-meta">Last updated June 2026</div>
+    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
   </div>
 </footer>
 <script>

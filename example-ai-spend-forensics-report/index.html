@@ -10,17 +10,17 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>Sample AI Spend Forensics Report | Blackridge by Northwatch Systems</title>
-<meta name="description" content="A sample Blackridge AI spend forensics report showing request volume, token usage, findings, evidence coverage, and recommended engineering actions.">
+<title>A Real Cause File, Anonymized | Blackridge</title>
+<meta name="description" content="A sample Blackridge cause file showing attributable AI spend leakage, workflow lineage, and evidence-backed root cause.">
 <link rel="canonical" href="https://northwatch.systems/example-ai-spend-forensics-report/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/example-ai-spend-forensics-report/">
-<meta property="og:title" content="Sample AI Spend Forensics Report">
-<meta property="og:description" content="A sample Blackridge report showing AI spend findings, evidence coverage, and recommended engineering actions.">
+<meta property="og:title" content="A Real Cause File, Anonymized | Blackridge">
+<meta property="og:description" content="The deliverable: attributable AI spend leakage, workflow lineage, and evidence-backed root cause.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sample AI Spend Forensics Report">
-<meta name="twitter:description" content="Request volume, token economics, findings, evidence coverage, and recommended engineering actions from a sample Blackridge report.">
+<meta name="twitter:title" content="A Real Cause File, Anonymized | Blackridge">
+<meta name="twitter:description" content="Attributable AI spend leakage, workflow lineage, and evidence-backed root cause.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
@@ -34,11 +34,11 @@
     <a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="../#product">Product</a>
-      <a href="../#product-evidence">Evidence</a>
-      <a href="../compare.html">Compare</a>
-      <a href="../about/">Company</a>
-      <a class="btn secondary" data-cta="spend-review-nav" href="../schedule-call/#request-call">Get a spend review</a>
+      <a href="../#forensics-flow">How it works</a>
+      <a href="../example-ai-spend-forensics-report/" aria-current="page">Example report</a>
+      <a href="../design-partners/">Design partners</a>
+      <a href="../security/">Security</a>
+      <a class="btn secondary" data-cta="call-nav" href="../call/">Book a call</a>
     </nav>
   </div>
 </header>
@@ -47,103 +47,63 @@
     <canvas class="hero-three" data-three-hero aria-hidden="true"></canvas>
     <div class="container evidence-hero-grid">
       <div>
-        <div class="eyebrow">Sample investigation</div>
-        <h1>From one AI spend window to an engineering work queue.</h1>
-        <p class="lead">Blackridge loaded a 14-day report, ranked the highest-value actions, and kept the product path inspectable down to request rows and workflow evidence.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="../schedule-call/#request-call">Get a spend review</a>
-          <a class="btn secondary" href="#product-surfaces">See product surfaces</a>
-        </div>
+        <div class="eyebrow">Sample cause file</div>
+        <h1>A real cause file, anonymized.</h1>
+        <p class="lead">This is the actual deliverable — not a marketing mock. A design partner's workflow, scrubbed of identifying detail, exactly as finance received it.</p>
       </div>
-      <aside class="report-brief" aria-label="Demo report brief">
-        <div class="brief-row headline"><span>Total opportunity</span><b>$710.79</b><em>23.5% of observed spend</em></div>
-        <div class="brief-row"><span>Window</span><b>6,001 requests</b><em>647.7M tokens · 75 workflows</em></div>
-        <div class="brief-row"><span>Queue</span><b>3 ranked actions</b><em>retry cap · branch pruning · cache test</em></div>
-        <div class="brief-row"><span>Evidence path</span><b>5,926 lineage edges</b><em>request ledger and inspector views</em></div>
+      <aside class="report-brief" aria-label="Anonymized cause file brief">
+        <div class="brief-row headline"><span>Total attributable leak</span><b>$3,018</b><em>avoidable spend in the period</em></div>
+        <div class="brief-row"><span>Root cause</span><b>Retry loop</b><em>amplified by oversized context</em></div>
+        <div class="brief-row"><span>Window</span><b>48 hours</b><em>first cause-file pass</em></div>
+        <div class="brief-row"><span>Evidence path</span><b>Request ledger</b><em>workflow lineage and inspector views</em></div>
       </aside>
     </div>
   </section>
-
-  <section class="compact-section action-queue-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Action queue</div>
-        <h2>The report becomes a short list of things to test.</h2>
-        <p>Every recommendation points to a workflow, operation, estimated impact, confidence, and the evidence that made it worth reviewing.</p>
-      </div>
-      <div class="action-cards">
-        <article>
-          <span>High severity</span>
-          <h3>Cap failed-attempt retries for test_repair.</h3>
-          <p>Reduce realized retry waste by up to $3.92 in this window.</p>
-          <div class="evidence-chips"><b>workflow=support-ticket-resolution</b><b>attempts=3</b><b>amplification_factor=2.8</b><b>confidence=90%</b></div>
-        </article>
-        <article>
-          <span>Medium severity</span>
-          <h3>Prune abandoned branches across affected workflows.</h3>
-          <p>Avoid up to $122.94 of speculative branch spend from 173 abandoned branch requests.</p>
-          <div class="evidence-chips"><b>affected_workflows=71</b><b>abandoned_branch_requests=173</b><b>confidence=90%</b></div>
-        </article>
-        <article>
-          <span>Medium severity</span>
-          <h3>Evaluate duplicate-request caching for code_generation.</h3>
-          <p>Repeated misses created a modeled $6.75 opportunity in document-ingestion-agent.</p>
-          <div class="evidence-chips"><b>requests=26</b><b>misses=26</b><b>modeled_opportunity=$6.75</b><b>confidence=80%</b></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="compact-section report-screens-section">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Product surfaces</div>
-        <h2>Reviewers can move from action to evidence without leaving the demo.</h2>
-        <p>The product UI loads the same report into guided workflows, request ledger, workflow trace, and inspector screens.</p>
+        <div class="eyebrow">What you're looking at</div>
+        <h2>The report moves from number, to lineage, to cause.</h2>
+      </div>
+      <div class="grid cols-3">
+        <article class="card"><h3>Page 1 — The number.</h3><p>Total attributable leak for the period, with confidence bounds. This is the page the CFO reads.</p></article>
+        <article class="card"><h3>Page 2 — The lineage.</h3><p>The workflow graph showing which calls, retries, and context decisions produced the cost.</p></article>
+        <article class="card"><h3>Page 3 — The cause.</h3><p>Plain-language root cause and what fixing it is worth, monthly and annualized.</p></article>
       </div>
       <div class="report-screen-grid">
         <figure>
-          <img src="../assets/screenshots/demo-guided-workflows.png" alt="Blackridge guided workflow investigation screenshot" loading="lazy">
-          <figcaption><strong>Guided investigation</strong><span>Shows where to start and which workflow deserves review.</span></figcaption>
+          <img src="../assets/screenshots/demo-guided-workflows.png" alt="Blackridge guided investigation screenshot" loading="lazy">
+          <figcaption><strong>Cause file overview</strong><span>Ranks the highest-value actions and separates observed waste from modeled opportunity.</span></figcaption>
         </figure>
         <figure>
           <img src="../assets/screenshots/demo-ledger.png" alt="Blackridge request ledger screenshot" loading="lazy">
-          <figcaption><strong>Request ledger</strong><span>Lets the team inspect request-level cost, status, attribution, and model data.</span></figcaption>
+          <figcaption><strong>Request ledger</strong><span>Shows the rows behind the claim: cost, status, attribution, and model data.</span></figcaption>
         </figure>
         <figure>
           <img src="../assets/screenshots/demo-ledger-inspector.png" alt="Blackridge request inspector screenshot" loading="lazy">
-          <figcaption><strong>Request inspector</strong><span>Connects a selected row to workflow lineage, findings, and evidence gaps.</span></figcaption>
+          <figcaption><strong>Inspector</strong><span>Connects one row to workflow lineage, findings, and evidence gaps.</span></figcaption>
         </figure>
       </div>
     </div>
   </section>
-
   <section class="compact-section report-close-section">
     <div class="container report-close">
       <div class="section-head">
-        <div class="eyebrow">Use it on your workflow</div>
-        <h2>Send one expensive workflow and the evidence you already have.</h2>
-        <p>We will tell you whether Blackridge can turn it into a useful action queue without requiring credentials or raw payloads in the first conversation.</p>
+        <div class="eyebrow">Your workflow</div>
+        <h2>Want this for one of your workflows?</h2>
+        <p>Get a free spend leak review — a founder replies within 2 business days.</p>
       </div>
-      <div class="hero-actions">
-        <a class="btn primary" href="../schedule-call/#request-call">Get a spend review</a>
-        <a class="btn secondary" href="mailto:sales@northwatch.systems?subject=Blackridge%20AI%20spend%20review">Email Northwatch</a>
-      </div>
+      <div class="hero-actions"><a class="btn primary" href="../spend-review/#request-review">Get a free spend leak review <span class="arr">→</span></a></div>
     </div>
   </section>
 </main>
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge</div>
+    <div class="footer-brand"><strong>Blackridge</strong> — AI spend forensics by Northwatch Systems</div>
     <nav class="footer-links" aria-label="Footer">
-      <a href="../#product">Product</a>
-      <a href="../#product-evidence">Evidence</a>
-      <a href="../compare.html">Compare</a>
-      <a href="../about/">Company</a>
-      <a href="../contact/">Contact</a>
+      <a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example report</a><a href="../design-partners/">Design partners</a><a href="../security/">Security</a><a href="../about/">About</a><a href="../faq/">FAQ</a>
     </nav>
-    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></div>
-    <div class="footer-meta">Last updated June 2026</div>
+    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
   </div>
 </footer>
 <script>

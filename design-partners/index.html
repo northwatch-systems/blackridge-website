@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+  if (window.location.protocol.indexOf("http") !== 0) return;
+  if (!window.location.pathname.endsWith("/index.html")) return;
+  window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
+})();
+</script>
+<title>Design Partner Program | Blackridge</title>
+<meta name="description" content="Blackridge accepts five design partners per quarter for founder-led AI spend forensics deployments.">
+<link rel="canonical" href="https://northwatch.systems/design-partners/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwatch.systems/design-partners/">
+<meta property="og:title" content="Design Partner Program | Blackridge">
+<meta property="og:description" content="Five partners per quarter. Founder-level attention, direct roadmap influence, and early pricing.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Design Partner Program | Blackridge">
+<meta name="twitter:description" content="Five partners per quarter. Founder-led AI spend forensics deployments.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../assets/brg.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="../#forensics-flow">How it works</a>
+      <a href="../example-ai-spend-forensics-report/">Example report</a>
+      <a href="../design-partners/" aria-current="page">Design partners</a>
+      <a href="../security/">Security</a>
+      <a class="btn secondary" data-cta="call-nav" href="../call/">Book a call</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero page-hero">
+    <canvas class="hero-three" data-three-hero aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="eyebrow">Design partners</div>
+      <h1>Five partners per quarter. Here's the deal.</h1>
+      <p class="lead">We're early, and we price like it. Design partners get founder-level attention, direct influence on the roadmap, and pricing that will never be offered again — in exchange for honest feedback and a reference when we've earned it.</p>
+    </div>
+  </section>
+  <section class="compact-section">
+    <div class="container">
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>What you get</h3>
+          <ul>
+            <li>Gateway deployment on one workflow within the first week, expanded on your schedule</li>
+            <li>A cause file in your first 30 days or we part as friends</li>
+            <li>Direct line to the founding engineers — the people who wrote the code answer the pager</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>What we ask</h3>
+          <ul>
+            <li>A real workflow with real spend, typically $10K+/month in AI costs</li>
+            <li>A monthly 30-minute feedback call</li>
+            <li>Permission to anonymize your findings, the way the example report was</li>
+          </ul>
+        </article>
+      </div>
+      <div class="card design-partner-terms">
+        <h3>Investment</h3>
+        <p>Design partner pricing is discussed on the first call. Slots remaining for Q3 2026: <strong>5 of 5</strong>.</p>
+        <div class="hero-actions"><a class="btn primary" href="../spend-review/#request-review">Apply for a design partner slot</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><strong>Blackridge</strong> — AI spend forensics by Northwatch Systems</div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example report</a><a href="../design-partners/">Design partners</a><a href="../security/">Security</a><a href="../about/">About</a><a href="../faq/">FAQ</a>
+    </nav>
+    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("navLinks");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
+  }
+})();
+</script>
+<script type="module" src="../assets/brg-three.js"></script>
+</body>
+</html>

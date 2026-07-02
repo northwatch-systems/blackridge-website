@@ -1,11 +1,15 @@
 Northwatch Systems builds Blackridge to help teams find where AI spend is leaking. Provider bills show totals. Blackridge shows near real-time causes with workflow correlation, request-level evidence rows, attribution coverage, confidence notes, and safe tests.
 
-The technical call is the entry motion for evaluating Blackridge fit. Bring one expensive or hard-to-explain AI workflow, your current stack, and the runtime evidence you already have. Blackridge explains and recommends; it does not take action or enforce changes for the user today.
+The spend review is the entry motion for evaluating Blackridge fit. A work email and monthly AI spend bracket are enough to start. A founding engineer replies within 2 business days with a written assessment.
 
 Primary public pages:
 - https://northwatch.systems/
-- https://northwatch.systems/schedule-call/
+- https://northwatch.systems/spend-review/
+- https://northwatch.systems/call/
 - https://northwatch.systems/example-ai-spend-forensics-report/
+- https://northwatch.systems/design-partners/
+- https://northwatch.systems/security/
+- https://northwatch.systems/faq/
 - https://northwatch.systems/how-token-economics-forensics-works/
 - https://northwatch.systems/what-is-ai-spend-forensics/
 - https://northwatch.systems/compare.html

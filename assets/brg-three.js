@@ -203,9 +203,10 @@ if (canvas && hero && window.matchMedia("(prefers-reduced-motion: reduce)").matc
     camera.updateProjectionMatrix();
 
     const compact = width < 760;
-    root.scale.setScalar(compact ? 0.78 : 1);
-    root.position.x = compact ? 0.42 : 0.95;
-    root.position.y = compact ? -0.22 : -0.03;
+    const pageHero = hero.classList.contains("page-hero") && !hero.querySelector(".hero-grid");
+    root.scale.setScalar(compact ? 0.82 : (pageHero ? 2.35 : 1));
+    root.position.x = compact ? 0.42 : (pageHero ? 3.15 : 0.95);
+    root.position.y = compact ? -0.22 : (pageHero ? -0.02 : -0.03);
   }
 
   function updateParticles(elapsed) {
