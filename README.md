@@ -2,7 +2,6 @@
 
 Production-ready website for Blackridge, deployed on GitHub Pages. Public positioning: Blackridge is a Token Forensics Engine / Gateway for enterprise inference spend; the spend review is the entry motion for evaluating Blackridge fit deployment.
 
----
 
 **Recent Update**: Site consolidated from 3 pages to 2 streamlined pages:
 - **index.html** - Complete landing page with problem, solution, product UI artifact, and spend review CTA
