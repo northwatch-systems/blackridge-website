@@ -4,7 +4,6 @@ Getting your AI bill explained is the entry motion for evaluating Blackridge fit
 
 Primary public pages:
 - https://northwatch.systems/
-- https://northwatch.systems/blackridge/
 - https://northwatch.systems/spend-review/
 - https://northwatch.systems/call/
 - https://northwatch.systems/example-ai-spend-forensics-report/
