@@ -16,6 +16,6 @@ Primary public pages:
 - https://northwatch.systems/compare/
 - https://northwatch.systems/about/
 - https://northwatch.systems/contact/
-- https://northwatch.systems/docs/
+- https://docs.northwatch.systems
 - https://northwatch.systems/privacy/
 - https://northwatch.systems/terms/

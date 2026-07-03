@@ -23,6 +23,5 @@ var SITE_CONFIG = {
   // TODO: Add approved technical blog URL
   technicalBlog: "",
 
-  // TODO: Add approved documentation URL
-  docs: ""
+  docs: "https://docs.northwatch.systems"
 };

@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
 (function() {
+  var docsUrl = "https://docs.northwatch.systems";
   if (window.location.protocol.indexOf("http") !== 0) return;
-  if (!window.location.pathname.endsWith("/index.html")) return;
-  window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
+  window.location.replace(docsUrl + window.location.search + window.location.hash);
 })();
 </script>
-<title>Blackridge Docs | Northwatch Systems</title>
-<meta name="description" content="Technical entry points for Blackridge: how it finds AI spend causes, uses evidence rows, reports coverage, and scopes deployment.">
-<link rel="canonical" href="https://northwatch.systems/docs/">
+<title>Blackridge Docs moved | Northwatch Systems</title>
+<meta name="description" content="Blackridge docs now live at docs.northwatch.systems.">
+<meta http-equiv="refresh" content="0; url=https://docs.northwatch.systems">
+<link rel="canonical" href="https://docs.northwatch.systems">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://northwatch.systems/docs/">
+<meta property="og:url" content="https://docs.northwatch.systems">
 <meta property="og:title" content="Blackridge Docs">
-<meta property="og:description" content="Docs for finding where AI spend is leaking with Blackridge evidence.">
+<meta property="og:description" content="Blackridge docs now live at docs.northwatch.systems.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Blackridge Docs">
-<meta name="twitter:description" content="Docs for finding AI spend causes with Blackridge evidence.">
+<meta name="twitter:description" content="Blackridge docs now live at docs.northwatch.systems.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
@@ -35,26 +36,18 @@
   <section class="page-hero">
     <div class="container">
       <div class="eyebrow">Docs</div>
-      <h1>Blackridge technical entry points</h1>
-      <p class="lead">Provider bills show totals. These docs explain how Blackridge shows causes: what AI Runtime Economics is, data inputs, waste classes, spend review, product evidence rows, coverage, and deployment scope.</p>
+      <h1>Blackridge docs moved</h1>
+      <p class="lead">The current Blackridge docs now live at docs.northwatch.systems.</p>
     </div>
   </section>
   <section><div class="container">
-    <div class="grid cols-3">
-      <article class="card"><h3>AI Runtime Economics</h3><p>Category definition for finding where AI spend is leaking, and how that differs from gateways, provider dashboards, and observability.</p><p style="margin-top:12px;"><a href="../what-is-ai-spend-forensics/">Read</a></p></article>
-      <article class="card"><h3>Data inputs</h3><p>Provider exports, gateway logs, OpenTelemetry traces, application logs, metadata, and runtime collection.</p><p style="margin-top:12px;"><a href="../how-token-economics-forensics-works/">Methodology</a></p></article>
-      <article class="card"><h3>Waste classes</h3><p>Retries, fallbacks, duplicate inference, premium-model overuse, abandoned branches, cache misses, failed calls, and attribution gaps.</p><p style="margin-top:12px;"><a href="../blackridge/">See the taxonomy</a></p></article>
-      <article class="card"><h3>Spend review</h3><p>Founder-led technical conversation for teams with production AI spend, unexplained runtime behavior, and interest in Blackridge deployment.</p><p style="margin-top:12px;"><a href="../spend-review/">Spend review page</a></p></article>
-      <article class="card"><h3>Example evidence</h3><p>An anonymized example cause file with spend map, findings, evidence rows, confidence, and ranked safe tests.</p><p style="margin-top:12px;"><a href="../example-ai-spend-forensics-report/">Open evidence</a></p></article>
-      <article class="card"><h3>Runtime collection</h3><p>Optional high-fidelity collection path when existing logs are incomplete. It is a deployment path, not the product category.</p><p style="margin-top:12px;"><a href="../security/">Security posture</a></p></article>
-    </div>
     <div class="hero-actions">
-      <a class="btn primary" href="../spend-review/#request-review">Get your AI bill explained — free</a>
+      <a class="btn primary" href="https://docs.northwatch.systems">Open docs</a>
       <a class="btn secondary" href="../contact/">Contact Northwatch</a>
     </div>
   </div></section>
 </main>
-<footer class="footer"><div class="container footer-inner"><div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge — the AI Runtime Economics platform</div><nav class="footer-links" aria-label="Footer product"><a href="../blackridge/">Blackridge</a><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example cause file</a><a href="../compare/">Compare</a><a href="../security/">Security</a><a href="../docs/" aria-current="page">Docs</a></nav><nav class="footer-links" aria-label="Footer company"><a href="../about/">About</a><a href="../design-partners/">Design partners</a><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></nav><div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div></div></footer>
+<footer class="footer"><div class="container footer-inner"><div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge — the AI Runtime Economics platform</div><nav class="footer-links" aria-label="Footer product"><a href="../blackridge/">Blackridge</a><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example cause file</a><a href="../compare/">Compare</a><a href="../security/">Security</a><a href="https://docs.northwatch.systems" aria-current="page">Docs</a></nav><nav class="footer-links" aria-label="Footer company"><a href="../about/">About</a><a href="../design-partners/">Design partners</a><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></nav><div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div></div></footer>
 <script>
 (function(){
   var toggle = document.getElementById("menuToggle");
