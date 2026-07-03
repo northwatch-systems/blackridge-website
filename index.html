@@ -194,7 +194,7 @@ s.parentNode.insertBefore(b, s);
 
   <div class="providers" aria-label="Provider and deployment evidence sources">
     <div class="container provider-band">
-      <span class="provider-label">Reconstructs spend from</span>
+      <span class="provider-label">OpenAI and Anthropic primary; others scoped per partner</span>
       <div class="provider-row">
         <span class="provider-logo openai" aria-label="OpenAI"><i></i><b>OpenAI</b></span>
         <span class="provider-logo anthropic" aria-label="Anthropic"><i></i><b>Anthropic</b></span>
@@ -254,6 +254,7 @@ s.parentNode.insertBefore(b, s);
             <div class="shot-frame demo-shot">
               <div class="shot-chrome"><span>quick-demo</span><span>walkthrough · sample cause file</span></div>
               <video class="demo-video" controls autoplay muted loop playsinline preload="metadata" poster="assets/screenshots/demo-trace.png" aria-label="Blackridge quick demo showing workflow traces, request ledger, and request inspector">
+                <source src="assets/quick-demo.mp4" type="video/mp4">
                 <source src="assets/quick-demo.webm" type="video/webm">
               </video>
               <div class="shot-caption"><strong>Quick Demo</strong><span>Shows the path from workflow-level spend to row-level evidence and the request inspector behind a selected ledger entry.</span></div>
@@ -320,6 +321,36 @@ s.parentNode.insertBefore(b, s);
     </div>
   </section>
 
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Published methodology</div>
+        <h2>Audit the math before you talk to us.</h2>
+        <p>The Blackridge docs explain evidence grades, attribution rules, coverage boundaries, reproducibility hashes, and how a cause file separates observed waste from modeled opportunity.</p>
+      </div>
+      <div class="artifact-proof-grid" aria-label="Blackridge documentation highlights">
+        <article>
+          <span>Evidence grades</span>
+          <strong>Observed, derived, inferred, simulated</strong>
+          <p>Every claim carries its evidence class so finance and engineering can see what was counted and what was modeled.</p>
+        </article>
+        <article>
+          <span>Attribution ladder</span>
+          <strong>Unknown is reported, not hidden</strong>
+          <p>Missing owners and coverage gaps stay visible instead of being spread across teams as false precision.</p>
+        </article>
+        <article>
+          <span>Reproducibility</span>
+          <strong>Rows, hashes, and resolver paths</strong>
+          <p>The methodology is published so platform teams can inspect the evidence chain before a sales call.</p>
+        </article>
+      </div>
+      <div class="hero-actions" style="justify-content:center;">
+        <a class="btn secondary" data-cta="docs-methodology-home" href="https://docs.northwatch.systems">Read the methodology <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
   <section id="leaks">
     <div class="container">
       <div class="section-head">
@@ -364,8 +395,8 @@ s.parentNode.insertBefore(b, s);
                     <i style="height:28%"></i><i style="height:34%"></i><i style="height:30%"></i><i style="height:36%"></i><i style="height:32%"></i><i class="hot" style="height:78%"></i><i class="hot" style="height:92%"></i><i style="height:44%"></i><i style="height:38%"></i>
                   </div>
                   <div class="spark-amount">
-                    <strong>$6,200</strong>
-                    <span>48-hour spike</span>
+                    <strong>$3,018.63</strong>
+                    <span>48-hour workflow spend</span>
                   </div>
                 </div>
                 <div class="hd-card-meta">support-agent / triage workflow</div>
@@ -399,8 +430,8 @@ s.parentNode.insertBefore(b, s);
               <div class="hd-annotation">Here's the fix.</div>
               <div class="hd-card fix">
                 <div class="hd-fix-primary">
-                  <strong>Add fallback to a lower-latency frontier model</strong>
-                  <span>When Claude latency exceeds 8 seconds, route to the approved fallback model</span>
+                  <strong>Add retry budget and fallback routing</strong>
+                  <span>Cap amplified retries, preserve the approved fallback path, and test cache coverage on the repeated context.</span>
                 </div>
                 <div class="hd-fix-savings">
                   <span>Estimated monthly savings</span>
@@ -412,9 +443,9 @@ s.parentNode.insertBefore(b, s);
           </div>
         </div>
         <div class="diagram-notes">
-          <div><span>01</span><strong>See the spike</strong><em>Cost behavior surfaces close to when it happens — not days later in a billing export.</em></div>
+          <div><span>01</span><strong>See the spike</strong><em>$3,018.63 over 48 hours, with $710.79 avoidable: $249.91 realized waste plus $460.88 modeled opportunity.</em></div>
           <div><span>02</span><strong>Understand the cause</strong><em>Blackridge traces spend to a workflow, an owner, a pattern, and a confidence level.</em></div>
-          <div><span>03</span><strong>Know the fix</strong><em>The first safe change is recommended with estimated savings. You decide and apply it.</em></div>
+          <div><span>03</span><strong>Know the fix</strong><em>The 48-hour finding annualizes to roughly $3.7K/month, with modeled cache and fallback opportunity taking the expected value to about $4.1K/month.</em></div>
         </div>
       </div>
     </div>
