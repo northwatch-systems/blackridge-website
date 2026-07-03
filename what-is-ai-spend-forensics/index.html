@@ -11,16 +11,16 @@
 })();
 </script>
 <title>What Is AI Runtime Economics? | Blackridge by Northwatch Systems</title>
-<meta name="description" content="Provider AI bills show totals. Token forensics shows causes across workflows, retries, fallbacks, duplicate requests, model choices, and attribution gaps.">
+<meta name="description" content="AI Runtime Economics is the discipline of knowing, with evidence, what every AI dollar bought at runtime. Provider bills show totals; AI Runtime Economics shows causes.">
 <link rel="canonical" href="https://northwatch.systems/what-is-ai-spend-forensics/">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://northwatch.systems/what-is-ai-spend-forensics/">
 <meta property="og:title" content="What Is AI Runtime Economics?">
-<meta property="og:description" content="A practical definition of AI token forensics: finding where AI spend is leaking and proving what caused it.">
+<meta property="og:description" content="A practical definition of AI Runtime Economics: finding where AI spend is leaking and proving what caused it.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="What Is AI Runtime Economics?">
-<meta name="twitter:description" content="Provider bills show totals. Token forensics shows causes.">
+<meta name="twitter:description" content="Provider bills show totals. AI Runtime Economics shows causes.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
@@ -29,24 +29,18 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="nav"><div class="container nav-inner"><a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a><button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button><nav class="nav-links" id="navLinks" aria-label="Primary"><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example report</a>
-      <a href="../design-partners/">Design partners</a><a href="../security/">Security</a><a class="btn secondary" data-cta="workflow-discussion-nav" href="../call/">Book a call</a></nav></div></header>
+<header class="nav"><div class="container nav-inner"><a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a><button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button><nav class="nav-links" id="navLinks" aria-label="Primary"><a href="../blackridge/">Blackridge</a><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example cause file</a>
+      <a href="../compare/">Compare</a><a href="../security/">Security</a><a href="../about/">Company</a><a class="btn secondary" data-cta="workflow-discussion-nav" href="../call/">Book a founder call</a></nav></div></header>
 <main>
   <section class="page-hero">
     <div class="container">
       <div class="eyebrow">Category definition</div>
-      <h1>What is AI token forensics?</h1>
-      <p class="lead">Provider bills show totals. Token forensics shows causes.</p>
-      <p class="lead">It helps teams find where AI spend is leaking across workflows, retries, fallbacks, duplicate requests, model choices, apps, teams, tenants, and missing attribution.</p>
+      <h1>What is AI Runtime Economics?</h1>
+      <p class="lead">AI Runtime Economics is the discipline of knowing, with evidence, what every AI dollar bought at runtime: which workflow spent it, which team owns it, what changed, what was wasted, and what the fix is worth.</p>
+      <p class="lead">Cloud spend got FinOps. AI spend — probabilistic, retry-amplified, agent-fanned — needs a stronger standard: attribution and economic forensics at the request level, reconciled against the invoice.</p>
     </div>
   </section>
   <section><div class="container article-body">
-    <h2>How it differs from a basic AI gateway</h2>
-    <p>Most AI gateways route, secure, and meter model traffic. Token forensics infrastructure answers the next question: which runtime behavior caused the bill, and what evidence supports the answer?</p>
-    <h2>How it differs from provider dashboards</h2>
-    <p>Provider dashboards show usage and invoice totals. Token forensics connects that cost back to workflows, retries, fallbacks, duplicate requests, model choices, apps, teams, tenants, and confidence coverage.</p>
-    <h2>How it differs from observability and tracing</h2>
-    <p>Observability and tracing tools are useful for debugging, latency, errors, and quality. Token forensics focuses specifically on spend causality, waste classes, attribution, evidence-backed safe tests, and ongoing visibility.</p>
     <h2>Common waste classes</h2>
     <div class="grid cols-3">
       <article class="card"><h3>Retry amplification</h3><p>One action fans out into repeated model calls.</p></article>
@@ -56,13 +50,17 @@
       <article class="card"><h3>Premium-model overuse</h3><p>Expensive models become defaults for work that may not require them.</p></article>
       <article class="card"><h3>Abandoned branches</h3><p>Agent branches spend tokens without affecting the final answer.</p></article>
     </div>
+    <h2>The evidence standard</h2>
+    <p>Findings separate observed waste — tied to real events — from modeled opportunity, a labeled estimate engineering should validate before treating it as savings. Every finding carries a confidence level and a coverage note: attribution is only as strong as the available metadata, and gaps are reported instead of hidden behind a chart.</p>
+    <h2>How it differs from monitoring and FinOps</h2>
+    <p>Observability and tracing tools are useful for debugging, latency, errors, and quality — they answer whether your systems are healthy. FinOps and cloud cost platforms allocate totals — they answer what the invoice says. AI Runtime Economics answers a third question neither is built for: which workflow, team, and decision the money actually bought, with evidence rows that survive a finance review.</p>
     <h2>How Blackridge fits</h2>
-    <p>Blackridge is a near real-time Token Economics and Forensics Engine for LLM and agent workflows. A spend review can start with only your work email and monthly AI spend bracket; a founder will ask sharper questions from there.</p>
-    <p>The purpose is proof before platform commitment: find where spend is leaking, inspect the rows behind the findings, and decide whether ongoing Blackridge forensics is justified.</p>
-    <div class="hero-actions"><a class="btn primary" href="../spend-review/#request-review">Get a spend review</a><a class="btn secondary" href="../example-ai-spend-forensics-report/">Inspect evidence</a></div>
+    <p>Blackridge, from Northwatch Systems, is the first platform built for this discipline: a near real-time attribution and forensics engine for LLM and agent workflows. A spend review can start with only your work email and monthly AI spend bracket; a founder will ask sharper questions from there.</p>
+    <p>The purpose is proof before platform commitment: find where spend is leaking, inspect the rows behind the findings, and decide whether ongoing Blackridge deployment is justified.</p>
+    <div class="hero-actions"><a class="btn primary" href="../spend-review/#request-review">Get your AI bill explained — free</a><a class="btn secondary" href="../example-ai-spend-forensics-report/">Inspect evidence</a></div>
   </div></section>
 </main>
-<footer class="footer"><div class="container footer-inner"><div class="footer-brand"><strong>Blackridge</strong> — AI spend forensics by Northwatch Systems</div><nav class="footer-links" aria-label="Footer"><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example report</a><a href="../design-partners/">Design partners</a><a href="../security/">Security</a><a href="../about/">About</a><a href="../faq/">FAQ</a></nav><div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div></div></footer>
+<footer class="footer"><div class="container footer-inner"><div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge — the AI Runtime Economics platform</div><nav class="footer-links" aria-label="Footer product"><a href="../blackridge/">Blackridge</a><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example cause file</a><a href="../compare/">Compare</a><a href="../security/">Security</a><a href="../docs/">Docs</a></nav><nav class="footer-links" aria-label="Footer company"><a href="../about/">About</a><a href="../design-partners/">Design partners</a><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></nav><div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div></div></footer>
 <script>
 (function(){
   var toggle = document.getElementById("menuToggle");

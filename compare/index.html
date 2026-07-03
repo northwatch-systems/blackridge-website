@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+  if (window.location.protocol.indexOf("http") !== 0) return;
+  if (!window.location.pathname.endsWith("/index.html")) return;
+  window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
+})();
+</script>
+<title>Blackridge Compared With AI Gateways, Observability, and FinOps</title>
+<meta name="description" content="Provider bills show totals. Compare how Blackridge finds AI spend causes across workflows, retries, fallbacks, attribution gaps, and evidence rows.">
+<link rel="canonical" href="https://northwatch.systems/compare/">
+<meta name="theme-color" content="#D2762F">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwatch.systems/compare/">
+<meta property="og:title" content="Blackridge Compared With AI Gateways, Observability, and FinOps">
+<meta property="og:description" content="How Blackridge compares with gateways, observability, provider dashboards, and FinOps when buyers need AI spend causes, not just totals.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Northwatch Systems">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://northwatch.systems/compare/">
+<meta name="twitter:title" content="Blackridge Compared With Adjacent AI Tools">
+<meta name="twitter:description" content="Gateways, observability, provider dashboards, FinOps, and Blackridge solve different jobs. Blackridge shows AI spend causes.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/brg.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-THGE3L4GDD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("config", "G-THGE3L4GDD", { page_location: window.location.href, page_title: "Blackridge - Comparison" });
+</script>
+<script>
+_linkedin_partner_id = "9262050";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])}; window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript"; b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);
+})(window.lintrk);
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../" aria-label="Northwatch Systems home">
+      <span class="brand-mark">N</span>
+      <span class="brand-name">Northwatch <span>Systems</span></span>
+    </a>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="../blackridge/">Blackridge</a>
+      <a href="../#forensics-flow">How it works</a>
+      <a href="../example-ai-spend-forensics-report/">Example cause file</a>
+      <a href="../compare/" aria-current="page">Compare</a>
+      <a href="../security/">Security</a>
+      <a href="../about/">Company</a>
+      <a class="btn secondary" data-cta="discuss-workflow-nav" href="../call/">Book a founder call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero compare-hero">
+    <canvas class="hero-three" data-three-hero aria-hidden="true"></canvas>
+    <div class="container compare-hero-grid">
+      <div>
+        <div class="announce">
+          <span class="pill">Compare</span>
+          <span>Most AI tools help run traffic. <b>They do not explain the bill.</b></span>
+        </div>
+        <div class="label">Adjacent tools, different jobs</div>
+        <h1>Provider bills show totals. Blackridge shows <em>causes.</em></h1>
+        <p class="lede">Gateways, observability, tracing, provider dashboards, and FinOps all help. Blackridge is for the painful question they usually leave behind: which workflow, retry loop, fallback path, duplicate request, model choice, app, team, or tenant caused the spend?</p>
+        <p class="lede">Keep your gateway, your tracer, and your FinOps tool. None of them produces a cause file.</p>
+        <div class="hero-actions">
+          <a class="btn primary" data-cta="workflow-discussion-compare-hero" href="../spend-review/#request-review">Get your AI bill explained — free <span class="arr">→</span></a>
+          <a class="btn ghost" href="../example-ai-spend-forensics-report/">Inspect example evidence</a>
+        </div>
+      </div>
+      <aside class="compare-finding" aria-label="Comparison summary">
+        <div class="finding-head">
+          <span class="t">comparison · spend causality</span>
+          <span class="synthetic">Plain-English position</span>
+        </div>
+        <div class="compare-equation">
+          <span>Gateway</span>
+          <b>routes calls</b>
+        </div>
+        <div class="compare-equation">
+          <span>Observability</span>
+          <b>shows behavior</b>
+        </div>
+        <div class="compare-equation">
+          <span>FinOps</span>
+          <b>allocates totals</b>
+        </div>
+        <div class="compare-equation hot">
+          <span>Blackridge</span>
+          <b>finds where AI spend is leaking</b>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="compare-map" class="compact-section compare-map">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Tool by tool</div>
+        <h2>Keep the tools that work. Add Blackridge when the bill needs a cause.</h2>
+        <p>Blackridge is not a generic gateway, dashboard, or trace viewer. It turns runtime evidence into an AI Runtime Economics case file that engineering, finance, executives, and application teams can act on.</p>
+      </div>
+      <div class="compare-cards">
+        <article>
+          <span>Provider dashboards</span>
+          <h3>They show usage totals.</h3>
+          <p>Helpful for provider-specific invoices, token counts, and model-level history.</p>
+          <strong>Blackridge connects that spend to workflows, owners, retries, fallbacks, and duplicate calls.</strong>
+        </article>
+        <article>
+          <span>API gateways</span>
+          <h3>They route requests.</h3>
+          <p>Helpful for authentication, forwarding, policy hooks, and traffic shape.</p>
+          <strong>Blackridge uses gateway evidence to correlate token economics and explain causality.</strong>
+        </article>
+        <article>
+          <span>Observability</span>
+          <h3>It shows behavior.</h3>
+          <p>Helpful for traces, debugging, latency, quality, and runtime health.</p>
+          <strong>Blackridge turns behavior into a spend finding with rows, coverage, and confidence.</strong>
+        </article>
+        <article>
+          <span>FinOps</span>
+          <h3>It allocates totals.</h3>
+          <p>Helpful for budgets, chargeback, forecasting, and cloud cost reporting.</p>
+          <strong>Blackridge gives finance a defensible engineering explanation for the AI line item.</strong>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="compact-section stack-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Where the layers sit</div>
+        <h2>The stack, drawn honestly.</h2>
+        <p>Most production teams can evaluate Blackridge from one expensive workflow before changing the broader platform or deploying inline.</p>
+      </div>
+      <div class="stack-map" aria-label="AI stack comparison">
+        <article>
+          <span>Workflow layer</span>
+          <h3>Orchestration</h3>
+          <p>LangChain, LlamaIndex, AutoGen, internal agents</p>
+        </article>
+        <article class="hot">
+          <span>Economics &amp; evidence layer</span>
+          <h3>Blackridge</h3>
+          <p>Attribution, waste classes, coverage, evidence rows, recommended operator tests</p>
+        </article>
+        <article>
+          <span>Traffic layer</span>
+          <h3>Routing and proxying</h3>
+          <p>LiteLLM, Portkey, Bifrost, Kong, Envoy</p>
+        </article>
+        <article>
+          <span>Inference layer</span>
+          <h3>Model providers</h3>
+          <p>OpenAI, Anthropic, Gemini, Azure OpenAI, Bedrock, self-hosted</p>
+        </article>
+        <article>
+          <span>Reporting layer</span>
+          <h3>Cost and finance</h3>
+          <p>Provider consoles, cloud cost platforms, FinOps reporting</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare-questions" class="compact-section compare-questions">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Painful questions</div>
+        <h2>What buyers ask when the bill lands.</h2>
+        <p>The point is not whether another tool has logs. The point is whether it can answer the spend question with enough proof to act.</p>
+      </div>
+      <div class="question-grid">
+        <article><span>Usually not</span><h3>Which workflow caused the spike?</h3><p>Provider dashboards and FinOps tools usually stop at totals or coarse allocation.</p></article>
+        <article><span>Sometimes</span><h3>Which retry loop amplified cost?</h3><p>Tracing may show behavior, but the spend case still has to be tied to token economics.</p></article>
+        <article><span>Usually not</span><h3>Which fallback changed unit economics?</h3><p>Routing tools can execute fallback paths without explaining the bill impact.</p></article>
+        <article><span>Primary use case</span><h3>What should engineering fix first?</h3><p>Blackridge ranks observed waste, modeled opportunity, coverage gaps, and safe tests. The buyer takes the action.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="compact-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Objections</div>
+        <h2>What if you already have the adjacent tool?</h2>
+        <p>Good. Blackridge can use those systems as evidence sources. The technical discussion tests whether the missing layer is worth deploying.</p>
+      </div>
+      <div class="objection-wall compare-objections">
+        <article><span>Gateway</span><h3>We already have a gateway.</h3><p>Use it as evidence. Blackridge adds spend causality, attribution confidence, waste classes, and evidence rows.</p></article>
+        <article><span>Observability</span><h3>We already have observability.</h3><p>Use the traces. Blackridge turns runtime behavior into a spend case file that can be shared beyond engineering.</p></article>
+        <article><span>Deployment</span><h3>We do not want inline deployment yet.</h3><p>Start with logs, traces, provider events, and gateway exports. Inline collection is scoped only when evidence requires it.</p></article>
+        <article><span>Trust</span><h3>We do not trust savings estimates.</h3><p>Blackridge separates observed waste from modeled opportunity and shows pricing assumptions, coverage, and confidence.</p></article>
+        <article><span>Proof</span><h3>We need proof before buying a platform.</h3><p>That is the point: inspect the rows, then decide whether deployment is justified.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <div>
+        <div class="eyebrow">Next step</div>
+        <h2>Bring one AI spend mystery.</h2>
+        <p>Bring one AI spend mystery. We will discuss the available evidence, the current stack, and whether Blackridge should be deployed for ongoing near real-time forensics.</p>
+      </div>
+      <a class="btn primary" data-cta="workflow-discussion-compare-final" href="../spend-review/#request-review">Get your AI bill explained — free</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge — the AI Runtime Economics platform</div>
+    <nav class="footer-links" aria-label="Footer product"><a href="../blackridge/">Blackridge</a><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example cause file</a><a href="../compare/" aria-current="page">Compare</a><a href="../security/">Security</a><a href="../docs/">Docs</a></nav>
+    <nav class="footer-links" aria-label="Footer company"><a href="../about/">About</a><a href="../design-partners/">Design partners</a><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></nav>
+    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
+  </div>
+</footer>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9262050&amp;fmt=gif">
+</noscript>
+<script type="module" src="../assets/brg-three.js"></script>
+<script>
+document.querySelectorAll("[data-cta]").forEach(function(el) {
+  el.addEventListener("click", function() {
+    if (typeof gtag === "function") {
+      gtag("event", "click", { event_category: "CTA", event_label: el.getAttribute("data-cta") });
+    }
+  });
+});
+
+(function(){
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("navLinks");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -11,16 +11,16 @@
 })();
 </script>
 <title>Security Posture | Blackridge</title>
-<meta name="description" content="Blackridge security posture: gateway architecture, data handling, fail-open behavior, performance, deployment, and compliance roadmap.">
+<meta name="description" content="Blackridge security posture: inline collector architecture, data handling, fail-open behavior, performance, deployment, and compliance roadmap.">
 <link rel="canonical" href="https://northwatch.systems/security/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northwatch.systems/security/">
 <meta property="og:title" content="Security Posture | Blackridge">
-<meta property="og:description" content="A forwardable security overview for Blackridge Runtime Gateway.">
+<meta property="og:description" content="A forwardable security overview for the Blackridge inline collector.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Security Posture | Blackridge">
-<meta name="twitter:description" content="A forwardable security overview for Blackridge Runtime Gateway.">
+<meta name="twitter:description" content="A forwardable security overview for the Blackridge inline collector.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css">
@@ -34,11 +34,13 @@
     <a class="brand" href="../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
     <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="../blackridge/">Blackridge</a>
       <a href="../#forensics-flow">How it works</a>
-      <a href="../example-ai-spend-forensics-report/">Example report</a>
-      <a href="../design-partners/">Design partners</a>
+      <a href="../example-ai-spend-forensics-report/">Example cause file</a>
+      <a href="../compare/">Compare</a>
       <a href="../security/" aria-current="page">Security</a>
-      <a class="btn secondary" data-cta="call-nav" href="../call/">Book a call</a>
+      <a href="../about/">Company</a>
+      <a class="btn secondary" data-cta="call-nav" href="../call/">Book a founder call</a>
     </nav>
   </div>
 </header>
@@ -48,7 +50,7 @@
     <div class="container">
       <div class="eyebrow">Security</div>
       <h1>Security posture</h1>
-      <p class="lead">A forwardable overview for platform and security teams evaluating Blackridge Runtime Gateway.</p>
+      <p class="lead">A forwardable overview for platform and security teams evaluating the Blackridge inline collector.</p>
     </div>
   </section>
   <section class="compact-section security-section">
@@ -62,9 +64,9 @@
 
       <div class="security-layout">
         <article class="security-primary">
-          <div class="eyebrow">Runtime gateway</div>
+          <div class="eyebrow">Inline collector</div>
           <h2>In the path, out of the way.</h2>
-          <p>Blackridge Runtime Gateway is a pass-through proxy for AI provider traffic. It records request metadata for attribution; it does not modify, reroute, or block requests today.</p>
+          <p>The Blackridge inline collector is a pass-through proxy for AI provider traffic. It records request metadata for attribution; it does not modify, reroute, or block requests today.</p>
           <div class="security-flow" aria-label="Blackridge gateway flow">
             <div><span>01</span><strong>Your app</strong><em>AI request leaves one scoped workflow</em></div>
             <i></i>
@@ -119,10 +121,9 @@
 </main>
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="footer-brand"><strong>Blackridge</strong> — AI spend forensics by Northwatch Systems</div>
-    <nav class="footer-links" aria-label="Footer">
-      <a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example report</a><a href="../design-partners/">Design partners</a><a href="../security/">Security</a><a href="../about/">About</a><a href="../faq/">FAQ</a>
-    </nav>
+    <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge — the AI Runtime Economics platform</div>
+    <nav class="footer-links" aria-label="Footer product"><a href="../blackridge/">Blackridge</a><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example cause file</a><a href="../compare/">Compare</a><a href="../security/" aria-current="page">Security</a><a href="../docs/">Docs</a></nav>
+    <nav class="footer-links" aria-label="Footer company"><a href="../about/">About</a><a href="../design-partners/">Design partners</a><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></nav>
     <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
   </div>
 </footer>
