@@ -97,6 +97,7 @@ s.parentNode.insertBefore(b, s);
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="#forensics-flow">How it works</a>
       <a href="example-ai-spend-forensics-report/">Example cause file</a>
+      <a href="https://demo.northwatch.systems" data-cta="live-demo-nav">Live demo</a>
       <a href="compare/">Compare</a>
       <a href="security/">Security</a>
       <a href="https://docs.northwatch.systems">Docs</a>
@@ -120,8 +121,8 @@ s.parentNode.insertBefore(b, s);
         <p class="lede">Blackridge traces every dollar of AI spend to the workflow, the team, and the decision that caused it — and hands you a cause file: evidence finance can trust and engineering can reproduce. Not another dashboard of totals.</p>
         <div class="hero-actions">
           <a class="btn primary" data-cta="inspect-example-report" href="example-ai-spend-forensics-report/">See a real cause file <span class="arr">→</span></a>
+          <a class="btn ghost" data-cta="live-demo-hero" href="https://demo.northwatch.systems">Explore the live demo — no signup</a>
           <a class="btn ghost" data-cta="book-founder-call-hero" href="call/">Book 20 minutes with a founder</a>
-
         </div>
         <p class="hero-note">Northwatch Systems was founded by principal-level infrastructure engineers who spent the last decade running platforms where every dollar had to be explained: <span>33M+ users, 40M+ telemetry rows evaluated in real time, 17 regulated U.S. jurisdictions. We've been on the receiving end of the "why did the bill double" email. Blackridge is the answer we wished existed.</span></p>
         <div class="proof">
@@ -194,7 +195,6 @@ s.parentNode.insertBefore(b, s);
 
   <div class="providers" aria-label="Provider and deployment evidence sources">
     <div class="container provider-band">
-      <span class="provider-label">OpenAI and Anthropic primary; others scoped per partner</span>
       <div class="provider-row">
         <span class="provider-logo openai" aria-label="OpenAI"><i></i><b>OpenAI</b></span>
         <span class="provider-logo anthropic" aria-label="Anthropic"><i></i><b>Anthropic</b></span>
@@ -317,6 +317,7 @@ s.parentNode.insertBefore(b, s);
       </div>
       <div class="hero-actions" style="justify-content:center;">
         <a class="btn primary" data-cta="full-example-report" href="example-ai-spend-forensics-report/">See the full cause file <span class="arr">→</span></a>
+        <a class="btn ghost" data-cta="live-demo-product" href="https://demo.northwatch.systems">Click through these screens live</a>
       </div>
     </div>
   </section>
@@ -564,7 +565,7 @@ s.parentNode.insertBefore(b, s);
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge — the AI Runtime Economics platform</div>
-    <nav class="footer-links" aria-label="Footer product"><a href="#forensics-flow">How it works</a><a href="example-ai-spend-forensics-report/">Example cause file</a><a href="compare/">Compare</a><a href="security/">Security</a><a href="https://docs.northwatch.systems">Docs</a></nav>
+    <nav class="footer-links" aria-label="Footer product"><a href="#forensics-flow">How it works</a><a href="example-ai-spend-forensics-report/">Example cause file</a><a href="https://demo.northwatch.systems" data-cta="live-demo-footer">Live demo</a><a href="compare/">Compare</a><a href="security/">Security</a><a href="https://docs.northwatch.systems">Docs</a></nav>
     <nav class="footer-links" aria-label="Footer company"><a href="about/">About</a><a href="design-partners/">Design partners</a><a href="contact/">Contact</a><a href="faq/">FAQ</a></nav>
     <div class="footer-legal"><a href="privacy/">Privacy</a><a href="terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
     
@@ -726,6 +727,43 @@ wireLeadForm(
         }
       });
     });
+  });
+})();
+
+(function() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelectorAll(".cause-file-hero .mpill").forEach(function(pill) {
+    var el = pill.querySelector(".mv");
+    if (!el) return;
+    var match = el.textContent.trim().match(/^\$([\d,]+(?:\.\d+)?)$/);
+    if (!match) return;
+    var target = parseFloat(match[1].replace(/,/g, ""));
+    var decimals = (match[1].split(".")[1] || "").length;
+    el.style.minWidth = el.offsetWidth + "px";
+
+    function format(value) {
+      return "$" + value.toLocaleString("en-US", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      });
+    }
+
+    function run() {
+      var duration = 900;
+      var start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var t = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = format(target * eased);
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    pill.addEventListener("animationstart", function(event) {
+      if (event.animationName === "cfReveal") run();
+    }, { once: true });
   });
 })();
 </script>

@@ -36,6 +36,7 @@
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="../#forensics-flow">How it works</a>
       <a href="../example-ai-spend-forensics-report/" aria-current="page">Example cause file</a>
+      <a href="https://demo.northwatch.systems" data-cta="live-demo-nav">Live demo</a>
       <a href="../compare/">Compare</a>
       <a href="../security/">Security</a>
       <a href="https://docs.northwatch.systems">Docs</a>
@@ -52,6 +53,7 @@
         <div class="eyebrow">Anonymized cause file</div>
         <h1>One workflow. 48 hours. $710 avoidable.</h1>
         <p class="lead">This is the deliverable's structure — from a design-partner deployment, values re-scaled and identifying detail removed. This is the format finance received it in.</p>
+        <div class="hero-actions"><a class="btn ghost" href="#walk-the-file">Walk the investigation yourself <span class="arr">↓</span></a></div>
       </div>
       <aside class="report-brief" aria-label="Anonymized cause file brief">
         <div class="brief-row headline"><span>Observed spend</span><b>$3,018.63</b><em>total spend on the workflow in the period</em></div>
@@ -59,6 +61,101 @@
         <div class="brief-row"><span>Root cause</span><b>Retry loop</b><em>amplified by oversized context, confidence: High</em></div>
         <div class="brief-row"><span>Evidence path</span><b>Request ledger</b><em>6,001 requests · 287 evidence rows on the primary finding</em></div>
       </aside>
+    </div>
+  </section>
+  <section class="compact-section" id="walk-the-file">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Interactive · no signup, no email</div>
+        <h2>Walk the investigation yourself.</h2>
+        <p>The same four steps a Blackridge investigation takes — from a number nobody could explain to a fix finance signed off on. Synthetic data, real method.</p>
+      </div>
+      <div class="inv" data-inv>
+        <div class="inv-steps" role="tablist" aria-label="Investigation steps">
+          <button class="inv-step active" role="tab" id="inv-tab-spike" aria-controls="inv-panel-spike" aria-selected="true" data-inv-step="spike"><span>01</span><strong>The spike</strong><em>something moved</em></button>
+          <button class="inv-step" role="tab" id="inv-tab-lineage" aria-controls="inv-panel-lineage" aria-selected="false" data-inv-step="lineage"><span>02</span><strong>The lineage</strong><em>why it moved</em></button>
+          <button class="inv-step" role="tab" id="inv-tab-evidence" aria-controls="inv-panel-evidence" aria-selected="false" data-inv-step="evidence"><span>03</span><strong>The receipts</strong><em>rows finance can audit</em></button>
+          <button class="inv-step" role="tab" id="inv-tab-finding" aria-controls="inv-panel-finding" aria-selected="false" data-inv-step="finding"><span>04</span><strong>The finding</strong><em>what fixing it is worth</em></button>
+        </div>
+
+        <div class="inv-panel active" role="tabpanel" id="inv-panel-spike" aria-labelledby="inv-tab-spike" data-inv-panel="spike">
+          <h3>Daily spend — workflow: support-agent / triage</h3>
+          <p class="inv-sub">Fourteen days of one workflow's spend. Twelve of them are boring. Hover the bars; click the orange ones.</p>
+          <div class="inv-scroll">
+            <div class="inv-plot" data-inv-chart aria-label="Bar chart of daily spend, April 6 through April 19. Two spike days, April 16 and 17, at roughly 4.5 times baseline."></div>
+          </div>
+          <p class="inv-note" data-spike-note>Click a bar to see how Blackridge classified that day.</p>
+          <details class="inv-data">
+            <summary>View the data as a table</summary>
+            <table data-inv-table></table>
+          </details>
+          <div class="inv-next">
+            <button class="btn primary" data-inv-next="lineage">Rebuild the lineage for Apr 16–17 <span class="arr">→</span></button>
+            <span class="inv-hint">Step 02 — where the money actually went</span>
+          </div>
+        </div>
+
+        <div class="inv-panel" role="tabpanel" id="inv-panel-lineage" aria-labelledby="inv-tab-lineage" data-inv-panel="lineage" hidden>
+          <h3>One conversation, six attempts</h3>
+          <p class="inv-sub">Attempt 1 failed on a malformed tool call. Every retry re-sent the entire conversation — including the previous failed attempts. The context snowballed. Click an attempt.</p>
+          <div class="inv-cascade" data-inv-cascade></div>
+          <div class="inv-attempt-detail" data-attempt-detail>Select an attempt above to see what was inside its context window.</div>
+          <p class="inv-kicker">This cascade ran <b>214 times</b> in 48 hours. Same shape every time. Attempts 2–6 are avoidable: <b>≈ $1.17 per cascade, $249.91 total</b>.</p>
+          <div class="inv-next">
+            <button class="btn primary" data-inv-next="evidence">Show me the rows <span class="arr">→</span></button>
+            <span class="inv-hint">Step 03 — the ledger behind the claim</span>
+          </div>
+        </div>
+
+        <div class="inv-panel" role="tabpanel" id="inv-panel-evidence" aria-labelledby="inv-tab-evidence" data-inv-panel="evidence" hidden>
+          <h3>The request ledger</h3>
+          <p class="inv-sub">Ten of the 6,001 requests behind this cause file — one full cascade plus the clean traffic around it. Click a row to inspect it. This is what "evidence, not estimates" means.</p>
+          <div class="inv-filters" data-inv-filters>
+            <button class="inv-filter active" data-filter="all">All rows</button>
+            <button class="inv-filter" data-filter="retry">Retry cascade</button>
+            <button class="inv-filter" data-filter="clean">Clean traffic</button>
+          </div>
+          <div class="inv-ledger-grid">
+            <div class="inv-ledger">
+              <table>
+                <thead><tr><th>Request</th><th>Time</th><th>Model</th><th>Tokens in → out</th><th>Cost</th><th>Verdict</th></tr></thead>
+                <tbody data-inv-ledger></tbody>
+              </table>
+            </div>
+            <aside class="inv-inspector" data-inv-inspector aria-live="polite">
+              <div class="ih">Request inspector</div>
+              <p style="margin:0;color:var(--dim);font-size:13px;">Select a row to see its full attribution: workflow, owner, lineage, and why it was classified the way it was.</p>
+            </aside>
+          </div>
+          <div class="inv-next">
+            <button class="btn primary" data-inv-next="finding">Package the finding <span class="arr">→</span></button>
+            <span class="inv-hint">Step 04 — the page the CFO reads</span>
+          </div>
+        </div>
+
+        <div class="inv-panel" role="tabpanel" id="inv-panel-finding" aria-labelledby="inv-tab-finding" data-inv-panel="finding" hidden>
+          <h3>The finding, packaged</h3>
+          <p class="inv-sub">Everything you just clicked through, reduced to the four numbers finance acts on — each one traceable back to the rows you saw in step 03.</p>
+          <div class="inv-finding-grid">
+            <div class="metric-grid">
+              <div class="mpill"><div class="ml">Observed spend</div><div class="mv warn">$3,018.63</div></div>
+              <div class="mpill"><div class="ml">Realized waste</div><div class="mv">$249.91</div></div>
+              <div class="mpill"><div class="ml">Modeled opportunity</div><div class="mv warn">$460.88</div></div>
+              <div class="mpill"><div class="ml">Confidence</div><div class="mv good">High</div></div>
+            </div>
+          </div>
+          <div class="finding-fix" style="margin-top:16px;border:1px solid var(--line);border-radius:8px;">
+            <span class="fx">Recommended first test</span>
+            <p>Add a retry budget (max 2 attempts) and strip failed attempts from retry context. Expected value: <b>$4,100 monthly savings</b> if the same pattern persists across the workflow's other cascades.</p>
+          </div>
+          <p class="inv-close">That's a cause file: the spike, the mechanism, the rows, and a priced fix — <b>a conclusion finance can audit and engineering can reproduce</b>. Not a dashboard that shows you the same total, bigger.</p>
+          <div class="inv-next">
+            <a class="btn primary" data-cta="assessment-from-interactive" href="../spend-review/#request-review">Get this for one of your workflows <span class="arr">→</span></a>
+            <a class="btn ghost" data-cta="live-demo-from-interactive" href="https://demo.northwatch.systems">Explore the full product, live</a>
+            <a class="btn ghost" data-cta="call-from-interactive" href="../call/">Book 20 minutes with a founder</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <section class="compact-section report-screens-section">
@@ -95,14 +192,17 @@
         <h2>Want this for one of your workflows?</h2>
         <p>Request an AI spend assessment — a founder replies within 2 business days.</p>
       </div>
-      <div class="hero-actions"><a class="btn primary" href="../spend-review/#request-review">Request an AI spend assessment <span class="arr">→</span></a></div>
+      <div class="hero-actions">
+        <a class="btn primary" href="../spend-review/#request-review">Request an AI spend assessment <span class="arr">→</span></a>
+        <a class="btn ghost" data-cta="live-demo-report-close" href="https://demo.northwatch.systems">Explore the full product demo</a>
+      </div>
     </div>
   </section>
 </main>
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand"><strong>Northwatch Systems</strong> · Blackridge — the AI Runtime Economics platform</div>
-    <nav class="footer-links" aria-label="Footer product"><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/" aria-current="page">Example cause file</a><a href="../compare/">Compare</a><a href="../security/">Security</a><a href="https://docs.northwatch.systems">Docs</a></nav>
+    <nav class="footer-links" aria-label="Footer product"><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/" aria-current="page">Example cause file</a><a href="https://demo.northwatch.systems" data-cta="live-demo-footer">Live demo</a><a href="../compare/">Compare</a><a href="../security/">Security</a><a href="https://docs.northwatch.systems">Docs</a></nav>
     <nav class="footer-links" aria-label="Footer company"><a href="../about/">About</a><a href="../design-partners/">Design partners</a><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></nav>
     <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
   </div>
@@ -115,6 +215,210 @@
     toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
     nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
   }
+})();
+</script>
+<script>
+(function() {
+  var root = document.querySelector("[data-inv]");
+  if (!root) return;
+
+  /* Presentation view-model. Hand-authored fixture for this page — not a product API shape. */
+  var days = [
+    { d: "Apr 06", v: 138.20 }, { d: "Apr 07", v: 142.55 }, { d: "Apr 08", v: 129.80 },
+    { d: "Apr 09", v: 151.10 }, { d: "Apr 10", v: 147.32 }, { d: "Apr 11", v: 133.95 },
+    { d: "Apr 12", v: 140.68 }, { d: "Apr 13", v: 155.22 }, { d: "Apr 14", v: 149.75 },
+    { d: "Apr 15", v: 136.40 },
+    { d: "Apr 16", v: 612.44, spike: true }, { d: "Apr 17", v: 678.34, spike: true },
+    { d: "Apr 18", v: 144.87 }, { d: "Apr 19", v: 158.01 }
+  ];
+  var baselineAvg = 143.99;
+  var attempts = [
+    { n: 1, tokens: "2,140",  pct: 11,  cost: "$0.042", status: "tool error", fail: true,  sys: "1,180", tools: "640", convo: "320",
+      note: "The first attempt. Normal context: system prompt, tool schemas, and a short conversation. It failed on a malformed tool call — that part is ordinary." },
+    { n: 2, tokens: "4,820",  pct: 25,  cost: "$0.096", status: "tool error", fail: true,  sys: "1,180", tools: "640", convo: "3,000",
+      note: "The retry re-sent everything — including attempt 1's failed exchange. Context more than doubled. Nobody decided this; it's the framework's default." },
+    { n: 3, tokens: "7,960",  pct: 41,  cost: "$0.159", status: "tool error", fail: true,  sys: "1,180", tools: "640", convo: "6,140",
+      note: "Now the conversation carries two failed attempts. The model is reasoning over its own failures, at full price per token." },
+    { n: 4, tokens: "11,480", pct: 59,  cost: "$0.229", status: "tool error", fail: true,  sys: "1,180", tools: "640", convo: "9,660",
+      note: "Attempt 4 costs 5.5× attempt 1 to ask the same question. The failure is now the majority of the context window." },
+    { n: 5, tokens: "15,310", pct: 79,  cost: "$0.296", status: "tool error", fail: true,  sys: "1,180", tools: "640", convo: "13,490",
+      note: "Still failing on the same malformed call. A retry budget would have stopped this three attempts ago." },
+    { n: 6, tokens: "19,420", pct: 100, cost: "$0.388", status: "recovered", fail: false, sys: "1,180", tools: "640", convo: "17,600",
+      note: "It recovers — which is why nobody noticed. No error reached a user. The only symptom was the bill." }
+  ];
+  var ledger = [
+    { id: "req_2b91e0", t: "14:02:11", model: "gpt-4o-mini", tok: "1,240 → 310",  cost: "$0.008", kind: "clean", verdict: "Clean",
+      detail: { attempt: "—", retryOf: "—", note: "Ordinary triage request. Attributed, priced, and moved on. Most rows look like this — that's the point: the ledger proves the waste is specific, not everywhere." } },
+    { id: "req_8f3a12", t: "14:07:02", model: "gpt-4o", tok: "2,140 → 480",  cost: "$0.042", kind: "retry", verdict: "Cascade · 1/6",
+      detail: { attempt: "1 of 6", retryOf: "—", note: "The cascade's first attempt. Failed on a malformed tool call. On its own, unremarkable — the cost is in what the framework did next." } },
+    { id: "req_8f3a13", t: "14:07:09", model: "gpt-4o", tok: "4,820 → 460",  cost: "$0.096", kind: "retry", verdict: "Cascade · 2/6",
+      detail: { attempt: "2 of 6", retryOf: "req_8f3a12", note: "Retry with the failed exchange re-sent in full. Blackridge links it to its parent — this edge in the lineage graph is what turns ten expensive rows into one explainable event." } },
+    { id: "req_8f3a14", t: "14:07:18", model: "gpt-4o", tok: "7,960 → 470",  cost: "$0.159", kind: "retry", verdict: "Cascade · 3/6",
+      detail: { attempt: "3 of 6", retryOf: "req_8f3a13", note: "Context now carries two failed attempts. Classified: retry amplification, avoidable." } },
+    { id: "req_8f3a15", t: "14:07:29", model: "gpt-4o", tok: "11,480 → 455", cost: "$0.229", kind: "retry", verdict: "Cascade · 4/6",
+      detail: { attempt: "4 of 6", retryOf: "req_8f3a14", note: "5.5× the cost of attempt 1 for the same question. This row alone won't move a budget — 214 cascades of it will." } },
+    { id: "req_8f3a16", t: "14:07:43", model: "gpt-4o", tok: "15,310 → 462", cost: "$0.296", kind: "retry", verdict: "Cascade · 5/6",
+      detail: { attempt: "5 of 6", retryOf: "req_8f3a15", note: "Fifth identical failure. A max-2 retry budget would have cut the cascade here at a quarter of the cost." } },
+    { id: "req_8f3a17", t: "14:08:01", model: "gpt-4o", tok: "19,420 → 501", cost: "$0.388", kind: "retry", verdict: "Cascade · 6/6",
+      detail: { attempt: "6 of 6", retryOf: "req_8f3a16", note: "Recovered. The user got their answer 59 seconds late and nobody filed a ticket. The only witness was the ledger." } },
+    { id: "req_5c22a8", t: "14:09:37", model: "gpt-4o-mini", tok: "980 → 240",   cost: "$0.006", kind: "clean", verdict: "Clean",
+      detail: { attempt: "—", retryOf: "—", note: "Clean traffic, seconds after the cascade. Same workflow, same period — correctly excluded from the finding. Precision is what makes the number defensible." } },
+    { id: "req_77d1f4", t: "14:11:05", model: "gpt-4o", tok: "2,310 → 520",  cost: "$0.046", kind: "clean", verdict: "Clean",
+      detail: { attempt: "—", retryOf: "—", note: "A frontier-model call that behaved. Not all gpt-4o spend is waste; the cause file names exactly which calls were." } },
+    { id: "req_90ab3c", t: "14:12:52", model: "gpt-4o-mini", tok: "1,105 → 275", cost: "$0.007", kind: "clean", verdict: "Clean",
+      detail: { attempt: "—", retryOf: "—", note: "Ordinary request. In the full ledger, 5,714 of 6,001 rows look like this one." } }
+  ];
+
+  /* Tabs */
+  var steps = root.querySelectorAll("[data-inv-step]");
+  var panels = root.querySelectorAll("[data-inv-panel]");
+  function show(name) {
+    steps.forEach(function(s) {
+      var active = s.getAttribute("data-inv-step") === name;
+      s.classList.toggle("active", active);
+      s.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    panels.forEach(function(p) {
+      var active = p.getAttribute("data-inv-panel") === name;
+      p.classList.toggle("active", active);
+      if (active) p.removeAttribute("hidden"); else p.setAttribute("hidden", "");
+    });
+    if (typeof gtag === "function") {
+      gtag("event", "interactive_step", { event_category: "CauseFile", event_label: name });
+    }
+  }
+  steps.forEach(function(s) {
+    s.addEventListener("click", function() { show(s.getAttribute("data-inv-step")); });
+  });
+  root.querySelectorAll("[data-inv-next]").forEach(function(b) {
+    b.addEventListener("click", function() {
+      show(b.getAttribute("data-inv-next"));
+      root.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  /* Step 1: chart */
+  var plot = root.querySelector("[data-inv-chart]");
+  var note = root.querySelector("[data-spike-note]");
+  var maxV = 700;
+  [0, 200, 400, 600].forEach(function(tick) {
+    var g = document.createElement("div");
+    g.className = "inv-grid";
+    g.style.bottom = (tick / maxV * 100) + "%";
+    g.innerHTML = "<b>$" + tick.toLocaleString() + "</b>";
+    plot.appendChild(g);
+  });
+  var bars = document.createElement("div");
+  bars.className = "inv-bars";
+  plot.appendChild(bars);
+  var tip = document.createElement("div");
+  tip.className = "inv-tip";
+  plot.appendChild(tip);
+  var axisDates = { "Apr 06": 1, "Apr 10": 1, "Apr 13": 1, "Apr 16": 1, "Apr 19": 1 };
+  days.forEach(function(day) {
+    var b = document.createElement("button");
+    b.className = "inv-bar" + (day.spike ? " spike" : "");
+    b.style.height = (day.v / maxV * 100) + "%";
+    b.setAttribute("aria-label", day.d + ": $" + day.v.toFixed(2));
+    var inner = "";
+    if (day.spike) inner += '<span class="bl">$' + Math.round(day.v).toLocaleString() + "</span>";
+    if (axisDates[day.d]) inner += '<span class="dt">' + day.d + "</span>";
+    b.innerHTML = inner;
+    b.addEventListener("mouseenter", function() {
+      var delta = Math.round((day.v / baselineAvg - 1) * 100);
+      tip.innerHTML = day.d + " · $" + day.v.toFixed(2) + "<em>" + (delta >= 0 ? "+" : "") + delta + "% vs trailing baseline</em>";
+      tip.style.display = "block";
+      var left = b.offsetLeft + b.offsetWidth / 2;
+      tip.style.left = Math.min(left, plot.offsetWidth - 150) + "px";
+      tip.style.bottom = (day.v / maxV * 100 + 4) + "%";
+    });
+    b.addEventListener("mouseleave", function() { tip.style.display = "none"; });
+    b.addEventListener("click", function() {
+      if (day.spike) {
+        note.classList.add("flag");
+        note.innerHTML = "<b>" + day.d + ": $" + day.v.toFixed(2) + " — " + (day.v / baselineAvg).toFixed(1) + "× baseline.</b> Together, Apr 16–17 spent $1,290.78 where the baseline predicts $287.98. Blackridge opened this investigation from the anomaly, not from a complaint. Step 02 shows where it went.";
+      } else {
+        note.classList.remove("flag");
+        note.textContent = day.d + ": $" + day.v.toFixed(2) + " — within ±9% of baseline. Nothing to explain; no finding opened. Blackridge only asks for your attention when a number needs a cause.";
+      }
+    });
+    bars.appendChild(b);
+  });
+  var table = root.querySelector("[data-inv-table]");
+  table.innerHTML = "<thead><tr><th>Day</th><th>Spend</th><th>vs baseline</th></tr></thead><tbody>" +
+    days.map(function(day) {
+      var delta = Math.round((day.v / baselineAvg - 1) * 100);
+      return "<tr><td>" + day.d + "</td><td>$" + day.v.toFixed(2) + "</td><td>" + (delta >= 0 ? "+" : "") + delta + "%</td></tr>";
+    }).join("") + "</tbody>";
+
+  /* Step 2: cascade */
+  var cascade = root.querySelector("[data-inv-cascade]");
+  var detail = root.querySelector("[data-attempt-detail]");
+  attempts.forEach(function(a, i) {
+    var b = document.createElement("button");
+    b.className = "inv-attempt";
+    b.innerHTML =
+      '<span class="ia-n">Attempt ' + a.n + '</span>' +
+      '<span class="ia-bar"><i style="width:' + a.pct + '%"></i></span>' +
+      '<span class="ia-tokens">' + a.tokens + " tok</span>" +
+      '<span class="ia-cost">' + a.cost + "</span>" +
+      '<span class="ia-status ' + (a.fail ? "fail" : "ok") + '">' + a.status + "</span>";
+    b.addEventListener("click", function() {
+      cascade.querySelectorAll(".inv-attempt").forEach(function(el) { el.classList.remove("active"); });
+      b.classList.add("active");
+      detail.innerHTML = "<b>Attempt " + a.n + " — " + a.tokens + " input tokens, " + a.cost + "</b><br>" + a.note +
+        '<div class="ctx">' +
+        "<span>system prompt · " + a.sys + " tok</span>" +
+        "<span>tool schemas · " + a.tools + " tok</span>" +
+        "<span>conversation incl. prior failed attempts · " + a.convo + " tok</span>" +
+        "</div>";
+    });
+    cascade.appendChild(b);
+  });
+
+  /* Step 3: ledger */
+  var tbody = root.querySelector("[data-inv-ledger]");
+  var inspector = root.querySelector("[data-inv-inspector]");
+  ledger.forEach(function(row) {
+    var tr = document.createElement("tr");
+    tr.setAttribute("data-kind", row.kind);
+    tr.setAttribute("tabindex", "0");
+    tr.innerHTML =
+      '<td class="mono">' + row.id + "</td>" +
+      '<td class="mono">' + row.t + "</td>" +
+      "<td>" + row.model + "</td>" +
+      '<td class="mono">' + row.tok + "</td>" +
+      '<td class="mono">' + row.cost + "</td>" +
+      '<td><span class="' + (row.kind === "retry" ? "v-retry" : "v-clean") + '">' + row.verdict + "</span></td>";
+    function inspect() {
+      tbody.querySelectorAll("tr").forEach(function(el) { el.classList.remove("active"); });
+      tr.classList.add("active");
+      inspector.innerHTML =
+        '<div class="ih">Request inspector</div>' +
+        '<div class="irow"><span>request</span><b>' + row.id + "</b></div>" +
+        '<div class="irow"><span>workflow</span><b>support-agent / triage</b></div>' +
+        '<div class="irow"><span>owner</span><b>Support Platform</b></div>' +
+        '<div class="irow"><span>model</span><b>' + row.model + "</b></div>" +
+        '<div class="irow"><span>tokens</span><b>' + row.tok + "</b></div>" +
+        '<div class="irow"><span>cost</span><b>' + row.cost + "</b></div>" +
+        '<div class="irow"><span>attempt</span><b>' + row.detail.attempt + "</b></div>" +
+        '<div class="irow"><span>retry of</span><b>' + row.detail.retryOf + "</b></div>" +
+        '<div class="iverdict"><b>' + row.verdict + ".</b> " + row.detail.note + "</div>";
+    }
+    tr.addEventListener("click", inspect);
+    tr.addEventListener("keydown", function(e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); inspect(); } });
+    tbody.appendChild(tr);
+  });
+  root.querySelectorAll("[data-filter]").forEach(function(f) {
+    f.addEventListener("click", function() {
+      root.querySelectorAll("[data-filter]").forEach(function(el) { el.classList.remove("active"); });
+      f.classList.add("active");
+      var kind = f.getAttribute("data-filter");
+      tbody.querySelectorAll("tr").forEach(function(tr) {
+        tr.style.display = (kind === "all" || tr.getAttribute("data-kind") === kind) ? "" : "none";
+      });
+    });
+  });
 })();
 </script>
 <script type="module" src="../assets/brg-three.js"></script>
