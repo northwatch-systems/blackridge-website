@@ -1,6 +1,6 @@
 Northwatch Systems builds the economic infrastructure for AI operations. Blackridge, the flagship Northwatch platform, is built for AI Runtime Economics: knowing, with evidence, what every AI dollar bought at runtime. Provider bills show totals. Blackridge shows near real-time causes with workflow correlation, request-level evidence rows, attribution coverage, confidence notes, and safe tests — packaged as a cause file.
 
-Getting your AI bill explained is the entry motion for evaluating Blackridge fit. A work email and monthly AI spend bracket are enough to start. A founding engineer replies within 2 business days with a written assessment.
+Requesting an AI spend assessment is the entry motion for evaluating Blackridge fit. A work email and monthly AI spend bracket are enough to start. A founding engineer replies within 2 business days with a written assessment.
 
 Primary public pages:
 - https://northwatch.systems/
