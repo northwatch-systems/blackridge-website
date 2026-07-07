@@ -10,8 +10,10 @@ Primary public pages:
 - https://northwatch.systems/design-partners/
 - https://northwatch.systems/security/
 - https://northwatch.systems/faq/
+- https://northwatch.systems/blog/
 - https://northwatch.systems/how-token-economics-forensics-works/
 - https://northwatch.systems/what-is-ai-spend-forensics/
+- https://northwatch.systems/anonymous-ai-workflow-evidence-gaps/
 - https://northwatch.systems/compare/
 - https://northwatch.systems/about/
 - https://northwatch.systems/contact/

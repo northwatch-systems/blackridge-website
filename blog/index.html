@@ -10,17 +10,17 @@
   window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
 })();
 </script>
-<title>Anonymous Field Note | AI Workflow Evidence Gaps</title>
-<meta name="description" content="Noindex draft field note about AI Runtime Economics evidence gaps in a multi-agent workflow.">
-<meta name="robots" content="noindex,nofollow">
-<link rel="canonical" href="https://northwatch.systems/anonymous-ai-workflow-evidence-gaps/">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Anonymous Field Note: AI Workflow Evidence Gaps">
-<meta property="og:description" content="A noindex draft showing how Blackridge frames evidence gaps before any remediation work.">
+<title>Blog | Northwatch Systems</title>
+<meta name="description" content="Articles, research notes, and technical explainers on AI spend forensics, runtime economics, attribution, and evidence for AI operations.">
+<link rel="canonical" href="https://northwatch.systems/blog/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwatch.systems/blog/">
+<meta property="og:title" content="Blog | Northwatch Systems">
+<meta property="og:description" content="Articles, research notes, and technical explainers on AI spend forensics and runtime economics.">
 <meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Anonymous Field Note: AI Workflow Evidence Gaps">
-<meta name="twitter:description" content="Noindex draft field note about AI Runtime Economics evidence gaps.">
+<meta name="twitter:title" content="Blog | Northwatch Systems">
+<meta name="twitter:description" content="Articles, research notes, and technical explainers on AI spend forensics and runtime economics.">
 <meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../assets/brg.css?v=b469a5d">
@@ -65,7 +65,7 @@
           <div class="mega-grid resources">
             <div class="mega-col">
               <div class="mega-heading">Articles</div>
-              <a href="../blog/"><strong>Blog</strong><em>Articles, field notes, and research from Northwatch.</em></a>
+              <a href="../blog/" aria-current="page"><strong>Blog</strong><em>Articles, field notes, and research from Northwatch.</em></a>
               <a href="../what-is-ai-spend-forensics/"><strong>What is AI spend forensics?</strong><em>The category, the buyer, and the operating problem.</em></a>
               <a href="../how-token-economics-forensics-works/"><strong>How token economics forensics works</strong><em>Attribution rules, confidence, and reproducibility.</em></a>
               <a href="../anonymous-ai-workflow-evidence-gaps/"><strong>Anonymous workflow evidence gaps</strong><em>Why invoices and logs miss the finance question.</em></a>
@@ -104,63 +104,104 @@
   </div>
 </header>
 <main>
-  <section class="page-hero">
-    <div class="container">
-      <div class="eyebrow">Noindex draft · anonymous field note</div>
-      <h1>Reconstructing evidence gaps in a multi-agent workflow</h1>
-      <p class="lead">This draft is based on an anonymized engagement. It is intentionally generalized, not linked from the public site, and should not be treated as a public customer reference without explicit approval.</p>
+  <section class="page-hero blog-hero">
+    <canvas class="hero-three" data-three-resource aria-hidden="true"></canvas>
+    <div class="container blog-hero-grid">
+      <div>
+        <div class="eyebrow">Articles and research</div>
+        <h1>Field notes on AI spend, runtime evidence, and economic operations.</h1>
+        <p class="lead">Practical writing for finance, platform, and engineering teams trying to explain what their AI systems cost, why that spend moved, and what evidence supports the answer.</p>
+      </div>
+      <aside class="blog-brief" aria-label="Northwatch research focus">
+        <span>Research focus</span>
+        <strong>AI spend forensics</strong>
+        <p>Attribution, workflow lineage, retry amplification, cache economics, evidence quality, and finance-ready cause files.</p>
+      </aside>
     </div>
   </section>
 
-  <section>
-    <div class="container article-body">
-      <div class="note">
-        <strong>Publication status:</strong> draft only. The client requested anonymity. Details that could identify the organization, scope, implementation, exact timeline, and downstream remediation have been removed or generalized.
+  <section class="compact-section blog-index-section">
+    <div class="container">
+      <div class="blog-toolbar" aria-label="Resource topics">
+        <a href="#all">All</a>
+        <a href="#forensics">Forensics</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#security">Security</a>
       </div>
 
-      <h2>The AI Runtime Economics question</h2>
-      <p>The initial Blackridge question was not whether the AI workflow was useful. It was whether engineering could reconstruct how the workflow produced its outputs, which runtime paths consumed tokens, which ownership signals were present, and where evidence was missing.</p>
+      <div class="blog-layout">
+        <div class="blog-main">
+          <article class="blog-feature-card" id="all">
+            <a href="../what-is-ai-spend-forensics/">
+              <div class="blog-card-visual forensic" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div>
+                <span>Category definition</span>
+                <h2>What is AI Runtime Economics?</h2>
+                <p>AI Runtime Economics is the discipline of knowing, with evidence, what every AI dollar bought at runtime: which workflow spent it, which team owns it, what changed, and what the fix is worth.</p>
+                <em>Read article</em>
+              </div>
+            </a>
+          </article>
 
-      <h2>What Blackridge reviewed</h2>
-      <div class="grid cols-2">
-        <article class="card"><h3>Workflow lineage</h3><p>Whether the team could follow a workflow from user action through intermediate agent steps, model calls, tool calls, and final output.</p></article>
-        <article class="card"><h3>Spend attribution</h3><p>Whether app, team, workflow, tenant, route, or request metadata was available consistently enough to support cost ownership.</p></article>
-        <article class="card"><h3>Evidence completeness</h3><p>Whether source events, prompt/configuration context, model choice, and downstream consumption path were available for review.</p></article>
-        <article class="card"><h3>Human review context</h3><p>Whether reviewers could see enough provenance to challenge an expensive or high-authority AI output before accepting it.</p></article>
-      </div>
+          <div class="blog-grid">
+            <article class="blog-card" id="methodology">
+              <a href="../how-token-economics-forensics-works/">
+                <div class="blog-card-visual method" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Methodology</span>
+                <h2>How token economics forensics works</h2>
+                <p>How attribution rules, confidence, evidence coverage, and reproducibility turn AI bills into cause files.</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card" id="evidence">
+              <a href="../anonymous-ai-workflow-evidence-gaps/">
+                <div class="blog-card-visual gaps" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Evidence gaps</span>
+                <h2>Anonymous AI workflow evidence gaps</h2>
+                <p>Why billing exports, traces, and logs often fail to answer the finance question: what caused the spend?</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card">
+              <a href="../example-ai-spend-forensics-report/">
+                <div class="blog-card-visual report" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Sample evidence</span>
+                <h2>Example AI spend forensics report</h2>
+                <p>A sample cause file showing observed waste, modeled opportunity, confidence, coverage, and evidence rows.</p>
+                <em>View sample</em>
+              </a>
+            </article>
+            <article class="blog-card" id="security">
+              <a href="../security/">
+                <div class="blog-card-visual security" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Security</span>
+                <h2>Security and deployment posture</h2>
+                <p>How Blackridge approaches inline deployment, fail-open behavior, prompt handling, and review boundaries.</p>
+                <em>Read overview</em>
+              </a>
+            </article>
+          </div>
+        </div>
 
-      <h2>Findings before remediation</h2>
-      <p>The Blackridge review found that the workflow had become operationally important before its evidence model was mature enough for audit, attribution, or spend review. The issue was not only model quality. The issue was missing reconstructability.</p>
-      <div class="grid cols-3">
-        <article class="card"><h3>Unclear ownership</h3><p>Some workflow paths crossed team and system boundaries without consistent ownership metadata. That made spend and responsibility hard to assign.</p></article>
-        <article class="card"><h3>Incomplete provenance</h3><p>Some outputs could not be traced cleanly back to the input state, intermediate context, model choice, and downstream consumer.</p></article>
-        <article class="card"><h3>Review without evidence</h3><p>Human reviewers saw confident outputs without always seeing the derivation context needed to evaluate cost, risk, or correctness.</p></article>
-      </div>
-
-      <h2>Why this matters for AI Runtime Economics</h2>
-      <p>AI Runtime Economics depends on evidence. If an organization cannot reconstruct the workflow path, ownership metadata, model choices, and event context behind an AI output, it also cannot reliably explain why the workflow cost what it did or whether Blackridge should be deployed for ongoing control.</p>
-
-      <h2>Blackridge framing</h2>
-      <p>The useful artifact was an evidence map: where the workflow could be reconstructed, where attribution was strong, where metadata was missing, and which runtime paths needed better instrumentation before recurring spend control would be trustworthy.</p>
-
-      <table class="report-table">
-        <thead>
-          <tr><th>Review area</th><th>What Blackridge assessed</th><th>Why it matters</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Workflow traceability</td><td>Can the path from request to output be reconstructed?</td><td>Without traceability, spend cannot be tied to workflow behavior.</td></tr>
-          <tr><td>Attribution coverage</td><td>Are app, team, tenant, and workflow signals present?</td><td>Without ownership signals, chargeback and remediation conversations become guesswork.</td></tr>
-          <tr><td>Evidence quality</td><td>Are source events and context available for inspection?</td><td>Without evidence rows, findings are assertions rather than reviewable claims.</td></tr>
-          <tr><td>Review context</td><td>Can engineering challenge expensive outputs with enough provenance?</td><td>Without provenance, human approval can become a rubber stamp.</td></tr>
-        </tbody>
-      </table>
-
-      <h2>What is intentionally omitted</h2>
-      <p>This draft does not describe the client, industry, exact team size, exact workflow count, timeline, implementation details, or later private remediation work. It also does not claim public endorsement, live deployment, quantified savings, or a named customer relationship.</p>
-
-      <div class="hero-actions">
-        <a class="btn primary" href="../spend-review/#request-review">Request an AI spend assessment</a>
-        <a class="btn secondary" href="../example-ai-spend-forensics-report/">Inspect evidence</a>
+        <aside class="blog-rail" aria-label="Research and assessment resources">
+          <div class="rail-card hot">
+            <span>Assessment</span>
+            <h2>Find the leaks before you write the memo.</h2>
+            <p>Send your work email and monthly AI spend range. A founder will reply with where companies like yours usually leak AI spend and what evidence would prove it.</p>
+            <a class="btn primary" href="../spend-review/">Request assessment</a>
+          </div>
+          <div class="rail-card">
+            <span>Research queue</span>
+            <a href="../security/">Security overview</a>
+            <a href="../example-ai-spend-forensics-report/">Sample evidence pack</a>
+            <a href="../faq/">FAQ</a>
+          </div>
+          <div class="rail-note">
+            <span>Whitepapers</span>
+            <p>We will publish deeper research as the evidence base grows. For now, the sample report is the fastest way to evaluate the standard.</p>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -171,7 +212,6 @@
     <nav class="footer-links" aria-label="Footer product"><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example cause file</a><a href="https://demo.northwatch.systems" data-cta="live-demo-footer">Live demo</a><a href="../compare/">Compare</a><a href="../security/">Security</a></nav>
     <nav class="footer-links" aria-label="Footer company"><a href="../about/">About</a><a href="../design-partners/">Design partners</a><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></nav>
     <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
-    
   </div>
 </footer>
 <script>
@@ -184,5 +224,6 @@
   }
 })();
 </script>
+<script type="module" src="../assets/brg-three.js"></script>
 </body>
 </html>

@@ -1,5 +1,12 @@
 import * as THREE from "./vendor/three.module.js";
 
+const resourceCanvas = document.querySelector("[data-three-resource]");
+const resourceHero = resourceCanvas ? resourceCanvas.closest(".page-hero") : null;
+
+if (resourceCanvas && resourceHero && window.matchMedia("(prefers-reduced-motion: reduce)").matches === false) {
+  createResourceHero(resourceCanvas, resourceHero);
+}
+
 const canvas = document.querySelector("[data-three-hero]");
 const hero = canvas ? canvas.closest(".hero") : null;
 
@@ -34,6 +41,7 @@ if (canvas && hero && window.matchMedia("(prefers-reduced-motion: reduce)").matc
   const steel = new THREE.Color(0x8b95a1);
   const blueSteel = new THREE.Color(0x465464);
   const darkSteel = new THREE.Color(0x222a34);
+  const heroMode = canvas.getAttribute("data-three-mode") || "lineage";
 
   const lineMaterial = new THREE.LineBasicMaterial({
     color: 0x3a4654,
@@ -188,6 +196,9 @@ if (canvas && hero && window.matchMedia("(prefers-reduced-motion: reduce)").matc
   }));
   root.add(field);
 
+  const modeGroup = createHeroModeOverlay(heroMode, warm, steel);
+  if (modeGroup) root.add(modeGroup);
+
   let width = 1;
   let height = 1;
   let frameId = 0;
@@ -227,6 +238,12 @@ if (canvas && hero && window.matchMedia("(prefers-reduced-motion: reduce)").matc
     updateParticles(elapsed);
     root.rotation.y = Math.sin(elapsed * 0.18) * 0.055;
     root.rotation.x = Math.sin(elapsed * 0.13) * 0.025;
+    if (modeGroup) {
+      modeGroup.rotation.z = Math.sin(elapsed * 0.24) * 0.035;
+      modeGroup.children.forEach((child, i) => {
+        child.position.y += Math.sin(elapsed * 0.7 + i) * 0.0009;
+      });
+    }
     finding.scale.setScalar(1 + Math.sin(elapsed * 2.1) * 0.12);
     field.rotation.z = elapsed * 0.01;
     renderer.render(scene, camera);
@@ -252,6 +269,255 @@ if (canvas && hero && window.matchMedia("(prefers-reduced-motion: reduce)").matc
   } else {
     canvas.dataset.rendered = "false";
   }
+}
+
+function createHeroModeOverlay(mode, warm, steel) {
+  if (!mode || mode === "lineage") return null;
+
+  const group = new THREE.Group();
+  group.position.set(0.4, 0, 0.45);
+
+  const orange = new THREE.MeshBasicMaterial({
+    color: 0xd2762f,
+    transparent: true,
+    opacity: 0.5,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  });
+  const line = new THREE.LineBasicMaterial({
+    color: 0xf0a14e,
+    transparent: true,
+    opacity: 0.62,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  });
+  const panel = new THREE.MeshBasicMaterial({
+    color: 0x121821,
+    transparent: true,
+    opacity: 0.42,
+    depthWrite: false
+  });
+
+  function addPanel(x, y, w, h) {
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(w, h), panel.clone());
+    mesh.position.set(x, y, 0);
+    const edges = new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry), line);
+    edges.position.copy(mesh.position);
+    group.add(mesh, edges);
+    return mesh;
+  }
+
+  if (mode === "questions") {
+    [[-1.4, .75], [.25, .35], [-.8, -.45], [1.05, -.85]].forEach((p, i) => {
+      addPanel(p[0], p[1], 1.2, .46);
+      const dot = new THREE.Mesh(new THREE.CircleGeometry(0.045, 18), orange);
+      dot.position.set(p[0] - .45, p[1], .05);
+      group.add(dot);
+      const bar = new THREE.Mesh(new THREE.PlaneGeometry(.52 + i * .08, .025), orange);
+      bar.position.set(p[0] + .12, p[1], .05);
+      group.add(bar);
+    });
+  } else if (mode === "shield") {
+    const shape = new THREE.Shape();
+    shape.moveTo(0, 1.05); shape.lineTo(.86, .62); shape.lineTo(.62, -.72); shape.lineTo(0, -1.12); shape.lineTo(-.62, -.72); shape.lineTo(-.86, .62); shape.lineTo(0, 1.05);
+    const points = shape.getPoints(7).map((p) => new THREE.Vector3(p.x, p.y, 0));
+    group.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(points), line));
+    [-.42, 0, .42].forEach((x) => addPanel(x, 0, .18, 1.35));
+  } else if (mode === "compare") {
+    addPanel(-.78, 0, 1.15, 1.65);
+    addPanel(.78, 0, 1.15, 1.65);
+    const seam = new THREE.Mesh(new THREE.PlaneGeometry(.045, 2.05), orange);
+    seam.position.set(0, 0, .08);
+    group.add(seam);
+  } else if (mode === "report") {
+    for (let i = 0; i < 4; i += 1) addPanel(-.65 + i * .34, .42 - i * .24, 1.25, .72);
+  } else if (mode === "assessment") {
+    const arc = new THREE.TorusGeometry(.82, .018, 8, 80, Math.PI * 1.25);
+    const gauge = new THREE.Mesh(arc, orange);
+    gauge.rotation.z = Math.PI * .88;
+    group.add(gauge);
+    addPanel(0, -.55, 1.4, .34);
+  } else if (mode === "company") {
+    const core = new THREE.Mesh(new THREE.CircleGeometry(.13, 32), orange);
+    group.add(core);
+    [0.55, 1.05, 1.55].forEach((r) => {
+      const ring = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(new THREE.EllipseCurve(0, 0, r, r * .48, 0, Math.PI * 2).getPoints(96).map((p) => new THREE.Vector3(p.x, p.y, 0))), line);
+      group.add(ring);
+    });
+  }
+
+  return group;
+}
+
+function createResourceHero(canvas, hero) {
+  let renderer = null;
+
+  try {
+    renderer = new THREE.WebGLRenderer({
+      canvas,
+      antialias: true,
+      alpha: true,
+      preserveDrawingBuffer: true,
+      powerPreference: "high-performance"
+    });
+  } catch (error) {
+    canvas.hidden = true;
+    return;
+  }
+
+  renderer.setClearColor(0x000000, 0);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+  camera.position.set(0, 0.25, 8.5);
+
+  const root = new THREE.Group();
+  scene.add(root);
+
+  const amber = new THREE.Color(0xf0a14e);
+  const steel = new THREE.Color(0x8b95a1);
+  const dim = new THREE.Color(0x273140);
+
+  const sheetMaterial = new THREE.MeshBasicMaterial({
+    color: 0x111822,
+    transparent: true,
+    opacity: 0.72,
+    depthWrite: false
+  });
+  const sheetEdgeMaterial = new THREE.LineBasicMaterial({
+    color: 0x536172,
+    transparent: true,
+    opacity: 0.44,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  });
+  const scanMaterial = new THREE.MeshBasicMaterial({
+    color: 0xd2762f,
+    transparent: true,
+    opacity: 0.72,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  });
+
+  const sheets = [];
+  for (let i = 0; i < 5; i += 1) {
+    const group = new THREE.Group();
+    const panel = new THREE.Mesh(new THREE.PlaneGeometry(2.25, 1.35), sheetMaterial);
+    const edges = new THREE.LineSegments(new THREE.EdgesGeometry(panel.geometry), sheetEdgeMaterial);
+    group.add(panel, edges);
+
+    for (let j = 0; j < 4; j += 1) {
+      const bar = new THREE.Mesh(new THREE.PlaneGeometry(1.2 - j * 0.16, 0.035), scanMaterial);
+      bar.position.set(-0.28 + j * 0.08, 0.42 - j * 0.23, 0.02);
+      bar.material = scanMaterial.clone();
+      bar.material.opacity = 0.34 + j * 0.08;
+      group.add(bar);
+    }
+
+    group.position.set(-0.22 + i * 0.44, 0.62 - i * 0.28, -0.42 - i * 0.08);
+    group.rotation.z = -0.08;
+    group.rotation.y = -0.14;
+    root.add(group);
+    sheets.push(group);
+  }
+
+  const pointCount = 160;
+  const positions = new Float32Array(pointCount * 3);
+  const colors = new Float32Array(pointCount * 3);
+  const pointData = [];
+  for (let i = 0; i < pointCount; i += 1) {
+    const x = -4.2 + Math.random() * 7.8;
+    const y = -2.2 + Math.random() * 4.2;
+    const z = -1.4 - Math.random() * 1.6;
+    positions[i * 3] = x;
+    positions[i * 3 + 1] = y;
+    positions[i * 3 + 2] = z;
+    const color = Math.random() > 0.82 ? amber : (Math.random() > 0.5 ? steel : dim);
+    colors[i * 3] = color.r;
+    colors[i * 3 + 1] = color.g;
+    colors[i * 3 + 2] = color.b;
+    pointData.push({ x, y, z, speed: 0.12 + Math.random() * 0.22, phase: Math.random() * Math.PI * 2 });
+  }
+
+  const pointGeometry = new THREE.BufferGeometry();
+  pointGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+  pointGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+  const points = new THREE.Points(pointGeometry, new THREE.PointsMaterial({
+    size: 0.034,
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.8,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  }));
+  root.add(points);
+
+  const scan = new THREE.Mesh(new THREE.PlaneGeometry(4.8, 0.025), new THREE.MeshBasicMaterial({
+    color: 0xf0a14e,
+    transparent: true,
+    opacity: 0.82,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  }));
+  scan.position.set(0.55, 0, 0.18);
+  scan.rotation.z = -0.08;
+  root.add(scan);
+
+  let frameId = 0;
+  let running = true;
+  const clock = new THREE.Clock();
+
+  function resize() {
+    const rect = hero.getBoundingClientRect();
+    const width = Math.max(1, Math.floor(rect.width));
+    const height = Math.max(1, Math.floor(rect.height));
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    const compact = width < 760;
+    root.scale.setScalar(compact ? 0.78 : 1.22);
+    root.position.set(compact ? 0.65 : 2.35, compact ? -0.25 : -0.1, 0);
+  }
+
+  function render() {
+    if (!running) return;
+    const elapsed = clock.getElapsedTime();
+    sheets.forEach((sheet, i) => {
+      sheet.position.y += Math.sin(elapsed * 0.5 + i) * 0.0009;
+      sheet.rotation.x = Math.sin(elapsed * 0.22 + i) * 0.025;
+    });
+    scan.position.y = Math.sin(elapsed * 0.8) * 1.05;
+    scan.material.opacity = 0.35 + Math.abs(Math.sin(elapsed * 0.8)) * 0.34;
+
+    for (let i = 0; i < pointCount; i += 1) {
+      const datum = pointData[i];
+      positions[i * 3] = datum.x + Math.sin(elapsed * datum.speed + datum.phase) * 0.08;
+      positions[i * 3 + 1] = datum.y + Math.cos(elapsed * datum.speed + datum.phase) * 0.05;
+      positions[i * 3 + 2] = datum.z;
+    }
+    pointGeometry.attributes.position.needsUpdate = true;
+    root.rotation.y = Math.sin(elapsed * 0.12) * 0.045;
+    renderer.render(scene, camera);
+    frameId = window.requestAnimationFrame(render);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    running = entries[0] ? entries[0].isIntersecting : true;
+    if (running && frameId === 0) {
+      clock.start();
+      render();
+    } else if (!running && frameId) {
+      window.cancelAnimationFrame(frameId);
+      frameId = 0;
+    }
+  }, { threshold: 0.01 });
+
+  window.addEventListener("resize", resize, { passive: true });
+  resize();
+  render();
+  observer.observe(hero);
+  canvas.dataset.rendered = "true";
 }
 
 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches === false) {
