@@ -73,7 +73,7 @@
             <div class="mega-col">
               <div class="mega-heading">Research</div>
               <a href="../security/"><strong>Security overview</strong><em>Technical posture before a security review.</em></a>
-              <a href="../example-ai-spend-forensics-report/"><strong>Sample evidence pack</strong><em>A practical substitute for gated PDFs while we publish research.</em></a>
+              <a href="../papers/"><strong>The Northwatch Papers</strong><em>Volume I — the runtime evidence layer, in six briefs.</em></a>
               <a href="../faq/"><strong>FAQ</strong><em>Common questions about deployment and evidence.</em></a>
             </div>
             <a class="mega-feature" href="../spend-review/">
@@ -109,14 +109,9 @@
     <div class="container blog-hero-grid">
       <div>
         <div class="eyebrow">Articles and research</div>
-        <h1>Field notes on AI spend, runtime evidence, and economic operations.</h1>
-        <p class="lead">Practical writing for finance, platform, and engineering teams trying to explain what their AI systems cost, why that spend moved, and what evidence supports the answer.</p>
+        <h1>Make AI spend explainable.</h1>
+        <p class="lead">Practical writing on AI spend forensics, runtime evidence, workflow attribution, and the operating model behind defensible AI cost decisions.</p>
       </div>
-      <aside class="blog-brief" aria-label="Northwatch research focus">
-        <span>Research focus</span>
-        <strong>AI spend forensics</strong>
-        <p>Attribution, workflow lineage, retry amplification, cache economics, evidence quality, and finance-ready cause files.</p>
-      </aside>
     </div>
   </section>
 
@@ -127,58 +122,121 @@
         <a href="#forensics">Forensics</a>
         <a href="#methodology">Methodology</a>
         <a href="#evidence">Evidence</a>
-        <a href="#security">Security</a>
+        <a href="#evaluation">Evaluation</a>
       </div>
 
       <div class="blog-layout">
         <div class="blog-main">
           <article class="blog-feature-card" id="all">
-            <a href="../what-is-ai-spend-forensics/">
+            <a href="which-workflow-generated-the-spend/">
               <div class="blog-card-visual forensic" aria-hidden="true"><i></i><i></i><i></i></div>
               <div>
-                <span>Category definition</span>
-                <h2>What is AI Runtime Economics?</h2>
-                <p>AI Runtime Economics is the discipline of knowing, with evidence, what every AI dollar bought at runtime: which workflow spent it, which team owns it, what changed, and what the fix is worth.</p>
+                <span>Jul 15, 2026 · 3 min</span>
+                <h2>Attribution Tells You Where To Look. Forensics Tells You What Happened.</h2>
+                <p>Attribution is table stakes. The missing layer is forensic reconstruction of what happened inside the workflow: the decision chains, waste classes, and evidence trails that explain why...</p>
                 <em>Read article</em>
               </div>
             </a>
           </article>
 
           <div class="blog-grid">
-            <article class="blog-card" id="methodology">
-              <a href="../how-token-economics-forensics-works/">
-                <div class="blog-card-visual method" aria-hidden="true"><i></i><i></i><i></i></div>
-                <span>Methodology</span>
-                <h2>How token economics forensics works</h2>
-                <p>How attribution rules, confidence, evidence coverage, and reproducibility turn AI bills into cause files.</p>
-                <em>Read article</em>
-              </a>
-            </article>
-            <article class="blog-card" id="evidence">
-              <a href="../anonymous-ai-workflow-evidence-gaps/">
+            <article class="blog-card">
+              <a href="can-you-justify-your-ai-bill/">
                 <div class="blog-card-visual gaps" aria-hidden="true"><i></i><i></i><i></i></div>
-                <span>Evidence gaps</span>
-                <h2>Anonymous AI workflow evidence gaps</h2>
-                <p>Why billing exports, traces, and logs often fail to answer the finance question: what caused the spend?</p>
+                <span>Jul 17, 2026 · 2 min</span>
+                <h2>Can You Justify Your AI Bill?</h2>
+                <p>The gap between &quot;we spent $90K&quot; and &quot;we know why we spent $90K&quot; is a receipt: evidence-backed, confidence-gated, and classified by waste type.</p>
                 <em>Read article</em>
               </a>
             </article>
             <article class="blog-card">
-              <a href="../example-ai-spend-forensics-report/">
+              <a href="the-provider-incident-made-something-visible/">
                 <div class="blog-card-visual report" aria-hidden="true"><i></i><i></i><i></i></div>
-                <span>Sample evidence</span>
-                <h2>Example AI spend forensics report</h2>
-                <p>A sample cause file showing observed waste, modeled opportunity, confidence, coverage, and evidence rows.</p>
-                <em>View sample</em>
+                <span>Jul 20, 2026 · 3 min</span>
+                <h2>The Provider Incident Made Something Visible</h2>
+                <p>Provider incidents trigger retry amplification in a traceable way — failed call, retry chain, escalating token cost, fallback. That same pattern runs constantly from internal causes. The...</p>
+                <em>Read article</em>
               </a>
             </article>
-            <article class="blog-card" id="security">
-              <a href="../security/">
+            <article class="blog-card">
+              <a href="one-retry-loop-cost-us-fourteen-thousand-dollars/">
                 <div class="blog-card-visual security" aria-hidden="true"><i></i><i></i><i></i></div>
-                <span>Security</span>
-                <h2>Security and deployment posture</h2>
-                <p>How Blackridge approaches inline deployment, fail-open behavior, prompt handling, and review boundaries.</p>
-                <em>Read overview</em>
+                <span>Jul 22, 2026 · 3 min</span>
+                <h2>One Retry Loop Cost Us $14,000</h2>
+                <p>Retry amplification is a diagnosable waste class where a failed step triggers progressively more expensive attempts. It hides because dashboards show token growth without connecting it...</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card">
+              <a href="your-ai-dashboard-is-lying-by-omission/">
+                <div class="blog-card-visual method" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Jul 24, 2026 · 3 min</span>
+                <h2>Your AI Dashboard Is Lying By Omission</h2>
+                <p>AI cost dashboards are accurate about what they show and misleading about what they imply. Surface metrics do not explain the behavioral causes of AI spend.</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card">
+              <a href="what-we-found-in-the-first-ai-spend-assessment/">
+                <div class="blog-card-visual gaps" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Jul 29, 2026 · 3 min</span>
+                <h2>What We Found In The First Hour Of An AI Spend Assessment</h2>
+                <p>A forensic assessment turns existing AI workflow events into specific findings: retrieval bloat, fallback tax, abandoned branch cost, confidence levels, and engineering fixes.</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card">
+              <a href="why-we-show-our-evidence/">
+                <div class="blog-card-visual report" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Jul 31, 2026 · 3 min</span>
+                <h2>Why We Show Our Evidence</h2>
+                <p>AI cost savings claims need inspectable evidence: source events, pricing basis, confidence levels, assumptions, and engineering recommendations.</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card">
+              <a href="budgets-dont-fix-ai-cost/">
+                <div class="blog-card-visual security" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Aug 5, 2026 · 3 min</span>
+                <h2>Budgets Don&#x27;t Fix AI Cost. They Hide It.</h2>
+                <p>AI cost controls constrain spend without explaining it. Forensics shows the workflow behavior behind the number so engineering can fix causes instead of capping symptoms.</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card">
+              <a href="how-to-evaluate-ai-cost-tools/">
+                <div class="blog-card-visual method" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Aug 7, 2026 · 3 min</span>
+                <h2>How To Evaluate AI Cost Tools (Including Ours)</h2>
+                <p>AI cost tools operate at four layers: billing, telemetry, attribution, and forensics. Most teams have the first three. The gap is evidence-backed reconstruction of why workflows cost...</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card">
+              <a href="the-waste-running-right-now-is-already-gone/">
+                <div class="blog-card-visual gaps" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Aug 12, 2026 · 2 min</span>
+                <h2>The Waste Running In Your Workflows Right Now Is Already Gone</h2>
+                <p>AI workflow waste accumulates continuously. Every week without forensics is preventable spend you cannot recover. The case for acting now is arithmetic, not sophistication.</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card">
+              <a href="your-board-wants-an-ai-spend-slide/">
+                <div class="blog-card-visual report" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Aug 14, 2026 · 2 min</span>
+                <h2>Your Board Wants An AI Spend Slide. What Will It Say?</h2>
+                <p>Board AI spend conversations are coming regardless. The difference between a defensible slide and an uncomfortable one is forensic evidence — specific waste classes, root causes, fixes...</p>
+                <em>Read article</em>
+              </a>
+            </article>
+            <article class="blog-card">
+              <a href="the-teams-that-figure-this-out-first/">
+                <div class="blog-card-visual security" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span>Aug 19, 2026 · 2 min</span>
+                <h2>The Teams That Figure This Out First Will Have A Cost Advantage You Cannot Close</h2>
+                <p>Teams with forensic understanding of their AI workflow economics build a compounding advantage — better decisions, faster fixes, lower cost — that teams managing to a budget number...</p>
+                <em>Read article</em>
               </a>
             </article>
           </div>
@@ -192,14 +250,15 @@
             <a class="btn primary" href="../spend-review/">Request assessment</a>
           </div>
           <div class="rail-card">
-            <span>Research queue</span>
+            <span>Evergreen references</span>
+            <a href="../what-is-ai-spend-forensics/">What is AI Runtime Economics?</a>
+            <a href="../how-token-economics-forensics-works/">How token economics forensics works</a>
+            <a href="../papers/">The Northwatch Papers</a>
             <a href="../security/">Security overview</a>
-            <a href="../example-ai-spend-forensics-report/">Sample evidence pack</a>
-            <a href="../faq/">FAQ</a>
           </div>
           <div class="rail-note">
-            <span>Whitepapers</span>
-            <p>We will publish deeper research as the evidence base grows. For now, the sample report is the fastest way to evaluate the standard.</p>
+            <span>Northwatch research</span>
+            <p>Articles focus on practical AI spend evidence: what changed, why it changed, how confident the finding is, and what engineering can fix.</p>
           </div>
         </aside>
       </div>
@@ -209,9 +268,9 @@
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand"><div class="footer-lockup"><img class="footer-logo footer-mark" src="../assets/northwatch-mark.png" alt=""><span class="footer-logo-text">Northwatch <b>Systems</b></span></div><span>Blackridge — the AI Runtime Economics platform</span></div>
-    <nav class="footer-links" aria-label="Footer product"><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example cause file</a><a href="https://demo.northwatch.systems" data-cta="live-demo-footer">Live demo</a><a href="../compare/">Compare</a><a href="../security/">Security</a></nav>
+    <nav class="footer-links" aria-label="Footer product"><a href="../#forensics-flow">How it works</a><a href="../example-ai-spend-forensics-report/">Example cause file</a><a href="https://demo.northwatch.systems" data-cta="live-demo-footer">Live demo</a><a href="../compare/">Compare</a><a href="../papers/">Papers</a><a href="../security/">Security</a></nav>
     <nav class="footer-links" aria-label="Footer company"><a href="../about/">About</a><a href="../design-partners/">Design partners</a><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></nav>
-    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
+    <div class="footer-legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><span class="pill-patent">Patent Pending</span><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
   </div>
 </footer>
 <script>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 230" width="760" style="max-width:100%;height:auto" role="img" aria-label="The five evidence grades in order of increasing distance from direct observation: observed, imported, derived, inferred, simulated. Unknown values are counted, never zeroed.">
+  <style>
+    text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    .gt-w{fill:#ffffff;font-size:13px;font-weight:600}
+    .gt-d{fill:#0b0b0b;font-size:13px;font-weight:600}
+    .t2{fill:#52514e;font-size:11px}
+    .t3{fill:#898781;font-size:10.5px}
+    .hair{stroke:#c3c2b7;stroke-width:1.25;fill:none}
+    .mk{fill:#898781}
+    .unk{fill:none;stroke:#898781;stroke-width:1.25;stroke-dasharray:5 4}
+    .g1{fill:#104281}.g2{fill:#1c5cab}.g3{fill:#2a78d6}.g4{fill:#5598e7}.g5{fill:#86b6ef}
+    @media (prefers-color-scheme:dark){
+      .t2{fill:#c3c2b7}
+      .hair{stroke:#383835}
+      .g1{fill:#184f95}.g2{fill:#256abf}.g3{fill:#3987e5}.g4{fill:#6da7ec}.g5{fill:#9ec5f4}
+    }
+  
+      .t2{fill:#c3c2b7}
+      .hair{stroke:#383835}
+      .g1{fill:#184f95}.g2{fill:#256abf}.g3{fill:#3987e5}.g4{fill:#6da7ec}.g5{fill:#9ec5f4}
+  </style>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" class="mk"/>
+    </marker>
+  </defs>
+
+  <rect x="60"  y="48" width="124" height="46" rx="10" class="g1"/>
+  <rect x="194" y="48" width="124" height="46" rx="10" class="g2"/>
+  <rect x="328" y="48" width="124" height="46" rx="10" class="g3"/>
+  <rect x="462" y="48" width="124" height="46" rx="10" class="g4"/>
+  <rect x="596" y="48" width="124" height="46" rx="10" class="g5"/>
+
+  <text x="122" y="76" text-anchor="middle" class="gt-w">observed</text>
+  <text x="256" y="76" text-anchor="middle" class="gt-w">imported</text>
+  <text x="390" y="76" text-anchor="middle" class="gt-w">derived</text>
+  <text x="524" y="76" text-anchor="middle" class="gt-d">inferred</text>
+  <text x="658" y="76" text-anchor="middle" class="gt-d">simulated</text>
+
+  <text x="122" y="114" text-anchor="middle" class="t3">seen by the runtime</text>
+  <text x="256" y="114" text-anchor="middle" class="t3">from provider records</text>
+  <text x="390" y="114" text-anchor="middle" class="t3">computed from records</text>
+  <text x="524" y="114" text-anchor="middle" class="t3">grouped by heuristic</text>
+  <text x="658" y="114" text-anchor="middle" class="t3">counterfactual</text>
+
+  <line x1="60" y1="140" x2="712" y2="140" class="hair" marker-end="url(#arr)"/>
+  <text x="390" y="160" text-anchor="middle" class="t3">increasing distance from direct observation — every claim carries its grade</text>
+
+  <rect x="270" y="178" width="240" height="34" rx="8" class="unk"/>
+  <text x="390" y="199" text-anchor="middle" class="t2">unknown — counted, never zeroed</text>
+</svg>

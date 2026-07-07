@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 375" width="760" style="max-width:100%;height:auto" role="img" aria-label="The runtime economics loop: capture evidence, attribute spend, derive findings, change policy, measure the next window — optimizing cost per successful workflow.">
+  <style>
+    text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    .t1{fill:#0b0b0b;font-size:12.5px;font-weight:600}
+    .t1b{fill:#0b0b0b;font-size:15px;font-weight:650}
+    .t3{fill:#898781;font-size:10px}
+    .box{fill:#fcfcfb;stroke:#c3c2b7;stroke-width:1.25}
+    .ring{fill:none;stroke:#898781;stroke-width:1.5}
+    .mk{fill:#898781}
+    @media (prefers-color-scheme:dark){
+      .t1{fill:#ffffff}.t1b{fill:#ffffff}
+      .box{fill:#1a1a19;stroke:#383835}
+    }
+  
+      .t1{fill:#ffffff}.t1b{fill:#ffffff}
+      .box{fill:#1a1a19;stroke:#383835}
+  </style>
+
+  <circle cx="380" cy="195" r="150" class="ring"/>
+
+  <path d="M-4 -3.5 L5 0 L-4 3.5 Z" class="mk" transform="translate(468,74) rotate(36)"/>
+  <path d="M-4 -3.5 L5 0 L-4 3.5 Z" class="mk" transform="translate(523,241) rotate(108)"/>
+  <path d="M-4 -3.5 L5 0 L-4 3.5 Z" class="mk" transform="translate(380,345) rotate(180)"/>
+  <path d="M-4 -3.5 L5 0 L-4 3.5 Z" class="mk" transform="translate(237,241) rotate(252)"/>
+  <path d="M-4 -3.5 L5 0 L-4 3.5 Z" class="mk" transform="translate(292,74) rotate(324)"/>
+
+  <rect x="305" y="21" width="150" height="48" rx="10" class="box"/>
+  <text x="380" y="42" text-anchor="middle" class="t1">capture evidence</text>
+  <text x="380" y="59" text-anchor="middle" class="t3">as it happens</text>
+
+  <rect x="448" y="125" width="150" height="48" rx="10" class="box"/>
+  <text x="523" y="146" text-anchor="middle" class="t1">attribute spend</text>
+  <text x="523" y="163" text-anchor="middle" class="t3">to owners and workflows</text>
+
+  <rect x="393" y="292" width="150" height="48" rx="10" class="box"/>
+  <text x="468" y="313" text-anchor="middle" class="t1">derive findings</text>
+  <text x="468" y="330" text-anchor="middle" class="t3">observed vs modeled</text>
+
+  <rect x="217" y="292" width="150" height="48" rx="10" class="box"/>
+  <text x="292" y="313" text-anchor="middle" class="t1">change policy</text>
+  <text x="292" y="330" text-anchor="middle" class="t3">routing · caching · retries</text>
+
+  <rect x="162" y="125" width="150" height="48" rx="10" class="box"/>
+  <text x="237" y="146" text-anchor="middle" class="t1">measure</text>
+  <text x="237" y="163" text-anchor="middle" class="t3">the next window</text>
+
+  <text x="380" y="190" text-anchor="middle" class="t1b">cost per successful workflow</text>
+  <text x="380" y="210" text-anchor="middle" class="t3">the unit the loop optimizes</text>
+</svg>

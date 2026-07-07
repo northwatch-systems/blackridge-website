@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 210" width="760" style="max-width:100%;height:auto" role="img" aria-label="The three states of an economic claim, kept separate: observed waste, modeled opportunity, and unknown. Segments are equal because the split is conceptual, not measured.">
+  <style>
+    text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    .t1{fill:#0b0b0b;font-size:13.5px;font-weight:600}
+    .t2{fill:#52514e;font-size:11px}
+    .t3{fill:#898781;font-size:10.5px}
+    .obs{fill:#2a78d6}
+    .mod-bg{fill:rgba(42,120,214,.10);stroke:#2a78d6;stroke-width:1.5}
+    .mod-hatch{stroke:#2a78d6;stroke-width:1.2}
+    .unk{fill:#f0efec;stroke:#898781;stroke-width:1.25;stroke-dasharray:5 4}
+    .seg-w{fill:#ffffff;font-size:11.5px;font-weight:600}
+    .seg-a{fill:#2a78d6;font-size:11.5px;font-weight:600;paint-order:stroke;stroke:#fcfcfb;stroke-width:3px;stroke-linejoin:round}
+    .seg-m{fill:#52514e;font-size:11.5px;font-weight:600}
+    @media (prefers-color-scheme:dark){
+      .t1{fill:#ffffff}.t2{fill:#c3c2b7}
+      .obs{fill:#3987e5}
+      .mod-bg{fill:rgba(57,135,229,.14);stroke:#3987e5}
+      .mod-hatch{stroke:#3987e5}
+      .unk{fill:#383835}
+      .seg-a{fill:#3987e5;stroke:#1a1a19}
+      .seg-m{fill:#c3c2b7}
+    }
+  
+      .t1{fill:#ffffff}.t2{fill:#c3c2b7}
+      .obs{fill:#3987e5}
+      .mod-bg{fill:rgba(57,135,229,.14);stroke:#3987e5}
+      .mod-hatch{stroke:#3987e5}
+      .unk{fill:#383835}
+      .seg-a{fill:#3987e5;stroke:#1a1a19}
+      .seg-m{fill:#c3c2b7}
+  </style>
+  <defs>
+    <pattern id="hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="7" class="mod-hatch"/>
+    </pattern>
+    <clipPath id="seg2"><rect x="274" y="96" width="212" height="52" rx="6"/></clipPath>
+  </defs>
+
+  <text x="166" y="56" text-anchor="middle" class="t1">Observed</text>
+  <text x="166" y="74" text-anchor="middle" class="t2">realized, evidence-cited</text>
+
+  <text x="380" y="56" text-anchor="middle" class="t1">Modeled</text>
+  <text x="380" y="74" text-anchor="middle" class="t2">an estimate, labeled as one</text>
+
+  <text x="594" y="56" text-anchor="middle" class="t1">Unknown</text>
+  <text x="594" y="74" text-anchor="middle" class="t2">counted, never zeroed</text>
+
+  <rect x="60" y="96" width="212" height="52" rx="6" class="obs"/>
+  <rect x="274" y="96" width="212" height="52" rx="6" class="mod-bg"/>
+  <rect x="274" y="96" width="212" height="52" clip-path="url(#seg2)" fill="url(#hatch)" opacity="0.55"/>
+  <rect x="488" y="96" width="212" height="52" rx="6" class="unk"/>
+
+  <text x="166" y="127" text-anchor="middle" class="seg-w">waste that happened</text>
+  <text x="380" y="127" text-anchor="middle" class="seg-a">what could improve</text>
+  <text x="594" y="127" text-anchor="middle" class="seg-m">what evidence can't say</text>
+
+  <text x="380" y="186" text-anchor="middle" class="t3">three states of an economic claim — reported separately, never blended into one savings number</text>
+</svg>
