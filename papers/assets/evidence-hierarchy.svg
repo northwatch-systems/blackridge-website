@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 478" width="760" style="max-width:100%;height:auto" role="img" aria-label="The abstraction hierarchy: reality produces evidence, evidence forms the evidence graph, projections are views over the graph, and products are packaged projections.">
+  <style>
+    text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    .t1{fill:#0b0b0b;font-size:14px;font-weight:600}
+    .t1b{fill:#0b0b0b;font-size:15px;font-weight:650}
+    .t2{fill:#52514e;font-size:11.5px}
+    .t3{fill:#898781;font-size:10.5px}
+    .cap{fill:#898781;font-size:10px;font-weight:600;letter-spacing:.09em}
+    .box{fill:#fcfcfb;stroke:#c3c2b7;stroke-width:1.25}
+    .soft{fill:rgba(42,120,214,.08);stroke:#2a78d6;stroke-width:1.5}
+    .edge{stroke:#898781;stroke-width:1.5;fill:none}
+    .fan{stroke:#898781;stroke-width:1.25;fill:none}
+    .mk{fill:#898781}
+    @media (prefers-color-scheme:dark){
+      .t1{fill:#ffffff}.t1b{fill:#ffffff}.t2{fill:#c3c2b7}
+      .box{fill:#1a1a19;stroke:#383835}
+      .soft{fill:rgba(57,135,229,.14);stroke:#3987e5}
+    }
+  
+      .t1{fill:#ffffff}.t1b{fill:#ffffff}.t2{fill:#c3c2b7}
+      .box{fill:#1a1a19;stroke:#383835}
+      .soft{fill:rgba(57,135,229,.14);stroke:#3987e5}
+  </style>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" class="mk"/>
+    </marker>
+  </defs>
+
+  <rect x="300" y="24" width="200" height="42" rx="10" class="box"/>
+  <text x="400" y="50" text-anchor="middle" class="t1">Reality</text>
+  <text x="520" y="50" class="t3">what happened</text>
+
+  <line x1="400" y1="66" x2="400" y2="100" class="edge" marker-end="url(#arr)"/>
+
+  <rect x="300" y="104" width="200" height="42" rx="10" class="box"/>
+  <text x="400" y="130" text-anchor="middle" class="t1">Evidence</text>
+  <text x="520" y="130" class="t3">what was captured, always graded</text>
+
+  <line x1="400" y1="146" x2="400" y2="180" class="edge" marker-end="url(#arr)"/>
+
+  <rect x="270" y="184" width="260" height="54" rx="10" class="soft"/>
+  <text x="400" y="207" text-anchor="middle" class="t1b">Evidence Graph</text>
+  <text x="400" y="226" text-anchor="middle" class="t3">typed · append-only · relationships are records</text>
+  <text x="550" y="211" class="t3">the canonical record</text>
+
+  <path d="M400 238 C 400 268, 85 272, 85 296"  class="fan" marker-end="url(#arr)"/>
+  <path d="M400 238 C 400 268, 203 272, 203 296" class="fan" marker-end="url(#arr)"/>
+  <path d="M400 238 C 400 268, 321 272, 321 296" class="fan" marker-end="url(#arr)"/>
+  <path d="M400 238 C 400 268, 439 272, 439 296" class="fan" marker-end="url(#arr)"/>
+  <path d="M400 238 C 400 268, 557 272, 557 296" class="fan" marker-end="url(#arr)"/>
+  <path d="M400 238 C 400 268, 675 272, 675 296" class="fan" marker-end="url(#arr)"/>
+
+  <text x="29" y="356" class="cap">PROJECTIONS — VIEWS OVER THE GRAPH</text>
+  <rect x="29"  y="298" width="112" height="36" rx="8" class="box"/>
+  <rect x="147" y="298" width="112" height="36" rx="8" class="box"/>
+  <rect x="265" y="298" width="112" height="36" rx="8" class="box"/>
+  <rect x="383" y="298" width="112" height="36" rx="8" class="box"/>
+  <rect x="501" y="298" width="112" height="36" rx="8" class="box"/>
+  <rect x="619" y="298" width="112" height="36" rx="8" class="box"/>
+  <text x="85"  y="320" text-anchor="middle" class="t2">economic</text>
+  <text x="203" y="320" text-anchor="middle" class="t2">authority</text>
+  <text x="321" y="320" text-anchor="middle" class="t2">temporal</text>
+  <text x="439" y="320" text-anchor="middle" class="t2">behavioral</text>
+  <text x="557" y="320" text-anchor="middle" class="t2">operational</text>
+  <text x="675" y="320" text-anchor="middle" class="t2">investigative</text>
+
+  <line x1="400" y1="334" x2="400" y2="398" class="edge" marker-end="url(#arr)"/>
+
+  <rect x="29"  y="402" width="112" height="36" rx="8" class="box"/>
+  <rect x="147" y="402" width="112" height="36" rx="8" class="box"/>
+  <rect x="265" y="402" width="112" height="36" rx="8" class="box"/>
+  <rect x="383" y="402" width="112" height="36" rx="8" class="box"/>
+  <rect x="501" y="402" width="112" height="36" rx="8" class="box"/>
+  <rect x="619" y="402" width="112" height="36" rx="8" class="box"/>
+  <text x="85"  y="424" text-anchor="middle" class="t2">reports</text>
+  <text x="203" y="424" text-anchor="middle" class="t2">receipts</text>
+  <text x="321" y="424" text-anchor="middle" class="t2">replay</text>
+  <text x="439" y="424" text-anchor="middle" class="t2">governance views</text>
+  <text x="557" y="424" text-anchor="middle" class="t2">dashboards</text>
+  <text x="675" y="424" text-anchor="middle" class="t2">investigations</text>
+  <text x="29" y="460" class="cap">PRODUCTS — PACKAGED PROJECTIONS</text>
+</svg>

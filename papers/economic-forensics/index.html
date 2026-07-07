@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+  if (window.location.protocol.indexOf("http") !== 0) return;
+  if (!window.location.pathname.endsWith("/index.html")) return;
+  window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
+})();
+</script>
+<title>Economic Forensics | The Northwatch Papers | Northwatch Systems</title>
+<meta name="description" content="AI cost is runtime behavior expressed as money. Every dollar claim should cite the evidence that produced it.">
+<link rel="canonical" href="https://northwatch.systems/papers/economic-forensics/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northwatch.systems/papers/economic-forensics/">
+<meta property="og:title" content="Economic Forensics | The Northwatch Papers | Northwatch Systems">
+<meta property="og:description" content="AI cost is runtime behavior expressed as money. Every dollar claim should cite the evidence that produced it.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Economic Forensics | The Northwatch Papers | Northwatch Systems">
+<meta name="twitter:description" content="AI cost is runtime behavior expressed as money. Every dollar claim should cite the evidence that produced it.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../assets/brg.css?v=b469a5d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <div class="nav-menu">
+        <button class="nav-trigger" type="button" aria-haspopup="true">Platform <span></span></button>
+        <div class="mega-panel">
+          <div class="mega-grid">
+            <div class="mega-col">
+              <div class="mega-heading">Product</div>
+              <a href="../../#forensics-flow"><strong>How it works</strong><em>Runtime attribution, lineage, and cause files.</em></a>
+              <a href="../../example-ai-spend-forensics-report/"><strong>Example cause file</strong><em>See what finance and engineering receive.</em></a>
+              <a href="../../compare/"><strong>Compare</strong><em>Where Blackridge fits beside billing and observability.</em></a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-heading">Operations</div>
+              <a href="../../security/"><strong>Security</strong><em>Fail-open gateway posture and review notes.</em></a>
+              <a href="../../spend-review/"><strong>AI spend assessment</strong><em>Get a founder-written review of likely waste.</em></a>
+              <a href="https://demo.northwatch.systems" data-cta="live-demo-nav-menu"><strong>Live demo</strong><em>Click through the current product surface.</em></a>
+            </div>
+            <a class="mega-feature" href="../../example-ai-spend-forensics-report/">
+              <span class="mega-visual cause" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>Featured</span>
+              <strong>Inspect a real cause file</strong>
+              <em>Observed waste, modeled opportunity, confidence, coverage, and evidence rows in one package.</em>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <button class="nav-trigger" type="button" aria-haspopup="true">Resources <span></span></button>
+        <div class="mega-panel">
+          <div class="mega-grid resources">
+            <div class="mega-col">
+              <div class="mega-heading">Articles</div>
+              <a href="../../blog/"><strong>Blog</strong><em>Articles, field notes, and research from Northwatch.</em></a>
+              <a href="../../what-is-ai-spend-forensics/"><strong>What is AI spend forensics?</strong><em>The category, the buyer, and the operating problem.</em></a>
+              <a href="../../how-token-economics-forensics-works/"><strong>How token economics forensics works</strong><em>Attribution rules, confidence, and reproducibility.</em></a>
+              <a href="../../anonymous-ai-workflow-evidence-gaps/"><strong>Anonymous workflow evidence gaps</strong><em>Why invoices and logs miss the finance question.</em></a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-heading">Research</div>
+              <a href="../../security/"><strong>Security overview</strong><em>Technical posture before a security review.</em></a>
+              <a href="../../papers/"><strong>The Northwatch Papers</strong><em>Volume I — the runtime evidence layer, in six briefs.</em></a>
+              <a href="../../faq/"><strong>FAQ</strong><em>Common questions about deployment and evidence.</em></a>
+            </div>
+            <a class="mega-feature" href="../../spend-review/">
+              <span class="mega-visual research" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>Research</span>
+              <strong>AI spend assessment</strong>
+              <em>Get a founder-written review of where AI spend may be leaking and what evidence would prove it.</em>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <button class="nav-trigger" type="button" aria-haspopup="true">Company <span></span></button>
+        <div class="mega-panel compact">
+          <div class="mega-grid company">
+            <div class="mega-col">
+              <div class="mega-heading">Northwatch Systems</div>
+              <a href="../../about/"><strong>About</strong><em>Who is building Blackridge.</em></a>
+              <a href="../../design-partners/"><strong>Design partners</strong><em>How early teams work with us.</em></a>
+              <a href="../../contact/"><strong>Contact</strong><em>Talk to the founders.</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://demo.northwatch.systems" data-cta="live-demo-nav">Live demo</a>
+      <a class="btn secondary" data-cta="call-nav" href="../../call/">Book a founder call</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero page-hero">
+    <div class="container">
+      <div class="eyebrow">The Northwatch Papers — Volume I · Paper 2</div>
+      <h1>Economic Forensics</h1>
+      <p class="lead">AI cost is runtime behavior expressed as money. Every dollar claim should cite the evidence that produced it.</p>
+    </div>
+  </section>
+  <section class="compact-section">
+    <div class="container">
+      <div class="article-body">
+<p>AI spend is usually reported as a provider bill, a token chart, or a budget variance. Those views show that money was spent. They cannot show why.</p>
+<p>During execution, cost is a series of decisions. A route selects a provider and model. A cache misses. A request grows because retrieved context was added. A provider times out and a fallback path advances to a different model. A caller retries. A tool call fails and the agent asks the model to recover. Each event changes the economics of the workflow, and the invoice is the last artifact in the chain rather than an explanation of it.</p>
+<p>Economic forensics is the discipline of explaining AI spend through runtime evidence. It treats cost as the financial surface of execution behavior, and it holds every economic claim to the standard set in <a href="../forensic-integrity/">Paper 1</a>: cite the evidence, state the basis, preserve the unknowns.</p>
+<p>A provider bill can show token volume by model. It will not show that 18 percent of a workflow’s spend came from a fallback chain after one provider started timing out. It will not show which failed attempts had unknown billing because the provider returned no usage data. It will not show that “unattributed” traffic came from missing workflow context rather than a real product line. Explaining any of that requires evidence from the runtime path, where the cost-producing behavior happened.</p>
+<h2 id="the-proof-rules">The proof rules</h2>
+<figure>
+<img src="../assets/observed-modeled-unknown.svg" alt="" /><figcaption>The three states of an economic claim, kept separate: observed waste (realized, evidence-cited), modeled opportunity (an estimate, labeled as one), and unknown (counted, never zeroed).</figcaption>
+</figure>
+<p><strong>Observed results and modeled opportunities never merge.</strong> Savings that were actually realized are reported separately from estimates of what could be improved. One blended “savings” number is how cost reports become fiction.</p>
+<p><strong>Unknown is counted, never zeroed.</strong> Missing pricing, missing usage, missing attribution — each is reported as unknown, with the reason. A report that quietly zeroes its gaps overstates its own coverage.</p>
+<p><strong>Waste is classified by the behavior that caused it,</strong> not by billing category: retry amplification, fallback tax, duplicate inference, context bloat, abandoned branches. Naming the causing behavior is what makes a finding actionable by engineers instead of merely visible to finance.</p>
+<h2 id="where-finops-fits">Where FinOps fits</h2>
+<p>FinOps stays necessary: budgeting, allocation, forecasting, accountability. It starts from infrastructure resources, and AI inference moved part of the cost center into per-request execution decisions — a workflow branch, a fallback target, a retry loop. Those units do not map to a cloud resource tag. Economic forensics is the missing layer between runtime behavior and financial management: it creates the evidence FinOps can use without turning FinOps into guesswork.</p>
+<p>Economic forensics does not make every dollar perfectly explainable. It makes the explanation and its limits explicit.</p>
+<h2 id="the-full-paper">The full paper</h2>
+<p>Paper 2 develops the discipline in depth: what an economic claim must cite to be trusted, how observed and modeled findings are kept apart in practice, the waste classes and what distinguishes them, how assessment reports work as evidence-citing artifacts, a worked reference scenario, and failure modes when spend is managed as a billing problem alone. The full paper is available to teams we work with — <a href="../disclosure-policy/">what we publish and what we gate</a>.</p>
+<p><em>Next: <a href="../evidence-graphs/">Paper 3 — Evidence Graphs</a>, the structure underneath both disciplines.</em></p>
+
+      </div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="container">
+      <div class="eyebrow">Go deeper</div>
+      <h2>The full paper is available under NDA.</h2>
+      <p>This brief carries the argument; the full paper carries the engineering. <a href="../disclosure-policy/">Here's what we publish and what we gate</a> — and <a href="../#download">you can get all six briefs as one PDF</a>.</p>
+      <div class="hero-actions"><a class="btn primary" data-cta="call-papers" href="../../call/">Book 20 minutes with a founder <span class="arr">→</span></a></div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><div class="footer-lockup"><img class="footer-logo footer-mark" src="../../assets/northwatch-mark.png" alt=""><span class="footer-logo-text">Northwatch <b>Systems</b></span></div><span>Blackridge — the AI Runtime Economics platform</span></div>
+    <nav class="footer-links" aria-label="Footer product"><a href="../../#forensics-flow">How it works</a><a href="../../example-ai-spend-forensics-report/">Example cause file</a><a href="https://demo.northwatch.systems" data-cta="live-demo-footer">Live demo</a><a href="../../compare/">Compare</a><a href="../../papers/">Papers</a><a href="../../security/">Security</a></nav>
+    <nav class="footer-links" aria-label="Footer company"><a href="../../about/">About</a><a href="../../design-partners/">Design partners</a><a href="../../contact/">Contact</a><a href="../../faq/">FAQ</a></nav>
+    <div class="footer-legal"><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><span class="pill-patent">Patent Pending</span><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("navLinks");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
+  }
+})();
+</script>
+<script type="module" src="../../assets/brg-three.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+  if (window.location.protocol.indexOf("http") !== 0) return;
+  if (!window.location.pathname.endsWith("/index.html")) return;
+  window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
+})();
+</script>
+<title>How To Evaluate AI Cost Tools (Including Ours) | Northwatch Systems</title>
+<meta name="description" content="AI cost tools operate at four layers: billing, telemetry, attribution, and forensics. Most teams have the first three. The gap is evidence-backed reconstruction of why...">
+<link rel="canonical" href="https://northwatch.systems/blog/how-to-evaluate-ai-cost-tools/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://northwatch.systems/blog/how-to-evaluate-ai-cost-tools/">
+<meta property="og:title" content="How To Evaluate AI Cost Tools (Including Ours)">
+<meta property="og:description" content="AI cost tools operate at four layers: billing, telemetry, attribution, and forensics. Most teams have the first three. The gap is evidence-backed reconstruction of why...">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How To Evaluate AI Cost Tools (Including Ours)">
+<meta name="twitter:description" content="AI cost tools operate at four layers: billing, telemetry, attribution, and forensics. Most teams have the first three. The gap is evidence-backed reconstruction of why...">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../assets/brg.css?v=b469a5d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <div class="nav-menu">
+        <button class="nav-trigger" type="button" aria-haspopup="true">Platform <span></span></button>
+        <div class="mega-panel">
+          <div class="mega-grid">
+            <div class="mega-col">
+              <div class="mega-heading">Product</div>
+              <a href="../../#forensics-flow"><strong>How it works</strong><em>Runtime attribution, lineage, and cause files.</em></a>
+              <a href="../../example-ai-spend-forensics-report/"><strong>Example cause file</strong><em>See what finance and engineering receive.</em></a>
+              <a href="../../compare/"><strong>Compare</strong><em>Where Blackridge fits beside billing and observability.</em></a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-heading">Operations</div>
+              <a href="../../security/"><strong>Security</strong><em>Fail-open gateway posture and review notes.</em></a>
+              <a href="../../spend-review/"><strong>AI spend assessment</strong><em>Get a founder-written review of likely waste.</em></a>
+              <a href="https://demo.northwatch.systems" data-cta="live-demo-nav-menu"><strong>Live demo</strong><em>Click through the current product surface.</em></a>
+            </div>
+            <a class="mega-feature" href="../../example-ai-spend-forensics-report/">
+              <span class="mega-visual cause" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>Featured</span>
+              <strong>Inspect a real cause file</strong>
+              <em>Observed waste, modeled opportunity, confidence, coverage, and evidence rows in one package.</em>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <button class="nav-trigger" type="button" aria-haspopup="true">Resources <span></span></button>
+        <div class="mega-panel">
+          <div class="mega-grid resources">
+            <div class="mega-col">
+              <div class="mega-heading">Articles</div>
+              <a href="../../blog/" aria-current="page"><strong>Blog</strong><em>Articles, field notes, and research from Northwatch.</em></a>
+              <a href="../../what-is-ai-spend-forensics/"><strong>What is AI spend forensics?</strong><em>The category, the buyer, and the operating problem.</em></a>
+              <a href="../../how-token-economics-forensics-works/"><strong>How token economics forensics works</strong><em>Attribution rules, confidence, and reproducibility.</em></a>
+              <a href="../../anonymous-ai-workflow-evidence-gaps/"><strong>Anonymous workflow evidence gaps</strong><em>Why invoices and logs miss the finance question.</em></a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-heading">Research</div>
+              <a href="../../security/"><strong>Security overview</strong><em>Technical posture before a security review.</em></a>
+              <a href="../../papers/"><strong>The Northwatch Papers</strong><em>Volume I — the runtime evidence layer, in six briefs.</em></a>
+              <a href="../../faq/"><strong>FAQ</strong><em>Common questions about deployment and evidence.</em></a>
+            </div>
+            <a class="mega-feature" href="../../spend-review/">
+              <span class="mega-visual research" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>Research</span>
+              <strong>AI spend assessment</strong>
+              <em>Get a founder-written review of where AI spend may be leaking and what evidence would prove it.</em>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <button class="nav-trigger" type="button" aria-haspopup="true">Company <span></span></button>
+        <div class="mega-panel compact">
+          <div class="mega-grid company">
+            <div class="mega-col">
+              <div class="mega-heading">Northwatch Systems</div>
+              <a href="../../about/"><strong>About</strong><em>Who is building Blackridge.</em></a>
+              <a href="../../design-partners/"><strong>Design partners</strong><em>How early teams work with us.</em></a>
+              <a href="../../contact/"><strong>Contact</strong><em>Talk to the founders.</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://demo.northwatch.systems" data-cta="live-demo-nav">Live demo</a>
+      <a class="btn secondary" data-cta="call-nav" href="../../call/">Book a founder call</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <article class="resource-article">
+    <header class="resource-hero">
+      <div class="container resource-hero-inner">
+        <a class="resource-back" href="../">Articles and research</a>
+        <div class="resource-meta"><span>Article</span><span>Aug 7, 2026</span><span>3 min read</span></div>
+        <h1>How To Evaluate AI Cost Tools (Including Ours)</h1>
+        <p>AI cost tools operate at four layers: billing, telemetry, attribution, and forensics. Most teams have the first three. The gap is evidence-backed reconstruction of why workflows cost what they cost.</p>
+      </div>
+    </header>
+    <section class="resource-body-section">
+      <div class="container resource-layout">
+        <div class="resource-prose"><p class="resource-lede">The AI cost tooling market is confusing because everything sounds similar. Gateways say they handle cost. Observability platforms say they handle cost. FinOps dashboards say they handle cost. Attribution tools say they handle cost. They all handle part of the problem. They handle different parts. Knowing which part you are buying matters more than the vendor category on the website. Here is the framework we use. Blackridge fits into it at a specific layer.</p><section class="resource-section" id="the-four-layers-of-ai-cost-tooling"><h2>The four layers of AI cost tooling</h2><figure class="article-diagram"><span>Tooling layers</span><div class="diagram-stack"><div class="diagram-layer"><b>Billing</b><em>What you paid</em></div><div class="diagram-layer"><b>Telemetry</b><em>What ran</em></div><div class="diagram-layer"><b>Attribution</b><em>Where spend came from</em></div><div class="diagram-layer"><b>Forensics</b><em>Why it happened</em></div></div></figure><h3>Layer 1: Billing</h3><p>What you paid: provider invoices, model-level totals, monthly spend.</p><p>Every organization has this. It answers: how much did we spend?</p><h3>Layer 2: Telemetry</h3><p>What ran: traces, spans, request logs, latency, error rates, token counts.</p><p>Observability platforms live here. This layer answers: what technical activity occurred?</p><h3>Layer 3: Attribution</h3><p>Where the spend came from: cost allocated to teams, projects, workflows, customers, features, or tags.</p><p>FinOps dashboards and tagging systems live here. This layer answers: who or what generated the cost?</p><h3>Layer 4: Forensics</h3><p>Why it happened: evidence-backed reconstruction of the economic behavior inside workflows.</p><p>Waste classification. Productive vs wasteful spend separation. Confidence-gated savings. Root-cause identification.</p><p>This layer answers: why did the spend occur, was it justified, and what should change?</p><p>Most organizations have layers 1 through 3 in some form.</p><p>The consistent gap is layer 4.</p></section><section class="resource-section" id="where-existing-categories-stop"><h2>Where existing categories stop</h2><p>Gateways sit between your application and the model provider. They route traffic, standardize API access, and expose usage metrics. Good gateways create clean data for billing and telemetry. Some offer attribution tagging.</p><p>Gateways operate at the request boundary. They see calls passing through.</p><p>They usually do not reconstruct what happened across a multi-step workflow. The economic behavior - retries, fallbacks, abandoned branches, duplicate work - emerges from the sequence, not any single request.</p><p>Observability platforms give you layer 2 in depth.</p><p>Traces, spans, request trees, latency analysis, error tracking. If you need to debug a slow or failing workflow, observability tools are the right answer.</p><p>They usually do not attach economics to the trace.</p><p>A span can tell you a model call took 1.2 seconds and returned 4,000 tokens. It does not tell you whether that call was productive work or a retry. It does not tell you whether the token count was appropriate or bloated. It does not tell you what the call cost relative to its role in the workflow.</p><p>FinOps dashboards give you layer 3.</p><p>Cost allocated by team, project, environment, or tag. If you need to know who is spending how much, FinOps tools answer that.</p><p>They do not explain why a team&#x27;s spend is what it is.</p><p>Allocation tells you Team A spent $47,000. It does not tell you that part of the spend came from fallback tax, retrieval bloat, retry amplification, or abandoned branches.</p></section><section class="resource-section" id="what-forensics-adds"><h2>What forensics adds</h2><p>Forensics is layer 4.</p><p>It reconstructs execution paths inside workflows. It classifies spend into productive and waste categories. It shows the evidence behind each finding. It puts confidence levels on savings estimates. It gives engineering a prioritized fix list.</p><p>Forensics depends on the layers below it.</p><p>If you have billing but no telemetry, you need observability before you need forensics.</p><p>If you have telemetry but no attribution, you need cost allocation before you need forensics.</p><p>If you have billing, telemetry, and attribution but still cannot explain why AI workflows cost what they cost, the missing layer is forensics.</p></section><section class="resource-section" id="where-blackridge-fits"><h2>Where Blackridge fits</h2><p>Blackridge is layer 4.</p><p>It consumes observed or imported workflow evidence, pricing context, attribution, and runtime economics events, then produces forensic findings: waste classification, evidence chains, confidence-gated savings, and prioritized recommendations.</p><p>Your gateway stays.</p><p>Your observability platform stays.</p><p>Your FinOps dashboard stays.</p><p class="resource-pullquote">Blackridge answers the question those tools leave open: why did this workflow cost what it did, and what should engineering fix first?</p><p>We built Blackridge specifically for layer 4 because we kept seeing teams that had excellent observability and attribution but still could not explain why their AI workflows cost what they cost. The gap was real and nobody was filling it.</p></section><div class="resource-callout"><strong>Why it matters:</strong> AI spend decisions get better when teams can connect the invoice to workflow behavior, confidence, and specific engineering fixes.</div><div class="resource-cta"><span>Next step</span><span class="resource-cta-title">Want to evaluate this against your AI workflows?</span><p>Request an AI spend assessment and a founder will look for likely leak classes before anyone touches production.</p><a class="btn primary" href="../../spend-review/">Request assessment</a></div></div>
+        <aside class="resource-sidebar" aria-label="Article navigation">
+          <div class="resource-sidebar-card"><span>On this page</span><nav class="resource-toc" aria-label="Table of contents"><a href="#the-four-layers-of-ai-cost-tooling">The four layers of AI cost tooling</a><a href="#where-existing-categories-stop">Where existing categories stop</a><a href="#what-forensics-adds">What forensics adds</a><a href="#where-blackridge-fits">Where Blackridge fits</a></nav></div>
+          <div class="resource-sidebar-card"><span>Article facts</span><b>3 minute read</b><p>Published by Northwatch Systems for teams operating AI workflows in production.</p></div>
+          <div class="resource-sidebar-card"><span>Related</span><div class="resource-related"><a href="../../what-is-ai-spend-forensics/">What is AI spend forensics?</a><a href="../../how-token-economics-forensics-works/">How token economics forensics works</a><a href="../../example-ai-spend-forensics-report/">Example cause file</a></div></div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><div class="footer-lockup"><img class="footer-logo footer-mark" src="../../assets/northwatch-mark.png" alt=""><span class="footer-logo-text">Northwatch <b>Systems</b></span></div><span>Blackridge — the AI Runtime Economics platform</span></div>
+    <nav class="footer-links" aria-label="Footer product"><a href="../../#forensics-flow">How it works</a><a href="../../example-ai-spend-forensics-report/">Example cause file</a><a href="https://demo.northwatch.systems" data-cta="live-demo-footer">Live demo</a><a href="../../compare/">Compare</a><a href="../../papers/">Papers</a><a href="../../security/">Security</a></nav>
+    <nav class="footer-links" aria-label="Footer company"><a href="../../about/">About</a><a href="../../design-partners/">Design partners</a><a href="../../contact/">Contact</a><a href="../../faq/">FAQ</a></nav>
+    <div class="footer-legal"><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><span class="pill-patent">Patent Pending</span><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("navLinks");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
+  }
+})();
+</script>
+<script type="module" src="../../assets/brg-three.js"></script>
+</body>
+</html>

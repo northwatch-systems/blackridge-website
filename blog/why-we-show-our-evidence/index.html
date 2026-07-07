@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+  if (window.location.protocol.indexOf("http") !== 0) return;
+  if (!window.location.pathname.endsWith("/index.html")) return;
+  window.location.replace(window.location.pathname.slice(0, -10) + window.location.search + window.location.hash);
+})();
+</script>
+<title>Why We Show Our Evidence | Northwatch Systems</title>
+<meta name="description" content="AI cost savings claims need inspectable evidence: source events, pricing basis, confidence levels, assumptions, and engineering recommendations.">
+<link rel="canonical" href="https://northwatch.systems/blog/why-we-show-our-evidence/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://northwatch.systems/blog/why-we-show-our-evidence/">
+<meta property="og:title" content="Why We Show Our Evidence">
+<meta property="og:description" content="AI cost savings claims need inspectable evidence: source events, pricing basis, confidence levels, assumptions, and engineering recommendations.">
+<meta property="og:image" content="https://northwatch.systems/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why We Show Our Evidence">
+<meta name="twitter:description" content="AI cost savings claims need inspectable evidence: source events, pricing basis, confidence levels, assumptions, and engineering recommendations.">
+<meta name="twitter:image" content="https://northwatch.systems/assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../assets/brg.css?v=b469a5d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="../../" aria-label="Northwatch Systems home"><span class="brand-mark">N</span><span class="brand-name">Northwatch <span>Systems</span></span></a>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <div class="nav-menu">
+        <button class="nav-trigger" type="button" aria-haspopup="true">Platform <span></span></button>
+        <div class="mega-panel">
+          <div class="mega-grid">
+            <div class="mega-col">
+              <div class="mega-heading">Product</div>
+              <a href="../../#forensics-flow"><strong>How it works</strong><em>Runtime attribution, lineage, and cause files.</em></a>
+              <a href="../../example-ai-spend-forensics-report/"><strong>Example cause file</strong><em>See what finance and engineering receive.</em></a>
+              <a href="../../compare/"><strong>Compare</strong><em>Where Blackridge fits beside billing and observability.</em></a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-heading">Operations</div>
+              <a href="../../security/"><strong>Security</strong><em>Fail-open gateway posture and review notes.</em></a>
+              <a href="../../spend-review/"><strong>AI spend assessment</strong><em>Get a founder-written review of likely waste.</em></a>
+              <a href="https://demo.northwatch.systems" data-cta="live-demo-nav-menu"><strong>Live demo</strong><em>Click through the current product surface.</em></a>
+            </div>
+            <a class="mega-feature" href="../../example-ai-spend-forensics-report/">
+              <span class="mega-visual cause" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>Featured</span>
+              <strong>Inspect a real cause file</strong>
+              <em>Observed waste, modeled opportunity, confidence, coverage, and evidence rows in one package.</em>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <button class="nav-trigger" type="button" aria-haspopup="true">Resources <span></span></button>
+        <div class="mega-panel">
+          <div class="mega-grid resources">
+            <div class="mega-col">
+              <div class="mega-heading">Articles</div>
+              <a href="../../blog/" aria-current="page"><strong>Blog</strong><em>Articles, field notes, and research from Northwatch.</em></a>
+              <a href="../../what-is-ai-spend-forensics/"><strong>What is AI spend forensics?</strong><em>The category, the buyer, and the operating problem.</em></a>
+              <a href="../../how-token-economics-forensics-works/"><strong>How token economics forensics works</strong><em>Attribution rules, confidence, and reproducibility.</em></a>
+              <a href="../../anonymous-ai-workflow-evidence-gaps/"><strong>Anonymous workflow evidence gaps</strong><em>Why invoices and logs miss the finance question.</em></a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-heading">Research</div>
+              <a href="../../security/"><strong>Security overview</strong><em>Technical posture before a security review.</em></a>
+              <a href="../../papers/"><strong>The Northwatch Papers</strong><em>Volume I — the runtime evidence layer, in six briefs.</em></a>
+              <a href="../../faq/"><strong>FAQ</strong><em>Common questions about deployment and evidence.</em></a>
+            </div>
+            <a class="mega-feature" href="../../spend-review/">
+              <span class="mega-visual research" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>Research</span>
+              <strong>AI spend assessment</strong>
+              <em>Get a founder-written review of where AI spend may be leaking and what evidence would prove it.</em>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <button class="nav-trigger" type="button" aria-haspopup="true">Company <span></span></button>
+        <div class="mega-panel compact">
+          <div class="mega-grid company">
+            <div class="mega-col">
+              <div class="mega-heading">Northwatch Systems</div>
+              <a href="../../about/"><strong>About</strong><em>Who is building Blackridge.</em></a>
+              <a href="../../design-partners/"><strong>Design partners</strong><em>How early teams work with us.</em></a>
+              <a href="../../contact/"><strong>Contact</strong><em>Talk to the founders.</em></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://demo.northwatch.systems" data-cta="live-demo-nav">Live demo</a>
+      <a class="btn secondary" data-cta="call-nav" href="../../call/">Book a founder call</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <article class="resource-article">
+    <header class="resource-hero">
+      <div class="container resource-hero-inner">
+        <a class="resource-back" href="../">Articles and research</a>
+        <div class="resource-meta"><span>Article</span><span>Jul 31, 2026</span><span>2 min read</span></div>
+        <h1>Why We Show Our Evidence</h1>
+        <p>AI cost savings claims need inspectable evidence: source events, pricing basis, confidence levels, assumptions, and engineering recommendations.</p>
+      </div>
+    </header>
+    <section class="resource-body-section">
+      <div class="container resource-layout">
+        <div class="resource-prose"><p class="resource-lede">A vendor tells you they can save 30% on your AI spend. Ask one question: what is that number based on? Which workflows did they analyze? Which model calls did they classify as waste? What pricing did they use? How confident are they? What assumptions did they make? What data was missing? If the answer is &quot;we do not show that,&quot; the 30% is a guess wearing a suit.</p><section class="resource-section" id="why-black-box-savings-fail"><h2>Why black-box savings fail</h2><ul class="article-list"><li>Engineering cannot prioritize.</li><li>&quot;Save 30%&quot; does not tell anyone which workflow to change, which configuration to fix, or which behavior to address. A percentage is not a work order.</li><li>Finance cannot trust it.</li><li>A CFO who approves a tool based on projected savings expects those savings to materialize. When they do not, the tool loses credibility and so does the team that recommended it.</li><li>The organization learns nothing.</li></ul><p>Engineering teams have been burned by this pattern before.</p><p>Cloud cost tools that promise savings from a utilization snapshot.</p><p>Performance vendors that project improvements from synthetic benchmarks.</p><p>Optimization reports that turn assumptions into a confident dollar figure.</p><p>When the number cannot be inspected, the credibility is borrowed.</p><p>AI spend is too new and too volatile to tolerate unverifiable claims.</p><p>A savings estimate without evidence creates three problems.</p><p>AI spend forensics should build institutional knowledge about how workflows behave economically. A one-time savings number is too thin.</p><p class="resource-pullquote">A black-box projection teaches nothing. An evidence chain teaches the team where waste originates and how to prevent it.</p></section><section class="resource-section" id="what-every-finding-should-expose"><h2>What every finding should expose</h2><figure class="article-diagram"><span>Evidence chain</span><div class="diagram-flow"><div class="diagram-node"><b>Source events</b><em>Requests and workflow steps</em></div><div class="diagram-node"><b>Cost basis</b><em>Rates, ledger data, math</em></div><div class="diagram-node"><b>Classification</b><em>Waste class and cause</em></div><div class="diagram-node"><b>Recommendation</b><em>Fix and verification path</em></div></div></figure><ul class="article-list"><li>The source events: which model calls, tool calls, and workflow steps produced the finding. Specific request IDs and event IDs an engineer can look up.</li><li>The cost basis: observed vendor rates, imported ledger data, a bundled pricing snapshot, or user-provided pricing. Version, timestamp, and reproducible math.</li><li>The classification: retry amplification, fallback tax, context bloat, retrieval duplication, abandoned branches, or another waste class.</li><li>The confidence level: what evidence supports the finding, what data is missing, and which assumptions were required.</li><li>The recommendation: what engineering should change, what impact is expected, and how to verify the fix.</li></ul><figure class="resource-figure"><img src="../../assets/screenshots/blog-demo-evidence-quality.png" alt="Blackridge evidence quality screen showing cost coverage, attribution coverage, and trust scores" loading="lazy"><figcaption><strong>From the Blackridge demo</strong><span>Coverage and confidence, broken out by dimension — the layer that makes a finding inspectable instead of asserted.</span></figcaption></figure><p>A credible finding has layers. Each layer should be inspectable.</p><p>Every layer should be open.</p></section><section class="resource-section" id="confidence-prevents-inflated-claims"><h2>Confidence prevents inflated claims</h2><ul class="article-list"><li>High-confidence savings: backed by complete evidence and ready for prioritization.</li><li>Medium-confidence savings: likely, but dependent on data that needs confirmation.</li><li>Low-confidence savings: plausible, but speculative.</li></ul><p>Confidence-gating matters because mixed certainty destroys trust.</p><p>&quot;We can save you $40,000 per month&quot; sounds impressive until engineering finds that $12,000 depends on assumptions that do not hold in their environment.</p><p>Confidence-gating separates what you can act on now from what needs more evidence.</p><p>That is a conversation engineering can have with finance.</p><p>Honest ranges beat inflated promises.</p></section><section class="resource-section" id="why-we-show-our-work"><h2>Why we show our work</h2><p>We built Blackridge to show its work. Every finding has evidence. Every savings estimate has a confidence level. Every cost calculation has a pricing basis you can trace.</p><p>We built Blackridge to show its work because we&#x27;ve been on the receiving end of unverifiable vendor savings claims. Engineering trust is not optional when the numbers are going into a budget conversation.</p></section><div class="resource-callout"><strong>Why it matters:</strong> AI spend decisions get better when teams can connect the invoice to workflow behavior, confidence, and specific engineering fixes.</div><div class="resource-cta"><span>Next step</span><span class="resource-cta-title">Want to evaluate this against your AI workflows?</span><p>Request an AI spend assessment and a founder will look for likely leak classes before anyone touches production.</p><a class="btn primary" href="../../spend-review/">Request assessment</a></div></div>
+        <aside class="resource-sidebar" aria-label="Article navigation">
+          <div class="resource-sidebar-card"><span>On this page</span><nav class="resource-toc" aria-label="Table of contents"><a href="#why-black-box-savings-fail">Why black-box savings fail</a><a href="#what-every-finding-should-expose">What every finding should expose</a><a href="#confidence-prevents-inflated-claims">Confidence prevents inflated claims</a><a href="#why-we-show-our-work">Why we show our work</a></nav></div>
+          <div class="resource-sidebar-card"><span>Article facts</span><b>2 minute read</b><p>Published by Northwatch Systems for teams operating AI workflows in production.</p></div>
+          <div class="resource-sidebar-card"><span>Related</span><div class="resource-related"><a href="../../what-is-ai-spend-forensics/">What is AI spend forensics?</a><a href="../../how-token-economics-forensics-works/">How token economics forensics works</a><a href="../../example-ai-spend-forensics-report/">Example cause file</a></div></div>
+        </aside>
+      </div>
+    </section>
+  </article>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><div class="footer-lockup"><img class="footer-logo footer-mark" src="../../assets/northwatch-mark.png" alt=""><span class="footer-logo-text">Northwatch <b>Systems</b></span></div><span>Blackridge — the AI Runtime Economics platform</span></div>
+    <nav class="footer-links" aria-label="Footer product"><a href="../../#forensics-flow">How it works</a><a href="../../example-ai-spend-forensics-report/">Example cause file</a><a href="https://demo.northwatch.systems" data-cta="live-demo-footer">Live demo</a><a href="../../compare/">Compare</a><a href="../../papers/">Papers</a><a href="../../security/">Security</a></nav>
+    <nav class="footer-links" aria-label="Footer company"><a href="../../about/">About</a><a href="../../design-partners/">Design partners</a><a href="../../contact/">Contact</a><a href="../../faq/">FAQ</a></nav>
+    <div class="footer-legal"><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><span class="pill-patent">Patent Pending</span><a href="mailto:founders@northwatch.systems">founders@northwatch.systems</a><a href="mailto:security@northwatch.systems">security@northwatch.systems</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var toggle = document.getElementById("menuToggle");
+  var nav = document.getElementById("navLinks");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function(){ toggle.classList.toggle("active"); nav.classList.toggle("open"); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggle.classList.remove("active"); nav.classList.remove("open"); }); });
+  }
+})();
+</script>
+<script type="module" src="../../assets/brg-three.js"></script>
+</body>
+</html>

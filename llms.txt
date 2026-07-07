@@ -7,6 +7,8 @@ Primary public pages:
 - https://northwatch.systems/spend-review/
 - https://northwatch.systems/call/
 - https://northwatch.systems/example-ai-spend-forensics-report/
+- https://northwatch.systems/papers/ (The Northwatch Papers, Volume I — six briefs on the runtime evidence layer; full papers under NDA)
+- https://northwatch.systems/papers/disclosure-policy/
 - https://northwatch.systems/design-partners/
 - https://northwatch.systems/security/
 - https://northwatch.systems/faq/

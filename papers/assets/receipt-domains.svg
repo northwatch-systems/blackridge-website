@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" style="max-width:100%;height:auto" role="img" aria-label="An AI receipt for one action, with six domains — identity, intent, governance, execution, economics, provenance — where every field cites records in the evidence graph or is marked unknown.">
+  <style>
+    text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    .t1{fill:#0b0b0b;font-size:13px;font-weight:600}
+    .t2{fill:#52514e;font-size:11px}
+    .t3{fill:#898781;font-size:10.5px}
+    .cap{fill:#898781;font-size:10px;font-weight:600;letter-spacing:.09em}
+    .box{fill:#fcfcfb;stroke:#c3c2b7;stroke-width:1.25}
+    .soft{fill:rgba(42,120,214,.08);stroke:#2a78d6;stroke-width:1.5}
+    .hair{stroke:#e1e0d9;stroke-width:1}
+    .fan{stroke:#898781;stroke-width:1.25;fill:none}
+    .fan-u{stroke:#898781;stroke-width:1.25;fill:none;stroke-dasharray:4 4}
+    .node{fill:#2a78d6}
+    .link{stroke:#898781;stroke-width:1}
+    .unk{fill:none;stroke:#898781;stroke-width:1.25;stroke-dasharray:5 4}
+    .mk{fill:#898781}
+    @media (prefers-color-scheme:dark){
+      .t1{fill:#ffffff}.t2{fill:#c3c2b7}
+      .box{fill:#1a1a19;stroke:#383835}
+      .soft{fill:rgba(57,135,229,.14);stroke:#3987e5}
+      .hair{stroke:#2c2c2a}
+      .node{fill:#3987e5}
+    }
+  
+      .t1{fill:#ffffff}.t2{fill:#c3c2b7}
+      .box{fill:#1a1a19;stroke:#383835}
+      .soft{fill:rgba(57,135,229,.14);stroke:#3987e5}
+      .hair{stroke:#2c2c2a}
+      .node{fill:#3987e5}
+  </style>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" class="mk"/>
+    </marker>
+  </defs>
+
+  <rect x="70" y="28" width="270" height="344" rx="12" class="box"/>
+  <text x="90" y="58" class="cap">AI RECEIPT</text>
+  <text x="320" y="58" text-anchor="end" class="t3">one meaningful action</text>
+  <line x1="90" y1="72" x2="320" y2="72" class="hair"/>
+
+  <text x="90" y="112" class="t1">identity</text>
+  <text x="320" y="112" text-anchor="end" class="t3">who acted</text>
+  <text x="90" y="154" class="t1">intent</text>
+  <text x="320" y="154" text-anchor="end" class="t3">what was attempted</text>
+  <text x="90" y="196" class="t1">governance</text>
+  <text x="320" y="196" text-anchor="end" class="t3">which rules applied</text>
+  <text x="90" y="238" class="t1">execution</text>
+  <text x="320" y="238" text-anchor="end" class="t3">what ran</text>
+  <text x="90" y="280" class="t1">economics</text>
+  <text x="320" y="280" text-anchor="end" class="t3">what it cost</text>
+  <text x="90" y="322" class="t1">provenance</text>
+  <text x="320" y="322" text-anchor="end" class="t3">what proves it</text>
+
+  <text x="412" y="84" text-anchor="middle" class="t3">every field cites records</text>
+
+  <path d="M340 108 C 410 108, 420 168, 478 168" class="fan" marker-end="url(#arr)"/>
+  <path d="M340 150 C 410 150, 420 168, 478 168" class="fan"/>
+  <path d="M340 192 C 410 192, 420 172, 478 170" class="fan"/>
+  <path d="M340 234 C 410 234, 420 176, 478 172" class="fan"/>
+  <path d="M340 318 C 410 318, 420 180, 478 176" class="fan"/>
+
+  <rect x="480" y="96" width="210" height="150" rx="12" class="soft"/>
+  <circle cx="530" cy="140" r="5" class="node"/>
+  <circle cx="585" cy="124" r="5" class="node"/>
+  <circle cx="642" cy="150" r="5" class="node"/>
+  <circle cx="558" cy="180" r="5" class="node"/>
+  <circle cx="620" cy="188" r="5" class="node"/>
+  <line x1="530" y1="140" x2="585" y2="124" class="link"/>
+  <line x1="585" y1="124" x2="642" y2="150" class="link"/>
+  <line x1="530" y1="140" x2="558" y2="180" class="link"/>
+  <line x1="558" y1="180" x2="620" y2="188" class="link"/>
+  <line x1="642" y1="150" x2="620" y2="188" class="link"/>
+  <text x="585" y="226" text-anchor="middle" class="t1">evidence graph</text>
+
+  <path d="M340 276 C 420 276, 420 300, 478 300" class="fan-u" marker-end="url(#arr)"/>
+  <rect x="480" y="280" width="210" height="40" rx="8" class="unk"/>
+  <text x="585" y="304" text-anchor="middle" class="t2">marked unknown — never guessed</text>
+</svg>

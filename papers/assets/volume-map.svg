@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" style="max-width:100%;height:auto" role="img" aria-label="Map of Volume I: Papers 1 to 3 build the model; Papers 4 to 6 deliver the operational payoff.">
+  <style>
+    text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    .t1{fill:#0b0b0b;font-size:14px;font-weight:600}
+    .t2{fill:#52514e;font-size:11px}
+    .cap{fill:#898781;font-size:10px;font-weight:600;letter-spacing:.09em}
+    .box{fill:#fcfcfb;stroke:#c3c2b7;stroke-width:1.25}
+    .soft{fill:rgba(42,120,214,.08);stroke:#2a78d6;stroke-width:1.5}
+    .edge{stroke:#898781;stroke-width:1.5;fill:none}
+    .mk{fill:#898781}
+    @media (prefers-color-scheme:dark){
+      .t1{fill:#ffffff}.t2{fill:#c3c2b7}
+      .box{fill:#1a1a19;stroke:#383835}
+      .soft{fill:rgba(57,135,229,.14);stroke:#3987e5}
+    }
+  
+      .t1{fill:#ffffff}.t2{fill:#c3c2b7}
+      .box{fill:#1a1a19;stroke:#383835}
+      .soft{fill:rgba(57,135,229,.14);stroke:#3987e5}
+  </style>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" class="mk"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="34" class="cap">THE MODEL — WHAT EVIDENCE IS</text>
+
+  <rect x="60" y="46" width="204" height="88" rx="10" class="box"/>
+  <text x="162" y="70" text-anchor="middle" class="cap">PAPER 1</text>
+  <text x="162" y="92" text-anchor="middle" class="t1">Forensic Integrity</text>
+  <text x="162" y="112" text-anchor="middle" class="t2">the proof requirement</text>
+
+  <rect x="278" y="46" width="204" height="88" rx="10" class="box"/>
+  <text x="380" y="70" text-anchor="middle" class="cap">PAPER 2</text>
+  <text x="380" y="92" text-anchor="middle" class="t1">Economic Forensics</text>
+  <text x="380" y="112" text-anchor="middle" class="t2">spend as evidence</text>
+
+  <rect x="496" y="46" width="204" height="88" rx="10" class="soft"/>
+  <text x="598" y="70" text-anchor="middle" class="cap">PAPER 3</text>
+  <text x="598" y="92" text-anchor="middle" class="t1">Evidence Graphs</text>
+  <text x="598" y="112" text-anchor="middle" class="t2">the canonical object</text>
+
+  <line x1="266" y1="90" x2="276" y2="90" class="edge" marker-end="url(#arr)"/>
+  <line x1="484" y1="90" x2="494" y2="90" class="edge" marker-end="url(#arr)"/>
+
+  <path d="M598 136 L598 156 L30 156 L30 234 L54 234" class="edge" marker-end="url(#arr)"/>
+
+  <text x="60" y="180" class="cap">THE PAYOFF — WHAT IT ENABLES</text>
+
+  <rect x="60" y="190" width="204" height="88" rx="10" class="box"/>
+  <text x="162" y="214" text-anchor="middle" class="cap">PAPER 4</text>
+  <text x="162" y="236" text-anchor="middle" class="t1">The AI Receipt</text>
+  <text x="162" y="256" text-anchor="middle" class="t2">portable proof per action</text>
+
+  <rect x="278" y="190" width="204" height="88" rx="10" class="box"/>
+  <text x="380" y="214" text-anchor="middle" class="cap">PAPER 5</text>
+  <text x="380" y="236" text-anchor="middle" class="t1">Behavioral Governance</text>
+  <text x="380" y="256" text-anchor="middle" class="t2">authority at the boundary</text>
+
+  <rect x="496" y="190" width="204" height="88" rx="10" class="box"/>
+  <text x="598" y="214" text-anchor="middle" class="cap">PAPER 6</text>
+  <text x="598" y="236" text-anchor="middle" class="t1">Runtime Economics</text>
+  <text x="598" y="256" text-anchor="middle" class="t2">the operating loop</text>
+
+  <line x1="266" y1="234" x2="276" y2="234" class="edge" marker-end="url(#arr)"/>
+  <line x1="484" y1="234" x2="494" y2="234" class="edge" marker-end="url(#arr)"/>
+</svg>
